@@ -71,9 +71,9 @@ This would give you a line graph with an x-axis of "Month", a y-axis of "Sales" 
 <bar-graph data="graphData" orientation="horizontal">
   <x field="Month" order-by="date"></x>
   <y field="Sales" order-by="number"></y>
-  <bar field="storeId" value="2"></line>
-  <bar field="storeId" value="1"></line>
-</line-graph>
+  <bar field="storeId" value="2"></bar>
+  <bar field="storeId" value="1"></bar>
+</bar-graph>
 ```html
 
 ## Contributing
