@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     'watch': {
       scripts: {
-        files: ['./app/**/*'],
+        files: ['./source/**/*'],
         tasks: ['compass','jshint'],
         options: {
           nospawn: true
@@ -15,8 +15,8 @@ module.exports = function(grunt) {
     'compass': {
       dev: {
         options: {
-          sassDir: 'app/scss',
-          cssDir: 'app/css'
+          sassDir: 'source/scss',
+          cssDir: 'source/css'
         }
       }
     },
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
     'connect': {
       'static': {
         options: {
-          base: 'app/',
+          base: 'source/',
           hostname: 'localhost',
           port: 8001
         }
