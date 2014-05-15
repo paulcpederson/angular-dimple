@@ -2,6 +2,29 @@
 
 [ng-cloak] { display: none;}
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   color: red;
+}
+
+.navigation {
+  position: fixed;
+  height: 100vh;
+  width: 14em;
+  padding: 1em;
+  background-color: rgba(#efefef, 0.9);
+}
+
+.chart {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 14rem;
+  right: 0;
+  height: 100vh;
+  padding-left: 1rem;
 }

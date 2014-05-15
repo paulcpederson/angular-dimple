@@ -4,6 +4,32 @@
 }
 
 /* line 5, ../scss/style.scss */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 10, ../scss/style.scss */
 h1 {
   color: red;
+}
+
+/* line 14, ../scss/style.scss */
+.navigation {
+  position: fixed;
+  height: 100vh;
+  width: 14em;
+  padding: 1em;
+  background-color: rgba(239, 239, 239, 0.9);
+}
+
+/* line 22, ../scss/style.scss */
+.chart {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 14rem;
+  right: 0;
+  height: 100vh;
+  padding-left: 1rem;
 }
