@@ -1,15 +1,17 @@
 {
-  "name": "angular-drag-and-drop",
+  "name": "angular-dimple",
   "private": true,
   "version": "0.0.0",
-  "description": "Drag and Drop in Angular",
-  "repository": "https://github.com/angular/angular-seed",
-  "license": "MIT",
+  "description": "Angular.js wrapper for the Dimple charting language",
+  "repository": "https://github.com/geoloqi/angular-dimple",
+  "license": "ISC",
   "devDependencies": {
     "grunt": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-watch": "*",
     "grunt-contrib-compass": "*",
-    "grunt-contrib-connect": "*"
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-concat": "*"
   }
 }

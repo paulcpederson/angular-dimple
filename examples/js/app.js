@@ -7,7 +7,6 @@ angular.module('myApp', [
 ])
 
 .config(['$routeProvider', function($routeProvider) {
-
   $routeProvider
 
   .when('/view1', {

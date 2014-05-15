@@ -4,9 +4,23 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     'watch': {
-      scripts: {
+      source: {
         files: ['./source/**/*'],
-        tasks: ['compass','jshint'],
+        tasks: ['jshint', 'concat', 'uglify'],
+        options: {
+          nospawn: true
+        }
+      },
+      examples: {
+        files: ['./examples/js/*.js'],
+        tasks: ['jshint'],
+        options: {
+          nospawn: true
+        }
+      },
+      sass: {
+        files: ['./examples/scss/**/*'],
+        tasks: ['compass'],
         options: {
           nospawn: true
         }
@@ -15,18 +29,53 @@ module.exports = function(grunt) {
     'compass': {
       dev: {
         options: {
-          sassDir: 'source/scss',
-          cssDir: 'source/css'
+          sassDir: 'examples/scss',
+          cssDir: 'examples/css'
         }
       }
     },
     'jshint': {
-      files: ['./*.js']
+      files: [
+        './source/**/*.js',
+        './examples/js/app.js',
+        './examples/js/controllers.js',
+        './examples/js/directives.js',
+        './examples/js/filters.js',
+        './examples/js/services.js'
+      ]
+    },
+    'concat': {
+      options: {
+        stripBanners: true,
+        banner: '/*! Angular-Dimple - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
+        '*   https://github.com/geoloqi/angular-dimple\n' +
+        '*   Licensed ISC */\n'
+      },
+      dist: {
+        src: ['source/*.js'],
+        dest: 'dist/angular-dimple.js'
+      },
+      examples: {
+        src: ['source/*.js'],
+        dest: 'examples/js/lib/angular-dimple.js'
+      },
+    },
+    'uglify': {
+      dist: {
+        files: {
+          'dist/angular-dimple.min.js': ['source/*.js']
+        }
+      },
+      examples: {
+        files: {
+          'examples/js/lib/angular-dimple.min.js': ['source/*.js']
+        }
+      }
     },
     'connect': {
       'static': {
         options: {
-          base: 'source/',
+          base: 'examples/',
           hostname: 'localhost',
           port: 8001
         }
@@ -38,8 +87,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 
   // Default task(s)
-  grunt.registerTask('default', [ 'connect', 'compass', 'watch']);
+  grunt.registerTask('default', [ 'connect', 'jshint', 'concat', 'uglify', 'compass', 'watch']);
 
 };

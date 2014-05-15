@@ -1,0 +1,9 @@
+/* line 3, ../scss/style.scss */
+[ng-cloak] {
+  display: none;
+}
+
+/* line 5, ../scss/style.scss */
+h1 {
+  color: red;
+}
