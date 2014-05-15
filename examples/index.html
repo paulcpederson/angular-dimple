@@ -6,6 +6,8 @@
   <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css"/>
 
   <!-- Dimple and D3 -->
@@ -13,16 +15,22 @@
   <script src="js/lib/dimple.v2.0.0.min.js"></script>
 
 </head>
+
+<!-- Application -->
 <body ng-app="myApp">
+
+  <!-- Menu -->
   <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
+    <li><a href="#/line-graph">Line Graph</a></li>
+    <li><a href="#/stacked-area">Stacked Area</a></li>
   </ul>
+
+  <!-- Views -->
   <div ng-view></div>
 
-
-
+  <!-- JS -->
   <script src="js/lib/angular.min.js"></script>
+  <script src="js/lib/angular-dimple.js"></script>
   <script src="js/lib/angular-route.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>

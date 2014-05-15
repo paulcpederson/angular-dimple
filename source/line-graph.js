@@ -1,17 +1,13 @@
-angular.module('myApp.directives', [])
+console.log('changed');
 
-.directive('appVersion', ['version', function(version) {
-  return function(scope, elm, attrs) {
-    elm.text(version);
-  };
-}])
+angular.module('angular-dimple.line-graph', [])
 
-.directive('dngLineGraph', function(){
+.directive('dngLineGraph', [function () {
   return {
     restrict: 'E',
     template: '<div class="dng-line-graph" id="line-graph"></div>',
     replace: true,
-    controller: function($scope, $element, $attrs) {
+    controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
       var svg = dimple.newSvg('#line-graph', '100%', '100%');
 
       d3.tsv($attrs.data, function (data) {
@@ -22,6 +18,6 @@ angular.module('myApp.directives', [])
         var s = chart.addSeries(null, dimple.plot.line);
         chart.draw();
       });
-    }
+    }]
   };
-});
+}]);
