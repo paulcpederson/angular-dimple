@@ -34,8 +34,8 @@ You'd set up a line-graph like this:
 
 ```
 <line-graph data="graphData">
-  <x field="Month" order-by="date"></x>
-  <y field="Sales" order-by="number"></y>
+  <x-axis field="Month" order-by="date"></x-axis>
+  <y-axis field="Sales" order-by="number"></y-axis>
   <line field="storeId" value="2"></line>
   <line field="storeId" value="1"></line>
 </line-graph>
@@ -47,8 +47,8 @@ This would give you a line graph with an x-axis of "Month", a y-axis of "Sales" 
 
 ```html
 <line-graph data="graphData">
-  <x field="Month" order-by="date"></x>
-  <y field="Sales" order-by="number"></y>
+  <x-axis field="Month" order-by="date"></x-axis>
+  <y-axis field="Sales" order-by="number"></y-axis>
   <line field="storeId" value="2"></line>
   <line field="storeId" value="1"></line>
 </line-graph>
@@ -58,8 +58,8 @@ This would give you a line graph with an x-axis of "Month", a y-axis of "Sales" 
 
 ```html
 <line-graph data="graphData">
-  <x field="Month" order-by="date"></x>
-  <y field="Sales" order-by="number"></y>
+  <x-axis field="Month" order-by="date"></x-axis>
+  <y-axis field="Sales" order-by="number"></y-axis>
   <stacked-area field="storeId" value="2"></stacked-area>
   <stacked-area field="storeId" value="1"></stacked-area>
 </line-graph>
@@ -69,12 +69,27 @@ This would give you a line graph with an x-axis of "Month", a y-axis of "Sales" 
 
 ```html
 <bar-graph data="graphData" orientation="horizontal">
-  <x field="Month" order-by="date"></x>
-  <y field="Sales" order-by="number"></y>
+  <x-axis field="Month" order-by="date"></x-axis>
+  <y-axis field="Sales" order-by="number"></y-axis>
   <bar field="storeId" value="2"></bar>
   <bar field="storeId" value="1"></bar>
 </bar-graph>
 ```html
+
+
+#### Future Graph Types
+
+We'd like to accomplish all of the following charts as directives:
+
+- Line
+- Multiple Line
+- Area
+- Stacked Area
+- 100% Stacked Area
+- Bar
+- Multiple Bar
+- Stacked Bar
+- Donut
 
 ## Contributing
 

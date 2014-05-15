@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     'watch': {
       source: {
         files: ['./source/**/*'],
-        tasks: ['jshint', 'concat', 'uglify'],
+        tasks: ['concat', 'uglify', 'jshint'],
         options: {
           nospawn: true
         }
