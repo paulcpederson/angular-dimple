@@ -1,23 +1,35 @@
-console.log('changed');
-
 angular.module('angular-dimple.line-graph', [])
 
-.directive('dngLineGraph', [function () {
+.directive('lineGraph', [function () {
   return {
     restrict: 'E',
-    template: '<div class="dng-line-graph" id="line-graph"></div>',
+    template: '<div class="dimple-line-graph" id="line-graph"></div>',
     replace: true,
+    scope: {
+      data:'='
+    },
+    require: ['lineGraph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
+      var chart, x, s;
       var svg = dimple.newSvg('#line-graph', '100%', '100%');
+      chart = new dimple.chart(svg);
 
-      d3.tsv($attrs.data, function (data) {
-        var chart = new dimple.chart(svg, data);
-        var x = chart.addCategoryAxis("x", "Month");
-        x.addOrderRule("Date");
-        chart.addMeasureAxis("y", "Unit Sales");
-        var s = chart.addSeries(null, dimple.plot.line);
+      this.updateData = function () {
+        chart.data = $scope.data;
+        x = chart.addCategoryAxis('x', 'Month');
+        x.addOrderRule('Date');
+        chart.addMeasureAxis('y', 'Unit Sales');
+        s = chart.addSeries(null, dimple.plot.line);
         chart.draw();
+      };
+    }],
+    link: function($scope, $element, $attrs, $controllers) {
+      var graphController = $controllers[0];
+      $scope.$watch('data', function(newValue, oldValue) {
+        if (newValue) {
+          graphController.updateData();
+        }
       });
-    }]
+    }
   };
 }]);
