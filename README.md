@@ -60,8 +60,8 @@ This would give you a line graph with an x-axis of "Month", a y-axis of "Sales" 
 <line-graph data="graphData">
   <x field="Month" order-by="date"></x>
   <y field="Sales" order-by="number"></y>
-  <stacked-area field="storeId" value="2"></line>
-  <stacked-area field="storeId" value="1"></line>
+  <stacked-area field="storeId" value="2"></stacked-area>
+  <stacked-area field="storeId" value="1"></stacked-area>
 </line-graph>
 ```
 
