@@ -8,15 +8,20 @@ angular.module('angular-dimple.line-graph', [])
       data: '='
     },
     require: ['lineGraph'],
+    transclude: true,
     compile: function($element, $attrs) {
       $element.append('<div class="dimple-line-graph" id="line-graph"></div>');
       return {
-        post: function postLink($scope, $element, $attrs, $controllers) {
+        post: function postLink($scope, $element, $attrs, $controllers, transclude) {
           var graphController = $controllers[0];
           $scope.$watch('data', function(newValue, oldValue) {
             if (newValue) {
               graphController.setData();
             }
+          });
+          transclude($scope, function(clone){
+              console.log('outerclone: ', clone);
+              $element.append(clone);
           });
         }
       };

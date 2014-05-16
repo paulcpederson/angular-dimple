@@ -4,13 +4,12 @@ angular.module('angular-dimple.line', [])
   return {
     restrict: 'E',
     replace: true,
-    scope: {
-      data: '='
-    },
     require: ['line', '^lineGraph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
+      console.log('innerscope: ', $scope.data);
+
       var graphController = $controllers[1];
       var lineController = $controllers[0];
       var chart = graphController.getChart();
@@ -27,6 +26,7 @@ angular.module('angular-dimple.line', [])
       }
 
       $scope.$watch('data', function(newValue, oldValue) {
+        console.log('innerscope: ', $scope.data);
         if (newValue) {
           addLine();
         }
