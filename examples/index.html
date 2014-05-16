@@ -20,13 +20,23 @@
 <body ng-app="myApp">
 
   <!-- Menu -->
-  <ul class="menu">
-    <li><a href="#/line-graph">Line Graph</a></li>
-    <li><a href="#/stacked-area">Stacked Area</a></li>
-  </ul>
+  <aside class="navigation">
+    <ul class="menu">
+      <li><a href="#/line-graph">Line Graph</a></li>
+      <li><a href="#/area">Area</a></li>
+      <li><a href="#/stacked-area">Stacked Area</a></li>
+      <li><a href="#/expanded-stacked-area">Expanded Stacked Area</a></li>
+      <li><a href="#/bar-graph">Bar Graph</a></li>
+      <li><a href="#/stacked-bar-graph">Stacked Bar Graph</a></li>
+      <li><a href="#/scatter-plot">Scatter Plot</a></li>
+      <!-- <li><a href="#/donut">Donut</a></li> -->
+    </ul>
+  </aside>
 
   <!-- Views -->
-  <div ng-view></div>
+  <main class="chart">
+    <div ng-view></div>
+  </main>
 
   <!-- JS -->
   <script src="js/lib/angular.min.js"></script>
