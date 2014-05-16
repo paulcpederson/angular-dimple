@@ -59,6 +59,13 @@ You'd set up a line-graph like this:
 
 This would give you a line graph with an x-axis of "Month", a y-axis of "Sales" and two lines, each corresponding to a different store from your dataset.
 
+```html
+<line field="storeId"></line>
+```
+
+Passing a line tag with a field and no value will draw a line on the chart for each unique value for that field in your data.
+
+
 #### Line Graphs
 
 ```html
