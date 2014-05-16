@@ -15,7 +15,7 @@ angular.module('angular-dimple.line', [])
       function addLine () {
         var filteredData;
         line = chart.addSeries([$attrs.field], dimple.plot.line);
-        if ($scope.data !== null) {
+        if ($scope.data !== null && $attrs.value !== undefined) {
           filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
           line.data = filteredData;
         }
