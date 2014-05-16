@@ -20,7 +20,7 @@ angular.module('angular-dimple.line-graph', [])
             }
           });
           transclude($scope, function(clone){
-              $element.append(clone);
+            $element.append(clone);
           });
         }
       };
@@ -36,9 +36,7 @@ angular.module('angular-dimple.line-graph', [])
 
       this.setData = function () {
         chart.data = $scope.data;
-        x = chart.addCategoryAxis('x', 'Month');
         y = chart.addMeasureAxis('y', 'Unit Sales');
-        x.addOrderRule('Date');
       };
 
       this.draw = function () {
