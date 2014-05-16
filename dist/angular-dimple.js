@@ -21,15 +21,20 @@ angular.module('angular-dimple.line-graph', [])
       data: '='
     },
     require: ['lineGraph'],
+    transclude: true,
     compile: function($element, $attrs) {
       $element.append('<div class="dimple-line-graph" id="line-graph"></div>');
       return {
-        post: function postLink($scope, $element, $attrs, $controllers) {
+        post: function postLink($scope, $element, $attrs, $controllers, transclude) {
           var graphController = $controllers[0];
           $scope.$watch('data', function(newValue, oldValue) {
             if (newValue) {
               graphController.setData();
             }
+          });
+          transclude($scope, function(clone){
+              console.log('outerclone: ', clone);
+              $element.append(clone);
           });
         }
       };
@@ -63,13 +68,12 @@ angular.module('angular-dimple.line', [])
   return {
     restrict: 'E',
     replace: true,
-    scope: {
-      data: '='
-    },
     require: ['line', '^lineGraph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
+      console.log('innerscope: ', $scope.data);
+
       var graphController = $controllers[1];
       var lineController = $controllers[0];
       var chart = graphController.getChart();
@@ -86,10 +90,34 @@ angular.module('angular-dimple.line', [])
       }
 
       $scope.$watch('data', function(newValue, oldValue) {
+        console.log('innerscope: ', $scope.data);
         if (newValue) {
           addLine();
         }
       });
+    }
+  };
+}]);
+angular.module('angular-dimple.tester', [])
+
+.directive('tester', [function () {
+  return {
+    restrict: 'E',
+    require: ['tester'],
+    replace: true,
+    controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
+      console.log('i am the tester');
+    }],
+
+    compile: function($element, $attrs){
+      $element.append("<div id='tester'></div>");
+      return function postLink() {
+        $scope.$watch('graphData', function(newVal, oldVal){
+          if(newVal!=oldVal) {
+            $scope.$emit('subtester', graphData);
+          }
+        });
+      };
     }
   };
 }]);
