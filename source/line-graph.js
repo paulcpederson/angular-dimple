@@ -20,7 +20,6 @@ angular.module('angular-dimple.line-graph', [])
             }
           });
           transclude($scope, function(clone){
-              console.log('outerclone: ', clone);
               $element.append(clone);
           });
         }

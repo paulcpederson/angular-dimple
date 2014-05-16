@@ -1,10 +1,10 @@
-angular.module('angular-dimple.line', [])
+angular.module('angular-dimple.x-axis', [])
 
-.directive('line', [function () {
+.directive('xAxis', [function () {
   return {
     restrict: 'E',
     replace: true,
-    require: ['line', '^lineGraph'],
+    require: ['xAxis', '^lineGraph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
@@ -24,6 +24,7 @@ angular.module('angular-dimple.line', [])
       }
 
       $scope.$watch('data', function(newValue, oldValue) {
+        console.log('neat');
         if (newValue) {
           addLine();
         }

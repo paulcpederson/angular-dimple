@@ -3,7 +3,8 @@
 *   Licensed ISC */
 angular.module('angular-dimple', [
   'angular-dimple.line-graph',
-  'angular-dimple.line'
+  'angular-dimple.line',
+  'angular-dimple.x-axis'
 ])
 
 .constant('MODULE_VERSION', '0.0.1')
@@ -33,7 +34,6 @@ angular.module('angular-dimple.line-graph', [])
             }
           });
           transclude($scope, function(clone){
-              console.log('outerclone: ', clone);
               $element.append(clone);
           });
         }
@@ -72,8 +72,6 @@ angular.module('angular-dimple.line', [])
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
-      console.log('innerscope: ', $scope.data);
-
       var graphController = $controllers[1];
       var lineController = $controllers[0];
       var chart = graphController.getChart();
@@ -90,7 +88,6 @@ angular.module('angular-dimple.line', [])
       }
 
       $scope.$watch('data', function(newValue, oldValue) {
-        console.log('innerscope: ', $scope.data);
         if (newValue) {
           addLine();
         }
@@ -118,6 +115,40 @@ angular.module('angular-dimple.tester', [])
           }
         });
       };
+    }
+  };
+}]);
+angular.module('angular-dimple.x-axis', [])
+
+.directive('xAxis', [function () {
+  return {
+    restrict: 'E',
+    replace: true,
+    require: ['xAxis', '^lineGraph'],
+    controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
+    }],
+    link: function($scope, $element, $attrs, $controllers) {
+      var graphController = $controllers[1];
+      var lineController = $controllers[0];
+      var chart = graphController.getChart();
+
+      function addLine () {
+        var filteredData;
+        line = chart.addSeries([$attrs.field], dimple.plot.line);
+        if ($scope.data !== null) {
+          filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
+          line.data = filteredData;
+        }
+        line.lineMarkers = true;
+        graphController.draw();
+      }
+
+      $scope.$watch('data', function(newValue, oldValue) {
+        console.log('neat');
+        if (newValue) {
+          addLine();
+        }
+      });
     }
   };
 }]);
