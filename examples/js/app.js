@@ -7,7 +7,7 @@ angular.module('myApp', [
   'myApp.controllers'
 ])
 
-.config(['$routeProvider', function($routeProvider) {
+.config(['$routeProvider', '$logProvider', function($routeProvider, $logProvider) {
   $routeProvider
 
   .when('/line-graph', {
@@ -23,5 +23,7 @@ angular.module('myApp', [
   .otherwise({
     redirectTo: '/line-graph'
   });
+
+  $logProvider.debugEnabled(true);
 
 }]);

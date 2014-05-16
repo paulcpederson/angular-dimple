@@ -8,31 +8,47 @@ To get setup, simply:
 
 1. Make sure you have d3 and dimple
 2. Download the minified javascript in dist
+3. Include the library as a module in your app
 
 ## Use
 
 All the angular directives behave in pretty much the same way. Simply use the directive, passing in a model from your scope as the `data=` attribute.
 
-For example, in the controller for your app, if you had something like `$scope.graphData` which was a csv (or json, or tsv, or javascript object) that looked like this:
+For example, in the controller for your app, if you had something like `$scope.graphData` which is json that looks like this:
 
-```
-  StoreId, Month, Sales
-  1, December, 12
-  1, November, 14
-  1, October, 18
-  1, September, 12
-  1, August, 10
-  2, December, 19
-  2, November, 24
-  2, October, 36
-  2, September, 24
-  2, August, 8
-}
+```json
+[
+  {
+    "Month": "Jan-11",
+    "storeId": 1,
+    "Sales": 14
+  },{
+    "Month": "Feb-11",
+    "storeId": 1,
+    "Sales": 14
+  },{
+    "Month": "March-11",
+    "storeId": 1,
+    "Sales": 17
+  },{
+    "Month": "Jan-11",
+    "storeId": 2,
+    "Sales": 14
+  },{
+    "Month": "Feb-11",
+    "storeId": 2,
+    "Sales": 16
+  },{
+    "Month": "March-11",
+    "storeId": 2,
+    "Sales": 8
+  }
+]
 ```
 
 You'd set up a line-graph like this:
 
-```
+```html
 <line-graph data="graphData">
   <x-axis field="Month" order-by="date"></x-axis>
   <y-axis field="Sales" order-by="number"></y-axis>
