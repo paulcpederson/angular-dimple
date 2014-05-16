@@ -36,7 +36,7 @@ angular.module('angular-dimple.line-graph', [])
 
       this.setData = function () {
         chart.data = $scope.data;
-        y = chart.addMeasureAxis('y', 'Unit Sales');
+        // y = chart.addMeasureAxis('y', 'Unit Sales');
       };
 
       this.draw = function () {

@@ -4,6 +4,7 @@
 angular.module('angular-dimple', [
   'angular-dimple.line-graph',
   'angular-dimple.x',
+  'angular-dimple.y',
   'angular-dimple.line',
 ])
 
@@ -50,7 +51,7 @@ angular.module('angular-dimple.line-graph', [])
 
       this.setData = function () {
         chart.data = $scope.data;
-        y = chart.addMeasureAxis('y', 'Unit Sales');
+        // y = chart.addMeasureAxis('y', 'Unit Sales');
       };
 
       this.draw = function () {
@@ -121,6 +122,45 @@ angular.module('angular-dimple.x', [])
           x.title = $attrs.title;
         } else if ($attrs.title == "null") {
           x.title = null;
+        }
+      }
+
+      $scope.$watch('data', function(newValue, oldValue) {
+        if (newValue) {
+          addAxis();
+        }
+      });
+    }
+  };
+}]);
+angular.module('angular-dimple.y', [])
+
+.directive('y', [function () {
+  return {
+    restrict: 'E',
+    replace: true,
+    require: ['y', '^lineGraph'],
+    controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
+    }],
+    link: function($scope, $element, $attrs, $controllers) {
+      var graphController = $controllers[1];
+      var chart = graphController.getChart();
+
+      function addAxis () {
+        if ($attrs.type == 'Category') {
+          y = chart.addCategoryAxis('y', $attrs.field);
+        } else {
+          y = chart.addMeasureAxis('y', $attrs.field);
+        }
+
+        if ($attrs.orderBy) {
+          y.addOrderRule($attrs.orderBy);
+        }
+
+        if ($attrs.title && $attrs.title !== "null") {
+          y.title = $attrs.title;
+        } else if ($attrs.title == "null") {
+          y.title = null;
         }
       }
 
