@@ -3,8 +3,8 @@
 *   Licensed ISC */
 angular.module('angular-dimple', [
   'angular-dimple.line-graph',
+  'angular-dimple.x',
   'angular-dimple.line',
-  'angular-dimple.x-axis'
 ])
 
 .constant('MODULE_VERSION', '0.0.1')
@@ -34,7 +34,7 @@ angular.module('angular-dimple.line-graph', [])
             }
           });
           transclude($scope, function(clone){
-              $element.append(clone);
+            $element.append(clone);
           });
         }
       };
@@ -50,9 +50,7 @@ angular.module('angular-dimple.line-graph', [])
 
       this.setData = function () {
         chart.data = $scope.data;
-        x = chart.addCategoryAxis('x', 'Month');
         y = chart.addMeasureAxis('y', 'Unit Sales');
-        x.addOrderRule('Date');
       };
 
       this.draw = function () {
@@ -95,58 +93,40 @@ angular.module('angular-dimple.line', [])
     }
   };
 }]);
-angular.module('angular-dimple.tester', [])
+angular.module('angular-dimple.x', [])
 
-.directive('tester', [function () {
-  return {
-    restrict: 'E',
-    require: ['tester'],
-    replace: true,
-    controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
-      console.log('i am the tester');
-    }],
-
-    compile: function($element, $attrs){
-      $element.append("<div id='tester'></div>");
-      return function postLink() {
-        $scope.$watch('graphData', function(newVal, oldVal){
-          if(newVal!=oldVal) {
-            $scope.$emit('subtester', graphData);
-          }
-        });
-      };
-    }
-  };
-}]);
-angular.module('angular-dimple.x-axis', [])
-
-.directive('xAxis', [function () {
+.directive('x', [function () {
   return {
     restrict: 'E',
     replace: true,
-    require: ['xAxis', '^lineGraph'],
+    require: ['x', '^lineGraph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
       var graphController = $controllers[1];
-      var lineController = $controllers[0];
       var chart = graphController.getChart();
 
-      function addLine () {
-        var filteredData;
-        line = chart.addSeries([$attrs.field], dimple.plot.line);
-        if ($scope.data !== null) {
-          filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
-          line.data = filteredData;
+      function addAxis () {
+        if ($attrs.type == 'Measure') {
+          x = chart.addMeasureAxis('x', $attrs.field);
+        } else {
+          x = chart.addCategoryAxis('x', $attrs.field);
         }
-        line.lineMarkers = true;
-        graphController.draw();
+
+        if ($attrs.orderBy) {
+          x.addOrderRule($attrs.orderBy);
+        }
+
+        if ($attrs.title && $attrs.title !== "null") {
+          x.title = $attrs.title;
+        } else if ($attrs.title == "null") {
+          x.title = null;
+        }
       }
 
       $scope.$watch('data', function(newValue, oldValue) {
-        console.log('neat');
         if (newValue) {
-          addLine();
+          addAxis();
         }
       });
     }
