@@ -57,17 +57,9 @@ angular.module('myApp.controllers', [])
   });
 }])
 
-.controller('stackedBarController', ['$scope', function($scope) {
-  var svg = dimple.newSvg("#chartContainer", 590, 400);
-  d3.tsv("/data/example_data.tsv", function (data) {
-    var myChart = new dimple.chart(svg, data);
-    myChart.setBounds(60, 30, 510, 305);
-    var x = myChart.addCategoryAxis("x", "Month");
-    x.addOrderRule("Date");
-    myChart.addMeasureAxis("y", "Unit Sales");
-    myChart.addSeries("Channel", dimple.plot.bar);
-    myChart.addLegend(60, 10, 510, 20, "right");
-    myChart.draw();
+.controller('stackedBarController', ['$scope', 'dataService', function($scope, dataService) {
+  dataService.getData().then(function(response) {
+    $scope.graphData = response.data;
   });
 }])
 

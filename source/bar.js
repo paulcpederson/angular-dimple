@@ -4,7 +4,7 @@ angular.module('angular-dimple.bar', [])
   return {
     restrict: 'E',
     replace: true,
-    require: ['bar', '^barGraph'],
+    require: ['bar', '^graph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
@@ -19,7 +19,6 @@ angular.module('angular-dimple.bar', [])
           filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
           bar.data = filteredData;
         }
-        // bar.lineMarkers = true;
         graphController.draw();
       }
 
