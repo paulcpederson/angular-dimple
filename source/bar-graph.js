@@ -1,16 +1,16 @@
-angular.module('angular-dimple.line-graph', [])
+angular.module('angular-dimple.bar-graph', [])
 
-.directive('lineGraph', [function () {
+.directive('barGraph', [function () {
   return {
     restrict: 'E',
     replace: true,
     scope: {
       data: '='
     },
-    require: ['lineGraph'],
+    require: ['barGraph'],
     transclude: true,
     compile: function($element, $attrs) {
-      $element.append('<div class="dimple-line-graph" id="line-graph"></div>');
+      $element.append('<div class="dimple-bar-graph" id="bar-graph"></div>');
       return {
         post: function postLink($scope, $element, $attrs, $controllers, transclude) {
           var graphController = $controllers[0];
@@ -27,7 +27,7 @@ angular.module('angular-dimple.line-graph', [])
     },
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
       var chart, x, s;
-      var svg = dimple.newSvg('#line-graph', $attrs.width, $attrs.height);
+      var svg = dimple.newSvg('#bar-graph', $attrs.width, $attrs.height);
       chart = new dimple.chart(svg);
 
       this.getChart = function () {
@@ -36,6 +36,9 @@ angular.module('angular-dimple.line-graph', [])
 
       this.setData = function () {
         chart.data = $scope.data;
+        y = chart.addMeasureAxis('y', 'Unit Sales');
+        x = chart.addCategoryAxis('x', 'Month');
+        x.addOrderRule('Date');
       };
 
       this.draw = function () {

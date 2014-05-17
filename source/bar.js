@@ -1,10 +1,10 @@
-angular.module('angular-dimple.line', [])
+angular.module('angular-dimple.bar', [])
 
-.directive('line', [function () {
+.directive('bar', [function () {
   return {
     restrict: 'E',
     replace: true,
-    require: ['line', '^lineGraph'],
+    require: ['bar', '^barGraph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
@@ -12,20 +12,20 @@ angular.module('angular-dimple.line', [])
       var lineController = $controllers[0];
       var chart = graphController.getChart();
 
-      function addLine () {
+      function addBar () {
         var filteredData;
-        line = chart.addSeries([$attrs.field], dimple.plot.line);
+        bar = chart.addSeries([$attrs.field], dimple.plot.bar);
         if ($scope.data !== null && $attrs.value !== undefined) {
           filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
-          line.data = filteredData;
+          bar.data = filteredData;
         }
-        line.lineMarkers = true;
+        // bar.lineMarkers = true;
         graphController.draw();
       }
 
       $scope.$watch('data', function(newValue, oldValue) {
         if (newValue) {
-          addLine();
+          addBar();
         }
       });
     }

@@ -1,31 +1,32 @@
-angular.module('angular-dimple.x', [])
+angular.module('angular-dimple.y', [])
 
-.directive('x', [function () {
+.directive('y', [function () {
   return {
     restrict: 'E',
     replace: true,
-    require: ['x', '^?lineGraph', '^?barGraph'],
+    require: ['y', '^?lineGraph', '^?barGraph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
       var graphController = $controllers[1] || controllers[2];
+      console.log(graphController);
       var chart = graphController.getChart();
 
       function addAxis () {
-        if ($attrs.type == 'Measure') {
-          x = chart.addMeasureAxis('x', $attrs.field);
+        if ($attrs.type == 'Category') {
+          y = chart.addCategoryAxis('y', $attrs.field);
         } else {
-          x = chart.addCategoryAxis('x', $attrs.field);
+          y = chart.addMeasureAxis('y', $attrs.field);
         }
 
         if ($attrs.orderBy) {
-          x.addOrderRule($attrs.orderBy);
+          y.addOrderRule($attrs.orderBy);
         }
 
         if ($attrs.title && $attrs.title !== "null") {
-          x.title = $attrs.title;
+          y.title = $attrs.title;
         } else if ($attrs.title == "null") {
-          x.title = null;
+          y.title = null;
         }
       }
 
