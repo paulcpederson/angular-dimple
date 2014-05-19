@@ -1,9 +1,8 @@
-/*! Angular-Dimple - 0.0.0 - 2014-05-16
+/*! Angular-Dimple - 0.0.0 - 2014-05-17
 *   https://github.com/geoloqi/angular-dimple
 *   Licensed ISC */
 angular.module('angular-dimple', [
-  'angular-dimple.line-graph',
-  'angular-dimple.bar-graph',
+  'angular-dimple.graph',
   'angular-dimple.x',
   'angular-dimple.y',
   'angular-dimple.line',
@@ -15,63 +14,13 @@ angular.module('angular-dimple', [
 .value('defaults', {
   foo: 'bar'
 });
-angular.module('angular-dimple.bar-graph', [])
-
-.directive('barGraph', [function () {
-  return {
-    restrict: 'E',
-    replace: true,
-    scope: {
-      data: '='
-    },
-    require: ['barGraph'],
-    transclude: true,
-    compile: function($element, $attrs) {
-      $element.append('<div class="dimple-bar-graph" id="bar-graph"></div>');
-      return {
-        post: function postLink($scope, $element, $attrs, $controllers, transclude) {
-          var graphController = $controllers[0];
-          $scope.$watch('data', function(newValue, oldValue) {
-            if (newValue) {
-              graphController.setData();
-            }
-          });
-          transclude($scope, function(clone){
-            $element.append(clone);
-          });
-        }
-      };
-    },
-    controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
-      var chart, x, s;
-      var svg = dimple.newSvg('#bar-graph', $attrs.width, $attrs.height);
-      chart = new dimple.chart(svg);
-
-      this.getChart = function () {
-        return chart;
-      };
-
-      this.setData = function () {
-        chart.data = $scope.data;
-        y = chart.addMeasureAxis('y', 'Unit Sales');
-        x = chart.addCategoryAxis('x', 'Month');
-        x.addOrderRule('Date');
-      };
-
-      this.draw = function () {
-        chart.draw();
-      };
-
-    }]
-  };
-}]);
 angular.module('angular-dimple.bar', [])
 
 .directive('bar', [function () {
   return {
     restrict: 'E',
     replace: true,
-    require: ['bar', '^barGraph'],
+    require: ['bar', '^graph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
@@ -86,7 +35,6 @@ angular.module('angular-dimple.bar', [])
           filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
           bar.data = filteredData;
         }
-        // bar.lineMarkers = true;
         graphController.draw();
       }
 
@@ -98,16 +46,16 @@ angular.module('angular-dimple.bar', [])
     }
   };
 }]);
-angular.module('angular-dimple.line-graph', [])
+angular.module('angular-dimple.graph', [])
 
-.directive('lineGraph', [function () {
+.directive('graph', [function () {
   return {
     restrict: 'E',
     replace: true,
     scope: {
       data: '='
     },
-    require: ['lineGraph'],
+    require: ['graph'],
     transclude: true,
     compile: function($element, $attrs) {
       $element.append('<div class="dimple-line-graph" id="line-graph"></div>');
@@ -151,7 +99,7 @@ angular.module('angular-dimple.line', [])
   return {
     restrict: 'E',
     replace: true,
-    require: ['line', '^lineGraph'],
+    require: ['line', '^graph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
@@ -184,11 +132,11 @@ angular.module('angular-dimple.x', [])
   return {
     restrict: 'E',
     replace: true,
-    require: ['x', '^?lineGraph', '^?barGraph'],
+    require: ['x', '^graph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
-      var graphController = $controllers[1] || controllers[2];
+      var graphController = $controllers[1];
       var chart = graphController.getChart();
 
       function addAxis () {
@@ -223,11 +171,11 @@ angular.module('angular-dimple.y', [])
   return {
     restrict: 'E',
     replace: true,
-    require: ['y', '^?lineGraph', '^?barGraph'],
+    require: ['y', '^graph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
-      var graphController = $controllers[1] || controllers[2];
+      var graphController = $controllers[1];
       console.log(graphController);
       var chart = graphController.getChart();
 

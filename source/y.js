@@ -4,11 +4,11 @@ angular.module('angular-dimple.y', [])
   return {
     restrict: 'E',
     replace: true,
-    require: ['y', '^?lineGraph', '^?barGraph'],
+    require: ['y', '^graph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
-      var graphController = $controllers[1] || controllers[2];
+      var graphController = $controllers[1];
       console.log(graphController);
       var chart = graphController.getChart();
 

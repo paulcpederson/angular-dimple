@@ -4,7 +4,7 @@ angular.module('angular-dimple.line', [])
   return {
     restrict: 'E',
     replace: true,
-    require: ['line', '^lineGraph'],
+    require: ['line', '^graph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {

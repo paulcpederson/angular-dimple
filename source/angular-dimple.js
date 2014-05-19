@@ -1,6 +1,5 @@
 angular.module('angular-dimple', [
-  'angular-dimple.line-graph',
-  'angular-dimple.bar-graph',
+  'angular-dimple.graph',
   'angular-dimple.x',
   'angular-dimple.y',
   'angular-dimple.line',

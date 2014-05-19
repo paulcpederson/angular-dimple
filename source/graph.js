@@ -1,13 +1,13 @@
-angular.module('angular-dimple.line-graph', [])
+angular.module('angular-dimple.graph', [])
 
-.directive('lineGraph', [function () {
+.directive('graph', [function () {
   return {
     restrict: 'E',
     replace: true,
     scope: {
       data: '='
     },
-    require: ['lineGraph'],
+    require: ['graph'],
     transclude: true,
     compile: function($element, $attrs) {
       $element.append('<div class="dimple-line-graph" id="line-graph"></div>');
