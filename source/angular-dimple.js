@@ -6,6 +6,7 @@ angular.module('angular-dimple', [
   'angular-dimple.bar',
   'angular-dimple.area',
   'angular-dimple.stacked-area',
+  'angular-dimple.scatter-plot'
 ])
 
 .constant('MODULE_VERSION', '0.0.1')
