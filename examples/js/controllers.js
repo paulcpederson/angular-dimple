@@ -6,17 +6,9 @@ angular.module('myApp.controllers', [])
   });
 }])
 
-.controller('areaController', ['$scope', function($scope) {
-  var svg = dimple.newSvg("#chartContainer", 590, 400);
-  d3.tsv("/data/example_data.tsv", function (data) {
-    data = dimple.filterData(data, "Owner", ["Aperture", "Black Mesa"]);
-    var myChart = new dimple.chart(svg, data);
-    myChart.setBounds(60, 30, 505, 305);
-    var x = myChart.addCategoryAxis("x", "Month");
-    x.addOrderRule("Date");
-    myChart.addMeasureAxis("y", "Unit Sales");
-    var s = myChart.addSeries(null, dimple.plot.area);
-    myChart.draw();
+.controller('areaController', ['$scope', 'dataService', function($scope, dataService) {
+  dataService.getData().then(function(response) {
+    $scope.graphData = response.data;
   });
 }])
 

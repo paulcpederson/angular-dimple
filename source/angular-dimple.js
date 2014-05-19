@@ -4,6 +4,7 @@ angular.module('angular-dimple', [
   'angular-dimple.y',
   'angular-dimple.line',
   'angular-dimple.bar',
+  'angular-dimple.area',
 ])
 
 .constant('MODULE_VERSION', '0.0.1')

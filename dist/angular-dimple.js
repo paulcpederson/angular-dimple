@@ -7,6 +7,7 @@ angular.module('angular-dimple', [
   'angular-dimple.y',
   'angular-dimple.line',
   'angular-dimple.bar',
+  'angular-dimple.area',
 ])
 
 .constant('MODULE_VERSION', '0.0.1')
@@ -14,6 +15,39 @@ angular.module('angular-dimple', [
 .value('defaults', {
   foo: 'bar'
 });
+angular.module('angular-dimple.area', [])
+
+.directive('area', [function () {
+  return {
+    restrict: 'E',
+    replace: true,
+    require: ['area', '^graph'],
+    controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
+    }],
+    link: function($scope, $element, $attrs, $controllers) {
+      var graphController = $controllers[1];
+      var areaController = $controllers[0];
+      var chart = graphController.getChart();
+
+      function addArea () {
+        var filteredData;
+        area = chart.addSeries([$attrs.field], dimple.plot.area);
+        if ($scope.data !== null && $attrs.value !== undefined) {
+          filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
+          area.data = filteredData;
+        }
+        area.lineMarkers = true;
+        graphController.draw();
+      }
+
+      $scope.$watch('data', function(newValue, oldValue) {
+        if (newValue) {
+          addArea();
+        }
+      });
+    }
+  };
+}]);
 angular.module('angular-dimple.bar', [])
 
 .directive('bar', [function () {
@@ -150,23 +184,32 @@ angular.module('angular-dimple.x', [])
       var chart = graphController.getChart();
 
       function addAxis () {
-        if ($attrs.type == 'Measure') {
-          x = chart.addMeasureAxis('x', $attrs.field);
+        if ($attrs.groupBy) {
+          if ($attrs.type == 'Measure') {
+            x = chart.addMeasureAxis('x', [$attrs.groupBy, $attrs.field]);
+          } else {
+            x = chart.addCategoryAxis('x', [$attrs.groupBy, $attrs.field]);
+          }
+          if ($attrs.orderBy) {
+            x.addGroupOrderRule($attrs.orderBy);
+          }
+
         } else {
-          x = chart.addCategoryAxis('x', $attrs.field);
+          if ($attrs.type == 'Measure') {
+            x = chart.addMeasureAxis('x', $attrs.field);
+          } else {
+            x = chart.addCategoryAxis('x', $attrs.field);
+          }
+          if ($attrs.orderBy) {
+            x.addOrderRule($attrs.orderBy);
+          }
         }
-
-        if ($attrs.orderBy) {
-          x.addOrderRule($attrs.orderBy);
-        }
-
         if ($attrs.title && $attrs.title !== "null") {
           x.title = $attrs.title;
         } else if ($attrs.title == "null") {
           x.title = null;
         }
       }
-
       $scope.$watch('data', function(newValue, oldValue) {
         if (newValue) {
           addAxis();
