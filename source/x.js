@@ -15,6 +15,8 @@ angular.module('angular-dimple.x', [])
         if ($attrs.groupBy) {
           if ($attrs.type == 'Measure') {
             x = chart.addMeasureAxis('x', [$attrs.groupBy, $attrs.field]);
+          } else if ($attrs.type == 'Percent') {
+            y = chart.addPctAxis('y', $attrs.field);
           } else {
             x = chart.addCategoryAxis('x', [$attrs.groupBy, $attrs.field]);
           }
