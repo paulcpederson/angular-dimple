@@ -1,4 +1,4 @@
-/*! Angular-Dimple - 0.0.0 - 2014-05-17
+/*! Angular-Dimple - 0.0.0 - 2014-05-19
 *   https://github.com/geoloqi/angular-dimple
 *   Licensed ISC */
 angular.module('angular-dimple', [
@@ -58,25 +58,32 @@ angular.module('angular-dimple.graph', [])
     require: ['graph'],
     transclude: true,
     compile: function($element, $attrs) {
-      $element.append('<div class="dimple-line-graph" id="line-graph"></div>');
+      var id = (Math.random() * 1e9).toString(36).replace(".", "_");
+      $element.append('<div class="dimple-graph" id="dng-'+ id +'"></div>');
       return {
-        post: function postLink($scope, $element, $attrs, $controllers, transclude) {
-          var graphController = $controllers[0];
-          $scope.$watch('data', function(newValue, oldValue) {
+        post: function postLink(scope, element, attrs, controllers, transclude) {
+          var graphController = controllers[0];
+          graphController._createChart(id);
+          scope.$watch('data', function(newValue, oldValue) {
             if (newValue) {
               graphController.setData();
             }
           });
-          transclude($scope, function(clone){
-            $element.append(clone);
+          transclude(scope, function(clone){
+            element.append(clone);
           });
         }
       };
     },
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
-      var chart, x, s;
-      var svg = dimple.newSvg('#line-graph', $attrs.width, $attrs.height);
-      chart = new dimple.chart(svg);
+      var chart;
+      var id;
+
+      this._createChart = function (domId) {
+        id = domId;
+        var svg = dimple.newSvg('#dng-'+ id +'', $attrs.width, $attrs.height);
+        chart = new dimple.chart(svg);
+      };
 
       this.getChart = function () {
         return chart;
@@ -90,6 +97,9 @@ angular.module('angular-dimple.graph', [])
         chart.draw();
       };
 
+      this.getID = function () {
+        return id;
+      };
     }]
   };
 }]);
