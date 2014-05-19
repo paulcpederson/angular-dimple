@@ -1,29 +1,29 @@
-/* line 3, ../scss/style.scss */
+/* line 4, ../scss/style.scss */
 [ng-cloak] {
   display: none;
 }
 
-/* line 5, ../scss/style.scss */
+/* line 6, ../scss/style.scss */
 body {
   margin: 0;
   padding: 0;
 }
 
-/* line 10, ../scss/style.scss */
+/* line 11, ../scss/style.scss */
 h1 {
   color: red;
 }
 
-/* line 14, ../scss/style.scss */
+/* line 15, ../scss/style.scss */
 .navigation {
   position: fixed;
   height: 100vh;
   width: 14em;
   padding: 1em;
-  background-color: rgba(239, 239, 239, 0.9);
+  background-color: #ededed;
 }
 
-/* line 22, ../scss/style.scss */
+/* line 23, ../scss/style.scss */
 .chart {
   position: absolute;
   top: 0;

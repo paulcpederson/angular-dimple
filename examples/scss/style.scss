@@ -1,4 +1,5 @@
 @import "compass";
+$cream: #FDF5DF !default;
 
 [ng-cloak] { display: none;}
 
@@ -16,7 +17,7 @@ h1 {
   height: 100vh;
   width: 14em;
   padding: 1em;
-  background-color: rgba(#efefef, 0.9);
+  background-color: #ededed;
 }
 
 .chart {
