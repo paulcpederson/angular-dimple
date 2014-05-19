@@ -13,19 +13,10 @@ angular.module('myApp.controllers', [])
 }])
 
 
-.controller('stackedAreaController', ['$scope', function($scope) {
-    var svg = dimple.newSvg("#chartContainer", 590, 400);
-    d3.tsv("/data/example_data.tsv", function (data) {
-      data = dimple.filterData(data, "Owner", ["Aperture", "Black Mesa"]);
-      var myChart = new dimple.chart(svg, data);
-      myChart.setBounds(60, 30, 505, 305);
-      var x = myChart.addCategoryAxis("x", "Month");
-      x.addOrderRule("Date");
-      myChart.addMeasureAxis("y", "Unit Sales");
-      var s = myChart.addSeries("Channel", dimple.plot.area);
-      myChart.addLegend(60, 10, 500, 20, "right");
-      myChart.draw();
-    });
+.controller('stackedAreaController', ['$scope', 'dataService', function($scope, dataService) {
+  dataService.getData().then(function(response) {
+    $scope.graphData = response.data;
+  });
 }])
 
 .controller('expandedAreaController', ['$scope', function($scope) {
