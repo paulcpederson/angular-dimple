@@ -36,6 +36,7 @@ angular.module('angular-dimple.x', [])
             x.addOrderRule($attrs.orderBy);
           }
         }
+
         if ($attrs.title && $attrs.title !== "null") {
           x.title = $attrs.title;
         } else if ($attrs.title == "null") {

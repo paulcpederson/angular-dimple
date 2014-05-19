@@ -7,6 +7,7 @@ angular.module('angular-dimple', [
   'angular-dimple.y',
   'angular-dimple.line',
   'angular-dimple.bar',
+  'angular-dimple.stacked-bar',
   'angular-dimple.area',
   'angular-dimple.stacked-area',
   'angular-dimple.scatter-plot'
@@ -255,6 +256,42 @@ angular.module('angular-dimple.stacked-area', [])
     }
   };
 }]);
+angular.module('angular-dimple.stacked-bar', [])
+
+.directive('stackedBar', [function () {
+  return {
+    restrict: 'E',
+    replace: true,
+    require: ['stackedBar', '^graph'],
+    controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
+    }],
+    link: function($scope, $element, $attrs, $controllers) {
+      var graphController = $controllers[1];
+      var lineController = $controllers[0];
+      var chart = graphController.getChart();
+
+      function addBar () {
+        var filteredData;
+        if ($attrs.series) {
+          bar = chart.addSeries([$attrs.series], dimple.plot.bar);
+        } else {
+          bar = chart.addSeries([$attrs.field], dimple.plot.bar);
+        }
+        if ($scope.data !== null && $attrs.value !== undefined) {
+          filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
+          bar.data = filteredData;
+        }
+        graphController.draw();
+      }
+
+      $scope.$watch('data', function(newValue, oldValue) {
+        if (newValue) {
+          addBar();
+        }
+      });
+    }
+  };
+}]);
 angular.module('angular-dimple.x', [])
 
 .directive('x', [function () {
@@ -293,6 +330,7 @@ angular.module('angular-dimple.x', [])
             x.addOrderRule($attrs.orderBy);
           }
         }
+
         if ($attrs.title && $attrs.title !== "null") {
           x.title = $attrs.title;
         } else if ($attrs.title == "null") {
