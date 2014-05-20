@@ -1,5 +1,12 @@
+# Angular Dimple Documentation
 
+Angular-Dimple is a series of Angular directives that help you create graphs and visualizations.
 
+## Graph
+
+The `<graph>` directive is the wrapper directive for every type of chart in Angular-Dimple. This will create a div with a dynamic id, and initialize a new Dimple graph inside of it with several default options.
+
+#### Attribute List
 
 | Directives     		|						     |
 | --------------------- | -------------------------- |

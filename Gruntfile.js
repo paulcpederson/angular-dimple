@@ -95,7 +95,7 @@ module.exports = function(grunt) {
           templateData: {
             title: 'Angular-Dimple API Reference'
           }},
-        files: [{ src: 'docs/API.md', dest: 'examples/api.html'}]
+        files: [{ src: 'docs/doc.md', dest: 'examples/doc.html'}]
       }
     }
   });
