@@ -1,6 +1,12 @@
 <!-- With Attrs -->
 <graph data="graphData">
-  <y field="Unit Sales" type="Measure"></y>
   <x field="Operating Profit" type="Measure"></x>
-  <scatter-plot field="Owner" series="SKU"></scatter-plot>
+  <y field="Unit Sales" type="Measure"></y>
+  <scatter-plot field="Owner" value="Aperture" series="SKU"></scatter-plot>
+</graph>
+
+<graph data="graphData" width="100%" height="600px">
+  <x field="Operating Profit" type="Measure" title="Profit, Aperture"></x>
+  <y field="Unit Sales" type="Measure"></y>
+  <scatter-plot field="Channel" series="SKU" filter="Owner:Aperture"></scatter-plot>
 </graph>

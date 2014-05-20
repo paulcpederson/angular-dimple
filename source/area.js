@@ -1,30 +1,31 @@
-angular.module('angular-dimple.line', [])
+angular.module('angular-dimple.area', [])
 
-.directive('line', ['angular-dimple.core', function (core) {
+.directive('area', ['angular-dimple.core', function (core) {
   return {
     restrict: 'E',
     replace: true,
-    require: ['line', '^graph'],
+    require: ['area', '^graph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
       var graphController = $controllers[1];
-      var lineController = $controllers[0];
+      var areaController = $controllers[0];
       var chart = graphController.getChart();
 
-      function addLine () {
-        var filteredData;
-        line = chart.addSeries([$attrs.field], dimple.plot.line);
-        core.filter(line, $attrs, $scope.data);
-        line.lineMarkers = true;
+      function addArea () {
+        area = chart.addSeries([$attrs.field], dimple.plot.area);
+        core.filter(area, $attrs, $scope.data);
+        area.lineMarkers = true;
         graphController.draw();
+
       }
 
       $scope.$watch('data', function(newValue, oldValue) {
         if (newValue) {
-          addLine();
+          addArea();
         }
       });
     }
   };
 }]);
+

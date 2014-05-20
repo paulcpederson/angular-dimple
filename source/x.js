@@ -12,14 +12,29 @@ angular.module('angular-dimple.x', [])
       var chart = graphController.getChart();
 
       function addAxis () {
-        if ($attrs.type == 'Measure') {
-          x = chart.addMeasureAxis('x', $attrs.field);
-        } else {
-          x = chart.addCategoryAxis('x', $attrs.field);
-        }
+        if ($attrs.groupBy) {
+          if ($attrs.type == 'Measure') {
+            x = chart.addMeasureAxis('x', [$attrs.groupBy, $attrs.field]);
+          } else if ($attrs.type == 'Percent') {
+            x = chart.addPctAxis('x', $attrs.field);
+          } else {
+            x = chart.addCategoryAxis('x', [$attrs.groupBy, $attrs.field]);
+          }
+          if ($attrs.orderBy) {
+            x.addGroupOrderRule($attrs.orderBy);
+          }
 
-        if ($attrs.orderBy) {
-          x.addOrderRule($attrs.orderBy);
+        } else {
+          if ($attrs.type == 'Measure') {
+            x = chart.addMeasureAxis('x', $attrs.field);
+          } else if ($attrs.type == 'Percent') {
+            x = chart.addPctAxis('x', $attrs.field);
+          } else {
+            x = chart.addCategoryAxis('x', $attrs.field);
+          }
+          if ($attrs.orderBy) {
+            x.addOrderRule($attrs.orderBy);
+          }
         }
 
         if ($attrs.title && $attrs.title !== "null") {
@@ -28,7 +43,6 @@ angular.module('angular-dimple.x', [])
           x.title = null;
         }
       }
-
       $scope.$watch('data', function(newValue, oldValue) {
         if (newValue) {
           addAxis();

@@ -1,0 +1,38 @@
+
+| Directives     		|						     |
+| --------------------- | -------------------------- |
+| <graph>		  		| Graph parent container     |
+| <x>			  		| Set x axis 		 	     |
+| <y>			  		| Set y axis  			     |
+| <line>		  		| add line to graph 	     |
+| <bar>		  			| add bar to graph 		     |
+| <stacked-bar>			| add stacked bars to graph  |
+| <area>		  		| add area to graph          |
+| <stacked-area>		| add stacked area to graph  |
+| <scatter-plot>		| add scatter plot to graph  |
+
+## <x>, <y>
+| attribute | accepts 	| 							 |
+| --------- | --------- | -------------------------- |
+| field*	| string	| Field to define on         |
+| type		| Category,
+			  Measure,
+			  Percent	| Defined axis type.
+						  X-Axis defaults to Category
+						  Y-Axis defaults to Measure |
+| order-by  | string    | Field to order data on     |
+| group-by  | string    | Field to group data on.
+						  Only for Categorical axis  |
+| title 	| string,
+			  null		| Draws title for axis.      |
+
+## All Directives
+| attribute | accepts 	| 							 |
+| --------- | --------- | -------------------------- |
+| field* 	| string	| Which field to plot 	 	 |
+| value		| string	| Plot single line. Default
+						  of undefined will plot all
+	   					  unique value for the field |
+| filter    | string:string | Filters plot data on
+							  field:value			 |
+

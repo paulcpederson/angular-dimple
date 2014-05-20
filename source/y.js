@@ -9,18 +9,31 @@ angular.module('angular-dimple.y', [])
     }],
     link: function($scope, $element, $attrs, $controllers) {
       var graphController = $controllers[1];
-      console.log(graphController);
       var chart = graphController.getChart();
 
       function addAxis () {
-        if ($attrs.type == 'Category') {
-          y = chart.addCategoryAxis('y', $attrs.field);
+        if ($attrs.groupBy) {
+          if ($attrs.type == 'Category') {
+            y = chart.addCategoryAxis('y', $attrs.field);
+          } else if ($attrs.type == 'Percent') {
+            y = chart.addPctAxis('y', $attrs.field);
+          } else {
+            y = chart.addMeasureAxis('y', $attrs.field);
+          }
+          if ($attrs.orderBy) {
+            y.addGroupOrderRule($attrs.orderBy);
+          }
         } else {
-          y = chart.addMeasureAxis('y', $attrs.field);
-        }
-
-        if ($attrs.orderBy) {
-          y.addOrderRule($attrs.orderBy);
+          if ($attrs.type == 'Category') {
+            y = chart.addCategoryAxis('y', $attrs.field);
+          } else if ($attrs.type == 'Percent') {
+            y = chart.addPctAxis('y', $attrs.field);
+          } else {
+            y = chart.addMeasureAxis('y', $attrs.field);
+          }
+          if ($attrs.orderBy) {
+            y.addOrderRule($attrs.orderBy);
+          }
         }
 
         if ($attrs.title && $attrs.title !== "null") {
