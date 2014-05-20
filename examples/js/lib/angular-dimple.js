@@ -46,7 +46,7 @@ angular.module('angular-dimple', [
 });
 angular.module('angular-dimple.area', [])
 
-.directive('area', [function () {
+.directive('area', ['angular-dimple.core', function (core) {
   return {
     restrict: 'E',
     replace: true,
@@ -59,23 +59,8 @@ angular.module('angular-dimple.area', [])
       var chart = graphController.getChart();
 
       function addArea () {
-        var filteredData;
-
         area = chart.addSeries([$attrs.field], dimple.plot.area);
-
-        if ($scope.data !== null && $attrs.value !== undefined) {
-
-          filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
-          area.data = filteredData;
-
-        } else if ($scope.data !== null && $attrs.value === undefined) {
-
-          var values = dimple.getUniqueValues($scope.data, $attrs.field);
-          for (var i = 0; i < values.length; i++) {
-            console.log(values[i]);
-          }
-        }
-
+        core.filter(area, $attrs, $scope.data);
         area.lineMarkers = true;
         graphController.draw();
 
@@ -89,6 +74,8 @@ angular.module('angular-dimple.area', [])
     }
   };
 }]);
+
+
 angular.module('angular-dimple.bar', [])
 
 .directive('bar', [function () {
@@ -180,7 +167,7 @@ angular.module('angular-dimple.graph', [])
 }]);
 angular.module('angular-dimple.line', [])
 
-.directive('line', [function () {
+.directive('line', ['angular-dimple.core', function (core) {
   return {
     restrict: 'E',
     replace: true,
@@ -195,10 +182,7 @@ angular.module('angular-dimple.line', [])
       function addLine () {
         var filteredData;
         line = chart.addSeries([$attrs.field], dimple.plot.line);
-        if ($scope.data !== null && $attrs.value !== undefined) {
-          filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
-          line.data = filteredData;
-        }
+        core.filter(line, $attrs, $scope.data);
         line.lineMarkers = true;
         graphController.draw();
       }
@@ -239,7 +223,7 @@ angular.module('angular-dimple.scatter-plot', [])
 }]);
 angular.module('angular-dimple.stacked-area', [])
 
-.directive('stackedArea', [function () {
+.directive('stackedArea', ['angular-dimple.core', function (core) {
   return {
     restrict: 'E',
     replace: true,
@@ -252,16 +236,12 @@ angular.module('angular-dimple.stacked-area', [])
       var chart = graphController.getChart();
 
       function addArea () {
-        var filteredData;
         if ($attrs.series) {
           area = chart.addSeries([$attrs.series], dimple.plot.area);
         } else {
           area = chart.addSeries([$attrs.field], dimple.plot.area);
         }
-        if ($scope.data !== null && $attrs.value !== undefined) {
-          filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
-          area.data = filteredData;
-        }
+        core.filter(area, $attrs, $scope.data);
         area.lineMarkers = false;
         graphController.draw();
       }
@@ -276,7 +256,7 @@ angular.module('angular-dimple.stacked-area', [])
 }]);
 angular.module('angular-dimple.stacked-bar', [])
 
-.directive('stackedBar', [function () {
+.directive('stackedBar', ['angular-dimple.core', function (core) {
   return {
     restrict: 'E',
     replace: true,
@@ -289,16 +269,13 @@ angular.module('angular-dimple.stacked-bar', [])
       var chart = graphController.getChart();
 
       function addBar () {
-        var filteredData;
         if ($attrs.series) {
           bar = chart.addSeries([$attrs.series], dimple.plot.bar);
         } else {
           bar = chart.addSeries([$attrs.field], dimple.plot.bar);
         }
-        if ($scope.data !== null && $attrs.value !== undefined) {
-          filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
-          bar.data = filteredData;
-        }
+
+        core.filter(bar, $attrs, $scope.data);
         graphController.draw();
       }
 
