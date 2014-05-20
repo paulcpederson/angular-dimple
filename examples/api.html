@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Angular-Dimple API Reference</title>
+  <meta name="description" content="Angular directives for creating charts with Dimple and d3">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <table>
+<thead>
+<tr>
+<th>Directives</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><graph></td>
+<td>Graph parent container</td>
+</tr>
+<tr>
+<td><x></td>
+<td>Set x axis</td>
+</tr>
+<tr>
+<td><y></td>
+<td>Set y axis</td>
+</tr>
+<tr>
+<td><line></td>
+<td>add line to graph</td>
+</tr>
+<tr>
+<td><bar></td>
+<td>add bar to graph</td>
+</tr>
+<tr>
+<td><stacked-bar></td>
+<td>add stacked bars to graph</td>
+</tr>
+<tr>
+<td><area></td>
+<td>add area to graph</td>
+</tr>
+<tr>
+<td><stacked-area></td>
+<td>add stacked area to graph</td>
+</tr>
+<tr>
+<td><scatter-plot></td>
+<td>add scatter plot to graph</td>
+</tr>
+</tbody>
+</table>
+<h2 id="-x-y-"><x>, <y></h2>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>accepts</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field*</td>
+<td>string</td>
+<td>Field to define on</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Category,</td>
+</tr>
+</tbody>
+</table>
+<pre><code>          Measure,
+          Percent    | Defined axis type.
+                      X-Axis defaults to Category
+                      Y-Axis defaults to Measure |
+</code></pre><p>| order-by  | string    | Field to order data on     |
+| group-by  | string    | Field to group data on.
+                          Only for Categorical axis  |
+| title     | string,
+              null        | Draws title for axis.      |</p>
+<h2 id="all-directives">All Directives</h2>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>accepts</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field*</td>
+<td>string</td>
+<td>Which field to plot</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Plot single line. Default</td>
+</tr>
+</tbody>
+</table>
+<pre><code>                      of undefined will plot all
+                         unique value for the field |
+</code></pre><p>| filter    | string:string | Filters plot data on
+                              field:value             |</p>
+
+</body>
+</html>
