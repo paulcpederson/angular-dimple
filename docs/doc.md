@@ -21,16 +21,10 @@ The `<x>` and `<y>` directives set up your axes for the graph. You can set multi
 | attribute | accepts     |                              |
 | --------- | --------- | -------------------------- |
 | field*    | string    | Field to define on         |
-| type        | Category,
-              Measure,
-              Percent    | Defined axis type.
-                          X-Axis defaults to Category
-                          Y-Axis defaults to Measure |
+| type | Category, Measure, Percent | Defined axis type. X-Axis defaults to Category. Y-Axis defaults to Measure. |
 | order-by  | string    | Field to order data on     |
-| group-by  | string    | Field to group data on.
-                          Only for Categorical axis  |
-| title     | string,
-              null        | Draws title for axis.      |
+| group-by  | string    | Field to group data on. Only for Categorical axis. |
+| title     | string, null        | Draws title for axis. |
 
 ## Legend
 
