@@ -35,7 +35,9 @@ angular.module('angular-dimple.graph', [])
         id = domId;
         var svg = dimple.newSvg('#dng-'+ id +'', $attrs.width, $attrs.height);
         chart = new dimple.chart(svg);
-        chart.noFormats = true;
+
+        var autoStyle = $attrs.autoStyle === 'false' ? true : false;
+        chart.noFormats = autoStyle;
       };
 
       this.getChart = function () {
@@ -54,9 +56,6 @@ angular.module('angular-dimple.graph', [])
         return id;
       };
 
-      this.autoStyle = function () {
-        chart.noFormats = false;
-      };
     }]
   };
 }]);

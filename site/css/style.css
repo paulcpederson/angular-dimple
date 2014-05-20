@@ -1,27 +1,28 @@
 /* light is default mode, so pair with general html definition */
-/* line 33, ../scss/_config.scss */
+/* line 40, ../scss/_config.scss */
 html * {
   color-profile: sRGB;
   rendering-intent: auto;
 }
 
-/* line 6, ../scss/style.scss */
+/* line 4, ../scss/style.scss */
 [ng-cloak] {
   display: none;
 }
 
-/* line 8, ../scss/style.scss */
+/* line 6, ../scss/style.scss */
 body {
   margin: 0;
   padding: 0;
+  font-family: "EB Garamond", "Garamond", "Georgia", serif;
 }
 
-/* line 13, ../scss/style.scss */
+/* line 12, ../scss/style.scss */
 h1 {
   color: red;
 }
 
-/* line 17, ../scss/style.scss */
+/* line 16, ../scss/style.scss */
 .navigation {
   position: fixed;
   height: 100vh;
@@ -30,7 +31,7 @@ h1 {
   background-color: #ededed;
 }
 
-/* line 25, ../scss/style.scss */
+/* line 24, ../scss/style.scss */
 .chart {
   position: absolute;
   top: 0;

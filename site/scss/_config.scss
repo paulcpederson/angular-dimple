@@ -1,5 +1,12 @@
-// SOLARIZED COLORS
+// Fonts
+$garamond: 'EB Garamond', 'Garamond', 'Georgia', serif;
+$open: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+$source: 'Source Code Pro', 'Inconsolata', 'Consolas', 'Courier New', monospace;
 
+// Colors
+$cream: #FDF5DF !default;
+
+// SOLARIZED COLORS
 $base03:    #002b36;
 $base02:    #073642;
 $base01:    #586e75;
@@ -34,6 +41,3 @@ html * {
     color-profile: sRGB;
     rendering-intent: auto;
 }
-
-// MOAR COLORS
-$cream:     #FDF5DF !default;
