@@ -1,13 +1,12 @@
 @import "compass";
 @import "config";
 
-
-
 [ng-cloak] { display: none;}
 
 body {
   margin: 0;
   padding: 0;
+  font-family: $garamond;
 }
 
 h1 {
