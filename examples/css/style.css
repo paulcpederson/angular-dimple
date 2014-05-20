@@ -1,20 +1,27 @@
-/* line 4, ../scss/style.scss */
+/* light is default mode, so pair with general html definition */
+/* line 33, ../scss/_config.scss */
+html * {
+  color-profile: sRGB;
+  rendering-intent: auto;
+}
+
+/* line 6, ../scss/style.scss */
 [ng-cloak] {
   display: none;
 }
 
-/* line 6, ../scss/style.scss */
+/* line 8, ../scss/style.scss */
 body {
   margin: 0;
   padding: 0;
 }
 
-/* line 11, ../scss/style.scss */
+/* line 13, ../scss/style.scss */
 h1 {
   color: red;
 }
 
-/* line 15, ../scss/style.scss */
+/* line 17, ../scss/style.scss */
 .navigation {
   position: fixed;
   height: 100vh;
@@ -23,7 +30,7 @@ h1 {
   background-color: #ededed;
 }
 
-/* line 23, ../scss/style.scss */
+/* line 25, ../scss/style.scss */
 .chart {
   position: absolute;
   top: 0;

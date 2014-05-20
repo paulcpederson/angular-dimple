@@ -1,4 +1,4 @@
-/*! Angular-Dimple - 0.0.0 - 2014-05-19
+/*! Angular-Dimple - 0.0.0 - 2014-05-20
 *   https://github.com/geoloqi/angular-dimple
 *   Licensed ISC */
 angular.module('angular-dimple.core', [])
@@ -145,6 +145,7 @@ angular.module('angular-dimple.graph', [])
         id = domId;
         var svg = dimple.newSvg('#dng-'+ id +'', $attrs.width, $attrs.height);
         chart = new dimple.chart(svg);
+        chart.noFormats = true;
       };
 
       this.getChart = function () {
@@ -161,6 +162,10 @@ angular.module('angular-dimple.graph', [])
 
       this.getID = function () {
         return id;
+      };
+
+      this.autoStyle = function () {
+        chart.noFormats = false;
       };
     }]
   };
