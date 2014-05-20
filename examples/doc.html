@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Angular-Dimple API Reference</title>
+  <meta name="description" content="Angular directives for creating charts with Dimple and d3">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <h1 id="angular-dimple-documentation">Angular Dimple Documentation</h1>
+<p>Angular-Dimple is a series of Angular directives that help you create graphs and visualizations.</p>
+<h2 id="graph">Graph</h2>
+<p>The <code>&lt;graph&gt;</code> directive is the wrapper directive for every type of chart in Angular-Dimple. This will create a div with a dynamic id, and initialize a new Dimple graph inside of it with several default options.</p>
+<h4 id="attributes">Attributes</h4>
+<ul>
+<li><code>data</code></li>
+<li><code>width</code></li>
+<li><code>height</code></li>
+</ul>
+<h2 id="x-and-y">X and Y</h2>
+<p>The <code>&lt;x&gt;</code> and <code>&lt;y&gt;</code> directives set up your axes for the graph. You can set multiple axes of each type and the graph will display them.</p>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>accepts</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field*</td>
+<td>string</td>
+<td>Field to define on</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Category,</td>
+</tr>
+</tbody>
+</table>
+<pre><code>          Measure,
+          Percent    | Defined axis type.
+                      X-Axis defaults to Category
+                      Y-Axis defaults to Measure |
+</code></pre><p>| order-by  | string    | Field to order data on     |
+| group-by  | string    | Field to group data on.
+                          Only for Categorical axis  |
+| title     | string,
+              null        | Draws title for axis.      |</p>
+<h2 id="legend">Legend</h2>
+<p>The <code>&lt;legend&gt;</code> directive creates a legend for your graph.</p>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>Directives</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><graph></td>
+<td>Graph parent container</td>
+</tr>
+<tr>
+<td><x></td>
+<td>Set x axis</td>
+</tr>
+<tr>
+<td><y></td>
+<td>Set y axis</td>
+</tr>
+<tr>
+<td><line></td>
+<td>add line to graph</td>
+</tr>
+<tr>
+<td><bar></td>
+<td>add bar to graph</td>
+</tr>
+<tr>
+<td><stacked-bar></td>
+<td>add stacked bars to graph</td>
+</tr>
+<tr>
+<td><area></td>
+<td>add area to graph</td>
+</tr>
+<tr>
+<td><stacked-area></td>
+<td>add stacked area to graph</td>
+</tr>
+<tr>
+<td><scatter-plot></td>
+<td>add scatter plot to graph</td>
+</tr>
+</tbody>
+</table>
+<h2 id="-x-y-"><x>, <y></h2>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>accepts</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field*</td>
+<td>string</td>
+<td>Field to define on</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Category,</td>
+</tr>
+</tbody>
+</table>
+<pre><code>          Measure,
+          Percent    | Defined axis type.
+                      X-Axis defaults to Category
+                      Y-Axis defaults to Measure |
+</code></pre><p>| order-by  | string    | Field to order data on     |
+| group-by  | string    | Field to group data on.
+                          Only for Categorical axis  |
+| title     | string,
+              null        | Draws title for axis.      |</p>
+<h2 id="all-directives">All Directives</h2>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>accepts</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field*</td>
+<td>string</td>
+<td>Which field to plot</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Plot single line. Default</td>
+</tr>
+</tbody>
+</table>
+<pre><code>                      of undefined will plot all
+                         unique value for the field |
+</code></pre><p>| filter    | string:string | Filters plot data on
+                              field:value             |</p>
+
+</body>
+</html>
