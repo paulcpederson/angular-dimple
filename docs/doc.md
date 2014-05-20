@@ -18,46 +18,25 @@ The `<x>` and `<y>` directives set up your axes for the graph. You can set multi
 
 #### Attributes
 
-| attribute | accepts     |                              |
+| attribute | accepts   |                            |
 | --------- | --------- | -------------------------- |
 | field*    | string    | Field to define on         |
-| type | Category, Measure, Percent | Defined axis type. X-Axis defaults to Category. Y-Axis defaults to Measure. |
+| type      | Category, Measure, Percent | Defined axis type. X-Axis defaults to Category. Y-Axis defaults to Measure. |
 | order-by  | string    | Field to order data on     |
 | group-by  | string    | Field to group data on. Only for Categorical axis. |
-| title     | string, null        | Draws title for axis. |
+| title     | string, 'null' | Draws title for axis. If set to `title='null'` will hide title. |
 
 ## Legend
 
 The `<legend>` directive creates a legend for your graph.
 
-#### Attributes
-
-| Directives     		|						     |
-| --------------------- | -------------------------- |
-| <graph>		  		| Graph parent container     |
-| <x>			  		| Set x axis 		 	     |
-| <y>			  		| Set y axis  			     |
-| <line>		  		| add line to graph 	     |
-| <bar>		  			| add bar to graph 		     |
-| <stacked-bar>			| add stacked bars to graph  |
-| <area>		  		| add area to graph          |
-| <stacked-area>		| add stacked area to graph  |
-| <scatter-plot>		| add scatter plot to graph  |
-
-## <x>, <y>
-| attribute | accepts 	| 							 |
+| attribute | accepts 	| 							             |
 | --------- | --------- | -------------------------- |
-| field*	| string	| Field to define on         |
-| type		| Category,
-			  Measure,
-			  Percent	| Defined axis type.
-						  X-Axis defaults to Category
-						  Y-Axis defaults to Measure |
-| order-by  | string    | Field to order data on     |
-| group-by  | string    | Field to group data on.
-						  Only for Categorical axis  |
-| title 	| string,
-			  null		| Draws title for axis.      |
+| left		  | '#', '#%' | Sets position from left of chart in either pixels or percent. Defaults to 10%. |
+| top		    | '#', '#%' | Sets position from top of chart in either pixels or percent. Defaults to 4%. |
+| height	  | '#', '#%' | Sets height of legend in either pixels or percent. Defaults to 100%. |
+| width     | '#', '#%' | Sets width of legend in either pixels or percent. Defaults to 90%. |
+| position 	| 'left', 'right' | Set float position of legend. Defaults to left. |
 
 ## All Directives
 | attribute | accepts 	| 							 |

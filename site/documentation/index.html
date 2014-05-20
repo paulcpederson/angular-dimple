@@ -54,61 +54,13 @@
 </tr>
 <tr>
 <td>title</td>
-<td>string, null</td>
-<td>Draws title for axis.</td>
+<td>string, &#39;null&#39;</td>
+<td>Draws title for axis. If set to <code>title=&#39;null&#39;</code> will hide title.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="legend">Legend</h2>
 <p>The <code>&lt;legend&gt;</code> directive creates a legend for your graph.</p>
-<h4 id="attributes">Attributes</h4>
-<table>
-<thead>
-<tr>
-<th>Directives</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><graph></td>
-<td>Graph parent container</td>
-</tr>
-<tr>
-<td><x></td>
-<td>Set x axis</td>
-</tr>
-<tr>
-<td><y></td>
-<td>Set y axis</td>
-</tr>
-<tr>
-<td><line></td>
-<td>add line to graph</td>
-</tr>
-<tr>
-<td><bar></td>
-<td>add bar to graph</td>
-</tr>
-<tr>
-<td><stacked-bar></td>
-<td>add stacked bars to graph</td>
-</tr>
-<tr>
-<td><area></td>
-<td>add area to graph</td>
-</tr>
-<tr>
-<td><stacked-area></td>
-<td>add stacked area to graph</td>
-</tr>
-<tr>
-<td><scatter-plot></td>
-<td>add scatter plot to graph</td>
-</tr>
-</tbody>
-</table>
-<h2 id="-x-y-"><x>, <y></h2>
 <table>
 <thead>
 <tr>
@@ -119,25 +71,32 @@
 </thead>
 <tbody>
 <tr>
-<td>field*</td>
-<td>string</td>
-<td>Field to define on</td>
+<td>left</td>
+<td>&#39;#&#39;, &#39;#%&#39;</td>
+<td>Sets position from left of chart in either pixels or percent. Defaults to 10%.</td>
 </tr>
 <tr>
-<td>type</td>
-<td>Category,</td>
+<td>top</td>
+<td>&#39;#&#39;, &#39;#%&#39;</td>
+<td>Sets position from top of chart in either pixels or percent. Defaults to 4%.</td>
+</tr>
+<tr>
+<td>height</td>
+<td>&#39;#&#39;, &#39;#%&#39;</td>
+<td>Sets height of legend in either pixels or percent. Defaults to 100%.</td>
+</tr>
+<tr>
+<td>width</td>
+<td>&#39;#&#39;, &#39;#%&#39;</td>
+<td>Sets width of legend in either pixels or percent. Defaults to 90%.</td>
+</tr>
+<tr>
+<td>position</td>
+<td>&#39;left&#39;, &#39;right&#39;</td>
+<td>Set float position of legend. Defaults to left.</td>
 </tr>
 </tbody>
 </table>
-<pre><code>          Measure,
-          Percent    | Defined axis type.
-                      X-Axis defaults to Category
-                      Y-Axis defaults to Measure |
-</code></pre><p>| order-by  | string    | Field to order data on     |
-| group-by  | string    | Field to group data on.
-                          Only for Categorical axis  |
-| title     | string,
-              null        | Draws title for axis.      |</p>
 <h2 id="all-directives">All Directives</h2>
 <table>
 <thead>
