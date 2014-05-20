@@ -1,9 +1,11 @@
 angular.module('angular-dimple', [
+  'angular-dimple.core',
   'angular-dimple.graph',
   'angular-dimple.x',
   'angular-dimple.y',
   'angular-dimple.line',
   'angular-dimple.bar',
+  'angular-dimple.stacked-bar',
   'angular-dimple.area',
   'angular-dimple.stacked-area',
   'angular-dimple.scatter-plot'

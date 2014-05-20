@@ -1,12 +1,39 @@
 /*! Angular-Dimple - 0.0.0 - 2014-05-19
 *   https://github.com/geoloqi/angular-dimple
 *   Licensed ISC */
+angular.module('angular-dimple.core', [])
+
+.service('angular-dimple.core', [function(){
+  return {
+    filter: function (chart, attrs, scopeData) {
+      if (scopeData !== null) {
+        var data = filterData(scopeData);
+        chart.data = data;
+        if (attrs.value !== undefined) {
+          chart.data = dimple.filterData(data, attrs.field, [attrs.value]);
+        }
+      }
+      function filterData (d) {
+        if (attrs.filter) {
+          var filter = attrs.filter.split(':');
+          return dimple.filterData(d, filter[0], [filter[1]]);
+        } else {
+          return d;
+        }
+      }
+    }
+  };
+}]);
+
+
 angular.module('angular-dimple', [
+  'angular-dimple.core',
   'angular-dimple.graph',
   'angular-dimple.x',
   'angular-dimple.y',
   'angular-dimple.line',
   'angular-dimple.bar',
+  'angular-dimple.stacked-bar',
   'angular-dimple.area',
   'angular-dimple.stacked-area',
   'angular-dimple.scatter-plot'
@@ -19,7 +46,7 @@ angular.module('angular-dimple', [
 });
 angular.module('angular-dimple.area', [])
 
-.directive('area', [function () {
+.directive('area', ['angular-dimple.core', function (core) {
   return {
     restrict: 'E',
     replace: true,
@@ -32,23 +59,8 @@ angular.module('angular-dimple.area', [])
       var chart = graphController.getChart();
 
       function addArea () {
-        var filteredData;
-
         area = chart.addSeries([$attrs.field], dimple.plot.area);
-
-        if ($scope.data !== null && $attrs.value !== undefined) {
-
-          filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
-          area.data = filteredData;
-
-        } else if ($scope.data !== null && $attrs.value === undefined) {
-
-          var values = dimple.getUniqueValues($scope.data, $attrs.field);
-          for (var i = 0; i < values.length; i++) {
-            console.log(values[i]);
-          }
-        }
-
+        core.filter(area, $attrs, $scope.data);
         area.lineMarkers = true;
         graphController.draw();
 
@@ -62,6 +74,8 @@ angular.module('angular-dimple.area', [])
     }
   };
 }]);
+
+
 angular.module('angular-dimple.bar', [])
 
 .directive('bar', [function () {
@@ -153,7 +167,7 @@ angular.module('angular-dimple.graph', [])
 }]);
 angular.module('angular-dimple.line', [])
 
-.directive('line', [function () {
+.directive('line', ['angular-dimple.core', function (core) {
   return {
     restrict: 'E',
     replace: true,
@@ -168,10 +182,7 @@ angular.module('angular-dimple.line', [])
       function addLine () {
         var filteredData;
         line = chart.addSeries([$attrs.field], dimple.plot.line);
-        if ($scope.data !== null && $attrs.value !== undefined) {
-          filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
-          line.data = filteredData;
-        }
+        core.filter(line, $attrs, $scope.data);
         line.lineMarkers = true;
         graphController.draw();
       }
@@ -186,27 +197,19 @@ angular.module('angular-dimple.line', [])
 }]);
 angular.module('angular-dimple.scatter-plot', [])
 
-.directive('scatterPlot', [function () {
+.directive('scatterPlot', ['angular-dimple.core', function (core) {
   return {
     restrict: 'E',
     replace: true,
     require: ['scatterPlot', '^graph'],
-    controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
-    }],
+    controller: [function() {}],
     link: function($scope, $element, $attrs, $controllers) {
       var graphController = $controllers[1];
-      var scatterPlotController = $controllers[0];
       var chart = graphController.getChart();
 
       function addScatterPlot () {
-        var filteredData;
         scatterPlot = chart.addSeries([$attrs.series, $attrs.field], dimple.plot.bubble);
-
-        if ($scope.data !== null && $attrs.value !== undefined) {
-          filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
-          scatterPlot.data = filteredData;
-        }
-
+        core.filter(scatterPlot, $attrs, $scope.data);
         graphController.draw();
       }
 
@@ -220,7 +223,7 @@ angular.module('angular-dimple.scatter-plot', [])
 }]);
 angular.module('angular-dimple.stacked-area', [])
 
-.directive('stackedArea', [function () {
+.directive('stackedArea', ['angular-dimple.core', function (core) {
   return {
     restrict: 'E',
     replace: true,
@@ -233,16 +236,12 @@ angular.module('angular-dimple.stacked-area', [])
       var chart = graphController.getChart();
 
       function addArea () {
-        var filteredData;
         if ($attrs.series) {
           area = chart.addSeries([$attrs.series], dimple.plot.area);
         } else {
           area = chart.addSeries([$attrs.field], dimple.plot.area);
         }
-        if ($scope.data !== null && $attrs.value !== undefined) {
-          filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
-          area.data = filteredData;
-        }
+        core.filter(area, $attrs, $scope.data);
         area.lineMarkers = false;
         graphController.draw();
       }
@@ -250,6 +249,39 @@ angular.module('angular-dimple.stacked-area', [])
       $scope.$watch('data', function(newValue, oldValue) {
         if (newValue) {
           addArea();
+        }
+      });
+    }
+  };
+}]);
+angular.module('angular-dimple.stacked-bar', [])
+
+.directive('stackedBar', ['angular-dimple.core', function (core) {
+  return {
+    restrict: 'E',
+    replace: true,
+    require: ['stackedBar', '^graph'],
+    controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
+    }],
+    link: function($scope, $element, $attrs, $controllers) {
+      var graphController = $controllers[1];
+      var lineController = $controllers[0];
+      var chart = graphController.getChart();
+
+      function addBar () {
+        if ($attrs.series) {
+          bar = chart.addSeries([$attrs.series], dimple.plot.bar);
+        } else {
+          bar = chart.addSeries([$attrs.field], dimple.plot.bar);
+        }
+
+        core.filter(bar, $attrs, $scope.data);
+        graphController.draw();
+      }
+
+      $scope.$watch('data', function(newValue, oldValue) {
+        if (newValue) {
+          addBar();
         }
       });
     }
@@ -273,7 +305,7 @@ angular.module('angular-dimple.x', [])
           if ($attrs.type == 'Measure') {
             x = chart.addMeasureAxis('x', [$attrs.groupBy, $attrs.field]);
           } else if ($attrs.type == 'Percent') {
-            y = chart.addPctAxis('y', $attrs.field);
+            x = chart.addPctAxis('x', $attrs.field);
           } else {
             x = chart.addCategoryAxis('x', [$attrs.groupBy, $attrs.field]);
           }
@@ -284,6 +316,8 @@ angular.module('angular-dimple.x', [])
         } else {
           if ($attrs.type == 'Measure') {
             x = chart.addMeasureAxis('x', $attrs.field);
+          } else if ($attrs.type == 'Percent') {
+            x = chart.addPctAxis('x', $attrs.field);
           } else {
             x = chart.addCategoryAxis('x', $attrs.field);
           }
@@ -291,6 +325,7 @@ angular.module('angular-dimple.x', [])
             x.addOrderRule($attrs.orderBy);
           }
         }
+
         if ($attrs.title && $attrs.title !== "null") {
           x.title = $attrs.title;
         } else if ($attrs.title == "null") {
@@ -319,16 +354,28 @@ angular.module('angular-dimple.y', [])
       var chart = graphController.getChart();
 
       function addAxis () {
-        if ($attrs.type == 'Category') {
-          y = chart.addCategoryAxis('y', $attrs.field);
-        } else if ($attrs.type == 'Percent') {
-          y = chart.addPctAxis('y', $attrs.field);
+        if ($attrs.groupBy) {
+          if ($attrs.type == 'Category') {
+            y = chart.addCategoryAxis('y', $attrs.field);
+          } else if ($attrs.type == 'Percent') {
+            y = chart.addPctAxis('y', $attrs.field);
+          } else {
+            y = chart.addMeasureAxis('y', $attrs.field);
+          }
+          if ($attrs.orderBy) {
+            y.addGroupOrderRule($attrs.orderBy);
+          }
         } else {
-          y = chart.addMeasureAxis('y', $attrs.field);
-        }
-
-        if ($attrs.orderBy) {
-          y.addOrderRule($attrs.orderBy);
+          if ($attrs.type == 'Category') {
+            y = chart.addCategoryAxis('y', $attrs.field);
+          } else if ($attrs.type == 'Percent') {
+            y = chart.addPctAxis('y', $attrs.field);
+          } else {
+            y = chart.addMeasureAxis('y', $attrs.field);
+          }
+          if ($attrs.orderBy) {
+            y.addOrderRule($attrs.orderBy);
+          }
         }
 
         if ($attrs.title && $attrs.title !== "null") {

@@ -1,6 +1,6 @@
 angular.module('angular-dimple.line', [])
 
-.directive('line', [function () {
+.directive('line', ['angular-dimple.core', function (core) {
   return {
     restrict: 'E',
     replace: true,
@@ -15,10 +15,7 @@ angular.module('angular-dimple.line', [])
       function addLine () {
         var filteredData;
         line = chart.addSeries([$attrs.field], dimple.plot.line);
-        if ($scope.data !== null && $attrs.value !== undefined) {
-          filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
-          line.data = filteredData;
-        }
+        core.filter(line, $attrs, $scope.data);
         line.lineMarkers = true;
         graphController.draw();
       }

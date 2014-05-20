@@ -1,31 +1,31 @@
-angular.module('angular-dimple.stacked-area', [])
+angular.module('angular-dimple.stacked-bar', [])
 
-.directive('stackedArea', ['angular-dimple.core', function (core) {
+.directive('stackedBar', ['angular-dimple.core', function (core) {
   return {
     restrict: 'E',
     replace: true,
-    require: ['stackedArea', '^graph'],
+    require: ['stackedBar', '^graph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
       var graphController = $controllers[1];
-      var areaController = $controllers[0];
+      var lineController = $controllers[0];
       var chart = graphController.getChart();
 
-      function addArea () {
+      function addBar () {
         if ($attrs.series) {
-          area = chart.addSeries([$attrs.series], dimple.plot.area);
+          bar = chart.addSeries([$attrs.series], dimple.plot.bar);
         } else {
-          area = chart.addSeries([$attrs.field], dimple.plot.area);
+          bar = chart.addSeries([$attrs.field], dimple.plot.bar);
         }
-        core.filter(area, $attrs, $scope.data);
-        area.lineMarkers = false;
+
+        core.filter(bar, $attrs, $scope.data);
         graphController.draw();
       }
 
       $scope.$watch('data', function(newValue, oldValue) {
         if (newValue) {
-          addArea();
+          addBar();
         }
       });
     }
