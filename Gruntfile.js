@@ -12,14 +12,14 @@ module.exports = function(grunt) {
         }
       },
       examples: {
-        files: ['./examples/js/*.js'],
+        files: ['./site/js/*.js'],
         tasks: ['jshint'],
         options: {
           nospawn: true
         }
       },
       sass: {
-        files: ['./examples/scss/**/*'],
+        files: ['./site/scss/**/*'],
         tasks: ['compass'],
         options: {
           nospawn: true
@@ -36,19 +36,15 @@ module.exports = function(grunt) {
     'compass': {
       dev: {
         options: {
-          sassDir: 'examples/scss',
-          cssDir: 'examples/css'
+          sassDir: 'site/scss',
+          cssDir: 'site/css'
         }
       }
     },
     'jshint': {
       files: [
         './source/**/*.js',
-        './examples/js/app.js',
-        './examples/js/controllers.js',
-        './examples/js/directives.js',
-        './examples/js/filters.js',
-        './examples/js/services.js'
+        './site/js/*.js'
       ]
     },
     'concat': {
@@ -64,7 +60,7 @@ module.exports = function(grunt) {
       },
       examples: {
         src: ['source/*.js'],
-        dest: 'examples/js/lib/angular-dimple.js'
+        dest: 'site/js/lib/angular-dimple.js'
       },
     },
     'uglify': {
@@ -75,14 +71,14 @@ module.exports = function(grunt) {
       },
       examples: {
         files: {
-          'examples/js/lib/angular-dimple.min.js': ['source/*.js']
+          'site/js/lib/angular-dimple.min.js': ['source/*.js']
         }
       }
     },
     'connect': {
       'static': {
         options: {
-          base: 'examples/',
+          base: 'site/',
           hostname: 'localhost',
           port: 8001
         }
@@ -95,7 +91,7 @@ module.exports = function(grunt) {
           templateData: {
             title: 'Angular-Dimple API Reference'
           }},
-        files: [{ src: 'docs/doc.md', dest: 'examples/doc.html'}]
+        files: [{ src: 'docs/doc.md', dest: 'site/documentation/index.html'}]
       }
     }
   });
