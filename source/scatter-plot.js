@@ -1,26 +1,18 @@
 angular.module('angular-dimple.scatter-plot', [])
 
-.directive('scatterPlot', [function () {
+.directive('scatterPlot', ['angular-dimple.core', function (core) {
   return {
     restrict: 'E',
     replace: true,
     require: ['scatterPlot', '^graph'],
-    controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
-    }],
+    controller: [function() {}],
     link: function($scope, $element, $attrs, $controllers) {
       var graphController = $controllers[1];
-      var scatterPlotController = $controllers[0];
       var chart = graphController.getChart();
 
       function addScatterPlot () {
-        var filteredData;
         scatterPlot = chart.addSeries([$attrs.series, $attrs.field], dimple.plot.bubble);
-
-        if ($scope.data !== null && $attrs.value !== undefined) {
-          filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
-          scatterPlot.data = filteredData;
-        }
-
+        core.filter(scatterPlot, $attrs, $scope.data);
         graphController.draw();
       }
 

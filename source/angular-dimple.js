@@ -1,4 +1,5 @@
 angular.module('angular-dimple', [
+  'angular-dimple.core',
   'angular-dimple.graph',
   'angular-dimple.x',
   'angular-dimple.y',

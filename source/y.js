@@ -9,7 +9,6 @@ angular.module('angular-dimple.y', [])
     }],
     link: function($scope, $element, $attrs, $controllers) {
       var graphController = $controllers[1];
-      console.log(graphController);
       var chart = graphController.getChart();
 
       function addAxis () {
