@@ -11,6 +11,7 @@ $gray:         #76899B !default;
 $dark-gray:    #4C5156 !default;
 $darker-gray:  #2C3136 !default;
 $blue:         #1F85C4 !default;
+$light-blue:   lighten($blue, 10%);
 $dark-blue:    #245070 !default;
 $darker-blue:  #234052 !default;
 

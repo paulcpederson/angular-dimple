@@ -4,15 +4,16 @@
   overflow: hidden;
   color: white;
   background: url(../img/dots.svg) #245070;
+  z-index: 20;
 }
-/* line 9, ../scss/home.scss */
+/* line 10, ../scss/home.scss */
 .banner .banner-copy {
   position: relative;
   margin: 8rem 0;
   z-index: 2;
   font-weight: 200;
 }
-/* line 15, ../scss/home.scss */
+/* line 16, ../scss/home.scss */
 .banner .dimple-graph {
   position: absolute;
   top: -260px;
@@ -21,26 +22,26 @@
   left: -25%;
   z-index: 1;
 }
-/* line 23, ../scss/home.scss */
+/* line 24, ../scss/home.scss */
 .banner .dimple-axis {
   display: none;
 }
-/* line 26, ../scss/home.scss */
+/* line 27, ../scss/home.scss */
 .banner .dimple-gridline {
   display: none;
 }
-/* line 29, ../scss/home.scss */
+/* line 30, ../scss/home.scss */
 .banner .dimple-line {
   opacity: 0.8;
   fill: none;
   stroke: #234052;
   stroke-width: 2;
 }
-/* line 35, ../scss/home.scss */
+/* line 36, ../scss/home.scss */
 .banner .dimple-marker-back {
   fill: #234052;
 }
-/* line 38, ../scss/home.scss */
+/* line 39, ../scss/home.scss */
 .banner .dimple-marker {
   display: none;
   fill: #234052;

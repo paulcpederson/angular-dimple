@@ -51,12 +51,12 @@ svg:not(:root) {
 }
 
 /* line 4, ../scss/base/_mixins.scss */
-.container:before, .row:before, .tab-group .tab-nav:before, .container:after, .row:after, .tab-group .tab-nav:after {
+.container:before, .row:before, .tab-group .tab-nav:before, .chart-icon:before, .container:after, .row:after, .tab-group .tab-nav:after, .chart-icon:after {
   content: " ";
   display: table;
 }
 /* line 8, ../scss/base/_mixins.scss */
-.container:after, .row:after, .tab-group .tab-nav:after {
+.container:after, .row:after, .tab-group .tab-nav:after, .chart-icon:after {
   clear: both;
 }
 
@@ -1590,14 +1590,38 @@ img::moz-selection {
   color: white;
 }
 /* line 17, ../scss/base/_buttons.scss */
+.btn.outline {
+  background: transparent;
+  color: #1f85c4;
+  border: 1px solid #1f85c4;
+}
+/* line 21, ../scss/base/_buttons.scss */
+.btn.outline:hover {
+  background-color: #379fdf;
+  color: white;
+  border: 1px solid #379fdf;
+}
+/* line 27, ../scss/base/_buttons.scss */
 .btn.dark-blue {
   background: #245070;
   color: #dde3e8;
 }
-/* line 20, ../scss/base/_buttons.scss */
+/* line 30, ../scss/base/_buttons.scss */
 .btn.dark-blue:hover {
   background-color: #306c97;
   color: #ecf0f3;
+}
+/* line 35, ../scss/base/_buttons.scss */
+.btn.white {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+/* line 39, ../scss/base/_buttons.scss */
+.btn.white:hover {
+  background-color: white;
+  color: #1f85c4;
+  border: 1px solid #ecf0f3;
 }
 
 /* line 11, ../scss/style.scss */
@@ -1609,33 +1633,58 @@ img::moz-selection {
 .fullscreen {
   padding: 8rem 0;
 }
-
-/* line 17, ../scss/style.scss */
-.darker-blue {
+/* line 15, ../scss/style.scss */
+.fullscreen .darker-blue {
   background-color: #234052;
-  color: #76899b;
 }
+
 /* line 20, ../scss/style.scss */
+.darker-blue {
+  color: #76899b;
+  background-color: #234052;
+}
+/* line 23, ../scss/style.scss */
 .darker-blue a {
   color: #379fdf;
 }
-/* line 22, ../scss/style.scss */
+/* line 25, ../scss/style.scss */
 .darker-blue a:hover {
   color: #63b4e6;
 }
 
-/* line 28, ../scss/style.scss */
+/* line 31, ../scss/style.scss */
 .off-white {
   color: #4c5156;
   background-color: #fafbfe;
 }
-/* line 31, ../scss/style.scss */
+/* line 34, ../scss/style.scss */
 .off-white code {
   background-color: white;
   border-color: #ecf0f3;
 }
 
-/* line 37, ../scss/style.scss */
+/* line 40, ../scss/style.scss */
+.primary-navigation {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+/* line 48, ../scss/style.scss */
+.angular-dimple-logo {
+  float: left;
+}
+
+/* line 52, ../scss/style.scss */
+.navigation-section {
+  width: 50%;
+  text-align: right;
+  float: right;
+}
+
+/* line 58, ../scss/style.scss */
 .numbered {
   text-align: center;
   width: 2em;
@@ -1655,7 +1704,7 @@ img::moz-selection {
   border-radius: 50%;
 }
 
-/* line 52, ../scss/style.scss */
+/* line 73, ../scss/style.scss */
 .navigation {
   position: fixed;
   height: 100vh;
@@ -1664,7 +1713,7 @@ img::moz-selection {
   background-color: #ededed;
 }
 
-/* line 60, ../scss/style.scss */
+/* line 81, ../scss/style.scss */
 .chart {
   position: absolute;
   top: 0;
@@ -1673,4 +1722,34 @@ img::moz-selection {
   right: 0;
   height: 100vh;
   padding-left: 1rem;
+}
+
+/* line 91, ../scss/style.scss */
+.chart-icon {
+  display: inline-block;
+  margin-bottom: 1rem;
+  background-color: white;
+  height: 6rem;
+  width: 6rem;
+  border: 0.25rem solid white;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 101, ../scss/style.scss */
+.chart-icon:hover {
+  background-color: #379fdf;
+  border: 0.25rem solid #379fdf;
+}
+/* line 104, ../scss/style.scss */
+.chart-icon:hover vgg {
+  fill: red;
+  stroke: red;
+}
+/* line 110, ../scss/style.scss */
+.chart-icon img {
+  width: 100%;
+  height: auto;
 }
