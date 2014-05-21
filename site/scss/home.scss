@@ -1,6 +1,19 @@
 @import "compass";
 @import "config";
 
+.homepage-navigation {
+  position: relative;
+  z-index: 2;
+  font-weight: 200;
+  margin-top: 1rem;
+  a {
+    color: $off-white;
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
 .banner {
   position: relative;
   overflow: hidden;
@@ -9,7 +22,7 @@
   z-index: 20;
   .banner-copy {
     position: relative;
-    margin: 8rem 0;
+    margin: 5rem 0 9rem 0;
     z-index: 2;
     font-weight: 200;
   }

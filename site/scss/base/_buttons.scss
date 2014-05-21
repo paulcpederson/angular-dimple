@@ -8,6 +8,7 @@
   text-decoration: none;
   font-family: $source;
   font-size: 0.75em;
+  font-weight: 300;
   cursor: pointer;
   @include transition(background-color 75ms linear, color 75ms linear);
   &:hover {
@@ -33,13 +34,11 @@
     }
   }
   &.white {
-    background: transparent;
-    color: $white;
-    border: 1px solid $white;
+    background: $off-white;
+    color: $dark-blue;
     &:hover {
       background-color: $white;
       color: $blue;
-      border: 1px solid $lighter-gray;
     }
   }
 }

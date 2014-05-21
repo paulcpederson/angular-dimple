@@ -3,13 +3,82 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><%= title %></title>
-  <meta name="description" content="Angular directives for creating charts with Dimple and d3">
+  <title>Angular Dimple Reference</title>
+  <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/examples.css"/>
+
+  <!-- Brick Fonts -->
+  <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Source+Code+Pro:200,300/EB+Garamond:400,400i/Open+Sans:400,700">
+
 </head>
-<body>
-  <%= document %>
+
+<body class="off-white">
+
+  <!-- Navigation -->
+  <nav class="primary-navigation">
+    <div class="container">
+      <div class="row">
+        <div class="column-24">
+          <div class="angular-dimple-logo">
+            <a href="../">
+              <img src="../img/Angular-Dimple-Logo.svg" alt="Angular Dimple">
+            </a>
+          </div>
+          <div class="navigation-section">
+            <a href="../examples" class="post-1">Examples</a>
+            <a href="../documentation" class="post-1">API Docs</a>
+            <a href="#" class="btn">GitHub</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container leader-5 trailer-5">
+    <div class="row">
+
+      <!-- Menu -->
+      <aside class="sidebar column-4">
+        <ul class="menu">
+          <li><a href="#/line-graph">Line Graph</a></li>
+          <li><a href="#/area">Area</a></li>
+          <li><a href="#/stacked-area">Stacked Area</a></li>
+          <li><a href="#/expanded-stacked-area">Expanded Stacked Area</a></li>
+          <li><a href="#/bar-graph">Bar Graph</a></li>
+          <li><a href="#/stacked-bar-graph">Stacked Bar Graph</a></li>
+          <li><a href="#/scatter-plot">Scatter Plot</a></li>
+        </ul>
+      </aside>
+
+      <!-- Views -->
+      <main class="chart column-18 pre-2 right">
+        <div class="white-panel padded">
+          <%= document %>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="fullscreen darker-blue">
+    <div class="container">
+      <div class="row">
+        <div class="column-24">
+          <h4>Made by <a href="http://pdx.esri.com/">EsriPDX</a></h4>
+          <ul>
+            <li class="leader-1"><a href="https://github.com/Esripdx">GitHub</a></li>
+            <li><a href="https://twitter.com/esripdx">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
