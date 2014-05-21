@@ -1,6 +1,7 @@
 angular.module('angular-dimple', [
   'angular-dimple.core',
   'angular-dimple.graph',
+  'angular-dimple.legend',
   'angular-dimple.x',
   'angular-dimple.y',
   'angular-dimple.line',
