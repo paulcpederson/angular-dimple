@@ -87,3 +87,12 @@ img {
   .leader-#{$i}  { margin-top:    $i * 1rem; }
   .trailer-#{$i} { margin-bottom: $i * 1rem; }
 }
+
+// Right and Left
+.right {
+  float: right !important;
+}
+
+.left {
+  float: left !important;
+}

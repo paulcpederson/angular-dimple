@@ -22,11 +22,32 @@
 <!-- Application -->
 <body ng-app="myApp" class="off-white">
 
-  <div class="container leader-3">
+  <!-- Navigation -->
+  <nav class="primary-navigation">
+    <div class="container">
+      <div class="row">
+        <div class="column-24">
+          <div class="angular-dimple-logo">
+            <a href="../">
+              <img src="../img/Angular-Dimple-Logo.svg" alt="Angular Dimple">
+            </a>
+          </div>
+          <div class="navigation-section">
+            <a href="../examples" class="post-1">Examples</a>
+            <a href="../documentation" class="post-1">API Docs</a>
+            <a href="#" class="btn">GitHub</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container leader-5 trailer-5">
     <div class="row">
 
       <!-- Menu -->
-      <aside class="navigation column-4">
+      <aside class="sidebar column-4">
         <ul class="menu">
           <li><a href="#/line-graph">Line Graph</a></li>
           <li><a href="#/area">Area</a></li>
@@ -39,10 +60,25 @@
       </aside>
 
       <!-- Views -->
-      <main class="chart column-18 pre-2 white-panel">
+      <main class="chart column-18 pre-2 right">
         <div ng-view></div>
       </main>
 
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="fullscreen darker-blue">
+    <div class="container">
+      <div class="row">
+        <div class="column-24">
+          <h4>Made by <a href="http://pdx.esri.com/">EsriPDX</a></h4>
+          <ul>
+            <li class="leader-1"><a href="https://github.com/Esripdx">GitHub</a></li>
+            <li><a href="https://twitter.com/esripdx">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 

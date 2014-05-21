@@ -28,8 +28,12 @@ blockquote {
 p {
   font-size: 1.05rem;
   line-height: 1.5em;
+  font-weight: 300;
   &.large {
     font-size: 1.35rem;
+  }
+  &.small {
+    font-size: .85rem;
   }
 }
 
