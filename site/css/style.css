@@ -1394,18 +1394,22 @@ small {
 a {
   color: #1f85c4;
   text-decoration: none;
+  -webkit-transition: color 200ms linear;
+  -moz-transition: color 200ms linear;
+  -o-transition: color 200ms linear;
+  transition: color 200ms linear;
 }
-/* line 58, ../scss/base/_type.scss */
+/* line 59, ../scss/base/_type.scss */
 a:hover, a:focus {
   color: #245070;
   cursor: pointer;
 }
-/* line 62, ../scss/base/_type.scss */
+/* line 63, ../scss/base/_type.scss */
 a:active, a:hover {
   outline: 0;
 }
 
-/* line 67, ../scss/base/_type.scss */
+/* line 68, ../scss/base/_type.scss */
 .example-link {
   margin-top: -4rem;
   float: right;
@@ -1413,28 +1417,28 @@ a:active, a:hover {
   font-size: 1rem;
 }
 
-/* line 74, ../scss/base/_type.scss */
+/* line 75, ../scss/base/_type.scss */
 ul, ol {
   list-style-position: inside;
   margin-top: 0;
   padding: 0;
 }
-/* line 78, ../scss/base/_type.scss */
+/* line 79, ../scss/base/_type.scss */
 ul ul, ul ol, ol ul, ol ol {
   padding-left: 1.25em;
 }
 
-/* line 83, ../scss/base/_type.scss */
+/* line 84, ../scss/base/_type.scss */
 ul {
   list-style-type: none;
 }
 
-/* line 92, ../scss/base/_type.scss */
+/* line 93, ../scss/base/_type.scss */
 code, kbd, pre, samp {
   font-family: "Source Code Pro", "Inconsolata", "Consolas", "Courier New", monospace;
 }
 
-/* line 96, ../scss/base/_type.scss */
+/* line 97, ../scss/base/_type.scss */
 code {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -1449,7 +1453,7 @@ code {
   line-height: 1.5em;
 }
 
-/* line 106, ../scss/base/_type.scss */
+/* line 107, ../scss/base/_type.scss */
 pre {
   padding: 1em;
   white-space: pre;
@@ -1465,7 +1469,7 @@ pre {
   max-width: 100%;
   margin: 0 0 1.25rem 0;
 }
-/* line 116, ../scss/base/_type.scss */
+/* line 117, ../scss/base/_type.scss */
 pre code {
   background-color: #fafbfe;
   display: block;
@@ -1474,34 +1478,34 @@ pre code {
   border: none;
 }
 
-/* line 125, ../scss/base/_type.scss */
+/* line 126, ../scss/base/_type.scss */
 hr {
   margin: 2rem 0;
   border: none;
   border-top: 1px solid #fafbfe;
 }
 
-/* line 131, ../scss/base/_type.scss */
+/* line 132, ../scss/base/_type.scss */
 .center-text {
   text-align: center;
 }
 
-/* line 135, ../scss/base/_type.scss */
+/* line 136, ../scss/base/_type.scss */
 img::selection {
   background: transparent;
 }
 
-/* line 139, ../scss/base/_type.scss */
+/* line 140, ../scss/base/_type.scss */
 img::moz-selection {
   background: transparent;
 }
 
-/* line 143, ../scss/base/_type.scss */
+/* line 144, ../scss/base/_type.scss */
 table {
   width: 100%;
   padding-bottom: 1.25rem;
 }
-/* line 147, ../scss/base/_type.scss */
+/* line 148, ../scss/base/_type.scss */
 table thead {
   background-color: #ecf0f3;
   text-transform: uppercase;
@@ -1510,20 +1514,20 @@ table thead {
   font-family: "Source Code Pro", "Inconsolata", "Consolas", "Courier New", monospace;
   font-weight: 300;
 }
-/* line 156, ../scss/base/_type.scss */
+/* line 157, ../scss/base/_type.scss */
 table th {
   padding: 0.25em 1em;
   text-align: left;
 }
-/* line 161, ../scss/base/_type.scss */
+/* line 162, ../scss/base/_type.scss */
 table td {
   padding: 0.75em 1em;
 }
-/* line 165, ../scss/base/_type.scss */
+/* line 166, ../scss/base/_type.scss */
 table tr:nth-child(even) {
   background-color: #fafbfe;
 }
-/* line 170, ../scss/base/_type.scss */
+/* line 171, ../scss/base/_type.scss */
 table tr:last-child td {
   border-bottom: 2px solid #ecf0f3;
 }
@@ -1768,7 +1772,7 @@ table tr:last-child td {
   border-radius: 50%;
 }
 
-/* line 71, ../scss/style.scss */
+/* line 70, ../scss/style.scss */
 .navigation {
   position: fixed;
   height: 100vh;
@@ -1777,7 +1781,7 @@ table tr:last-child td {
   background-color: #ededed;
 }
 
-/* line 79, ../scss/style.scss */
+/* line 78, ../scss/style.scss */
 .chart {
   position: absolute;
   top: 0;
@@ -1788,34 +1792,60 @@ table tr:last-child td {
   padding-left: 1rem;
 }
 
-/* line 90, ../scss/style.scss */
+/* line 88, ../scss/style.scss */
 .chart-icon {
   display: inline-block;
   margin-bottom: 1rem;
   background-color: white;
   height: 6rem;
   width: 6rem;
-  border: 0.25rem solid white;
+  position: relative;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
   cursor: pointer;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+  border: 1px solid #dde3e8;
 }
-/* line 101, ../scss/style.scss */
+/* line 100, ../scss/style.scss */
 .chart-icon:hover {
-  background-color: #379fdf;
-  border: 0.25rem solid #379fdf;
+  background-color: #fafbfe;
 }
-/* line 106, ../scss/style.scss */
-.chart-icon object {
-  height: 6rem;
-  width: 6rem;
-  cursor: pointer;
+/* line 104, ../scss/style.scss */
+.chart-icon:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0 6px #dde3e8;
+  -moz-box-shadow: 0 0 0 6px #dde3e8;
+  box-shadow: 0 0 0 6px #dde3e8;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
 }
-/* line 110, ../scss/style.scss */
-.chart-icon object svg {
-  height: 6rem;
-  width: 6rem;
+/* line 117, ../scss/style.scss */
+.chart-icon:hover:before {
+  -webkit-box-shadow: 0 0 0 12px #dde3e8;
+  -moz-box-shadow: 0 0 0 12px #dde3e8;
+  box-shadow: 0 0 0 12px #dde3e8;
+}
+/* line 121, ../scss/style.scss */
+.chart-icon img {
+  width: 100%;
+  height: auto;
 }

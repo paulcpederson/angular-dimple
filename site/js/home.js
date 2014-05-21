@@ -6,6 +6,7 @@ angular.module('homeApp', [
   dataService.getData().then(function(response) {
     $scope.graphData = response.data;
   });
+  T.init();
 }])
 
 .service('dataService', ['$http', function($http) {
