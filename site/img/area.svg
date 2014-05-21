@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
-<g id="Layer_4">
-	<path fill="#4C5156" d="M54.984,20.351c0-1.344-1.094-2.438-2.438-2.438c-1.344,0-2.438,1.093-2.438,2.438c0,0.615,0.236,1.17,0.613,1.6
-		l-9.646,16.203c-0.179-0.04-0.361-0.067-0.552-0.067c-0.393,0-0.758,0.103-1.086,0.267l-14.315-14.43
-		c0.166-0.329,0.268-0.696,0.268-1.089c0-1.344-1.094-2.438-2.438-2.438c-1.344,0-2.438,1.093-2.438,2.438
-		c0,0.657,0.264,1.252,0.688,1.691l-9.325,16.985c-0.158-0.032-0.321-0.05-0.489-0.05c-1.345,0-2.438,1.094-2.438,2.438
-		c0,1.346,1.094,2.438,2.438,2.438c1.081,0,1.989-0.712,2.308-1.688H53.33V22.647C54.289,22.319,54.984,21.419,54.984,20.351z"/>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px"
+	 height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<g id="Layer_2">
+	<polygon fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" points="8.75,50 13.625,28.5 17.75,27.75 
+		22.75,24.375 27.5,31.75 39.5,32.625 51.125,41.625 54.25,35.875 54.25,50 	"/>
+	<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="13.5" y1="50.125" x2="13.5" y2="29.375"/>
+	<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="10.5" y1="50.125" x2="10.5" y2="42.25"/>
+	<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="16.5" y1="50.125" x2="16.5" y2="28.75"/>
+	<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="19.5" y1="50.125" x2="19.5" y2="27.125"/>
+	<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="22.5" y1="50.125" x2="22.5" y2="25.5"/>
+	<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="25.5" y1="50.125" x2="25.5" y2="29"/>
+	<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="28.5" y1="50.125" x2="28.5" y2="31.75"/>
+	<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="31.5" y1="50.125" x2="31.5" y2="32"/>
+	<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="34.5" y1="50.125" x2="34.5" y2="31.75"/>
+	<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="37.5" y1="50.125" x2="37.5" y2="31.75"/>
+	<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="40.5" y1="50.125" x2="40.5" y2="32.875"/>
+	<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="43.5" y1="50.125" x2="43.5" y2="36.625"/>
+	<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="46.5" y1="50.125" x2="46.5" y2="38.375"/>
+	<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="49.5" y1="50.125" x2="49.5" y2="41.125"/>
+	<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="52.5" y1="50.125" x2="52.5" y2="38.625"/>
+</g>
+<g id="Layer_1">
+	<polygon fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" points="8.75,50 20.875,32.75 27.5,42.75 
+		39.5,30.625 51.125,29.625 54.25,23.875 54.25,50 	"/>
+	<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="12.5" y1="50.125" x2="12.5" y2="44.75"/>
+	<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="15.5" y1="50.125" x2="15.5" y2="40.375"/>
+	<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="18.5" y1="50.125" x2="18.5" y2="36"/>
+	<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="21.5" y1="50.125" x2="21.5" y2="34"/>
+	<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="24.5" y1="50.125" x2="24.5" y2="38.125"/>
+	<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="27.5" y1="50.125" x2="27.5" y2="41.75"/>
+	<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="30.5" y1="50.125" x2="30.5" y2="40"/>
+	<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="33.5" y1="50.125" x2="33.5" y2="36.75"/>
+	<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="36.5" y1="50.125" x2="36.5" y2="33.75"/>
+	<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="39.5" y1="50.125" x2="39.5" y2="30.875"/>
+	<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="42.5" y1="50.125" x2="42.5" y2="30.625"/>
+	<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="45.5" y1="50.125" x2="45.5" y2="30.375"/>
+	<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="48.5" y1="50.125" x2="48.5" y2="30.125"/>
+	<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="51.5" y1="50.125" x2="51.5" y2="28.625"/>
 </g>
 </svg>

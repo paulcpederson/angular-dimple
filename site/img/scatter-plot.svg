@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px"
-	 height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
-<g id="Layer_8">
-	<g>
-		<path fill="#4C5156"  d="M54.633,32.375H9.303c-0.414,0-0.75-0.336-0.75-0.75s0.336-0.75,0.75-0.75h45.33c0.414,0,0.75,0.336,0.75,0.75
-			S55.047,32.375,54.633,32.375z"/>
-	</g>
-	<g>
-		<path fill="#4C5156"  d="M31.968,55.04c-0.414,0-0.75-0.336-0.75-0.75V8.96c0-0.414,0.336-0.75,0.75-0.75s0.75,0.336,0.75,0.75v45.33
-			C32.718,54.704,32.382,55.04,31.968,55.04z"/>
-	</g>
-	<g>
-		<path fill="#4C5156"  d="M41.449,26.101c-2.155,0-3.908-1.754-3.908-3.91s1.753-3.909,3.908-3.909c2.157,0,3.912,1.753,3.912,3.909
-			S43.606,26.101,41.449,26.101z M41.449,19.782c-1.328,0-2.408,1.081-2.408,2.409s1.08,2.41,2.408,2.41
-			c1.33,0,2.412-1.081,2.412-2.41S42.779,19.782,41.449,19.782z"/>
-	</g>
-	<g>
-		<path fill="#4C5156"  d="M22.481,45.357c-2.155,0-3.908-1.754-3.908-3.91c0-2.155,1.753-3.909,3.908-3.909c2.157,0,3.912,1.754,3.912,3.909
-			C26.394,43.604,24.639,45.357,22.481,45.357z M22.481,39.038c-1.328,0-2.408,1.081-2.408,2.409c0,1.329,1.08,2.41,2.408,2.41
-			c1.33,0,2.412-1.081,2.412-2.41C24.894,40.119,23.812,39.038,22.481,39.038z"/>
-	</g>
-</g>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<circle fill="#FFFFFF" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" cx="27.851" cy="31.8" r="2.483"/>
+<circle fill="#FFFFFF" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" cx="46.766" cy="19.717" r="2.483"/>
+<circle fill="#FFFFFF" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" cx="40.183" cy="24.966" r="2.483"/>
+<circle fill="#FFFFFF" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" cx="27.266" cy="39.667" r="2.483"/>
+<circle fill="#FFFFFF" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" cx="35.766" cy="32.083" r="2.483"/>
+<circle fill="#FFFFFF" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" cx="47.767" cy="27.917" r="2.483"/>
+<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="20.833" y1="52.947" x2="20.833" y2="15.062"/>
+<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="13.812" y1="45.875" x2="51.833" y2="45.875"/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="13.812" y1="16.875" x2="17.875" y2="16.875"/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="13.812" y1="22.875" x2="17.875" y2="22.875"/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="13.812" y1="28.875" x2="17.875" y2="28.875"/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="13.812" y1="34.875" x2="17.875" y2="34.875"/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="13.812" y1="40.875" x2="17.875" y2="40.875"/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="24.718" y1="52.947" x2="24.718" y2="48.885"/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="30.718" y1="52.947" x2="30.718" y2="48.885"/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="36.718" y1="52.947" x2="36.718" y2="48.885"/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="42.718" y1="52.947" x2="42.718" y2="48.885"/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="48.718" y1="52.947" x2="48.718" y2="48.885"/>
 </svg>

@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px"
-	 height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
-<g id="Layer_6">
-	<path fill="#4C5156"  d="M9.317,18.768v14.623v1.033v4.622h0.009v7.462h13.157v-7.462h0.011v-4.622v-1.033V18.768H9.317z M21.494,19.768v13.623
-		h-1.089h-1h-1h-1h-1h-1h-1h-1h-1h-1h-1.088V19.768H21.494z M10.317,34.424h1.088v3.622h-1.088V34.424z M12.405,34.424h1v3.622h-1
-		V34.424z M14.405,34.424h1v3.622h-1V34.424z M16.405,34.424h1v3.622h-1V34.424z M18.405,34.424h1v3.622h-1V34.424z M20.405,34.424
-		h1.089v3.622h-1.089V34.424z"/>
-	<path fill="#4C5156"  d="M25.389,12.713v12.941v0.941v8.941v11.006h13.157V35.537v-8.941v-0.941V12.713H25.389z M35.5,34.537h-1v-7.883h1V34.537z
-		 M36.5,26.654h1.046v7.883H36.5V26.654z M29.5,26.654v7.883h-1v-7.883H29.5z M30.5,26.654h1v7.883h-1V26.654z M32.5,26.654h1v7.883
-		h-1V26.654z M26.389,26.654H27.5v7.883h-1.111V26.654z M26.389,13.713h11.157v11.883H26.389V13.713z"/>
-	<path fill="#4C5156"  d="M41.451,17.5v3.867v1.016v16.6v7.561h13.157v-7.561v-16.6v-1.016V17.5H41.451z M48.5,22.383h1v15.6h-1V22.383z
-		 M47.5,37.982h-1v-15.6h1V37.982z M45.5,22.383v15.6h-1v-15.6H45.5z M50.5,22.383h1v15.6h-1V22.383z M42.451,22.383H43.5v15.6
-		h-1.049V22.383z M53.608,37.982H52.5v-15.6h1.108V37.982z M52.5,21.367h-1h-1h-1h-1h-1h-1h-1h-1h-1h-1.049V18.5h11.157v2.867H52.5z
-		"/>
-</g>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<polygon fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" points="9.264,40.828 9.264,47.945 18.271,47.945 
+	18.271,40.828 "/>
+<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="12.271" y1="47.188" x2="12.271" y2="40.812"/>
+<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="15.271" y1="47.188" x2="15.271" y2="41.188"/>
+<polygon fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" points="9.264,20.724 9.264,37.841 18.271,37.841 
+	18.271,20.724 "/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="12.271" y1="37.083" x2="12.271" y2="20.708"/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="15.271" y1="37.083" x2="15.271" y2="21.083"/>
+<polygon fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" points="21.889,32.828 21.889,47.945 30.896,47.945 
+	30.896,32.828 "/>
+<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="24.896" y1="47.188" x2="24.896" y2="32.812"/>
+<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="27.896" y1="47.188" x2="27.896" y2="33.188"/>
+<polygon fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" points="21.889,16.724 21.889,29.841 30.896,29.841 
+	30.896,16.724 "/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="24.896" y1="29.083" x2="24.896" y2="16.708"/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="27.896" y1="29.083" x2="27.896" y2="17.083"/>
+<polygon fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" points="34.264,36.828 34.264,47.945 43.271,47.945 
+	43.271,36.828 "/>
+<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="37.271" y1="47.188" x2="37.271" y2="36.812"/>
+<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="40.271" y1="47.188" x2="40.271" y2="37.188"/>
+<polygon fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" points="34.264,24.724 34.264,33.841 43.271,33.841 
+	43.271,24.724 "/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="37.271" y1="33.083" x2="37.271" y2="24.708"/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="40.271" y1="33.083" x2="40.271" y2="25.083"/>
+<polygon fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" points="46.639,39.828 46.639,47.945 55.646,47.945 
+	55.646,39.828 "/>
+<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="49.646" y1="47.188" x2="49.646" y2="39.812"/>
+<line fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" x1="52.646" y1="47.188" x2="52.646" y2="40.188"/>
+<polygon fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" points="46.639,21.724 46.639,36.841 55.646,36.841 
+	55.646,21.724 "/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="49.646" y1="36.083" x2="49.646" y2="21.708"/>
+<line fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" x1="52.646" y1="36.083" x2="52.646" y2="22.083"/>
 </svg>

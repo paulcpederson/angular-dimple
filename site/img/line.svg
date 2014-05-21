@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px"
-	 height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
-
-<g id="Layer_3">
-	<path fill="#4C5156" d="M52.546,17.913c-1.344,0-2.438,1.093-2.438,2.438c0,0.615,0.236,1.17,0.613,1.6l-9.646,16.204
-		c-0.178-0.041-0.361-0.068-0.552-0.068c-0.4,0-0.773,0.106-1.106,0.278L25.109,23.945c0.173-0.334,0.28-0.708,0.28-1.11
-		c0-1.344-1.094-2.438-2.438-2.438s-2.438,1.093-2.438,2.438c0,0.646,0.257,1.23,0.668,1.667l-9.336,17.005
-		c-0.149-0.028-0.301-0.046-0.458-0.046c-1.345,0-2.438,1.094-2.438,2.438c0,1.345,1.094,2.438,2.438,2.438s2.438-1.094,2.438-2.438
-		c0-0.646-0.257-1.229-0.668-1.666l9.336-17.005c0.149,0.028,0.301,0.046,0.458,0.046c0.395,0,0.763-0.104,1.094-0.271
-		l14.314,14.425c-0.169,0.331-0.272,0.7-0.272,1.096c0,1.344,1.094,2.438,2.438,2.438c1.345,0,2.439-1.094,2.439-2.438
-		c0-0.61-0.233-1.162-0.605-1.59l9.648-16.21c0.175,0.04,0.354,0.064,0.539,0.064c1.345,0,2.439-1.093,2.439-2.438
-		S53.891,17.913,52.546,17.913z M11.387,44.837c-0.518,0-0.938-0.421-0.938-0.938c0-0.517,0.421-0.938,0.938-0.938
-		s0.938,0.421,0.938,0.938C12.325,44.416,11.904,44.837,11.387,44.837z M22.013,22.835c0-0.517,0.421-0.938,0.938-0.938
-		s0.938,0.42,0.938,0.938c0,0.518-0.421,0.938-0.938,0.938S22.013,23.353,22.013,22.835z M40.524,41.461
-		c-0.517,0-0.938-0.421-0.938-0.938s0.421-0.938,0.938-0.938c0.518,0,0.939,0.421,0.939,0.938S41.042,41.461,40.524,41.461z
-		 M52.546,21.288c-0.517,0-0.938-0.42-0.938-0.938s0.421-0.938,0.938-0.938c0.518,0,0.939,0.42,0.939,0.938
-		S53.063,21.288,52.546,21.288z"/>
-</g>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<polyline fill="none" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" points="11.25,43.917 22.833,22.667 40.416,40.5 
+	52.499,20.333 "/>
+<circle fill="#FFFFFF" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" cx="11.266" cy="43.883" r="2.483"/>
+<circle fill="#FFFFFF" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" cx="22.85" cy="22.716" r="2.483"/>
+<circle fill="#FFFFFF" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" cx="40.601" cy="40.05" r="2.483"/>
+<circle fill="#FFFFFF" stroke="#1F85C4" stroke-width="2" stroke-miterlimit="10" cx="52.685" cy="20.383" r="2.483"/>
+<polyline fill="none" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" points="11.25,36.583 22.833,36.667 40.416,26.417 
+	52.499,35.383 "/>
+<circle fill="#FFFFFF" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" cx="11.266" cy="36.667" r="2.483"/>
+<circle fill="#FFFFFF" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" cx="22.85" cy="36.668" r="2.483"/>
+<circle fill="#FFFFFF" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" cx="40.601" cy="26.3" r="2.483"/>
+<circle fill="#FFFFFF" stroke="#4C5156" stroke-width="2" stroke-miterlimit="10" cx="52.685" cy="35.633" r="2.483"/>
 </svg>
