@@ -1,17 +1,12 @@
 @import "compass";
+
 @import "config";
+@import "base/reset";
+@import "base/mixins";
+@import "base/grid";
+@import "base/type";
 
 [ng-cloak] { display: none;}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: $garamond;
-}
-
-h1 {
-  color: red;
-}
 
 .navigation {
   position: fixed;
