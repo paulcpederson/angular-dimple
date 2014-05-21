@@ -14,48 +14,121 @@
 <p>Angular-Dimple is a series of Angular directives that help you create graphs and visualizations.</p>
 <h2 id="graph">Graph</h2>
 <p>The <code>&lt;graph&gt;</code> directive is the wrapper directive for every type of chart in Angular-Dimple. This will create a div with a dynamic id, and initialize a new Dimple graph inside of it with several default options.</p>
-<h4 id="attributes">Attributes</h4>
-<ul>
-<li><code>data</code></li>
-<li><code>width</code></li>
-<li><code>height</code></li>
-</ul>
-<h2 id="x-and-y">X and Y</h2>
-<p>The <code>&lt;x&gt;</code> and <code>&lt;y&gt;</code> directives set up your axes for the graph. You can set multiple axes of each type and the graph will display them.</p>
+<pre><code class="lang-html">&lt;graph data=&#39;data&#39; width=&#39;100%&#39; height=&#39;100%&#39;&gt;
+
+&lt;graph&gt;
+</code></pre>
 <h4 id="attributes">Attributes</h4>
 <table>
 <thead>
 <tr>
 <th>attribute</th>
-<th>accepts</th>
-<th></th>
+<th>default</th>
+<th>description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>field*</td>
-<td>string</td>
-<td>Field to define on</td>
+<td>data</td>
+<td>none</td>
+<td><strong>Required.</strong> Angular Dimple graphs accept flat JSON files as a $scope variable, set from a service. Or something</td>
+</tr>
+<tr>
+<td>width</td>
+<td>100%</td>
+<td>Accepts a percent or a number. Sets the width of the chart, either in pixels or percent.</td>
+</tr>
+<tr>
+<td>height</td>
+<td>100%</td>
+<td>Accepts a percent or a number. Sets the width of the chart, either in pixels or percent.</td>
+</tr>
+<tr>
+<td>auto-style</td>
+<td>true</td>
+<td>Boolean. If false, no default dimple color, fill, or stroke styles will be applied to the graph. Allows for custom css styling.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="x">X</h2>
+<p>The <code>&lt;x&gt;</code> directive sets up your x axis for the graph. You can set multiple axes of each type and the graph will display them.</p>
+<pre><code class="lang-html">&lt;x field=&#39;Month&#39; type=&#39;Category&#39; order-by=&#39;Date&#39; group-by=&#39;Owner&#39; title=&#39;Month, Year&#39;&gt;&lt;/x&gt;
+</code></pre>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td>none</td>
+<td><strong>Required.</strong> Field from your data to set as the X-Axis.</td>
 </tr>
 <tr>
 <td>type</td>
-<td>Category, Measure, Percent</td>
-<td>Defined axis type. X-Axis defaults to Category. Y-Axis defaults to Measure.</td>
+<td>Category</td>
+<td>Accepts &#39;Category&#39;, &#39;Measure&#39;, or &#39;Percent&#39;. Defines axis type.</td>
 </tr>
 <tr>
 <td>order-by</td>
-<td>string</td>
-<td>Field to order data on</td>
+<td>none</td>
+<td>Field from your data to order the x axis by.</td>
 </tr>
 <tr>
 <td>group-by</td>
-<td>string</td>
-<td>Field to group data on. Only for Categorical axis.</td>
+<td>none</td>
+<td>Creates small mutliple graphs grouped by a Categorical data field.</td>
 </tr>
 <tr>
 <td>title</td>
-<td>string, &#39;null&#39;</td>
-<td>Draws title for axis. If set to <code>title=&#39;null&#39;</code> will hide title.</td>
+<td>field value</td>
+<td>Labels the x axis. If &#39;null&#39;, will not draw a title for the axis.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="y">Y</h2>
+<p>The <code>&lt;y&gt;</code> directive sets up your y axis for the graph. You can set multiple axes of each type and the graph will display them.</p>
+<pre><code class="lang-html">&lt;y field=&#39;Unit Sales&#39; type=&#39;Measure&#39; order-by=&#39;Unit Sales&#39; group-by=&#39;Owner&#39; title=&#39;Sales&#39;&gt;&lt;/x&gt;
+</code></pre>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td>none</td>
+<td><strong>Required.</strong> Field from your data to set as the Y-Axis.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Measure</td>
+<td>Accepts &#39;Category&#39;, &#39;Measure&#39;, or &#39;Percent&#39;. Defines axis type.</td>
+</tr>
+<tr>
+<td>order-by</td>
+<td>none</td>
+<td>Field from your data to order the y axis by.</td>
+</tr>
+<tr>
+<td>group-by</td>
+<td>none</td>
+<td>Creates small mutliple graphs grouped by a Categorical data field.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>field value</td>
+<td>Labels the y-axis. If &#39;null&#39;, will not draw a title for the axis.</td>
 </tr>
 </tbody>
 </table>
@@ -65,64 +138,199 @@
 <thead>
 <tr>
 <th>attribute</th>
-<th>accepts</th>
-<th></th>
+<th>default</th>
+<th>description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>left</td>
-<td>&#39;#&#39;, &#39;#%&#39;</td>
-<td>Sets position from left of chart in either pixels or percent. Defaults to 10%.</td>
+<td>10%</td>
+<td>Accepts a percent or a number. Sets position from left of chart in either pixels or percent.</td>
 </tr>
 <tr>
 <td>top</td>
-<td>&#39;#&#39;, &#39;#%&#39;</td>
-<td>Sets position from top of chart in either pixels or percent. Defaults to 4%.</td>
+<td>4%</td>
+<td>Accepts a percent or a number. Sets position from top of chart in either pixels or percent.</td>
 </tr>
 <tr>
 <td>height</td>
-<td>&#39;#&#39;, &#39;#%&#39;</td>
-<td>Sets height of legend in either pixels or percent. Defaults to 100%.</td>
+<td>100%</td>
+<td>Accepts a percent or a number. Sets height of legend in either pixels or percent.</td>
 </tr>
 <tr>
 <td>width</td>
-<td>&#39;#&#39;, &#39;#%&#39;</td>
-<td>Sets width of legend in either pixels or percent. Defaults to 90%.</td>
+<td>90%</td>
+<td>Accepts a percent or a number. Sets width of legend in either pixels or percent.</td>
 </tr>
 <tr>
 <td>position</td>
-<td>&#39;left&#39;, &#39;right&#39;</td>
-<td>Set float position of legend. Defaults to left.</td>
+<td>left</td>
+<td>Accepts &#39;left&#39; or &#39;right&#39;. Set float position of legend.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="all-directives">All Directives</h2>
+<h2 id="line">Line</h2>
+<p>The <code>&lt;line&gt;</code> directive plots your data as a line. The <code>field</code> attribute (required) will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single line to your graph  for that value in the field. You can include as many line elements in your graph as you have unique values.</p>
+<pre><code class="lang-html">&lt;line field=&quot;Owner&quot;&gt;&lt;/line&gt;
+
+&lt;!-- OR --&gt;
+
+&lt;line field=&quot;Owner&quot; val=&quot;Aperture&quot;&gt;&lt;/line&gt;
+&lt;line field=&quot;Owner&quot; val=&quot;Black Mesa&quot;&gt;&lt;/line&gt;
+</code></pre>
+<h4 id="attributes">Attributes</h4>
 <table>
 <thead>
 <tr>
 <th>attribute</th>
-<th>accepts</th>
-<th></th>
+<th>description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>field*</td>
-<td>string</td>
-<td>Which field to plot</td>
+<td>field</td>
+<td><strong>Required.</strong> Field to plot as a line.</td>
 </tr>
 <tr>
 <td>value</td>
-<td>string</td>
-<td>Plot single line. Default</td>
+<td>Will plot a line where the field is the given value.</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>Accepts a string &#39;field:value&#39;. Will filter the data to only points where the defined field matches the defined value.</td>
 </tr>
 </tbody>
 </table>
-<pre><code>                      of undefined will plot all
-                         unique value for the field |
-</code></pre><p>| filter    | string:string | Filters plot data on
-                              field:value             |</p>
+<h2 id="bar">Bar</h2>
+<p>The <code>&lt;bar&gt;</code> directive plots your data as series of bars. The <code>field</code> attribute (required) will define the field from your data to plot to the graph. The <code>value</code> attribute will plot the bars to your graph  for that value in the field. If no value is defined, or multiple bars are included in the graph, the data will plot as a stacked bar.</p>
+<pre><code class="lang-html">&lt;bar field=&quot;Owner&quot; val=&quot;Aperture&quot;&gt;&lt;/bar&gt;
+
+&lt;!-- OR --&gt;
+
+&lt;bar field=&quot;Owner&quot;&gt;&lt;/bar&gt;
+</code></pre>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td><strong>Required.</strong> Field to plot as a line.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Will plot a line where the field is the given value.</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>Accepts a string &#39;field:value&#39;. Will filter the data to only points where the defined field matches the defined value.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="area">Area</h2>
+<p>The <code>&lt;area&gt;</code> directive plots your data to an area chart. The <code>field</code> attribute will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single area to your graph for that value in the field. You can include as many area elements in your graph as you have unique values.</p>
+<pre><code class="lang-html">&lt;area field=&quot;Owner&quot;&gt;&lt;/area&gt;
+
+&lt;!-- OR --&gt;
+
+&lt;area field=&quot;Owner&quot; val=&quot;Aperture&quot;&gt;&lt;/area&gt;
+&lt;area field=&quot;Owner&quot; val=&quot;Black Mesa&quot;&gt;&lt;/area&gt;
+</code></pre>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td><strong>Required.</strong> Field to plot as a line.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Will plot a line where the field is the given value.</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>Accepts a string &#39;field:value&#39;. Will filter the data to only points where the defined field matches the defined value.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stacked-area">Stacked Area</h2>
+<p>The <code>&lt;stacked-area&gt;</code> directive plots your data to a stacked area chart. The <code>field</code> attribute will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single line to your graph for that value in the field. You can include as many area elements in your graph as you have unique values.</p>
+<pre><code class="lang-html">&lt;stacked-area field=&quot;Owner&quot;&gt;&lt;/stacked-area&gt;
+
+&lt;!-- OR --&gt;
+
+&lt;stacked-area field=&quot;Owner&quot; val=&quot;Aperture&quot;&gt;&lt;/stacked-area&gt;
+&lt;stacked-area field=&quot;Owner&quot; val=&quot;Black Mesa&quot;&gt;&lt;/stacked-area&gt;
+</code></pre>
+<h3 id="exapanded-stacked-area">Exapanded Stacked Area</h3>
+<p>Setting the y axis in a stacked area graph with create an expanded stacked area, where the total combined value of the field is equal to 100%.</p>
+<pre><code class="lang-html">&lt;y field=&#39;Unit Sales&#39; type=&quot;Percent&quot;&gt;&lt;/y&gt;
+&lt;stacked-area field=&quot;Owner&quot;&gt;&lt;/stacked-area&gt;
+``
+
+#### Attributes
+
+| attribute | description |
+| --------- | ----------- |
+| field     | **Required.** Field to plot as a line. |
+| value     | Will plot a line where the field is the given value. |
+| filter    | Accepts a string &#39;field:value&#39;. Will filter the data to only points where the defined field matches the defined value. |
+
+
+
+## Scatter Plot
+
+The `&lt;scatter-plot&gt;` directive plots your data to an scatter plot chart. The `field` attribute will define the field from your data to plot to the graph. The `value` attribute will plot a single scatter plot to your graph for that value in the field. You can include as many scatter plot elements in your graph as you have unique values.
+
+Scatter Plots also use the `series` attribute. Series defines the categorical data to plot against the field on the axes.
+
+```html
+&lt;scatter-plot field=&quot;Owner&quot; series=&quot;SKU&quot;&gt;&lt;/scatter-plot&gt;
+
+&lt;!-- OR --&gt;
+
+&lt;scatter-plot field=&quot;Channel&quot; val=&quot;Supermarket&quot; series=&quot;SKU&quot; filter=&quot;Owner:Aperture&quot;&gt;&lt;/scatter-plot&gt;
+&lt;scatter-plot field=&quot;Channel&quot; val=&quot;Hypermarket&quot; series=&quot;SKU&quot; filter=&quot;Owner:Aperture&quot;&gt;&lt;/scatter-plot&gt;
+</code></pre>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td><strong>Required.</strong> Field to plot as a line.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Will plot a line where the field is the given value.</td>
+</tr>
+<tr>
+<td>series</td>
+<td>Accepts a string &#39;field&#39;.</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>Accepts a string &#39;field:value&#39;. Will filter the data to only points where the defined field matches the defined value.</td>
+</tr>
+</tbody>
+</table>
 
 </body>
 </html>
