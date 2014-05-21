@@ -62,10 +62,9 @@
 <p>Angular-Dimple is a series of Angular directives that help you create graphs and visualizations.</p>
 <h2 id="graph">Graph</h2>
 <p>The <code>&lt;graph&gt;</code> directive is the wrapper directive for every type of chart in Angular-Dimple. This will create a div with a dynamic id, and initialize a new Dimple graph inside of it with several default options.</p>
-<pre><code class="lang-html">&lt;graph data=&#39;data&#39; width=&#39;100%&#39; height=&#39;100%&#39;&gt;
+<pre><code class="lang-html"><span class="tag">&lt;<span class="title">graph</span> <span class="attribute">data</span>=<span class="value">'data'</span> <span class="attribute">width</span>=<span class="value">'100%'</span> <span class="attribute">height</span>=<span class="value">'100%'</span>&gt;</span>
 
-&lt;graph&gt;
-</code></pre>
+<span class="tag">&lt;<span class="title">graph</span>&gt;</span></code></pre>
 <h4 id="attributes">Attributes</h4>
 <table>
 <thead>
@@ -100,8 +99,7 @@
 </table>
 <h2 id="x">X</h2>
 <p>The <code>&lt;x&gt;</code> directive sets up your x axis for the graph. You can set multiple axes of each type and the graph will display them.</p>
-<pre><code class="lang-html">&lt;x field=&#39;Month&#39; type=&#39;Category&#39; order-by=&#39;Date&#39; group-by=&#39;Owner&#39; title=&#39;Month, Year&#39;&gt;&lt;/x&gt;
-</code></pre>
+<pre><code class="lang-html"><span class="tag">&lt;<span class="title">x</span> <span class="attribute">field</span>=<span class="value">'Month'</span> <span class="attribute">type</span>=<span class="value">'Category'</span> <span class="attribute">order-by</span>=<span class="value">'Date'</span> <span class="attribute">group-by</span>=<span class="value">'Owner'</span> <span class="attribute">title</span>=<span class="value">'Month, Year'</span>&gt;</span><span class="tag">&lt;/<span class="title">x</span>&gt;</span></code></pre>
 <h4 id="attributes">Attributes</h4>
 <table>
 <thead>
@@ -141,8 +139,7 @@
 </table>
 <h2 id="y">Y</h2>
 <p>The <code>&lt;y&gt;</code> directive sets up your y axis for the graph. You can set multiple axes of each type and the graph will display them.</p>
-<pre><code class="lang-html">&lt;y field=&#39;Unit Sales&#39; type=&#39;Measure&#39; order-by=&#39;Unit Sales&#39; group-by=&#39;Owner&#39; title=&#39;Sales&#39;&gt;&lt;/x&gt;
-</code></pre>
+<pre><code class="lang-html"><span class="tag">&lt;<span class="title">y</span> <span class="attribute">field</span>=<span class="value">'Unit Sales'</span> <span class="attribute">type</span>=<span class="value">'Measure'</span> <span class="attribute">order-by</span>=<span class="value">'Unit Sales'</span> <span class="attribute">group-by</span>=<span class="value">'Owner'</span> <span class="attribute">title</span>=<span class="value">'Sales'</span>&gt;</span><span class="tag">&lt;/<span class="title">x</span>&gt;</span></code></pre>
 <h4 id="attributes">Attributes</h4>
 <table>
 <thead>
@@ -220,13 +217,12 @@
 </table>
 <h2 id="line">Line</h2>
 <p>The <code>&lt;line&gt;</code> directive plots your data as a line. The <code>field</code> attribute (required) will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single line to your graph  for that value in the field. You can include as many line elements in your graph as you have unique values.</p>
-<pre><code class="lang-html">&lt;line field=&quot;Owner&quot;&gt;&lt;/line&gt;
+<pre><code class="lang-html"><span class="tag">&lt;<span class="title">line</span> <span class="attribute">field</span>=<span class="value">"Owner"</span>&gt;</span><span class="tag">&lt;/<span class="title">line</span>&gt;</span>
 
-&lt;!-- OR --&gt;
+<span class="comment">&lt;!-- OR --&gt;</span>
 
-&lt;line field=&quot;Owner&quot; val=&quot;Aperture&quot;&gt;&lt;/line&gt;
-&lt;line field=&quot;Owner&quot; val=&quot;Black Mesa&quot;&gt;&lt;/line&gt;
-</code></pre>
+<span class="tag">&lt;<span class="title">line</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">val</span>=<span class="value">"Aperture"</span>&gt;</span><span class="tag">&lt;/<span class="title">line</span>&gt;</span>
+<span class="tag">&lt;<span class="title">line</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">val</span>=<span class="value">"Black Mesa"</span>&gt;</span><span class="tag">&lt;/<span class="title">line</span>&gt;</span></code></pre>
 <h4 id="attributes">Attributes</h4>
 <table>
 <thead>
@@ -252,12 +248,11 @@
 </table>
 <h2 id="bar">Bar</h2>
 <p>The <code>&lt;bar&gt;</code> directive plots your data as series of bars. The <code>field</code> attribute (required) will define the field from your data to plot to the graph. The <code>value</code> attribute will plot the bars to your graph  for that value in the field. If no value is defined, or multiple bars are included in the graph, the data will plot as a stacked bar.</p>
-<pre><code class="lang-html">&lt;bar field=&quot;Owner&quot; val=&quot;Aperture&quot;&gt;&lt;/bar&gt;
+<pre><code class="lang-html"><span class="tag">&lt;<span class="title">bar</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">val</span>=<span class="value">"Aperture"</span>&gt;</span><span class="tag">&lt;/<span class="title">bar</span>&gt;</span>
 
-&lt;!-- OR --&gt;
+<span class="comment">&lt;!-- OR --&gt;</span>
 
-&lt;bar field=&quot;Owner&quot;&gt;&lt;/bar&gt;
-</code></pre>
+<span class="tag">&lt;<span class="title">bar</span> <span class="attribute">field</span>=<span class="value">"Owner"</span>&gt;</span><span class="tag">&lt;/<span class="title">bar</span>&gt;</span></code></pre>
 <h4 id="attributes">Attributes</h4>
 <table>
 <thead>
@@ -283,13 +278,12 @@
 </table>
 <h2 id="area">Area</h2>
 <p>The <code>&lt;area&gt;</code> directive plots your data to an area chart. The <code>field</code> attribute will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single area to your graph for that value in the field. You can include as many area elements in your graph as you have unique values.</p>
-<pre><code class="lang-html">&lt;area field=&quot;Owner&quot;&gt;&lt;/area&gt;
+<pre><code class="lang-html"><span class="tag">&lt;<span class="title">area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span>&gt;</span><span class="tag">&lt;/<span class="title">area</span>&gt;</span>
 
-&lt;!-- OR --&gt;
+<span class="comment">&lt;!-- OR --&gt;</span>
 
-&lt;area field=&quot;Owner&quot; val=&quot;Aperture&quot;&gt;&lt;/area&gt;
-&lt;area field=&quot;Owner&quot; val=&quot;Black Mesa&quot;&gt;&lt;/area&gt;
-</code></pre>
+<span class="tag">&lt;<span class="title">area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">val</span>=<span class="value">"Aperture"</span>&gt;</span><span class="tag">&lt;/<span class="title">area</span>&gt;</span>
+<span class="tag">&lt;<span class="title">area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">val</span>=<span class="value">"Black Mesa"</span>&gt;</span><span class="tag">&lt;/<span class="title">area</span>&gt;</span></code></pre>
 <h4 id="attributes">Attributes</h4>
 <table>
 <thead>
@@ -315,43 +309,41 @@
 </table>
 <h2 id="stacked-area">Stacked Area</h2>
 <p>The <code>&lt;stacked-area&gt;</code> directive plots your data to a stacked area chart. The <code>field</code> attribute will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single line to your graph for that value in the field. You can include as many area elements in your graph as you have unique values.</p>
-<pre><code class="lang-html">&lt;stacked-area field=&quot;Owner&quot;&gt;&lt;/stacked-area&gt;
+<pre><code class="lang-html"><span class="tag">&lt;<span class="title">stacked-area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span>&gt;</span><span class="tag">&lt;/<span class="title">stacked-area</span>&gt;</span>
 
-&lt;!-- OR --&gt;
+<span class="comment">&lt;!-- OR --&gt;</span>
 
-&lt;stacked-area field=&quot;Owner&quot; val=&quot;Aperture&quot;&gt;&lt;/stacked-area&gt;
-&lt;stacked-area field=&quot;Owner&quot; val=&quot;Black Mesa&quot;&gt;&lt;/stacked-area&gt;
-</code></pre>
+<span class="tag">&lt;<span class="title">stacked-area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">val</span>=<span class="value">"Aperture"</span>&gt;</span><span class="tag">&lt;/<span class="title">stacked-area</span>&gt;</span>
+<span class="tag">&lt;<span class="title">stacked-area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">val</span>=<span class="value">"Black Mesa"</span>&gt;</span><span class="tag">&lt;/<span class="title">stacked-area</span>&gt;</span></code></pre>
 <h3 id="exapanded-stacked-area">Exapanded Stacked Area</h3>
 <p>Setting the y axis in a stacked area graph with create an expanded stacked area, where the total combined value of the field is equal to 100%.</p>
-<pre><code class="lang-html">&lt;y field=&#39;Unit Sales&#39; type=&quot;Percent&quot;&gt;&lt;/y&gt;
-&lt;stacked-area field=&quot;Owner&quot;&gt;&lt;/stacked-area&gt;
+<pre><code class="lang-html"><span class="xml"><span class="tag">&lt;<span class="title">y</span> <span class="attribute">field</span>=<span class="value">'Unit Sales'</span> <span class="attribute">type</span>=<span class="value">"Percent"</span>&gt;</span><span class="tag">&lt;/<span class="title">y</span>&gt;</span>
+<span class="tag">&lt;<span class="title">stacked-area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span>&gt;</span><span class="tag">&lt;/<span class="title">stacked-area</span>&gt;</span>
 ``
 
-#### Attributes
+</span><span class="comment">#### Attributes</span><span class="xml">
 
 | attribute | description |
 | --------- | ----------- |
 | field     | **Required.** Field to plot as a line. |
 | value     | Will plot a line where the field is the given value. |
-| filter    | Accepts a string &#39;field:value&#39;. Will filter the data to only points where the defined field matches the defined value. |
+| filter    | Accepts a string 'field:value'. Will filter the data to only points where the defined field matches the defined value. |
 
 
 
-## Scatter Plot
+</span><span class="comment">## Scatter Plot</span><span class="xml">
 
-The `&lt;scatter-plot&gt;` directive plots your data to an scatter plot chart. The `field` attribute will define the field from your data to plot to the graph. The `value` attribute will plot a single scatter plot to your graph for that value in the field. You can include as many scatter plot elements in your graph as you have unique values.
+The `<span class="tag">&lt;<span class="title">scatter-plot</span>&gt;</span>` directive plots your data to an scatter plot chart. The `field` attribute will define the field from your data to plot to the graph. The `value` attribute will plot a single scatter plot to your graph for that value in the field. You can include as many scatter plot elements in your graph as you have unique values.
 
 Scatter Plots also use the `series` attribute. Series defines the categorical data to plot against the field on the axes.
 
 ```html
-&lt;scatter-plot field=&quot;Owner&quot; series=&quot;SKU&quot;&gt;&lt;/scatter-plot&gt;
+<span class="tag">&lt;<span class="title">scatter-plot</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">series</span>=<span class="value">"SKU"</span>&gt;</span><span class="tag">&lt;/<span class="title">scatter-plot</span>&gt;</span>
 
-&lt;!-- OR --&gt;
+<span class="comment">&lt;!-- OR --&gt;</span>
 
-&lt;scatter-plot field=&quot;Channel&quot; val=&quot;Supermarket&quot; series=&quot;SKU&quot; filter=&quot;Owner:Aperture&quot;&gt;&lt;/scatter-plot&gt;
-&lt;scatter-plot field=&quot;Channel&quot; val=&quot;Hypermarket&quot; series=&quot;SKU&quot; filter=&quot;Owner:Aperture&quot;&gt;&lt;/scatter-plot&gt;
-</code></pre>
+<span class="tag">&lt;<span class="title">scatter-plot</span> <span class="attribute">field</span>=<span class="value">"Channel"</span> <span class="attribute">val</span>=<span class="value">"Supermarket"</span> <span class="attribute">series</span>=<span class="value">"SKU"</span> <span class="attribute">filter</span>=<span class="value">"Owner:Aperture"</span>&gt;</span><span class="tag">&lt;/<span class="title">scatter-plot</span>&gt;</span>
+<span class="tag">&lt;<span class="title">scatter-plot</span> <span class="attribute">field</span>=<span class="value">"Channel"</span> <span class="attribute">val</span>=<span class="value">"Hypermarket"</span> <span class="attribute">series</span>=<span class="value">"SKU"</span> <span class="attribute">filter</span>=<span class="value">"Owner:Aperture"</span>&gt;</span><span class="tag">&lt;/<span class="title">scatter-plot</span>&gt;</span></span></code></pre>
 <h4 id="attributes">Attributes</h4>
 <table>
 <thead>
