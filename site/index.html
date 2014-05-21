@@ -264,7 +264,7 @@ angular.module(&#39;myApp&#39;, [
 .service(&#39;dataService&#39;, [&#39;$http&#39;, function($http) {
   return {
     getData: function() {
-      return $http.get(&#39;../data/example_data.json&#39;);
+      return $http.get(&#39;data.json&#39;);
     }
   };
 }]);
