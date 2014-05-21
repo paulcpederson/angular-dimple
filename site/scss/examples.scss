@@ -14,4 +14,35 @@
 
 .sidebar {
   position: fixed;
+  height: 100vh;
+  overflow: auto;
+
+  li {
+    height: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    img {
+      float: left;
+      height: 3rem;
+      width: 3rem;
+      margin-right: 1rem;
+      background-color: $white;
+      border: 0.5em solid $white;
+      @include border-radius(2rem);
+    }
+
+    &:hover {
+      img {
+        background-color: $light-blue;
+        border: 0.5em solid $light-blue;
+      }
+    }
+  }
+
+  span {
+    display: inline-block;
+    padding-top: 1.25rem;
+  }
 }

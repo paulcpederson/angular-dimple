@@ -20,4 +20,35 @@
 /* line 15, ../scss/examples.scss */
 .sidebar {
   position: fixed;
+  height: 100vh;
+  overflow: auto;
+}
+/* line 20, ../scss/examples.scss */
+.sidebar li {
+  height: 4rem;
+  margin-bottom: 1rem;
+}
+/* line 26, ../scss/examples.scss */
+.sidebar a img {
+  float: left;
+  height: 3rem;
+  width: 3rem;
+  margin-right: 1rem;
+  background-color: white;
+  border: 0.5em solid white;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  border-radius: 2rem;
+}
+/* line 37, ../scss/examples.scss */
+.sidebar a:hover img {
+  background-color: #379fdf;
+  border: 0.5em solid #379fdf;
+}
+/* line 44, ../scss/examples.scss */
+.sidebar span {
+  display: inline-block;
+  padding-top: 1.25rem;
 }

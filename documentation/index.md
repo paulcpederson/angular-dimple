@@ -73,6 +73,7 @@ The `<legend>` directive creates a legend for your graph.
 
 
 ## Line
+<a class="example-link" href="/examples/#/line-graph">example</a>
 
 The `<line>` directive plots your data as a line. The `field` attribute (required) will define the field from your data to plot to the graph. The `value` attribute will plot a single line to your graph  for that value in the field. You can include as many line elements in your graph as you have unique values.
 
@@ -95,6 +96,7 @@ The `<line>` directive plots your data as a line. The `field` attribute (require
 
 
 ## Bar
+<a class="example-link" href="/examples/#/line-graph">example</a>
 
 The `<bar>` directive plots your data as series of bars. The `field` attribute (required) will define the field from your data to plot to the graph. The `value` attribute will plot the bars to your graph  for that value in the field. If no value is defined, or multiple bars are included in the graph, the data will plot as a stacked bar.
 
@@ -116,6 +118,7 @@ The `<bar>` directive plots your data as series of bars. The `field` attribute (
 
 
 ## Area
+<a class="example-link" href="/examples/#/line-graph">example</a>
 
 The `<area>` directive plots your data to an area chart. The `field` attribute will define the field from your data to plot to the graph. The `value` attribute will plot a single area to your graph for that value in the field. You can include as many area elements in your graph as you have unique values.
 
@@ -138,6 +141,7 @@ The `<area>` directive plots your data to an area chart. The `field` attribute w
 
 
 ## Stacked Area
+<a class="example-link" href="/examples/#/line-graph">example</a>
 
 The `<stacked-area>` directive plots your data to a stacked area chart. The `field` attribute will define the field from your data to plot to the graph. The `value` attribute will plot a single line to your graph for that value in the field. You can include as many area elements in your graph as you have unique values.
 
@@ -150,14 +154,15 @@ The `<stacked-area>` directive plots your data to a stacked area chart. The `fie
 <stacked-area field="Owner" val="Black Mesa"></stacked-area>
 ```
 
-### Exapanded Stacked Area
+### Expanded Stacked Area
+<a class="example-link" href="/examples/#/line-graph">example</a>
 
 Setting the y axis in a stacked area graph with create an expanded stacked area, where the total combined value of the field is equal to 100%.
 
 ```html
 <y field='Unit Sales' type="Percent"></y>
 <stacked-area field="Owner"></stacked-area>
-``
+```
 
 #### Attributes
 
@@ -170,6 +175,7 @@ Setting the y axis in a stacked area graph with create an expanded stacked area,
 
 
 ## Scatter Plot
+<a class="example-link" href="/examples/#/line-graph">example</a>
 
 The `<scatter-plot>` directive plots your data to an scatter plot chart. The `field` attribute will define the field from your data to plot to the graph. The `value` attribute will plot a single scatter plot to your graph for that value in the field. You can include as many scatter plot elements in your graph as you have unique values.
 
