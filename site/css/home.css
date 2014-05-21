@@ -1,0 +1,47 @@
+/* line 4, ../scss/home.scss */
+.banner {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  background-color: #245070;
+}
+/* line 9, ../scss/home.scss */
+.banner .banner-copy {
+  position: relative;
+  margin: 8rem 0;
+  z-index: 2;
+  font-weight: 200;
+}
+/* line 15, ../scss/home.scss */
+.banner .dimple-graph {
+  position: absolute;
+  top: -260px;
+  right: 0;
+  bottom: 0;
+  left: -25%;
+  z-index: 1;
+}
+/* line 23, ../scss/home.scss */
+.banner .dimple-axis {
+  display: none;
+}
+/* line 26, ../scss/home.scss */
+.banner .dimple-gridline {
+  display: none;
+}
+/* line 29, ../scss/home.scss */
+.banner .dimple-line {
+  opacity: 0.8;
+  fill: none;
+  stroke: #234052;
+  stroke-width: 2;
+}
+/* line 35, ../scss/home.scss */
+.banner .dimple-marker-back {
+  fill: #234052;
+}
+/* line 38, ../scss/home.scss */
+.banner .dimple-marker {
+  display: none;
+  fill: #234052;
+}

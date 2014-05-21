@@ -1,0 +1,118 @@
+body {
+  color: $dark-gray;
+  font-family: $clear;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: $clear;
+  font-weight: 300;
+  line-height: 1.25em;
+}
+
+h1 { font-size: 2.75rem; }
+h2 { font-size: 2.00rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.50rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1.00rem; }
+
+blockquote {
+  font-family: $clear;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.75rem;
+  color: $light-gray;
+}
+
+p {
+  font-size: 1rem;
+  &.large {
+    font-size: 1.5rem;
+  }
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+small {
+  font-size: .875rem;
+  color: $gray;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: $dark-blue;
+    cursor: pointer;
+  }
+  &:active, &:hover {
+    outline: 0;
+  }
+}
+
+ul, ol {
+  font-size: .75rem;
+  list-style-position: inside;
+  margin-top: 0;
+  padding: 0;
+  ul, ol {
+    padding-left: 1.25em;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+ol {
+
+}
+
+code, kbd, pre, samp {
+  font-family: $source;
+}
+
+code {
+  @include border-radius(3px);
+  background: $off-white;
+  border: 1px solid $light-gray;
+  white-space: pre;
+}
+
+pre {
+  @include leader(0);
+  @include trailer(1);
+  @include adjust-font-size-to(12px);
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  @include experimental(tab-size, 4);
+  max-width: 100%;
+  code {
+    display: block;
+    overflow: auto;
+    word-wrap: normal;
+  }
+}
+
+hr {
+  margin: 1rem 0;
+  border: none;
+  border-top: 1px solid #ededed;
+}
+
+.center-text {
+  text-align: center;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::moz-selection {
+  background: transparent;
+}

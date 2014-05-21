@@ -1,28 +1,1409 @@
-/* light is default mode, so pair with general html definition */
-/* line 40, ../scss/_config.scss */
-html * {
-  color-profile: sRGB;
-  rendering-intent: auto;
+/* line 1, ../scss/base/_reset.scss */
+html {
+  overflow-y: scroll;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
-/* line 4, ../scss/style.scss */
+/* line 9, ../scss/base/_reset.scss */
+body {
+  margin: 0;
+}
+
+/* line 25, ../scss/base/_reset.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* line 31, ../scss/base/_reset.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/* line 35, ../scss/base/_reset.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 40, ../scss/base/_reset.scss */
+[hidden] {
+  display: none;
+}
+
+/* line 44, ../scss/base/_reset.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 4, ../scss/base/_mixins.scss */
+.container:before, .row:before, .container:after, .row:after {
+  content: " ";
+  display: table;
+}
+/* line 8, ../scss/base/_mixins.scss */
+.container:after, .row:after {
+  clear: both;
+}
+
+/* line 51, ../scss/base/_mixins.scss */
+.column-1, .column-2, .column-3, .column-4, .column-5, .column-6, .column-7, .column-8, .column-9, .column-10, .column-11, .column-12, .column-13, .column-14, .column-15, .column-16, .column-17, .column-18, .column-19, .column-20, .column-21, .column-22, .column-23, .column-24 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  padding: 0 0.5em;
+}
+
+/* line 2, ../scss/base/_grid.scss */
+.container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1280px;
+  min-width: 0;
+  padding: 0 1em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* line 6, ../scss/base/_grid.scss */
+.row {
+  position: relative;
+}
+/* line 9, ../scss/base/_grid.scss */
+.row .row {
+  width: auto;
+  max-width: none;
+  min-width: 0;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+}
+
+/* line 18, ../scss/base/_grid.scss */
+img, object, embed, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 23, ../scss/base/_grid.scss */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* line 29, ../scss/base/_grid.scss */
+[class*="column-"].last-column {
+  float: right;
+}
+/* line 32, ../scss/base/_grid.scss */
+[class*="column-"].center {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-1 {
+  width: 4.16667%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-2 {
+  width: 8.33333%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-3 {
+  width: 12.5%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-4 {
+  width: 16.66667%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-5 {
+  width: 20.83333%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-6 {
+  width: 25%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-7 {
+  width: 29.16667%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-8 {
+  width: 33.33333%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-9 {
+  width: 37.5%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-10 {
+  width: 41.66667%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-11 {
+  width: 45.83333%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-12 {
+  width: 50%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-13 {
+  width: 54.16667%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-14 {
+  width: 58.33333%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-15 {
+  width: 62.5%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-16 {
+  width: 66.66667%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-17 {
+  width: 70.83333%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-18 {
+  width: 75%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-19 {
+  width: 79.16667%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-20 {
+  width: 83.33333%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-21 {
+  width: 87.5%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-22 {
+  width: 91.66667%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-23 {
+  width: 95.83333%;
+}
+
+/* line 38, ../scss/base/_grid.scss */
+.column-24 {
+  width: 100%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-0 {
+  margin-left: 0%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-0 {
+  margin-right: 0%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-1 {
+  margin-left: 4.16667%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-1 {
+  margin-right: 4.16667%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-2 {
+  margin-left: 8.33333%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-2 {
+  margin-right: 8.33333%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-3 {
+  margin-left: 12.5%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-3 {
+  margin-right: 12.5%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-4 {
+  margin-left: 16.66667%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-4 {
+  margin-right: 16.66667%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-5 {
+  margin-left: 20.83333%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-5 {
+  margin-right: 20.83333%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-6 {
+  margin-left: 25%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-6 {
+  margin-right: 25%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-7 {
+  margin-left: 29.16667%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-7 {
+  margin-right: 29.16667%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-8 {
+  margin-left: 33.33333%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-8 {
+  margin-right: 33.33333%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-9 {
+  margin-left: 37.5%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-9 {
+  margin-right: 37.5%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-10 {
+  margin-left: 41.66667%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-10 {
+  margin-right: 41.66667%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-11 {
+  margin-left: 45.83333%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-11 {
+  margin-right: 45.83333%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-12 {
+  margin-left: 50%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-12 {
+  margin-right: 50%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-13 {
+  margin-left: 54.16667%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-13 {
+  margin-right: 54.16667%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-14 {
+  margin-left: 58.33333%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-14 {
+  margin-right: 58.33333%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-15 {
+  margin-left: 62.5%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-15 {
+  margin-right: 62.5%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-16 {
+  margin-left: 66.66667%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-16 {
+  margin-right: 66.66667%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-17 {
+  margin-left: 70.83333%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-17 {
+  margin-right: 70.83333%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-18 {
+  margin-left: 75%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-18 {
+  margin-right: 75%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-19 {
+  margin-left: 79.16667%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-19 {
+  margin-right: 79.16667%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-20 {
+  margin-left: 83.33333%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-20 {
+  margin-right: 83.33333%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-21 {
+  margin-left: 87.5%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-21 {
+  margin-right: 87.5%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-22 {
+  margin-left: 91.66667%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-22 {
+  margin-right: 91.66667%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-23 {
+  margin-left: 95.83333%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-23 {
+  margin-right: 95.83333%;
+}
+
+/* line 45, ../scss/base/_grid.scss */
+.pre-24 {
+  margin-left: 100%;
+}
+
+/* line 48, ../scss/base/_grid.scss */
+.post-24 {
+  margin-right: 100%;
+}
+
+@media screen and (max-width: 960px) {
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-1 {
+    width: 4.16667%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-2 {
+    width: 8.33333%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-3 {
+    width: 12.5%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-4 {
+    width: 16.66667%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-5 {
+    width: 20.83333%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-6 {
+    width: 25%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-7 {
+    width: 29.16667%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-8 {
+    width: 33.33333%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-9 {
+    width: 37.5%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-10 {
+    width: 41.66667%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-11 {
+    width: 45.83333%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-12 {
+    width: 50%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-13 {
+    width: 54.16667%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-14 {
+    width: 58.33333%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-15 {
+    width: 62.5%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-16 {
+    width: 66.66667%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-17 {
+    width: 70.83333%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-18 {
+    width: 75%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-19 {
+    width: 79.16667%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-20 {
+    width: 83.33333%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-21 {
+    width: 87.5%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-22 {
+    width: 91.66667%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-23 {
+    width: 95.83333%;
+  }
+
+  /* line 55, ../scss/base/_grid.scss */
+  .tablet-column-24 {
+    width: 100%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-0 {
+    margin-right: 0%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-0 {
+    margin-left: 0%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-1 {
+    margin-right: 4.16667%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-1 {
+    margin-left: 4.16667%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-2 {
+    margin-right: 8.33333%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-2 {
+    margin-left: 8.33333%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-3 {
+    margin-right: 12.5%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-3 {
+    margin-left: 12.5%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-4 {
+    margin-right: 16.66667%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-4 {
+    margin-left: 16.66667%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-5 {
+    margin-right: 20.83333%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-5 {
+    margin-left: 20.83333%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-6 {
+    margin-right: 25%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-6 {
+    margin-left: 25%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-7 {
+    margin-right: 29.16667%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-7 {
+    margin-left: 29.16667%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-8 {
+    margin-right: 33.33333%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-8 {
+    margin-left: 33.33333%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-9 {
+    margin-right: 37.5%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-9 {
+    margin-left: 37.5%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-10 {
+    margin-right: 41.66667%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-10 {
+    margin-left: 41.66667%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-11 {
+    margin-right: 45.83333%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-11 {
+    margin-left: 45.83333%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-12 {
+    margin-right: 50%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-12 {
+    margin-left: 50%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-13 {
+    margin-right: 54.16667%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-13 {
+    margin-left: 54.16667%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-14 {
+    margin-right: 58.33333%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-14 {
+    margin-left: 58.33333%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-15 {
+    margin-right: 62.5%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-15 {
+    margin-left: 62.5%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-16 {
+    margin-right: 66.66667%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-16 {
+    margin-left: 66.66667%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-17 {
+    margin-right: 70.83333%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-17 {
+    margin-left: 70.83333%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-18 {
+    margin-right: 75%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-18 {
+    margin-left: 75%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-19 {
+    margin-right: 79.16667%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-19 {
+    margin-left: 79.16667%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-20 {
+    margin-right: 83.33333%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-20 {
+    margin-left: 83.33333%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-21 {
+    margin-right: 87.5%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-21 {
+    margin-left: 87.5%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-22 {
+    margin-right: 91.66667%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-22 {
+    margin-left: 91.66667%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-23 {
+    margin-right: 95.83333%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-23 {
+    margin-left: 95.83333%;
+  }
+
+  /* line 60, ../scss/base/_grid.scss */
+  .tablet-post-24 {
+    margin-right: 100%;
+  }
+
+  /* line 63, ../scss/base/_grid.scss */
+  .tablet-pre-24 {
+    margin-left: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-1 {
+    width: 4.16667%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-2 {
+    width: 8.33333%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-3 {
+    width: 12.5%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-4 {
+    width: 16.66667%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-5 {
+    width: 20.83333%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-6 {
+    width: 25%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-7 {
+    width: 29.16667%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-8 {
+    width: 33.33333%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-9 {
+    width: 37.5%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-10 {
+    width: 41.66667%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-11 {
+    width: 45.83333%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-12 {
+    width: 50%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-13 {
+    width: 54.16667%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-14 {
+    width: 58.33333%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-15 {
+    width: 62.5%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-16 {
+    width: 66.66667%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-17 {
+    width: 70.83333%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-18 {
+    width: 75%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-19 {
+    width: 79.16667%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-20 {
+    width: 83.33333%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-21 {
+    width: 87.5%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-22 {
+    width: 91.66667%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-23 {
+    width: 95.83333%;
+  }
+
+  /* line 71, ../scss/base/_grid.scss */
+  .phone-column-24 {
+    width: 100%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-0 {
+    margin-right: 0%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-0 {
+    margin-left: 0%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-1 {
+    margin-right: 4.16667%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-1 {
+    margin-left: 4.16667%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-2 {
+    margin-right: 8.33333%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-2 {
+    margin-left: 8.33333%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-3 {
+    margin-right: 12.5%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-3 {
+    margin-left: 12.5%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-4 {
+    margin-right: 16.66667%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-4 {
+    margin-left: 16.66667%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-5 {
+    margin-right: 20.83333%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-5 {
+    margin-left: 20.83333%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-6 {
+    margin-right: 25%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-6 {
+    margin-left: 25%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-7 {
+    margin-right: 29.16667%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-7 {
+    margin-left: 29.16667%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-8 {
+    margin-right: 33.33333%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-8 {
+    margin-left: 33.33333%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-9 {
+    margin-right: 37.5%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-9 {
+    margin-left: 37.5%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-10 {
+    margin-right: 41.66667%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-10 {
+    margin-left: 41.66667%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-11 {
+    margin-right: 45.83333%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-11 {
+    margin-left: 45.83333%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-12 {
+    margin-right: 50%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-12 {
+    margin-left: 50%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-13 {
+    margin-right: 54.16667%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-13 {
+    margin-left: 54.16667%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-14 {
+    margin-right: 58.33333%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-14 {
+    margin-left: 58.33333%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-15 {
+    margin-right: 62.5%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-15 {
+    margin-left: 62.5%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-16 {
+    margin-right: 66.66667%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-16 {
+    margin-left: 66.66667%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-17 {
+    margin-right: 70.83333%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-17 {
+    margin-left: 70.83333%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-18 {
+    margin-right: 75%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-18 {
+    margin-left: 75%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-19 {
+    margin-right: 79.16667%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-19 {
+    margin-left: 79.16667%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-20 {
+    margin-right: 83.33333%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-20 {
+    margin-left: 83.33333%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-21 {
+    margin-right: 87.5%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-21 {
+    margin-left: 87.5%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-22 {
+    margin-right: 91.66667%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-22 {
+    margin-left: 91.66667%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-23 {
+    margin-right: 95.83333%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-23 {
+    margin-left: 95.83333%;
+  }
+
+  /* line 76, ../scss/base/_grid.scss */
+  .phone-post-24 {
+    margin-right: 100%;
+  }
+
+  /* line 79, ../scss/base/_grid.scss */
+  .phone-pre-24 {
+    margin-left: 100%;
+  }
+}
+/* line 1, ../scss/base/_type.scss */
+body {
+  color: #2c3136;
+  font-family: "Clear Sans", "Helvetica", "Arial", sans-serif;
+}
+
+/* line 6, ../scss/base/_type.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: "Clear Sans", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 1.25em;
+}
+
+/* line 13, ../scss/base/_type.scss */
+h1 {
+  font-size: 2.75rem;
+}
+
+/* line 14, ../scss/base/_type.scss */
+h2 {
+  font-size: 2.00rem;
+}
+
+/* line 15, ../scss/base/_type.scss */
+h3 {
+  font-size: 1.75rem;
+}
+
+/* line 16, ../scss/base/_type.scss */
+h4 {
+  font-size: 1.50rem;
+}
+
+/* line 17, ../scss/base/_type.scss */
+h5 {
+  font-size: 1.25rem;
+}
+
+/* line 18, ../scss/base/_type.scss */
+h6 {
+  font-size: 1.00rem;
+}
+
+/* line 20, ../scss/base/_type.scss */
+blockquote {
+  font-family: "Clear Sans", "Helvetica", "Arial", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.75rem;
+  color: #bcc4cc;
+}
+
+/* line 28, ../scss/base/_type.scss */
+p {
+  font-size: 1rem;
+}
+/* line 30, ../scss/base/_type.scss */
+p.large {
+  font-size: 1.5rem;
+}
+
+/* line 35, ../scss/base/_type.scss */
+b, strong {
+  font-weight: 700;
+}
+
+/* line 39, ../scss/base/_type.scss */
+small {
+  font-size: .875rem;
+  color: #586470;
+}
+
+/* line 44, ../scss/base/_type.scss */
+a {
+  color: #1f85c4;
+  text-decoration: none;
+}
+/* line 47, ../scss/base/_type.scss */
+a:hover, a:focus {
+  color: #245070;
+  cursor: pointer;
+}
+/* line 51, ../scss/base/_type.scss */
+a:active, a:hover {
+  outline: 0;
+}
+
+/* line 56, ../scss/base/_type.scss */
+ul, ol {
+  font-size: .75rem;
+  list-style-position: inside;
+  margin-top: 0;
+  padding: 0;
+}
+/* line 61, ../scss/base/_type.scss */
+ul ul, ul ol, ol ul, ol ol {
+  padding-left: 1.25em;
+}
+
+/* line 66, ../scss/base/_type.scss */
+ul {
+  list-style-type: none;
+}
+
+/* line 75, ../scss/base/_type.scss */
+code, kbd, pre, samp {
+  font-family: "Source Code Pro", "Inconsolata", "Consolas", "Courier New", monospace;
+}
+
+/* line 79, ../scss/base/_type.scss */
+code {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: #f0f1f2;
+  border: 1px solid #bcc4cc;
+  white-space: pre;
+}
+
+/* line 86, ../scss/base/_type.scss */
+pre {
+  margin-top: 0em;
+  margin-bottom: 1.5em;
+  font-size: 0.75em;
+  line-height: 2em;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  -webkit-tab-size: 4;
+  -moz-tab-size: 4;
+  -ms-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  max-width: 100%;
+}
+/* line 95, ../scss/base/_type.scss */
+pre code {
+  display: block;
+  overflow: auto;
+  word-wrap: normal;
+}
+
+/* line 102, ../scss/base/_type.scss */
+hr {
+  margin: 1rem 0;
+  border: none;
+  border-top: 1px solid #ededed;
+}
+
+/* line 108, ../scss/base/_type.scss */
+.center-text {
+  text-align: center;
+}
+
+/* line 112, ../scss/base/_type.scss */
+img::selection {
+  background: transparent;
+}
+
+/* line 116, ../scss/base/_type.scss */
+img::moz-selection {
+  background: transparent;
+}
+
+/* line 9, ../scss/style.scss */
 [ng-cloak] {
   display: none;
 }
 
-/* line 6, ../scss/style.scss */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "EB Garamond", "Garamond", "Georgia", serif;
-}
-
-/* line 12, ../scss/style.scss */
-h1 {
-  color: red;
-}
-
-/* line 16, ../scss/style.scss */
+/* line 11, ../scss/style.scss */
 .navigation {
   position: fixed;
   height: 100vh;
@@ -31,7 +1412,7 @@ h1 {
   background-color: #ededed;
 }
 
-/* line 24, ../scss/style.scss */
+/* line 19, ../scss/style.scss */
 .chart {
   position: absolute;
   top: 0;

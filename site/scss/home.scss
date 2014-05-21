@@ -1,0 +1,42 @@
+@import "compass";
+@import "config";
+
+.banner {
+  position: relative;
+  overflow: hidden;
+  color: $white;
+  background-color: $dark-blue;
+  .banner-copy {
+    position: relative;
+    margin: 8rem 0;
+    z-index: 2;
+    font-weight: 200;
+  }
+  .dimple-graph {
+    position: absolute;
+    top: -260px;
+    right: 0;
+    bottom: 0;
+    left: -25%;
+    z-index: 1;
+  }
+  .dimple-axis {
+    display: none;
+  }
+  .dimple-gridline{
+    display: none;
+  }
+  .dimple-line {
+    opacity: 0.8;
+    fill: none;
+    stroke: $darker-blue;
+    stroke-width: 2;
+  }
+  .dimple-marker-back {
+    fill: $darker-blue;
+  }
+  .dimple-marker {
+    display: none;
+    fill: $darker-blue;
+  }
+}

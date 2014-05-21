@@ -1,43 +1,32 @@
 // Fonts
-$garamond: 'EB Garamond', 'Garamond', 'Georgia', serif;
-$open: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+$clear: 'Clear Sans', 'Helvetica', 'Arial', sans-serif;
 $source: 'Source Code Pro', 'Inconsolata', 'Consolas', 'Courier New', monospace;
 
 // Colors
-$cream: #FDF5DF !default;
+$white:       #FFFFFF !default;
+$off-white:   #F0F1F2 !default;
+$light-gray:  #BCC4CC !default;
+$gray:        #586470 !default;
+$dark-gray:   #2C3136 !default;
+$blue:        #1F85C4 !default;
+$dark-blue:   #245070 !default;
+$darker-blue: #234052 !default;
 
-// SOLARIZED COLORS
-$base03:    #002b36;
-$base02:    #073642;
-$base01:    #586e75;
-$base00:    #657b83;
-$base0:     #839496;
-$base1:     #93a1a1;
-$base2:     #eee8d5;
-$base3:     #fdf6e3;
-$yellow:    #b58900;
-$orange:    #cb4b16;
-$red:       #dc322f;
-$magenta:   #d33682;
-$violet:    #6c71c4;
-$blue:      #268bd2;
-$cyan:      #2aa198;
-$green:     #859900;
+// Grid Variables
+$total-columns:     24 !default;
+$container-width:   100% !default;
+$container-max:     1280px !default;
+$container-min:     0 !default;
+$column-gutter:     1em !default;
+$container-gutter:  1em !default;
 
-@mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3)
-{
-    background-color:$rebase03;
-    color:$rebase0;
-    * { color:$rebase0; }
-    h1,h2,h3,h4,h5,h6 { color:$rebase1; border-color: $rebase0; }
-    a, a:active, a:visited { color: $rebase1; }
-}
-@mixin accentize($accent) {
-    a, a:active, a:visited, code.url { color: $accent; }
-    h1,h2,h3,h4,h5,h6 {color:$accent}
-}
-/* light is default mode, so pair with general html definition */
-html * {
-    color-profile: sRGB;
-    rendering-intent: auto;
-}
+// Breakpoints
+$desktop:       1280px !default;
+$laptop-large:  1180px !default;
+$laptop:        1080px !default;
+$tablet-wide:   1024px !default;
+$tablet-mid:    960px  !default;
+$tablet-tall:   768px  !default;
+$phone-large:   662px  !default;
+$phone:         480px  !default;
+$phone-tall:    320px  !default;
