@@ -26,9 +26,10 @@ blockquote {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.5em;
   &.large {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
 }
 
@@ -54,7 +55,6 @@ a {
 }
 
 ul, ol {
-  font-size: .75rem;
   list-style-position: inside;
   margin-top: 0;
   padding: 0;
@@ -77,32 +77,34 @@ code, kbd, pre, samp {
 }
 
 code {
-  @include border-radius(3px);
+  @include border-radius(2px);
   background: $off-white;
-  border: 1px solid $light-gray;
+  padding: .2em;
+  border: 1px solid darken($off-white, 5%);
   white-space: pre;
+  font-size: .75rem;
+  line-height: 1.5em;
 }
 
 pre {
-  @include leader(0);
-  @include trailer(1);
-  @include adjust-font-size-to(12px);
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
   @include experimental(tab-size, 4);
   max-width: 100%;
+  margin: 0;
   code {
     display: block;
     overflow: auto;
     word-wrap: normal;
+    border: none;
   }
 }
 
 hr {
-  margin: 1rem 0;
+  margin: 2rem 0;
   border: none;
-  border-top: 1px solid #ededed;
+  border-top: 1px solid $off-white;
 }
 
 .center-text {

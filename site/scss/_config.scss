@@ -3,14 +3,16 @@ $clear: 'Clear Sans', 'Helvetica', 'Arial', sans-serif;
 $source: 'Source Code Pro', 'Inconsolata', 'Consolas', 'Courier New', monospace;
 
 // Colors
-$white:       #FFFFFF !default;
-$off-white:   #F0F1F2 !default;
-$light-gray:  #BCC4CC !default;
-$gray:        #586470 !default;
-$dark-gray:   #2C3136 !default;
-$blue:        #1F85C4 !default;
-$dark-blue:   #245070 !default;
-$darker-blue: #234052 !default;
+$white:        #FFFFFF !default;
+$off-white:    #FAFBFE !default;
+$lighter-gray: #ECF0F3 !default;
+$light-gray:   #DDE3E8 !default;
+$gray:         #76899B !default;
+$dark-gray:    #4C5156 !default;
+$darker-gray:  #2C3136 !default;
+$blue:         #1F85C4 !default;
+$dark-blue:    #245070 !default;
+$darker-blue:  #234052 !default;
 
 // Grid Variables
 $total-columns:     24 !default;

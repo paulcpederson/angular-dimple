@@ -1,0 +1,25 @@
+// Buttons
+.btn {
+  display: inline-block;
+  padding: 1em;
+  background-color: $blue;
+  color: $lighter-gray;
+  @include border-radius(3px);
+  text-decoration: none;
+  font-family: $source;
+  font-size: 0.75em;
+  cursor: pointer;
+  @include transition(background-color 75ms linear, color 75ms linear);
+  &:hover {
+    background-color: lighten($blue, 10%);
+    color: $white;
+  }
+  &.dark-blue {
+    background: $dark-blue;
+    color: $light-gray;
+    &:hover {
+      background-color: lighten($dark-blue, 10%);
+      color: $lighter-gray;
+    }
+  }
+}
