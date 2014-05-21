@@ -4,8 +4,12 @@
 .white-panel {
   background-color: $white;
   border: 1px solid $lighter-gray;
+  @include box-sizing(border-box);
   @include trailer(3);
   @include border-radius(3px);
+  &.padded {
+    padding: 2rem;
+  }
 }
 
 .sidebar {
