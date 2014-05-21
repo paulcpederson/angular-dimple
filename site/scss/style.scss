@@ -31,10 +31,6 @@
 .off-white {
   color: $dark-gray;
   background-color: $off-white;
-  code {
-    background-color: $white;
-    border-color: $lighter-gray;
-  }
 }
 
 .primary-navigation {
@@ -71,6 +67,26 @@
   @include border-radius(50%);
 }
 
+
+.navigation {
+  position: fixed;
+  height: 100vh;
+  width: 14em;
+  padding: 1em;
+  background-color: #ededed;
+}
+
+.chart {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 14rem;
+  right: 0;
+  height: 100vh;
+  padding-left: 1rem;
+}
+
+
 .chart-icon {
   @extend %clearfix;
   display: inline-block;
@@ -80,6 +96,7 @@
   width: 6rem;
   border: 0.25rem solid $white;
   @include border-radius(50%);
+  cursor: pointer;
 
   &:hover {
     background-color: $light-blue;
@@ -89,6 +106,7 @@
   object {
     height: 6rem;
     width: 6rem;
+    cursor: pointer;
     svg {
       height: 6rem;
       width: 6rem;
