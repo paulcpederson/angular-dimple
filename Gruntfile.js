@@ -84,14 +84,23 @@ module.exports = function(grunt) {
         }
       }
     },
-    'md2html': {
-      api: {
+    'markdown': {
+      all: {
+        files: [
+          {
+            expand: true,
+            src: 'documentation/index.md',
+            dest: 'site/',
+            ext: '.html'
+          }
+        ],
         options: {
-          layout: 'docs/layout.html',
-          templateData: {
-            title: 'Angular-Dimple API Reference'
-          }},
-        files: [{ src: 'docs/doc.md', dest: 'site/documentation/index.html'}]
+          template: 'documentation/layout.html',
+          markdownOptions: {
+            gfm: true,
+            highlight: 'manual'
+          }
+        }
       }
     }
   });
@@ -102,9 +111,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-md2html');
+  grunt.loadNpmTasks('grunt-markdown');
 
   // Default task(s)
-  grunt.registerTask('default', [ 'connect', 'jshint', 'concat', 'uglify', 'md2html', 'compass', 'watch']);
+  grunt.registerTask('default', [ 'connect', 'jshint', 'concat', 'uglify', 'markdown', 'compass', 'watch']);
 
 };
