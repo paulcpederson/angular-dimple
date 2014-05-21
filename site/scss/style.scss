@@ -5,8 +5,49 @@
 @import "base/mixins";
 @import "base/grid";
 @import "base/type";
+@import "base/tabs";
+@import "base/buttons";
 
 [ng-cloak] { display: none;}
+
+.fullscreen {
+  padding: 8rem 0;
+}
+
+.darker-blue {
+  background-color: $darker-blue;
+  color: $gray;
+  a {
+    color: lighten($blue, 10%);
+    &:hover {
+      color: lighten($blue, 20%);
+    }
+  }
+}
+
+.off-white {
+  color: $dark-gray;
+  background-color: $off-white;
+  code {
+    background-color: $white;
+    border-color: $lighter-gray;
+  }
+}
+
+.numbered {
+  text-align: center;
+  width: 2em;
+  height: 2em;
+  margin-right: 1em;
+  display: inline-block;
+  color: $white;
+  font-family: $source;
+  font-size: .75rem;
+  line-height: 2em;
+  vertical-align: .25em;
+  background-color: $blue;
+  @include border-radius(50%);
+}
 
 .navigation {
   position: fixed;

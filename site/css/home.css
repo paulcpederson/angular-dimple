@@ -3,7 +3,7 @@
   position: relative;
   overflow: hidden;
   color: white;
-  background-color: #245070;
+  background: url(../img/dots.svg) #245070;
 }
 /* line 9, ../scss/home.scss */
 .banner .banner-copy {
