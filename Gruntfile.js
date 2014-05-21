@@ -87,10 +87,8 @@ module.exports = function(grunt) {
     'md2html': {
       api: {
         options: {
-          layout: 'docs/layout.html',
-          templateData: {
-            title: 'Angular-Dimple API Reference'
-          }},
+          layout: 'docs/layout.html'
+        },
         files: [{ src: 'docs/doc.md', dest: 'site/documentation/index.html'}]
       }
     }
