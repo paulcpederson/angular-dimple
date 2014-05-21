@@ -1705,11 +1705,6 @@ img::moz-selection {
 }
 
 /* line 73, ../scss/style.scss */
-#this-svg:hover {
-  fill: red;
-}
-
-/* line 77, ../scss/style.scss */
 .navigation {
   position: fixed;
   height: 100vh;
@@ -1718,7 +1713,7 @@ img::moz-selection {
   background-color: #ededed;
 }
 
-/* line 85, ../scss/style.scss */
+/* line 81, ../scss/style.scss */
 .chart {
   position: absolute;
   top: 0;
@@ -1729,7 +1724,7 @@ img::moz-selection {
   padding-left: 1rem;
 }
 
-/* line 96, ../scss/style.scss */
+/* line 92, ../scss/style.scss */
 .chart-icon {
   display: inline-block;
   margin-bottom: 1rem;
@@ -1742,18 +1737,20 @@ img::moz-selection {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
+  cursor: pointer;
 }
-/* line 106, ../scss/style.scss */
+/* line 103, ../scss/style.scss */
 .chart-icon:hover {
   background-color: #379fdf;
   border: 0.25rem solid #379fdf;
 }
-/* line 111, ../scss/style.scss */
+/* line 108, ../scss/style.scss */
 .chart-icon object {
   height: 6rem;
   width: 6rem;
+  cursor: pointer;
 }
-/* line 114, ../scss/style.scss */
+/* line 112, ../scss/style.scss */
 .chart-icon object svg {
   height: 6rem;
   width: 6rem;

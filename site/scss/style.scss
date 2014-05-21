@@ -70,10 +70,6 @@
   @include border-radius(50%);
 }
 
-#this-svg:hover {
-  fill: red;
-}
-
 .navigation {
   position: fixed;
   height: 100vh;
@@ -102,6 +98,7 @@
   width: 6rem;
   border: 0.25rem solid $white;
   @include border-radius(50%);
+  cursor: pointer;
 
   &:hover {
     background-color: $light-blue;
@@ -111,6 +108,7 @@
   object {
     height: 6rem;
     width: 6rem;
+    cursor: pointer;
     svg {
       height: 6rem;
       width: 6rem;
