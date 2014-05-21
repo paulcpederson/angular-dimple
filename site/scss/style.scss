@@ -67,7 +67,6 @@
   @include border-radius(50%);
 }
 
-
 .navigation {
   position: fixed;
   height: 100vh;
@@ -86,7 +85,6 @@
   padding-left: 1rem;
 }
 
-
 .chart-icon {
   @extend %clearfix;
   display: inline-block;
@@ -94,22 +92,33 @@
   background-color: $white;
   height: 6rem;
   width: 6rem;
-  border: 0.25rem solid $white;
+  position: relative;
   @include border-radius(50%);
   cursor: pointer;
-
+  @include transition(all 200ms linear);
+  border: 1px solid $light-gray;
   &:hover {
-    background-color: $light-blue;
-    border: 0.25rem solid $light-blue;
+    background-color: $off-white;
   }
-
-  object {
-    height: 6rem;
-    width: 6rem;
-    cursor: pointer;
-    svg {
-      height: 6rem;
-      width: 6rem;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    @include border-radius(50%);
+    @include box-shadow(0 0 0 6px $light-gray);
+    @include transition(all 200ms linear);
+  }
+  &:hover {
+    &:before {
+      @include box-shadow(0 0 0 12px $light-gray);
     }
+  }
+  img {
+    width: 100%;
+    height: auto;
   }
 }

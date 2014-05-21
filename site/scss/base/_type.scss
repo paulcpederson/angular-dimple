@@ -55,6 +55,7 @@ small {
 a {
   color: $blue;
   text-decoration: none;
+  @include transition(color 200ms linear);
   &:hover, &:focus {
     color: $dark-blue;
     cursor: pointer;
