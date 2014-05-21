@@ -1,0 +1,10 @@
+/* line 4, ../scss/examples.scss */
+.white-panel {
+  background-color: white;
+  border: 1px solid #ecf0f3;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}

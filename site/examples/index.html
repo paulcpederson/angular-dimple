@@ -9,6 +9,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/examples.css"/>
 
   <!-- Brick Fonts -->
   <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Source+Code+Pro:200,300/EB+Garamond:400,400i/Open+Sans:400,700">
@@ -16,30 +17,34 @@
   <!-- Dimple and D3 -->
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
-
 </head>
 
 <!-- Application -->
-<body ng-app="myApp">
+<body ng-app="myApp" class="off-white">
 
-  <!-- Menu -->
-  <aside class="navigation">
-    <ul class="menu">
-      <li><a href="#/line-graph">Line Graph</a></li>
-      <li><a href="#/area">Area</a></li>
-      <li><a href="#/stacked-area">Stacked Area</a></li>
-      <li><a href="#/expanded-stacked-area">Expanded Stacked Area</a></li>
-      <li><a href="#/bar-graph">Bar Graph</a></li>
-      <li><a href="#/stacked-bar-graph">Stacked Bar Graph</a></li>
-      <li><a href="#/scatter-plot">Scatter Plot</a></li>
-      <!-- <li><a href="#/donut">Donut</a></li> -->
-    </ul>
-  </aside>
+  <div class="container leader-3">
+    <div class="row">
 
-  <!-- Views -->
-  <main class="chart">
-    <div ng-view></div>
-  </main>
+      <!-- Menu -->
+      <aside class="navigation column-4">
+        <ul class="menu">
+          <li><a href="#/line-graph">Line Graph</a></li>
+          <li><a href="#/area">Area</a></li>
+          <li><a href="#/stacked-area">Stacked Area</a></li>
+          <li><a href="#/expanded-stacked-area">Expanded Stacked Area</a></li>
+          <li><a href="#/bar-graph">Bar Graph</a></li>
+          <li><a href="#/stacked-bar-graph">Stacked Bar Graph</a></li>
+          <li><a href="#/scatter-plot">Scatter Plot</a></li>
+        </ul>
+      </aside>
+
+      <!-- Views -->
+      <main class="chart column-18 pre-2 white-panel">
+        <div ng-view></div>
+      </main>
+
+    </div>
+  </div>
 
   <!-- Angular and Angular-Route -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js"></script>

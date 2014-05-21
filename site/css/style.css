@@ -1705,31 +1705,6 @@ img::moz-selection {
 }
 
 /* line 73, ../scss/style.scss */
-#this-svg:hover {
-  fill: red;
-}
-
-/* line 77, ../scss/style.scss */
-.navigation {
-  position: fixed;
-  height: 100vh;
-  width: 14em;
-  padding: 1em;
-  background-color: #ededed;
-}
-
-/* line 85, ../scss/style.scss */
-.chart {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 14rem;
-  right: 0;
-  height: 100vh;
-  padding-left: 1rem;
-}
-
-/* line 96, ../scss/style.scss */
 .chart-icon {
   display: inline-block;
   margin-bottom: 1rem;
@@ -1743,17 +1718,17 @@ img::moz-selection {
   -o-border-radius: 50%;
   border-radius: 50%;
 }
-/* line 106, ../scss/style.scss */
+/* line 83, ../scss/style.scss */
 .chart-icon:hover {
   background-color: #379fdf;
   border: 0.25rem solid #379fdf;
 }
-/* line 111, ../scss/style.scss */
+/* line 88, ../scss/style.scss */
 .chart-icon object {
   height: 6rem;
   width: 6rem;
 }
-/* line 114, ../scss/style.scss */
+/* line 91, ../scss/style.scss */
 .chart-icon object svg {
   height: 6rem;
   width: 6rem;
