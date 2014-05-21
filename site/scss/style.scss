@@ -70,6 +70,10 @@
   @include border-radius(50%);
 }
 
+#this-svg:hover {
+  fill: red;
+}
+
 .navigation {
   position: fixed;
   height: 100vh;
@@ -88,6 +92,7 @@
   padding-left: 1rem;
 }
 
+
 .chart-icon {
   @extend %clearfix;
   display: inline-block;
@@ -101,14 +106,14 @@
   &:hover {
     background-color: $light-blue;
     border: 0.25rem solid $light-blue;
-    svg {
-      fill: red;
-      stroke: red;
-    }
   }
 
-  img {
-    width: 100%;
-    height: auto;
+  object {
+    height: 6rem;
+    width: 6rem;
+    svg {
+      height: 6rem;
+      width: 6rem;
+    }
   }
 }
