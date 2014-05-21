@@ -38,6 +38,7 @@
 }
 
 .primary-navigation {
+  font-weight: 300;
   position: fixed;
   top: 1rem;
   left: 0;
@@ -69,6 +70,7 @@
   background-color: $blue;
   @include border-radius(50%);
 }
+
 
 .navigation {
   position: fixed;

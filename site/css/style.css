@@ -1291,6 +1291,16 @@ img {
   margin-bottom: 5rem;
 }
 
+/* line 92, ../scss/base/_grid.scss */
+.right {
+  float: right !important;
+}
+
+/* line 96, ../scss/base/_grid.scss */
+.left {
+  float: left !important;
+}
+
 /* line 1, ../scss/base/_type.scss */
 body {
   color: #4c5156;
@@ -1348,60 +1358,65 @@ blockquote {
 p {
   font-size: 1.05rem;
   line-height: 1.5em;
+  font-weight: 300;
 }
-/* line 31, ../scss/base/_type.scss */
+/* line 32, ../scss/base/_type.scss */
 p.large {
   font-size: 1.35rem;
 }
+/* line 35, ../scss/base/_type.scss */
+p.small {
+  font-size: .85rem;
+}
 
-/* line 36, ../scss/base/_type.scss */
+/* line 40, ../scss/base/_type.scss */
 b, strong {
   font-weight: 700;
 }
 
-/* line 40, ../scss/base/_type.scss */
+/* line 44, ../scss/base/_type.scss */
 small {
   font-size: .875rem;
   color: #76899b;
 }
 
-/* line 45, ../scss/base/_type.scss */
+/* line 49, ../scss/base/_type.scss */
 a {
   color: #1f85c4;
   text-decoration: none;
 }
-/* line 48, ../scss/base/_type.scss */
+/* line 52, ../scss/base/_type.scss */
 a:hover, a:focus {
   color: #245070;
   cursor: pointer;
 }
-/* line 52, ../scss/base/_type.scss */
+/* line 56, ../scss/base/_type.scss */
 a:active, a:hover {
   outline: 0;
 }
 
-/* line 57, ../scss/base/_type.scss */
+/* line 61, ../scss/base/_type.scss */
 ul, ol {
   list-style-position: inside;
   margin-top: 0;
   padding: 0;
 }
-/* line 61, ../scss/base/_type.scss */
+/* line 65, ../scss/base/_type.scss */
 ul ul, ul ol, ol ul, ol ol {
   padding-left: 1.25em;
 }
 
-/* line 66, ../scss/base/_type.scss */
+/* line 70, ../scss/base/_type.scss */
 ul {
   list-style-type: none;
 }
 
-/* line 75, ../scss/base/_type.scss */
+/* line 79, ../scss/base/_type.scss */
 code, kbd, pre, samp {
   font-family: "Source Code Pro", "Inconsolata", "Consolas", "Courier New", monospace;
 }
 
-/* line 79, ../scss/base/_type.scss */
+/* line 83, ../scss/base/_type.scss */
 code {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -1416,7 +1431,7 @@ code {
   line-height: 1.5em;
 }
 
-/* line 89, ../scss/base/_type.scss */
+/* line 93, ../scss/base/_type.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -1429,7 +1444,7 @@ pre {
   max-width: 100%;
   margin: 0;
 }
-/* line 96, ../scss/base/_type.scss */
+/* line 100, ../scss/base/_type.scss */
 pre code {
   display: block;
   overflow: auto;
@@ -1437,24 +1452,24 @@ pre code {
   border: none;
 }
 
-/* line 104, ../scss/base/_type.scss */
+/* line 108, ../scss/base/_type.scss */
 hr {
   margin: 2rem 0;
   border: none;
   border-top: 1px solid #fafbfe;
 }
 
-/* line 110, ../scss/base/_type.scss */
+/* line 114, ../scss/base/_type.scss */
 .center-text {
   text-align: center;
 }
 
-/* line 114, ../scss/base/_type.scss */
+/* line 118, ../scss/base/_type.scss */
 img::selection {
   background: transparent;
 }
 
-/* line 118, ../scss/base/_type.scss */
+/* line 122, ../scss/base/_type.scss */
 img::moz-selection {
   background: transparent;
 }
@@ -1578,50 +1593,49 @@ img::moz-selection {
   text-decoration: none;
   font-family: "Source Code Pro", "Inconsolata", "Consolas", "Courier New", monospace;
   font-size: 0.75em;
+  font-weight: 300;
   cursor: pointer;
   -webkit-transition: background-color 75ms linear, color 75ms linear;
   -moz-transition: background-color 75ms linear, color 75ms linear;
   -o-transition: background-color 75ms linear, color 75ms linear;
   transition: background-color 75ms linear, color 75ms linear;
 }
-/* line 13, ../scss/base/_buttons.scss */
+/* line 14, ../scss/base/_buttons.scss */
 .btn:hover {
   background-color: #379fdf;
   color: white;
 }
-/* line 17, ../scss/base/_buttons.scss */
+/* line 18, ../scss/base/_buttons.scss */
 .btn.outline {
   background: transparent;
   color: #1f85c4;
   border: 1px solid #1f85c4;
 }
-/* line 21, ../scss/base/_buttons.scss */
+/* line 22, ../scss/base/_buttons.scss */
 .btn.outline:hover {
   background-color: #379fdf;
   color: white;
   border: 1px solid #379fdf;
 }
-/* line 27, ../scss/base/_buttons.scss */
+/* line 28, ../scss/base/_buttons.scss */
 .btn.dark-blue {
   background: #245070;
   color: #dde3e8;
 }
-/* line 30, ../scss/base/_buttons.scss */
+/* line 31, ../scss/base/_buttons.scss */
 .btn.dark-blue:hover {
   background-color: #306c97;
   color: #ecf0f3;
 }
-/* line 35, ../scss/base/_buttons.scss */
+/* line 36, ../scss/base/_buttons.scss */
 .btn.white {
-  background: transparent;
-  color: white;
-  border: 1px solid white;
+  background: #fafbfe;
+  color: #245070;
 }
 /* line 39, ../scss/base/_buttons.scss */
 .btn.white:hover {
   background-color: white;
   color: #1f85c4;
-  border: 1px solid #ecf0f3;
 }
 
 /* line 11, ../scss/style.scss */
@@ -1665,6 +1679,7 @@ img::moz-selection {
 
 /* line 40, ../scss/style.scss */
 .primary-navigation {
+  font-weight: 300;
   position: fixed;
   top: 1rem;
   left: 0;
@@ -1672,19 +1687,19 @@ img::moz-selection {
   z-index: 10;
 }
 
-/* line 48, ../scss/style.scss */
+/* line 49, ../scss/style.scss */
 .angular-dimple-logo {
   float: left;
 }
 
-/* line 52, ../scss/style.scss */
+/* line 53, ../scss/style.scss */
 .navigation-section {
   width: 50%;
   text-align: right;
   float: right;
 }
 
-/* line 58, ../scss/style.scss */
+/* line 59, ../scss/style.scss */
 .numbered {
   text-align: center;
   width: 2em;
@@ -1704,7 +1719,7 @@ img::moz-selection {
   border-radius: 50%;
 }
 
-/* line 73, ../scss/style.scss */
+/* line 75, ../scss/style.scss */
 .navigation {
   position: fixed;
   height: 100vh;
@@ -1713,7 +1728,7 @@ img::moz-selection {
   background-color: #ededed;
 }
 
-/* line 81, ../scss/style.scss */
+/* line 83, ../scss/style.scss */
 .chart {
   position: absolute;
   top: 0;
@@ -1724,7 +1739,7 @@ img::moz-selection {
   padding-left: 1rem;
 }
 
-/* line 92, ../scss/style.scss */
+/* line 94, ../scss/style.scss */
 .chart-icon {
   display: inline-block;
   margin-bottom: 1rem;
@@ -1739,18 +1754,18 @@ img::moz-selection {
   border-radius: 50%;
   cursor: pointer;
 }
-/* line 103, ../scss/style.scss */
+/* line 105, ../scss/style.scss */
 .chart-icon:hover {
   background-color: #379fdf;
   border: 0.25rem solid #379fdf;
 }
-/* line 108, ../scss/style.scss */
+/* line 110, ../scss/style.scss */
 .chart-icon object {
   height: 6rem;
   width: 6rem;
   cursor: pointer;
 }
-/* line 112, ../scss/style.scss */
+/* line 114, ../scss/style.scss */
 .chart-icon object svg {
   height: 6rem;
   width: 6rem;

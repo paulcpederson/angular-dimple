@@ -1,0 +1,23 @@
+/* line 4, ../scss/examples.scss */
+.white-panel {
+  background-color: white;
+  border: 1px solid #ecf0f3;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 4.5em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 10, ../scss/examples.scss */
+.white-panel.padded {
+  padding: 2rem;
+}
+
+/* line 15, ../scss/examples.scss */
+.sidebar {
+  position: fixed;
+}
