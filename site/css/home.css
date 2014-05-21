@@ -41,7 +41,7 @@ code {
   z-index: 2;
   font-weight: 200;
 }
-/* line 39, ../scss/home.scss */
+/* line 40, ../scss/home.scss */
 .banner .dimple-graph {
   position: absolute;
   top: -260px;
@@ -50,27 +50,32 @@ code {
   left: -25%;
   z-index: 1;
 }
-/* line 47, ../scss/home.scss */
+/* line 48, ../scss/home.scss */
 .banner .dimple-axis {
   display: none;
 }
-/* line 50, ../scss/home.scss */
+/* line 51, ../scss/home.scss */
 .banner .dimple-gridline {
   display: none;
 }
-/* line 53, ../scss/home.scss */
+/* line 54, ../scss/home.scss */
 .banner .dimple-line {
   opacity: 0.8;
   fill: none;
   stroke: #234052;
   stroke-width: 2;
 }
-/* line 59, ../scss/home.scss */
+/* line 60, ../scss/home.scss */
 .banner .dimple-marker-back {
   fill: #234052;
 }
-/* line 62, ../scss/home.scss */
+/* line 63, ../scss/home.scss */
 .banner .dimple-marker {
   display: none;
   fill: #234052;
+}
+
+/* line 70, ../scss/home.scss */
+.charts-list a {
+  color: #76899b;
 }

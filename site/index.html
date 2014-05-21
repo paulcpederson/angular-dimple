@@ -99,21 +99,23 @@
           <div class="column-12">
             <div class="tab-group">
               <nav class="tab-nav">
-                <a class="tab active">Sample Code</a>
-                <a class="tab">Graph</a>
+                <a class="tab">Sample Code</a>
+                <a class="tab active">Graph</a>
               </nav>
               <section class="tab-contents">
-                <article class="tab-content active">
-<pre><code>&lt;graph data=&quot;graphData&quot;&gt;
+                <article class="tab-content">
+<pre><code>&lt;graph data=&quot;graphData&quot; height=&quot;400&quot;&gt;
   &lt;x field=&quot;Month&quot; order-by=&quot;Date&quot;&gt;&lt;/x&gt;
   &lt;y field=&quot;Unit Sales&quot;&gt;&lt;/y&gt;
+  &lt;legend&gt;&lt;/legend&gt;
   &lt;line field=&quot;Owner&quot; value=&quot;Aperture&quot;&gt;&lt;/line&gt;
 &lt;/graph&gt;    </code></pre>
                 </article>
-                <article class="tab-content">
-                  <graph data="graphData">
+                <article class="tab-content active">
+                  <graph data="graphData" height="400">
                     <x field="Month" order-by="Date"></x>
                     <y field="Unit Sales"></y>
+                    <legend></legend>
                     <line field="Owner" value="Aperture"></line>
                   </graph>
                 </article>
@@ -125,12 +127,12 @@
     </div>
 
     <!-- Charts List -->
-    <div class="fullscreen darker-blue">
+    <div class="fullscreen darker-blue charts-list">
       <div class="container">
         <div class="row trailer-5">
           <div class="column-6 pre-1 post-1 center-text">
             <a href="./examples/#/line-graph" class="chart-icon">
-              <object type="image/svg+xml" data="img/line.svg"></object>
+              <img src="img/line.svg">
             </a>
             <h4>
               <a href="./documentation/#line-graph">Line</a>
@@ -142,7 +144,7 @@
           </div>
           <div class="column-6 pre-1 post-1 center-text">
             <a href="./examples/#/area" class="chart-icon">
-              <object type="image/svg+xml" data="img/area.svg"></object>
+              <img src="img/area.svg">
             </a>
             <h4>
               <a href="./documentation/#area">Area</a>
@@ -154,7 +156,7 @@
           </div>
           <div class="column-6 pre-1 post-1 center-text">
             <a href="./examples/#/stacked-area" class="chart-icon">
-              <object type="image/svg+xml" data="img/stacked-area.svg"></object>
+              <img src="img/stacked-area.svg">
             </a>
             <h4>
               <a href="./documentation/#stacked-area">Stacked Area</a>
@@ -168,7 +170,7 @@
         <div class="row">
           <div class="column-6 pre-1 post-1 center-text">
             <a href="./examples/#/bar-graph" class="chart-icon">
-              <object type="image/svg+xml" data="img/bar.svg"></object>
+              <img src="img/bar.svg">
             </a>
             <h4>
               <a href="./documentation/#bar">Bar</a>
@@ -180,7 +182,7 @@
           </div>
           <div class="column-6 pre-1 post-1 center-text">
             <a href="./examples/#/stacked-bar" class="chart-icon">
-              <object type="image/svg+xml" data="img/stacked-bar.svg"></object>
+              <img src="img/stacked-bar.svg">
             </a>
             <h4>
               <a href="./documentation/#stacked-bar-graph">Stacked Bar</a>
@@ -192,7 +194,7 @@
           </div>
           <div class="column-6 pre-1 post-1 center-text">
             <a href="./examples/#/scatter-plot" class="chart-icon">
-              <object type="image/svg+xml" data="img/scatter-plot.svg"></object>
+              <img src="img/scatter-plot.svg">
             </a>
             <h4>
               <a href="./documentation/#scatter-plot">Scatter Plot</a>
@@ -319,6 +321,7 @@ angular.module(&#39;myApp&#39;, [
 
   <!-- JS -->
   <script src="js/lib/angular-dimple.js"></script>
+  <script src="js/lib/tailcoat.js"></script>
   <script src="js/home.js"></script>
 </body>
 </html>
