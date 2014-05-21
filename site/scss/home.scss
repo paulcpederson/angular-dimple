@@ -6,6 +6,7 @@
   overflow: hidden;
   color: $white;
   background: url(../img/dots.svg) $dark-blue;
+  z-index: 20;
   .banner-copy {
     position: relative;
     margin: 8rem 0;

@@ -12,11 +12,14 @@
 
 .fullscreen {
   padding: 8rem 0;
+  .darker-blue {
+    background-color: $darker-blue;
+  }
 }
 
 .darker-blue {
-  background-color: $darker-blue;
   color: $gray;
+  background-color: $darker-blue;
   a {
     color: lighten($blue, 10%);
     &:hover {
@@ -32,6 +35,24 @@
     background-color: $white;
     border-color: $lighter-gray;
   }
+}
+
+.primary-navigation {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.angular-dimple-logo {
+  float: left;
+}
+
+.navigation-section {
+  width: 50%;
+  text-align: right;
+  float: right;
 }
 
 .numbered {
@@ -65,4 +86,29 @@
   right: 0;
   height: 100vh;
   padding-left: 1rem;
+}
+
+.chart-icon {
+  @extend %clearfix;
+  display: inline-block;
+  margin-bottom: 1rem;
+  background-color: $white;
+  height: 6rem;
+  width: 6rem;
+  border: 0.25rem solid $white;
+  @include border-radius(50%);
+
+  &:hover {
+    background-color: $light-blue;
+    border: 0.25rem solid $light-blue;
+    svg {
+      fill: red;
+      stroke: red;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
