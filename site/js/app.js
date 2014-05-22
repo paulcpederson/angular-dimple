@@ -11,11 +11,11 @@ angular.module('myApp', [
   $routeProvider
 
   .when('/line-graph', {
-    templateUrl: '../partials/line-graph.html',
+    templateUrl: '../documentation/partials/line-graph.html',
     controller: 'lineGraphController'
   })
   .when('/stacked-area', {
-    templateUrl: '../partials/stacked-area.html',
+    templateUrl: '../documentation/partials/stacked-area.html',
     controller: 'stackedAreaController'
   })
   .when('/area', {
@@ -23,19 +23,19 @@ angular.module('myApp', [
     controller: 'areaController'
   })
   .when('/expanded-stacked-area', {
-    templateUrl: '../partials/expanded-stacked-area.html',
+    templateUrl: '../documentation/partials/expanded-stacked-area.html',
     controller: 'expandedAreaController'
   })
-  .when('/bar-graph', {
-    templateUrl: '../partials/bar-graph.html',
+  .when('/bar', {
+    templateUrl: '../documentation/partials/bar-graph.html',
     controller: 'barController'
   })
-  .when('/stacked-bar-graph', {
-    templateUrl: '../partials/stacked-bar-graph.html',
+  .when('/stacked-bar', {
+    templateUrl: '../documentation/partials/stacked-bar-graph.html',
     controller: 'stackedBarController'
   })
   .when('/scatter-plot', {
-    templateUrl: '../partials/scatter-plot.html',
+    templateUrl: '../documentation/partials/scatter-plot.html',
     controller: 'scatterController'
   })
 

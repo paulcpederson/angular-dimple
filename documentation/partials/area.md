@@ -1,9 +1,10 @@
-<span class="api-link">
-  <a href="/documentation/#area">API</a>
-</span>
-## Area Graph
+<h2>
+    Area Graph
+    <span class="api-link">
+      <a href="/documentation/#line-graph">Area Graph Documentation</a>
+    </span>
+</h2>
 
-<!-- Default -->
 <div class="white-panel">
   <graph data="graphData">
     <x field="Month" order-by="Date"></x>

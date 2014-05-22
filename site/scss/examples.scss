@@ -2,10 +2,10 @@
 @import "config";
 
 .white-panel {
+  margin-bottom: 1rem;
   background-color: $white;
   border: 1px solid $lighter-gray;
   @include box-sizing(border-box);
-  @include trailer(3);
   @include border-radius(3px);
   &.padded {
     padding: 2rem;
@@ -16,43 +16,37 @@
   position: fixed;
   height: 100vh;
   overflow: auto;
-  padding-top: 1rem;
-
   li {
-    height: 4rem;
     margin-bottom: 1rem;
+    padding: .25rem 0;
   }
-
-
-.chart-icon {
-  &:hover {
-    &:before {
-      @include box-shadow(0 0 0 9px $light-gray);
-    }
-  }
-}
-
   a {
-    height: 3rem;
-    width: 3rem;
-
+    width: 100%;
     img {
       float: left;
       height: 3rem;
       width: 3rem;
       margin-right: 1rem;
+      background-color: $white;
+      border: 2px solid $light-gray;
+      @include border-radius(50%);
+      @include box-shadow( 0 0 0 0 $light-gray);
+      @include transition(all 200ms linear);
+    }
+    &:hover {
+      img {
+        @include box-shadow( 0 0 0 4px $light-gray);
+      }
     }
   }
-
   span {
-    float: left;
-    position: absolute;
     display: inline-block;
-    padding-top: 0.75rem;
+    line-height: 3rem;
   }
 }
 
 .api-link {
+  font-size: 1rem;
   float: right;
-  margin-top: 1.5rem;
+  line-height: 3.25rem;
 }

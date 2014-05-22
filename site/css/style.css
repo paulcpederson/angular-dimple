@@ -1467,7 +1467,7 @@ pre {
   background: #fafbfe;
   border: 1px solid #ecf0f3;
   max-width: 100%;
-  margin: 0 0 1.25rem 0;
+  margin: 0 0 3rem 0;
 }
 /* line 117, ../scss/base/_type.scss */
 pre code {
@@ -1848,4 +1848,10 @@ table tr:last-child td {
 .chart-icon img {
   width: 100%;
   height: auto;
+}
+
+/* line 126, ../scss/style.scss */
+.footer {
+  position: relative;
+  z-index: 5;
 }
