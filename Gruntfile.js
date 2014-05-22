@@ -3,6 +3,12 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    'gh-pages': {
+      options: {
+        base: 'site'
+      },
+      src: '**/*'
+    },
     'watch': {
       source: {
         files: ['./source/**/*'],
@@ -128,9 +134,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-markdown');
 
   // Default task(s)
   grunt.registerTask('default', [ 'connect', 'jshint', 'concat', 'uglify', 'markdown', 'compass', 'watch']);
+  grunt.registerTask('deploy', [ 'connect', 'jshint', 'concat', 'uglify', 'markdown', 'compass', 'gh-pages']);
+
 
 };

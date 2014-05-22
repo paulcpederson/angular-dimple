@@ -1,12 +1,15 @@
+
 # Angular Dimple Documentation
 
-Angular-Dimple is a series of Angular directives that help you create graphs and visualizations.
+Angular Dimple is a series of Angular directives that help you create graphs and visualizations based on [Dimple.js](http://dimplejs.org/) and [d3](http://d3js.org/). It's designed to create graphs as simply as possible from flat JSON data.
 
 ---
 
 ## Graph
 
-The `<graph>` directive is the wrapper directive for every type of chart in Angular-Dimple. This will create a div with a dynamic id, and initialize a new Dimple graph inside of it with several default options.
+The `<graph>` directive is the wrapper directive for every type of chart in Angular Dimple. This is where you define what data to graph, as well as the size of the graph. The data property accepts a scope variable, and you should handle the variables creation in your own data service – Dimple Angular provides some simple methods of data filtering on a graph, but avoids intensive data compiling and manipulation.
+
+This directive creates a div with a dynamic id, and initializes a new Dimple graph inside of it with several default options. Default heighth and width are 100% of the parent container.
 
 ```html
 <graph data='data' width='100%' height='100%'>
@@ -27,7 +30,7 @@ The `<graph>` directive is the wrapper directive for every type of chart in Angu
 
 ## X
 
-The `<x>` directive sets up your x axis for the graph. You can set multiple axes of each type and the graph will display them.
+The `<x>` directive sets up your x axis for the graph. Defining an x axis is required. Because it's graph. Be default, `<x>` will expect to tie to categorical data rather than measure data.
 
 ```html
 <x field='Month' type='Category' order-by='Date' group-by='Owner' title='Month, Year'></x>
@@ -47,7 +50,9 @@ The `<x>` directive sets up your x axis for the graph. You can set multiple axes
 
 ## Y
 
-The `<y>` directive sets up your y axis for the graph. You can set multiple axes of each type and the graph will display them.
+The `<y>` directive sets up your y axis for the graph. One y axis is requires, but you can set multiple axes of each type and the graph will display them. By default, `<y>` will expect to plot measure data rather than categorical data.
+
+Changing the axis to to 'Percent' will tie the largest value on the defined field to 100%, and compare the rest of the values to that.
 
 ```html
 <y field='Unit Sales' type='Measure' order-by='Unit Sales' group-by='Owner' title='Sales'></x>
@@ -67,7 +72,7 @@ The `<y>` directive sets up your y axis for the graph. You can set multiple axes
 
 ## Legend
 
-The `<legend>` directive creates a legend for your graph.
+The `<legend>` directive creates a legend for your graph. The legend is generated from the plotted data.
 
 | attribute | default     | description |
 | --------- | ----------- | ----------- |
@@ -82,7 +87,7 @@ The `<legend>` directive creates a legend for your graph.
 ## Line
 <a class="example-link" href="/examples/#/line-graph">example</a>
 
-The `<line>` directive plots your data as a line. The `field` attribute (required) will define the field from your data to plot to the graph. The `value` attribute will plot a single line to your graph  for that value in the field. You can include as many line elements in your graph as you have unique values.
+The `<line>` directive plots your data as a line. The `field` attribute (required) will define the field from your data to plot to the graph. The `value` attribute will plot a single line to your graph for that value in the field. You can include as many line elements in your graph as you have unique values. Leaving the `value` attribute blank will plot each unique value in the data set as it's own line.
 
 ```html
 <line field="Owner"></line>
@@ -215,7 +220,7 @@ Setting the y axis in a stacked area graph with create an expanded stacked area,
 
 The `<scatter-plot>` directive plots your data to an scatter plot chart. The `field` attribute will define the field from your data to plot to the graph. The `value` attribute will plot a single scatter plot to your graph for that value in the field. You can include as many scatter plot elements in your graph as you have unique values.
 
-Scatter Plots also use the `series` attribute. Series defines the categorical data to plot against the field on the axes.
+Scatter Plots also use the `series` attribute. Series defines the categorical data to plot against the fields on the axes.
 
 ```html
 <scatter-plot field="Owner" series="SKU"></scatter-plot>

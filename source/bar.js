@@ -1,6 +1,6 @@
 angular.module('angular-dimple.bar', [])
 
-.directive('bar', [function () {
+.directive('bar', ['angular-dimple.core', function (core) {
   return {
     restrict: 'E',
     replace: true,
@@ -15,12 +15,11 @@ angular.module('angular-dimple.bar', [])
       function addBar () {
         var filteredData;
         bar = chart.addSeries([$attrs.field], dimple.plot.bar);
-        if ($scope.data !== null && $attrs.value !== undefined) {
-          filteredData = dimple.filterData($scope.data, $attrs.field, [$attrs.value]);
-          bar.data = filteredData;
-        }
+        core.filter(bar, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
         graphController.draw();
       }
+
+
 
       $scope.$watch('data', function(newValue, oldValue) {
         if (newValue) {

@@ -47,61 +47,61 @@
         <ul class="menu">
           <li>
             <a href="#graph">
-              <img src="/img/graph.svg">
+              <img src="../img/graph.svg">
               <span>Graph</span>
             </a>
           </li>
           <li>
             <a href="#x">
-              <img src="/img/x.svg">
+              <img src="../img/x.svg">
               <span>X</span>
             </a>
           </li>
           <li>
             <a href="#y">
-              <img src="/img/y.svg">
+              <img src="../img/y.svg">
               <span>Y</span>
             </a>
           </li>
           <li>
             <a href="#legend">
-              <img src="/img/legend.svg">
+              <img src="../img/legend.svg">
               <span>Legend</span>
             </a>
           </li>
           <li>
             <a href="#line">
-              <img src="/img/line.svg">
+              <img src="../img/line.svg">
               <span>Line</span>
             </a>
           </li>
           <li>
             <a href="#bar">
-              <img src="/img/bar.svg">
+              <img src="../img/bar.svg">
               <span>Bar</span>
             </a>
           </li>
           <li>
             <a href="#stacked-bar">
-              <img src="/img/stacked-bar.svg">
+              <img src="../img/stacked-bar.svg">
               <span>Stacked Bar</span>
             </a>
           </li>
           <li>
             <a href="#area">
-              <img src="/img/area.svg">
+              <img src="../img/area.svg">
               <span>Area</span>
             </a>
           </li>
           <li>
             <a href="#stacked-area">
-              <img src="/img/stacked-area.svg">
+              <img src="../img/stacked-area.svg">
               <span>Stacked Area</span>
             </a>
           </li>
           <li>
             <a href="#scatter-plot">
-              <img src="/img/scatter-plot.svg">
+              <img src="../img/scatter-plot.svg">
               <span>Scatter Plot</span>
             </a>
          </li>
@@ -112,10 +112,11 @@
       <main class="column-18 pre-2 right">
         <div class="white-panel padded">
           <h1 id="angular-dimple-documentation">Angular Dimple Documentation</h1>
-<p>Angular-Dimple is a series of Angular directives that help you create graphs and visualizations.</p>
+<p>Angular Dimple is a series of Angular directives that help you create graphs and visualizations based on <a href="http://dimplejs.org/">Dimple.js</a> and <a href="http://d3js.org/">d3</a>. It&#39;s designed to create graphs as simply as possible from flat JSON data.</p>
 <hr>
 <h2 id="graph">Graph</h2>
-<p>The <code>&lt;graph&gt;</code> directive is the wrapper directive for every type of chart in Angular-Dimple. This will create a div with a dynamic id, and initialize a new Dimple graph inside of it with several default options.</p>
+<p>The <code>&lt;graph&gt;</code> directive is the wrapper directive for every type of chart in Angular Dimple. This is where you define what data to graph, as well as the size of the graph. The data property accepts a scope variable, and you should handle the variables creation in your own data service – Dimple Angular provides some simple methods of data filtering on a graph, but avoids intensive data compiling and manipulation.</p>
+<p>This directive creates a div with a dynamic id, and initializes a new Dimple graph inside of it with several default options. Default heighth and width are 100% of the parent container.</p>
 <pre><code class="lang-html"><span class="tag">&lt;<span class="title">graph</span> <span class="attribute">data</span>=<span class="value">'data'</span> <span class="attribute">width</span>=<span class="value">'100%'</span> <span class="attribute">height</span>=<span class="value">'100%'</span>&gt;</span>
 
 <span class="tag">&lt;<span class="title">graph</span>&gt;</span></code></pre>
@@ -153,7 +154,7 @@
 </table>
 <hr>
 <h2 id="x">X</h2>
-<p>The <code>&lt;x&gt;</code> directive sets up your x axis for the graph. You can set multiple axes of each type and the graph will display them.</p>
+<p>The <code>&lt;x&gt;</code> directive sets up your x axis for the graph. Defining an x axis is required. Because it&#39;s graph. Be default, <code>&lt;x&gt;</code> will expect to tie to categorical data rather than measure data.</p>
 <pre><code class="lang-html"><span class="tag">&lt;<span class="title">x</span> <span class="attribute">field</span>=<span class="value">'Month'</span> <span class="attribute">type</span>=<span class="value">'Category'</span> <span class="attribute">order-by</span>=<span class="value">'Date'</span> <span class="attribute">group-by</span>=<span class="value">'Owner'</span> <span class="attribute">title</span>=<span class="value">'Month, Year'</span>&gt;</span><span class="tag">&lt;/<span class="title">x</span>&gt;</span></code></pre>
 <h4 id="attributes">Attributes</h4>
 <table>
@@ -194,7 +195,8 @@
 </table>
 <hr>
 <h2 id="y">Y</h2>
-<p>The <code>&lt;y&gt;</code> directive sets up your y axis for the graph. You can set multiple axes of each type and the graph will display them.</p>
+<p>The <code>&lt;y&gt;</code> directive sets up your y axis for the graph. One y axis is requires, but you can set multiple axes of each type and the graph will display them. By default, <code>&lt;y&gt;</code> will expect to plot measure data rather than categorical data.</p>
+<p>Changing the axis to to &#39;Percent&#39; will tie the largest value on the defined field to 100%, and compare the rest of the values to that.</p>
 <pre><code class="lang-html"><span class="tag">&lt;<span class="title">y</span> <span class="attribute">field</span>=<span class="value">'Unit Sales'</span> <span class="attribute">type</span>=<span class="value">'Measure'</span> <span class="attribute">order-by</span>=<span class="value">'Unit Sales'</span> <span class="attribute">group-by</span>=<span class="value">'Owner'</span> <span class="attribute">title</span>=<span class="value">'Sales'</span>&gt;</span><span class="tag">&lt;/<span class="title">x</span>&gt;</span></code></pre>
 <h4 id="attributes">Attributes</h4>
 <table>
@@ -235,7 +237,7 @@
 </table>
 <hr>
 <h2 id="legend">Legend</h2>
-<p>The <code>&lt;legend&gt;</code> directive creates a legend for your graph.</p>
+<p>The <code>&lt;legend&gt;</code> directive creates a legend for your graph. The legend is generated from the plotted data.</p>
 <table>
 <thead>
 <tr>
@@ -275,7 +277,7 @@
 <hr>
 <h2 id="line">Line</h2>
 <p><a class="example-link" href="/examples/#/line-graph">example</a></p>
-<p>The <code>&lt;line&gt;</code> directive plots your data as a line. The <code>field</code> attribute (required) will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single line to your graph  for that value in the field. You can include as many line elements in your graph as you have unique values.</p>
+<p>The <code>&lt;line&gt;</code> directive plots your data as a line. The <code>field</code> attribute (required) will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single line to your graph for that value in the field. You can include as many line elements in your graph as you have unique values. Leaving the <code>value</code> attribute blank will plot each unique value in the data set as it&#39;s own line.</p>
 <pre><code class="lang-html"><span class="tag">&lt;<span class="title">line</span> <span class="attribute">field</span>=<span class="value">"Owner"</span>&gt;</span><span class="tag">&lt;/<span class="title">line</span>&gt;</span>
 
 <span class="comment">&lt;!-- OR --&gt;</span>
@@ -445,7 +447,7 @@
 <h2 id="scatter-plot">Scatter Plot</h2>
 <p><a class="example-link" href="/examples/#/scatter-plot">example</a></p>
 <p>The <code>&lt;scatter-plot&gt;</code> directive plots your data to an scatter plot chart. The <code>field</code> attribute will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single scatter plot to your graph for that value in the field. You can include as many scatter plot elements in your graph as you have unique values.</p>
-<p>Scatter Plots also use the <code>series</code> attribute. Series defines the categorical data to plot against the field on the axes.</p>
+<p>Scatter Plots also use the <code>series</code> attribute. Series defines the categorical data to plot against the fields on the axes.</p>
 <pre><code class="lang-html"><span class="tag">&lt;<span class="title">scatter-plot</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">series</span>=<span class="value">"SKU"</span>&gt;</span><span class="tag">&lt;/<span class="title">scatter-plot</span>&gt;</span>
 
 <span class="comment">&lt;!-- OR --&gt;</span>
