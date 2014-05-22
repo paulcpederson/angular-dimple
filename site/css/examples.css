@@ -18,21 +18,29 @@
 }
 
 /* line 15, ../scss/examples.scss */
+.example-link {
+  margin-top: -2.75rem;
+  float: right;
+  font-family: "Source Code Pro", "Inconsolata", "Consolas", "Courier New", monospace;
+  font-size: 1rem;
+}
+
+/* line 22, ../scss/examples.scss */
 .sidebar {
   position: fixed;
   height: 100vh;
   overflow: auto;
 }
-/* line 19, ../scss/examples.scss */
+/* line 26, ../scss/examples.scss */
 .sidebar li {
   margin-bottom: 1rem;
   padding: .25rem 0;
 }
-/* line 23, ../scss/examples.scss */
+/* line 30, ../scss/examples.scss */
 .sidebar a {
   width: 100%;
 }
-/* line 25, ../scss/examples.scss */
+/* line 32, ../scss/examples.scss */
 .sidebar a img {
   float: left;
   height: 3rem;
@@ -53,21 +61,26 @@
   -o-transition: all 200ms linear;
   transition: all 200ms linear;
 }
-/* line 37, ../scss/examples.scss */
+/* line 44, ../scss/examples.scss */
 .sidebar a:hover img {
   -webkit-box-shadow: 0 0 0 4px #dde3e8;
   -moz-box-shadow: 0 0 0 4px #dde3e8;
   box-shadow: 0 0 0 4px #dde3e8;
 }
-/* line 42, ../scss/examples.scss */
+/* line 49, ../scss/examples.scss */
 .sidebar span {
   display: inline-block;
   line-height: 3rem;
 }
 
-/* line 48, ../scss/examples.scss */
+/* line 55, ../scss/examples.scss */
 .api-link {
   font-size: 1rem;
   float: right;
   line-height: 3.25rem;
+}
+
+/* line 61, ../scss/examples.scss */
+h2 {
+  padding: 6rem 0 1rem 0;
 }

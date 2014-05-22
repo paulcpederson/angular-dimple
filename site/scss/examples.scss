@@ -12,6 +12,13 @@
   }
 }
 
+.example-link {
+  margin-top: -2.75rem;
+  float: right;
+  font-family: $source;
+  font-size: 1rem;
+}
+
 .sidebar {
   position: fixed;
   height: 100vh;
@@ -49,4 +56,8 @@
   font-size: 1rem;
   float: right;
   line-height: 3.25rem;
+}
+
+h2 {
+  padding: 6rem 0 1rem 0;
 }
