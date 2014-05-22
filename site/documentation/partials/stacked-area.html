@@ -45,3 +45,19 @@
       <a href="/documentation/#line-graph">Stacked Area Documentation</a>
     </span>
 </h3>
+
+<div class="white-panel">
+  <graph data="graphData" height="600">
+    <x field="Month" order-by="Date"></x>
+    <y field="Unit Sales" type="Percent"></y>
+    <legend></legend>
+    <stacked-area field="Owner"></area>
+  </graph>
+</div>
+
+<pre><code><span class="tag">&lt;<span class="title">graph</span> <span class="attribute">data</span>=<span class="value">"graphData"</span> <span class="attribute">height</span>=<span class="value">"600"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">x</span> <span class="attribute">field</span>=<span class="value">"Month"</span> <span class="attribute">order-by</span>=<span class="value">"Date"</span>&gt;</span><span class="tag">&lt;/<span class="title">x</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">y</span> <span class="attribute">field</span>=<span class="value">"Unit Sales"</span> <span class="attribute">type</span>=<span class="value">"Percent"</span>&gt;</span><span class="tag">&lt;/<span class="title">y</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">legend</span>&gt;</span><span class="tag">&lt;/<span class="title">legend</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">stacked-area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span>&gt;</span><span class="tag">&lt;/<span class="title">area</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">graph</span>&gt;</span></code></pre>

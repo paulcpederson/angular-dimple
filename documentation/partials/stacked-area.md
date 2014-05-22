@@ -51,3 +51,21 @@
       <a href="/documentation/#line-graph">Stacked Area Documentation</a>
     </span>
 </h3>
+
+<div class="white-panel">
+  <graph data="graphData" height="600">
+    <x field="Month" order-by="Date"></x>
+    <y field="Unit Sales" type="Percent"></y>
+    <legend></legend>
+    <stacked-area field="Owner"></area>
+  </graph>
+</div>
+
+```
+<graph data="graphData" height="600">
+  <x field="Month" order-by="Date"></x>
+  <y field="Unit Sales" type="Percent"></y>
+  <legend></legend>
+  <stacked-area field="Owner"></area>
+</graph>
+```
