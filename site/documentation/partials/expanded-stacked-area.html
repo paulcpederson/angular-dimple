@@ -1,0 +1,37 @@
+<h2>
+    Expanded Stacked Area
+    <span class="api-link">
+      <a href="/documentation/#line-graph">Expanded Stacked Area Documentation</a>
+    </span>
+</h2>
+
+<graph data="graphData">
+  <x field="Month" order-by="Date"></x>
+  <y field="Unit Sales" type="Percent"></y>
+  <legend></legend>
+  <stacked-area field="Owner"></area>
+</graph>
+
+<pre><code class="lang-html"><span class="comment">&lt;!-- Default Stacked --&gt;</span>
+<span class="tag">&lt;<span class="title">graph</span> <span class="attribute">data</span>=<span class="value">"graphData"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">x</span> <span class="attribute">field</span>=<span class="value">"Month"</span> <span class="attribute">order-by</span>=<span class="value">"Date"</span>&gt;</span><span class="tag">&lt;/<span class="title">x</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">y</span> <span class="attribute">field</span>=<span class="value">"Unit Sales"</span> <span class="attribute">type</span>=<span class="value">"Percent"</span>&gt;</span><span class="tag">&lt;/<span class="title">y</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">legend</span>&gt;</span><span class="tag">&lt;/<span class="title">legend</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">stacked-area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span>&gt;</span><span class="tag">&lt;/<span class="title">area</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">graph</span>&gt;</span></code></pre>
+<graph data="graphData" width="100%" height="600px">
+  <x group-by="Owner" field="Month" order-by="Date" type="Category" title="Cream, Get the Money"></x>
+  <y field="Unit Sales" type="Percent" title="Dollah Dolah Bill Yall"></y>
+  <stacked-area field="Owner" value="Aperture" series='SKU'></stacked-area>
+  <stacked-area field="Owner" value="Black Mesa" series='SKU'></stacked-area>
+  <stacked-area field="Owner" value="Tyrell Corp" series='SKU'></stacked-area>
+</graph>
+
+<pre><code class="lang-html"><span class="comment">&lt;!-- Grouped, with Attrs --&gt;</span>
+<span class="tag">&lt;<span class="title">graph</span> <span class="attribute">data</span>=<span class="value">"graphData"</span> <span class="attribute">width</span>=<span class="value">"100%"</span> <span class="attribute">height</span>=<span class="value">"600px"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">x</span> <span class="attribute">group-by</span>=<span class="value">"Owner"</span> <span class="attribute">field</span>=<span class="value">"Month"</span> <span class="attribute">order-by</span>=<span class="value">"Date"</span> <span class="attribute">type</span>=<span class="value">"Category"</span> <span class="attribute">title</span>=<span class="value">"Cream, Get the Money"</span>&gt;</span><span class="tag">&lt;/<span class="title">x</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">y</span> <span class="attribute">field</span>=<span class="value">"Unit Sales"</span> <span class="attribute">type</span>=<span class="value">"Percent"</span> <span class="attribute">title</span>=<span class="value">"Dollah Dolah Bill Yall"</span>&gt;</span><span class="tag">&lt;/<span class="title">y</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">stacked-area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">value</span>=<span class="value">"Aperture"</span> <span class="attribute">series</span>=<span class="value">'SKU'</span>&gt;</span><span class="tag">&lt;/<span class="title">stacked-area</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">stacked-area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">value</span>=<span class="value">"Black Mesa"</span> <span class="attribute">series</span>=<span class="value">'SKU'</span>&gt;</span><span class="tag">&lt;/<span class="title">stacked-area</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">stacked-area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">value</span>=<span class="value">"Tyrell Corp"</span> <span class="attribute">series</span>=<span class="value">'SKU'</span>&gt;</span><span class="tag">&lt;/<span class="title">stacked-area</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">graph</span>&gt;</span></code></pre>
