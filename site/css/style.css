@@ -1482,7 +1482,7 @@ pre code {
 hr {
   margin: 2rem 0;
   border: none;
-  border-top: 1px solid #fafbfe;
+  border-top: 2rem solid #1f85c4;
 }
 
 /* line 132, ../scss/base/_type.scss */
@@ -1734,25 +1734,28 @@ table tr:last-child td {
 .primary-navigation {
   font-weight: 300;
   position: fixed;
-  top: 1rem;
+  top: 0;
   left: 0;
   right: 0;
+  background-color: white;
+  border-bottom: 1px solid #dde3e8;
+  padding-top: 1rem;
   z-index: 10;
 }
 
-/* line 45, ../scss/style.scss */
+/* line 48, ../scss/style.scss */
 .angular-dimple-logo {
   float: left;
 }
 
-/* line 49, ../scss/style.scss */
+/* line 52, ../scss/style.scss */
 .navigation-section {
   width: 50%;
   text-align: right;
   float: right;
 }
 
-/* line 55, ../scss/style.scss */
+/* line 58, ../scss/style.scss */
 .numbered {
   text-align: center;
   width: 2em;
@@ -1772,7 +1775,7 @@ table tr:last-child td {
   border-radius: 50%;
 }
 
-/* line 70, ../scss/style.scss */
+/* line 73, ../scss/style.scss */
 .navigation {
   position: fixed;
   height: 100vh;
@@ -1781,7 +1784,7 @@ table tr:last-child td {
   background-color: #ededed;
 }
 
-/* line 78, ../scss/style.scss */
+/* line 81, ../scss/style.scss */
 .chart {
   position: absolute;
   top: 0;
@@ -1792,7 +1795,7 @@ table tr:last-child td {
   padding-left: 1rem;
 }
 
-/* line 88, ../scss/style.scss */
+/* line 91, ../scss/style.scss */
 .chart-icon {
   display: inline-block;
   margin-bottom: 1rem;
@@ -1812,11 +1815,11 @@ table tr:last-child td {
   transition: all 200ms linear;
   border: 1px solid #dde3e8;
 }
-/* line 100, ../scss/style.scss */
+/* line 103, ../scss/style.scss */
 .chart-icon:hover {
   background-color: #fafbfe;
 }
-/* line 103, ../scss/style.scss */
+/* line 106, ../scss/style.scss */
 .chart-icon:before {
   content: "";
   position: absolute;
@@ -1838,19 +1841,19 @@ table tr:last-child td {
   -o-transition: all 200ms linear;
   transition: all 200ms linear;
 }
-/* line 116, ../scss/style.scss */
+/* line 119, ../scss/style.scss */
 .chart-icon:hover:before {
   -webkit-box-shadow: 0 0 0 12px #dde3e8;
   -moz-box-shadow: 0 0 0 12px #dde3e8;
   box-shadow: 0 0 0 12px #dde3e8;
 }
-/* line 120, ../scss/style.scss */
+/* line 123, ../scss/style.scss */
 .chart-icon img {
   width: 100%;
   height: auto;
 }
 
-/* line 126, ../scss/style.scss */
+/* line 129, ../scss/style.scss */
 .footer {
   position: relative;
   z-index: 5;

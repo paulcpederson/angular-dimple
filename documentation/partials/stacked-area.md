@@ -1,7 +1,7 @@
 <h2>
     Stacked Area
     <span class="api-link">
-      <a href="/documentation/#line-graph">Stacked Area Documentation</a>
+      <a href="/documentation/#stacked-area">Stacked Area Documentation</a>
     </span>
 </h2>
 
@@ -44,3 +44,10 @@
   <stacked-area field="Owner" value="Tyrell Corp" series='SKU'></stacked-area>
 </graph>
 ```
+
+<h3>
+    Expanded Stacked Area
+    <span class="api-link">
+      <a href="/documentation/#line-graph">Stacked Area Documentation</a>
+    </span>
+</h3>
