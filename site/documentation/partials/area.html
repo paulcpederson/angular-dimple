@@ -1,7 +1,7 @@
 <h2>
     Area Graph
     <span class="api-link">
-      <a href="/documentation/#line-graph">Area Graph Documentation</a>
+      <a href="/documentation/#area">Area Graph Documentation</a>
     </span>
 </h2>
 
