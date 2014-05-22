@@ -18,7 +18,7 @@ angular.module('angular-dimple.stacked-area', [])
         } else {
           area = chart.addSeries([$attrs.field], dimple.plot.area);
         }
-        core.filter(area, $attrs, $scope.data);
+        core.filter(area, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
         area.lineMarkers = false;
         graphController.draw();
       }

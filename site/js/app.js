@@ -26,11 +26,11 @@ angular.module('myApp', [
     templateUrl: '../partials/expanded-stacked-area.html',
     controller: 'expandedAreaController'
   })
-  .when('/bar-graph', {
+  .when('/bar', {
     templateUrl: '../partials/bar-graph.html',
     controller: 'barController'
   })
-  .when('/stacked-bar-graph', {
+  .when('/stacked-bar', {
     templateUrl: '../partials/stacked-bar-graph.html',
     controller: 'stackedBarController'
   })

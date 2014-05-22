@@ -13,11 +13,19 @@ angular.module('angular-dimple.area', [])
       var chart = graphController.getChart();
 
       function addArea () {
-        area = chart.addSeries([$attrs.field], dimple.plot.area);
-        core.filter(area, $attrs, $scope.data);
-        area.lineMarkers = true;
+        if ($attrs.value) {
+          area = chart.addSeries([$attrs.field], dimple.plot.area);
+          core.filter(area, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
+          area.lineMarkers = true;
+        } else {
+          var values = dimple.getUniqueValues($scope.data, $attrs.field);
+          angular.forEach(values, function(value){
+            area = chart.addSeries([$attrs.field], dimple.plot.area);
+            core.filter(area, $scope.data, $attrs.field, value, $attrs.filter);;
+            area.lineMarkers = true;
+          });
+        }
         graphController.draw();
-
       }
 
       $scope.$watch('data', function(newValue, oldValue) {
