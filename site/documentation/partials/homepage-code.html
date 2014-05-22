@@ -1,0 +1,66 @@
+<p>Top Tabbed Code Sample:</p>
+<pre><code class="lang-html"><span class="tag">&lt;<span class="title">graph</span> <span class="attribute">data</span>=<span class="value">"graphData"</span> <span class="attribute">height</span>=<span class="value">"400"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">x</span> <span class="attribute">field</span>=<span class="value">"Month"</span> <span class="attribute">order-by</span>=<span class="value">"Date"</span>&gt;</span><span class="tag">&lt;/<span class="title">x</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">y</span> <span class="attribute">field</span>=<span class="value">"Unit Sales"</span>&gt;</span><span class="tag">&lt;/<span class="title">y</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">legend</span>&gt;</span><span class="tag">&lt;/<span class="title">legend</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">line</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">value</span>=<span class="value">"Aperture"</span>&gt;</span><span class="tag">&lt;/<span class="title">line</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">graph</span>&gt;</span></code></pre>
+<p>index.html:</p>
+<pre><code class="lang-html"><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://d3js.org/d3.v3.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://dimplejs.org/dist/dimple.v2.0.0.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">body</span> <span class="attribute">ng-app</span>=<span class="value">"myApp"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"myController"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">graph</span> <span class="attribute">data</span>=<span class="value">"graphData"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">x</span> <span class="attribute">field</span>=<span class="value">"Month"</span> <span class="attribute">order-by</span>=<span class="value">"Date"</span>&gt;</span><span class="tag">&lt;/<span class="title">x</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">y</span> <span class="attribute">field</span>=<span class="value">"Unit Sales"</span>&gt;</span><span class="tag">&lt;/<span class="title">y</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">line</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">value</span>=<span class="value">"Aperture"</span>&gt;</span><span class="tag">&lt;/<span class="title">line</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">graph</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"angular-dimple.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"app.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></pre>
+<p>app.js</p>
+<pre><code class="lang-js">angular.module(<span class="comment">'myApp', [</span>
+  <span class="comment">'angular-dimple'</span>
+])
+
+.controller(<span class="comment">'myController', ['$scope', 'dataService', function($scope, dataService) {</span>
+  dataService.getData().<span class="keyword">then</span>(<span class="keyword">function</span>(<span class="built_in">response</span>) {
+    $scope.graphData = <span class="built_in">response</span>.data;
+  });
+}])
+
+.service(<span class="comment">'dataService', ['$http', function($http) {</span>
+  return {
+    getData: <span class="keyword">function</span>() {
+      return $http.<span class="keyword">get</span>(<span class="comment">'data.json');</span>
+    }
+  };
+}]);</code></pre>
+<p>data.json</p>
+<pre><code class="lang-json">[
+  {
+    "<span class="attribute">Date</span>": <span class="value"><span class="string">"01\/01\/2011"</span></span>,
+    "<span class="attribute">Month</span>": <span class="value"><span class="string">"Jan-11"</span></span>,
+    "<span class="attribute">Owner</span>": <span class="value"><span class="string">"Aperture"</span></span>,
+    "<span class="attribute">Unit Sales</span>": <span class="value"><span class="string">"1765"</span>
+  }</span>,
+  {
+    "<span class="attribute">Date</span>": <span class="value"><span class="string">"02\/01\/2011"</span></span>,
+    "<span class="attribute">Month</span>": <span class="value"><span class="string">"Jan-11"</span></span>,
+    "<span class="attribute">Owner</span>": <span class="value"><span class="string">"Aperture"</span></span>,
+    "<span class="attribute">Unit Sales</span>": <span class="value"><span class="string">"1899"</span>
+  }</span>,
+  {
+    "<span class="attribute">Date</span>": <span class="value"><span class="string">"02\/01\/2011"</span></span>,
+    "<span class="attribute">Month</span>": <span class="value"><span class="string">"Jan-11"</span></span>,
+    "<span class="attribute">Owner</span>": <span class="value"><span class="string">"Aperture"</span></span>,
+    "<span class="attribute">Unit Sales</span>": <span class="value"><span class="string">"1565"</span>
+  }</span>
+]</code></pre>

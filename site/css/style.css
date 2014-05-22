@@ -1430,35 +1430,27 @@ a:active, a:hover {
 }
 
 /* line 68, ../scss/base/_type.scss */
-.example-link {
-  margin-top: -4rem;
-  float: right;
-  font-family: "Source Code Pro", "Inconsolata", "Consolas", "Courier New", monospace;
-  font-size: 1rem;
-}
-
-/* line 75, ../scss/base/_type.scss */
 ul, ol {
   list-style-position: inside;
   margin-top: 0;
   padding: 0;
 }
-/* line 79, ../scss/base/_type.scss */
+/* line 72, ../scss/base/_type.scss */
 ul ul, ul ol, ol ul, ol ol {
   padding-left: 1.25em;
 }
 
-/* line 84, ../scss/base/_type.scss */
+/* line 77, ../scss/base/_type.scss */
 ul {
   list-style-type: none;
 }
 
-/* line 93, ../scss/base/_type.scss */
+/* line 86, ../scss/base/_type.scss */
 code, kbd, pre, samp {
   font-family: "Source Code Pro", "Inconsolata", "Consolas", "Courier New", monospace;
 }
 
-/* line 97, ../scss/base/_type.scss */
+/* line 90, ../scss/base/_type.scss */
 code {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -1473,7 +1465,7 @@ code {
   line-height: 1.5em;
 }
 
-/* line 107, ../scss/base/_type.scss */
+/* line 100, ../scss/base/_type.scss */
 pre {
   padding: 1em;
   white-space: pre;
@@ -1487,9 +1479,8 @@ pre {
   background: #fafbfe;
   border: 1px solid #ecf0f3;
   max-width: 100%;
-  margin: 0 0 3rem 0;
 }
-/* line 117, ../scss/base/_type.scss */
+/* line 109, ../scss/base/_type.scss */
 pre code {
   background-color: #fafbfe;
   display: block;
@@ -1498,58 +1489,65 @@ pre code {
   border: none;
 }
 
-/* line 126, ../scss/base/_type.scss */
+/* line 118, ../scss/base/_type.scss */
 hr {
-  margin: 2rem 0;
+  display: none;
+  margin-top: 2rem;
   border: none;
   border-top: 2rem solid #1f85c4;
 }
 
-/* line 132, ../scss/base/_type.scss */
+/* line 125, ../scss/base/_type.scss */
 .center-text {
   text-align: center;
 }
 
-/* line 136, ../scss/base/_type.scss */
+/* line 129, ../scss/base/_type.scss */
 img::selection {
   background: transparent;
 }
 
-/* line 140, ../scss/base/_type.scss */
+/* line 133, ../scss/base/_type.scss */
 img::moz-selection {
   background: transparent;
 }
 
-/* line 144, ../scss/base/_type.scss */
+/* line 137, ../scss/base/_type.scss */
 table {
   width: 100%;
-  padding-bottom: 1.25rem;
-}
-/* line 148, ../scss/base/_type.scss */
-table thead {
-  background-color: #ecf0f3;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: .85rem;
-  font-family: "Source Code Pro", "Inconsolata", "Consolas", "Courier New", monospace;
-  font-weight: 300;
-}
-/* line 157, ../scss/base/_type.scss */
-table th {
-  padding: 0.25em 1em;
+  background-color: white;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #e4e9ed;
   text-align: left;
 }
-/* line 162, ../scss/base/_type.scss */
-table td {
-  padding: 0.75em 1em;
+/* line 144, ../scss/base/_type.scss */
+table > thead {
+  background-color: #f3f5f8;
+  border-bottom: 1px solid #e4e9ed;
 }
-/* line 166, ../scss/base/_type.scss */
+/* line 148, ../scss/base/_type.scss */
+table th, table td {
+  border-left: 1px solid #e4e9ed;
+  border-right: 1px solid #e4e9ed;
+  padding: 12px;
+}
+/* line 153, ../scss/base/_type.scss */
+table tr {
+  border-bottom: 1px solid #e4e9ed;
+  text-align: left;
+}
+/* line 156, ../scss/base/_type.scss */
+table tr:last-child {
+  border-bottom: none;
+}
+/* line 159, ../scss/base/_type.scss */
 table tr:nth-child(even) {
   background-color: #fafbfe;
 }
-/* line 171, ../scss/base/_type.scss */
-table tr:last-child td {
-  border-bottom: 2px solid #ecf0f3;
+/* line 161, ../scss/base/_type.scss */
+table tr:nth-child(even) td {
+  background-color: #fafbfe;
 }
 
 /*
@@ -1869,7 +1867,7 @@ pre .tex .formula {
   right: 0;
   background-color: white;
   border-bottom: 1px solid #dde3e8;
-  padding-top: 1rem;
+  padding: 1rem 0;
   z-index: 10;
 }
 

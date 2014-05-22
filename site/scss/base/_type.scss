@@ -65,13 +65,6 @@ a {
   }
 }
 
-.example-link {
-  margin-top: -4rem;
-  float: right;
-  font-family: $source;
-  font-size: 1rem;
-}
-
 ul, ol {
   list-style-position: inside;
   margin-top: 0;
@@ -113,7 +106,6 @@ pre {
   background: $off-white;
   border: 1px solid $lighter-gray;
   max-width: 100%;
-  margin: 0 0 3rem 0;
   code {
     background-color: $off-white;
     display: block;
@@ -124,7 +116,8 @@ pre {
 }
 
 hr {
-  margin: 2rem 0;
+  display: none;
+  margin-top: 2rem;
   border: none;
   border-top: 2rem solid $blue;
 }
@@ -143,33 +136,31 @@ img::moz-selection {
 
 table {
   width: 100%;
-  padding-bottom: $baseline;
-
-  thead {
-    background-color: $lighter-gray;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: .85rem;
-    font-family: $source;
-    font-weight: 300;
+  background-color: $white;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid mix($lighter-gray, $light-gray);
+  text-align: left;
+  > thead {
+    background-color: mix($off-white, $lighter-gray);
+    border-bottom: 1px solid mix($lighter-gray, $light-gray);
   }
-
-  th {
-    padding: 0.25em 1em;
+  th, td {
+    border-left: 1px solid mix($lighter-gray, $light-gray);
+    border-right: 1px solid mix($lighter-gray, $light-gray);
+    padding: 12px;
+  }
+  tr {
+    border-bottom: 1px solid mix($lighter-gray, $light-gray);
     text-align: left;
-  }
-
-  td {
-    padding: 0.75em 1em;
-  }
-
-  tr:nth-child(even) {
-    background-color: $off-white;
-  }
-
-  tr:last-child {
-    td {
-      border-bottom: 2px solid $lighter-gray;
+    &:last-child {
+      border-bottom: none;
+    }
+    &:nth-child(even){
+        background-color: $off-white;
+      td {
+        background-color: $off-white;
+      }
     }
   }
 }
