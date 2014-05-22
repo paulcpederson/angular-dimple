@@ -2,7 +2,7 @@
 <h2>
     Line Graph
     <span class="api-link">
-      <a href="/documentation/#line">Line Graph Documentation</a>
+      <a href="../documentation/#line">Line Graph Documentation</a>
     </span>
 </h2>
 

@@ -1,7 +1,7 @@
 <h2>
     Bar Graph
     <span class="api-link">
-      <a href="/documentation/#bar">Bar Graph Documentation</a>
+      <a href="../documentation/#bar">Bar Graph Documentation</a>
     </span>
 </h2>
 

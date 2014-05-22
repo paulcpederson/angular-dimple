@@ -1,7 +1,7 @@
 <h2>
     Scatter Plot
     <span class="api-link">
-      <a href="/documentation/#scatter-plot">Scatter Plot Documentation</a>
+      <a href="../documentation/#scatter-plot">Scatter Plot Documentation</a>
     </span>
 </h2>
 
