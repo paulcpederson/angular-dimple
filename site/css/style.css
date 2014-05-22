@@ -1291,6 +1291,26 @@ img {
   margin-bottom: 5rem;
 }
 
+/* line 87, ../scss/base/_grid.scss */
+.leader-6 {
+  margin-top: 6rem;
+}
+
+/* line 88, ../scss/base/_grid.scss */
+.trailer-6 {
+  margin-bottom: 6rem;
+}
+
+/* line 87, ../scss/base/_grid.scss */
+.leader-7 {
+  margin-top: 7rem;
+}
+
+/* line 88, ../scss/base/_grid.scss */
+.trailer-7 {
+  margin-bottom: 7rem;
+}
+
 /* line 92, ../scss/base/_grid.scss */
 .right {
   float: right !important;
