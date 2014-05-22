@@ -22,33 +22,41 @@
   position: fixed;
   height: 100vh;
   overflow: auto;
+  padding-top: 1rem;
 }
-/* line 20, ../scss/examples.scss */
+/* line 21, ../scss/examples.scss */
 .sidebar li {
   height: 4rem;
   margin-bottom: 1rem;
 }
-/* line 26, ../scss/examples.scss */
+/* line 29, ../scss/examples.scss */
+.sidebar .chart-icon:hover:before {
+  -webkit-box-shadow: 0 0 0 9px #dde3e8;
+  -moz-box-shadow: 0 0 0 9px #dde3e8;
+  box-shadow: 0 0 0 9px #dde3e8;
+}
+/* line 35, ../scss/examples.scss */
+.sidebar a {
+  height: 3rem;
+  width: 3rem;
+}
+/* line 39, ../scss/examples.scss */
 .sidebar a img {
   float: left;
   height: 3rem;
   width: 3rem;
   margin-right: 1rem;
-  background-color: white;
-  border: 0.5em solid white;
-  -webkit-border-radius: 2rem;
-  -moz-border-radius: 2rem;
-  -ms-border-radius: 2rem;
-  -o-border-radius: 2rem;
-  border-radius: 2rem;
 }
-/* line 37, ../scss/examples.scss */
-.sidebar a:hover img {
-  background-color: #379fdf;
-  border: 0.5em solid #379fdf;
-}
-/* line 44, ../scss/examples.scss */
+/* line 47, ../scss/examples.scss */
 .sidebar span {
+  float: left;
+  position: absolute;
   display: inline-block;
-  padding-top: 1.25rem;
+  padding-top: 0.75rem;
+}
+
+/* line 55, ../scss/examples.scss */
+.api-link {
+  float: right;
+  margin-top: 1.5rem;
 }

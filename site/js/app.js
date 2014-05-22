@@ -19,7 +19,7 @@ angular.module('myApp', [
     controller: 'stackedAreaController'
   })
   .when('/area', {
-    templateUrl: '../partials/area.html',
+    templateUrl: '../documentation/partials/area.html',
     controller: 'areaController'
   })
   .when('/expanded-stacked-area', {

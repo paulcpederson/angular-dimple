@@ -26,8 +26,8 @@ module.exports = function(grunt) {
         }
       },
       docs: {
-        files: ['docs/**'],
-        tasks: ['md2html'],
+        files: ['documentation/**'],
+        tasks: ['markdown'],
         options: {
           nospawn: true
         }
@@ -96,6 +96,23 @@ module.exports = function(grunt) {
         ],
         options: {
           template: 'documentation/layout.html',
+          markdownOptions: {
+            gfm: true,
+            highlight: 'manual'
+          }
+        }
+      },
+      partials: {
+        files: [
+          {
+            expand: true,
+            src: 'documentation/partials/*.md',
+            dest: 'site/',
+            ext: '.html'
+          }
+        ],
+        options: {
+          template: 'documentation/blank.html',
           markdownOptions: {
             gfm: true,
             highlight: 'manual'

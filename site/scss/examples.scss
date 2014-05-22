@@ -16,33 +16,43 @@
   position: fixed;
   height: 100vh;
   overflow: auto;
+  padding-top: 1rem;
 
   li {
     height: 4rem;
     margin-bottom: 1rem;
   }
 
+
+.chart-icon {
+  &:hover {
+    &:before {
+      @include box-shadow(0 0 0 9px $light-gray);
+    }
+  }
+}
+
   a {
+    height: 3rem;
+    width: 3rem;
+
     img {
       float: left;
       height: 3rem;
       width: 3rem;
       margin-right: 1rem;
-      background-color: $white;
-      border: 0.5em solid $white;
-      @include border-radius(2rem);
-    }
-
-    &:hover {
-      img {
-        background-color: $light-blue;
-        border: 0.5em solid $light-blue;
-      }
     }
   }
 
   span {
+    float: left;
+    position: absolute;
     display: inline-block;
-    padding-top: 1.25rem;
+    padding-top: 0.75rem;
   }
+}
+
+.api-link {
+  float: right;
+  margin-top: 1.5rem;
 }

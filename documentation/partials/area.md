@@ -1,9 +1,7 @@
 <span class="api-link">
   <a href="/documentation/#area">API</a>
 </span>
-<h2>
-  Area Graph
-</h2>
+## Area Graph
 
 <!-- Default -->
 <div class="white-panel">
@@ -15,7 +13,17 @@
   </graph>
 </div>
 
-
+```
+<!-- Default -->
+<div class="white-panel">
+  <graph data="graphData">
+    <x field="Month" order-by="Date"></x>
+    <y field="Unit Sales"></y>
+    <legend></legend>
+    <area field="Owner"></area>
+  </graph>
+</div>
+```
 
 <!-- Grouped Area -->
 <div class="white-panel">
@@ -28,3 +36,17 @@
     <area field="Owner" value="Tyrell Corp"></area>
   </graph>
 </div>
+
+```
+<!-- Grouped Area -->
+<div class="white-panel">
+  <graph data="graphData" width="100%" height="600px">
+    <x group-by="Owner" field="Month" order-by="Date" title="Cream, Get the Money"></x>
+    <y field="Unit Sales" type="Measure" title="Dollah Dolah Bill Yall"></y>
+
+    <area field="Owner" value="Aperture"></area>
+    <area field="Owner" value="Black Mesa"></area>
+    <area field="Owner" value="Tyrell Corp"></area>
+  </graph>
+</div>
+```
