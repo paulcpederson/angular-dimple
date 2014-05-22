@@ -1,7 +1,7 @@
 <h2>
     Expanded Stacked Area
     <span class="api-link">
-      <a href="/documentation/#line-graph">Expanded Stacked Area Documentation</a>
+      <a href="/documentation/#stacked-area">Expanded Stacked Area Documentation</a>
     </span>
 </h2>
 

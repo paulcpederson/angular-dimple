@@ -39,62 +39,68 @@
     </div>
   </nav>
 
-  <div class="container leader-5 trailer-5">
+  <div class="container leader-7 trailer-5">
     <div class="row">
 
       <!-- Menu -->
-      <aside class="sidebar column-4 leader-5">
+      <aside class="sidebar column-4">
         <ul class="menu">
           <li>
-            <a href="#graph" class="chart-icon">
+            <a href="#graph">
               <img src="/img/graph.svg">
               <span>Graph</span>
             </a>
           </li>
           <li>
-            <a href="#x" class="chart-icon">
+            <a href="#x">
               <img src="/img/x.svg">
               <span>X</span>
             </a>
           </li>
           <li>
-            <a href="#y" class="chart-icon">
+            <a href="#y">
               <img src="/img/y.svg">
               <span>Y</span>
             </a>
           </li>
           <li>
-            <a href="#legend" class="chart-icon">
+            <a href="#legend">
               <img src="/img/legend.svg">
               <span>Legend</span>
             </a>
           </li>
           <li>
-            <a href="#line" class="chart-icon">
+            <a href="#line">
               <img src="/img/line.svg">
               <span>Line</span>
             </a>
           </li>
           <li>
-            <a href="#area" class="chart-icon">
-              <img src="/img/area.svg">
-              <span>Area</span>
-            </a>
-          </li>
-          <li>
-            <a href="#stacked-area" class="chart-icon">
-              <img src="/img/stacked-area.svg">
-              <span>Stacked Area</span>
-            </a>
-          </li>
-          <li>
-            <a href="#bar" class="chart-icon">
+            <a href="#bar">
               <img src="/img/bar.svg">
               <span>Bar</span>
             </a>
           </li>
           <li>
-            <a href="#scatter-plot" class="chart-icon">
+            <a href="#stacked-bar">
+              <img src="/img/stacked-bar.svg">
+              <span>Stacked Bar</span>
+            </a>
+          </li>
+          <li>
+            <a href="#area">
+              <img src="/img/area.svg">
+              <span>Area</span>
+            </a>
+          </li>
+          <li>
+            <a href="#stacked-area">
+              <img src="/img/stacked-area.svg">
+              <span>Stacked Area</span>
+            </a>
+          </li>
+          <li>
+            <a href="#scatter-plot">
               <img src="/img/scatter-plot.svg">
               <span>Scatter Plot</span>
             </a>
@@ -107,6 +113,7 @@
         <div class="white-panel padded">
           <h1 id="angular-dimple-documentation">Angular Dimple Documentation</h1>
 <p>Angular-Dimple is a series of Angular directives that help you create graphs and visualizations.</p>
+<hr>
 <h2 id="graph">Graph</h2>
 <p>The <code>&lt;graph&gt;</code> directive is the wrapper directive for every type of chart in Angular-Dimple. This will create a div with a dynamic id, and initialize a new Dimple graph inside of it with several default options.</p>
 <pre><code class="lang-html"><span class="tag">&lt;<span class="title">graph</span> <span class="attribute">data</span>=<span class="value">'data'</span> <span class="attribute">width</span>=<span class="value">'100%'</span> <span class="attribute">height</span>=<span class="value">'100%'</span>&gt;</span>
@@ -144,6 +151,7 @@
 </tr>
 </tbody>
 </table>
+<hr>
 <h2 id="x">X</h2>
 <p>The <code>&lt;x&gt;</code> directive sets up your x axis for the graph. You can set multiple axes of each type and the graph will display them.</p>
 <pre><code class="lang-html"><span class="tag">&lt;<span class="title">x</span> <span class="attribute">field</span>=<span class="value">'Month'</span> <span class="attribute">type</span>=<span class="value">'Category'</span> <span class="attribute">order-by</span>=<span class="value">'Date'</span> <span class="attribute">group-by</span>=<span class="value">'Owner'</span> <span class="attribute">title</span>=<span class="value">'Month, Year'</span>&gt;</span><span class="tag">&lt;/<span class="title">x</span>&gt;</span></code></pre>
@@ -184,6 +192,7 @@
 </tr>
 </tbody>
 </table>
+<hr>
 <h2 id="y">Y</h2>
 <p>The <code>&lt;y&gt;</code> directive sets up your y axis for the graph. You can set multiple axes of each type and the graph will display them.</p>
 <pre><code class="lang-html"><span class="tag">&lt;<span class="title">y</span> <span class="attribute">field</span>=<span class="value">'Unit Sales'</span> <span class="attribute">type</span>=<span class="value">'Measure'</span> <span class="attribute">order-by</span>=<span class="value">'Unit Sales'</span> <span class="attribute">group-by</span>=<span class="value">'Owner'</span> <span class="attribute">title</span>=<span class="value">'Sales'</span>&gt;</span><span class="tag">&lt;/<span class="title">x</span>&gt;</span></code></pre>
@@ -224,6 +233,7 @@
 </tr>
 </tbody>
 </table>
+<hr>
 <h2 id="legend">Legend</h2>
 <p>The <code>&lt;legend&gt;</code> directive creates a legend for your graph.</p>
 <table>
@@ -262,6 +272,7 @@
 </tr>
 </tbody>
 </table>
+<hr>
 <h2 id="line">Line</h2>
 <p><a class="example-link" href="/examples/#/line-graph">example</a></p>
 <p>The <code>&lt;line&gt;</code> directive plots your data as a line. The <code>field</code> attribute (required) will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single line to your graph  for that value in the field. You can include as many line elements in your graph as you have unique values.</p>
@@ -294,8 +305,9 @@
 </tr>
 </tbody>
 </table>
+<hr>
 <h2 id="bar">Bar</h2>
-<p><a class="example-link" href="/examples/#/line-graph">example</a></p>
+<p><a class="example-link" href="/examples/#/bar">example</a></p>
 <p>The <code>&lt;bar&gt;</code> directive plots your data as series of bars. The <code>field</code> attribute (required) will define the field from your data to plot to the graph. The <code>value</code> attribute will plot the bars to your graph  for that value in the field. If no value is defined, or multiple bars are included in the graph, the data will plot as a stacked bar.</p>
 <pre><code class="lang-html"><span class="tag">&lt;<span class="title">bar</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">val</span>=<span class="value">"Aperture"</span>&gt;</span><span class="tag">&lt;/<span class="title">bar</span>&gt;</span>
 
@@ -325,8 +337,42 @@
 </tr>
 </tbody>
 </table>
+<hr>
+<hr>
+<h2 id="stacked-bar">Stacked Bar</h2>
+<p><a class="example-link" href="/examples/#/stacked-bar">example</a></p>
+<p>The <code>&lt;bar&gt;</code> directive plots your data as series of bars. The <code>field</code> attribute (required) will define the field from your data to plot to the graph. The <code>value</code> attribute will plot the bars to your graph  for that value in the field. If no value is defined, or multiple bars are included in the graph, the data will plot as a stacked bar.</p>
+<pre><code class="lang-html"><span class="tag">&lt;<span class="title">stacked-bar</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">val</span>=<span class="value">"Aperture"</span>&gt;</span><span class="tag">&lt;/<span class="title">stacked-bar</span>&gt;</span>
+
+<span class="comment">&lt;!-- OR --&gt;</span>
+
+<span class="tag">&lt;<span class="title">stacked-bar</span> <span class="attribute">field</span>=<span class="value">"Owner"</span>&gt;</span><span class="tag">&lt;/<span class="title">stacked-bar</span>&gt;</span></code></pre>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td><strong>Required.</strong> Field to plot as a line.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Will plot a line where the field is the given value.</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>Accepts a string &#39;field:value&#39;. Will filter the data to only points where the defined field matches the defined value.</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <h2 id="area">Area</h2>
-<p><a class="example-link" href="/examples/#/line-graph">example</a></p>
+<p><a class="example-link" href="/examples/#/area-graph">example</a></p>
 <p>The <code>&lt;area&gt;</code> directive plots your data to an area chart. The <code>field</code> attribute will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single area to your graph for that value in the field. You can include as many area elements in your graph as you have unique values.</p>
 <pre><code class="lang-html"><span class="tag">&lt;<span class="title">area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span>&gt;</span><span class="tag">&lt;/<span class="title">area</span>&gt;</span>
 
@@ -357,8 +403,9 @@
 </tr>
 </tbody>
 </table>
+<hr>
 <h2 id="stacked-area">Stacked Area</h2>
-<p><a class="example-link" href="/examples/#/line-graph">example</a></p>
+<p><a class="example-link" href="/examples/#/stacked-area">example</a></p>
 <p>The <code>&lt;stacked-area&gt;</code> directive plots your data to a stacked area chart. The <code>field</code> attribute will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single line to your graph for that value in the field. You can include as many area elements in your graph as you have unique values.</p>
 <pre><code class="lang-html"><span class="tag">&lt;<span class="title">stacked-area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span>&gt;</span><span class="tag">&lt;/<span class="title">stacked-area</span>&gt;</span>
 
@@ -367,7 +414,7 @@
 <span class="tag">&lt;<span class="title">stacked-area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">val</span>=<span class="value">"Aperture"</span>&gt;</span><span class="tag">&lt;/<span class="title">stacked-area</span>&gt;</span>
 <span class="tag">&lt;<span class="title">stacked-area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">val</span>=<span class="value">"Black Mesa"</span>&gt;</span><span class="tag">&lt;/<span class="title">stacked-area</span>&gt;</span></code></pre>
 <h3 id="expanded-stacked-area">Expanded Stacked Area</h3>
-<p><a class="example-link" href="/examples/#/line-graph">example</a></p>
+<p><a class="example-link" href="/examples/#/stacked-area">example</a></p>
 <p>Setting the y axis in a stacked area graph with create an expanded stacked area, where the total combined value of the field is equal to 100%.</p>
 <pre><code class="lang-html"><span class="tag">&lt;<span class="title">y</span> <span class="attribute">field</span>=<span class="value">'Unit Sales'</span> <span class="attribute">type</span>=<span class="value">"Percent"</span>&gt;</span><span class="tag">&lt;/<span class="title">y</span>&gt;</span>
 <span class="tag">&lt;<span class="title">stacked-area</span> <span class="attribute">field</span>=<span class="value">"Owner"</span>&gt;</span><span class="tag">&lt;/<span class="title">stacked-area</span>&gt;</span></code></pre>
@@ -394,8 +441,9 @@
 </tr>
 </tbody>
 </table>
+<hr>
 <h2 id="scatter-plot">Scatter Plot</h2>
-<p><a class="example-link" href="/examples/#/line-graph">example</a></p>
+<p><a class="example-link" href="/examples/#/scatter-plot">example</a></p>
 <p>The <code>&lt;scatter-plot&gt;</code> directive plots your data to an scatter plot chart. The <code>field</code> attribute will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single scatter plot to your graph for that value in the field. You can include as many scatter plot elements in your graph as you have unique values.</p>
 <p>Scatter Plots also use the <code>series</code> attribute. Series defines the categorical data to plot against the field on the axes.</p>
 <pre><code class="lang-html"><span class="tag">&lt;<span class="title">scatter-plot</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">series</span>=<span class="value">"SKU"</span>&gt;</span><span class="tag">&lt;/<span class="title">scatter-plot</span>&gt;</span>
@@ -439,7 +487,7 @@
   </div>
 
   <!-- Footer -->
-  <div class="fullscreen darker-blue">
+  <div class="fullscreen darker-blue footer">
     <div class="container">
       <div class="row">
         <div class="column-24">

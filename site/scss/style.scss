@@ -5,6 +5,7 @@
 @import "base/mixins";
 @import "base/grid";
 @import "base/type";
+@import "base/code";
 @import "base/tabs";
 @import "base/buttons";
 
@@ -36,9 +37,12 @@
 .primary-navigation {
   font-weight: 300;
   position: fixed;
-  top: 1rem;
+  top: 0;
   left: 0;
   right: 0;
+  background-color: $white;
+  border-bottom: 1px solid $light-gray;
+  padding-top: 1rem;
   z-index: 10;
 }
 

@@ -83,7 +83,7 @@ img {
 }
 
 // Leader & Trailer
-@for $i from 0 through 5 {
+@for $i from 0 through 7 {
   .leader-#{$i}  { margin-top:    $i * 1rem; }
   .trailer-#{$i} { margin-bottom: $i * 1rem; }
 }

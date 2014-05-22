@@ -1,7 +1,7 @@
 <h2>
     Stacked Area
     <span class="api-link">
-      <a href="/documentation/#line-graph">Stacked Area Documentation</a>
+      <a href="/documentation/#stacked-area">Stacked Area Documentation</a>
     </span>
 </h2>
 
@@ -42,5 +42,30 @@
   <stacked-area field="Owner" value="Aperture" series='SKU' series-val="Theta Pack 6 Standard, Theta Pacl 18 Standard"></stacked-area>
   <stacked-area field="Owner" value="Black Mesa" series='SKU'></stacked-area>
   <stacked-area field="Owner" value="Tyrell Corp" series='SKU'></stacked-area>
+</graph>
+```
+
+<h3>
+    Expanded Stacked Area
+    <span class="api-link">
+      <a href="/documentation/#expanded-stacked-area">Stacked Area Documentation</a>
+    </span>
+</h3>
+
+<div class="white-panel">
+  <graph data="graphData" height="600">
+    <x field="Month" order-by="Date"></x>
+    <y field="Unit Sales" type="Percent"></y>
+    <legend></legend>
+    <stacked-area field="Owner"></area>
+  </graph>
+</div>
+
+```
+<graph data="graphData" height="600">
+  <x field="Month" order-by="Date"></x>
+  <y field="Unit Sales" type="Percent"></y>
+  <legend></legend>
+  <stacked-area field="Owner"></area>
 </graph>
 ```
