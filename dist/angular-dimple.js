@@ -1,4 +1,4 @@
-/*! Angular-Dimple - 0.0.0 - 2014-05-21
+/*! Angular-Dimple - 0.0.0 - 2014-05-22
 *   https://github.com/geoloqi/angular-dimple
 *   Licensed ISC */
 angular.module('angular-dimple.core', [])
