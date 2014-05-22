@@ -18,8 +18,7 @@ angular.module('angular-dimple.stacked-bar', [])
         } else {
           bar = chart.addSeries([$attrs.field], dimple.plot.bar);
         }
-
-        core.filter(bar, $attrs, $scope.data);
+        core.filter(bar, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
         graphController.draw();
       }
 

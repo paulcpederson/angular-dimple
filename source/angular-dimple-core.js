@@ -2,21 +2,21 @@ angular.module('angular-dimple.core', [])
 
 .service('angular-dimple.core', [function(){
   return {
-    filter: function (chart, attrs, scopeData) {
+    filter: function (chart, scopeData, field, value, filter) {
       if (scopeData !== null) {
-        var data = filterData(scopeData);
+        var data = this.filterData(scopeData, filter);
         chart.data = data;
-        if (attrs.value !== undefined) {
-          chart.data = dimple.filterData(data, attrs.field, [attrs.value]);
+        if (value !== undefined) {
+          chart.data = dimple.filterData(data, field, [value]);
         }
       }
-      function filterData (d) {
-        if (attrs.filter) {
-          var filter = attrs.filter.split(':');
-          return dimple.filterData(d, filter[0], [filter[1]]);
-        } else {
-          return d;
-        }
+    },
+    filterData: function (data, filter) {
+      if (filter) {
+        var filters = filter.split(':');
+        return dimple.filterData(data, filters[0], [filters[1]]);
+      } else {
+        return data;
       }
     }
   };

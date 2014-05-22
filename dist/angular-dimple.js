@@ -5,21 +5,21 @@ angular.module('angular-dimple.core', [])
 
 .service('angular-dimple.core', [function(){
   return {
-    filter: function (chart, attrs, scopeData) {
+    filter: function (chart, scopeData, field, value, filter) {
       if (scopeData !== null) {
-        var data = filterData(scopeData);
+        var data = this.filterData(scopeData, filter);
         chart.data = data;
-        if (attrs.value !== undefined) {
-          chart.data = dimple.filterData(data, attrs.field, [attrs.value]);
+        if (value !== undefined) {
+          chart.data = dimple.filterData(data, field, [value]);
         }
       }
-      function filterData (d) {
-        if (attrs.filter) {
-          var filter = attrs.filter.split(':');
-          return dimple.filterData(d, filter[0], [filter[1]]);
-        } else {
-          return d;
-        }
+    },
+    filterData: function (data, filter) {
+      if (filter) {
+        var filters = filter.split(':');
+        return dimple.filterData(data, filters[0], [filters[1]]);
+      } else {
+        return data;
       }
     }
   };
@@ -60,11 +60,19 @@ angular.module('angular-dimple.area', [])
       var chart = graphController.getChart();
 
       function addArea () {
-        area = chart.addSeries([$attrs.field], dimple.plot.area);
-        core.filter(area, $attrs, $scope.data);
-        area.lineMarkers = true;
+        if ($attrs.value) {
+          area = chart.addSeries([$attrs.field], dimple.plot.area);
+          core.filter(area, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
+          area.lineMarkers = true;
+        } else {
+          var values = dimple.getUniqueValues($scope.data, $attrs.field);
+          angular.forEach(values, function(value){
+            area = chart.addSeries([$attrs.field], dimple.plot.area);
+            core.filter(area, $scope.data, $attrs.field, value, $attrs.filter);
+            area.lineMarkers = true;
+          });
+        }
         graphController.draw();
-
       }
 
       $scope.$watch('data', function(newValue, oldValue) {
@@ -217,7 +225,7 @@ angular.module('angular-dimple.line', [])
       function addLine () {
         var filteredData;
         line = chart.addSeries([$attrs.field], dimple.plot.line);
-        core.filter(line, $attrs, $scope.data);
+        core.filter(line, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
         line.lineMarkers = true;
         graphController.draw();
       }
@@ -244,7 +252,7 @@ angular.module('angular-dimple.scatter-plot', [])
 
       function addScatterPlot () {
         scatterPlot = chart.addSeries([$attrs.series, $attrs.field], dimple.plot.bubble);
-        core.filter(scatterPlot, $attrs, $scope.data);
+        core.filter(scatterPlot, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
         graphController.draw();
       }
 
@@ -276,7 +284,7 @@ angular.module('angular-dimple.stacked-area', [])
         } else {
           area = chart.addSeries([$attrs.field], dimple.plot.area);
         }
-        core.filter(area, $attrs, $scope.data);
+        core.filter(area, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
         area.lineMarkers = false;
         graphController.draw();
       }
@@ -309,8 +317,7 @@ angular.module('angular-dimple.stacked-bar', [])
         } else {
           bar = chart.addSeries([$attrs.field], dimple.plot.bar);
         }
-
-        core.filter(bar, $attrs, $scope.data);
+        core.filter(bar, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
         graphController.draw();
       }
 

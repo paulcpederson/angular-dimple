@@ -12,7 +12,7 @@ angular.module('angular-dimple.scatter-plot', [])
 
       function addScatterPlot () {
         scatterPlot = chart.addSeries([$attrs.series, $attrs.field], dimple.plot.bubble);
-        core.filter(scatterPlot, $attrs, $scope.data);
+        core.filter(scatterPlot, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
         graphController.draw();
       }
 
