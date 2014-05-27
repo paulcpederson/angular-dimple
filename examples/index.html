@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Examples | Angular Dimple</title>
+  <link rel="shortcut icon" href="../favicon.ico">
+  <meta name="description" content="Example code for Angular dimple, a mini-library of Angular directives for charting.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/examples.css"/>
+
+  <!-- Brick Fonts -->
+  <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Source+Code+Pro:200,300/EB+Garamond:400,400i/Open+Sans:400,700">
+
+  <!-- Dimple and D3 -->
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+</head>
+
+<!-- Application -->
+<body ng-app="myApp" class="off-white">
+
+  <!-- Navigation -->
+  <nav class="primary-navigation">
+    <div class="container">
+      <div class="row">
+        <div class="column-24">
+          <div class="angular-dimple-logo">
+            <a href="../">
+              <img src="../img/Angular-Dimple-Logo.svg" alt="Angular Dimple">
+            </a>
+          </div>
+          <div class="navigation-section">
+            <a href="../examples" class="post-1">Examples</a>
+            <a href="../documentation" class="post-1">API Docs</a>
+            <a href="http://esripdx.github.io/angular-dimple" class="btn">GitHub</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container leader-7 trailer-5">
+    <div class="row">
+
+      <!-- Menu -->
+      <aside class="sidebar column-4">
+        <ul class="menu">
+          <li>
+            <a href="#line">
+              <img src="../img/line.svg">
+              <span>Line</span>
+            </a>
+          </li>
+          <li>
+            <a href="#area">
+              <img src="../img/area.svg">
+              <span>Area</span>
+            </a>
+          </li>
+          <li>
+            <a href="#stacked-area">
+              <img src="../img/stacked-area.svg">
+              <span>Stacked Area</span>
+            </a>
+          </li>
+          <li>
+            <a href="#bar">
+              <img src="../img/bar.svg">
+              <span>Bar</span>
+            </a>
+          </li>
+          <li>
+            <a href="#stacked-bar">
+              <img src="../img/stacked-bar.svg">
+              <span>Stacked Bar</span>
+            </a>
+          </li>
+          <li>
+            <a href="#scatter-plot">
+              <img src="../img/scatter-plot.svg">
+              <span>Scatter Plot</span>
+            </a>
+         </li>
+        </ul>
+      </aside>
+
+      <!-- Views -->
+      <main class="column-18 pre-2 right">
+        <div ng-view></div>
+      </main>
+
+    </div>
+  </div>
+
+ <!-- Footer -->
+  <div class="fullscreen darker-blue">
+    <div class="container">
+      <div class="row">
+        <div class="column-24">
+          <h4>Made by <a href="http://pdx.esri.com/">EsriPDX</a></h4>
+          <nav>
+            <a href="https://github.com/Esripdx">GitHub</a> | <a href="https://twitter.com/esripdx">Twitter</a>
+          </nav>
+          <ul>
+            <li class="leader-1">Made with <a href="http://dimplejs.org/">DimpleJS</a>, <a href="https://angularjs.org/">AngularJS</a>, and <a href="http://gruntjs.com/">Grunt</a>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Angular and Angular-Route -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.3.0-beta.8/angular-route.min.js"></script>
+
+  <!-- JS -->
+  <script src="../js/lib/angular-dimple.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/services.js"></script>
+  <script src="../js/controllers.js"></script>
+  <script src="../js/filters.js"></script>
+  <script src="../js/directives.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+// Buttons
+.btn {
+  display: inline-block;
+  padding: 1em;
+  background-color: $blue;
+  color: $lighter-gray;
+  @include border-radius(3px);
+  text-decoration: none;
+  font-family: $source;
+  font-size: 0.75em;
+  font-weight: 300;
+  cursor: pointer;
+  @include transition(background-color 75ms linear, color 75ms linear);
+  &:hover {
+    background-color: lighten($blue, 10%);
+    color: $white;
+  }
+  &.outline {
+    background: transparent;
+    color: $blue;
+    border: 1px solid $blue;
+    &:hover {
+      background-color: lighten($blue, 10%);
+      color: $white;
+      border: 1px solid lighten($blue, 10%);
+    }
+  }
+  &.dark-blue {
+    background: $dark-blue;
+    color: $light-gray;
+    &:hover {
+      background-color: lighten($dark-blue, 10%);
+      color: $lighter-gray;
+    }
+  }
+  &.white {
+    background: $off-white;
+    color: $dark-blue;
+    &:hover {
+      background-color: $white;
+      color: $blue;
+    }
+  }
+}

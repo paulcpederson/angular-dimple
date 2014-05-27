@@ -1,0 +1,74 @@
+@import "compass";
+@import "config";
+
+.homepage-navigation {
+  position: relative;
+  z-index: 2;
+  font-weight: 200;
+  margin-top: 1rem;
+  a {
+    color: $off-white;
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+pre {
+  padding: 0;
+  border: none;
+}
+
+code {
+  background-color: $white;
+  border-color: $lighter-gray;
+}
+
+.banner {
+  position: relative;
+  overflow: hidden;
+  color: $white;
+  background: url(../img/dots.svg) $dark-blue;
+  z-index: 20;
+  .banner-copy {
+    position: relative;
+    margin: 5rem 0 9rem 0;
+    z-index: 2;
+    font-weight: 200;
+  }
+  .dimple-graph {
+    position: absolute;
+    top: -260px;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    width: 2400px;
+    margin-left: -1200px;
+    z-index: 1;
+  }
+  .dimple-axis {
+    display: none;
+  }
+  .dimple-gridline{
+    display: none;
+  }
+  .dimple-line {
+    opacity: 0.8;
+    fill: none;
+    stroke: $darker-blue;
+    stroke-width: 2;
+  }
+  .dimple-marker-back {
+    fill: $darker-blue;
+  }
+  .dimple-marker {
+    display: none;
+    fill: $darker-blue;
+  }
+}
+
+.charts-list {
+  a {
+    color: $gray;
+  }
+}
