@@ -1,7 +1,7 @@
 <h2>
     Stacked Bar
     <span class="api-link">
-      <a href="/documentation/#stacked-bar">Stacked Bar Documentatoin</a>
+      <a href="../documentation/#stacked-bar">Stacked Bar Documentatoin</a>
     </span>
 </h2>
 
