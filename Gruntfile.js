@@ -138,8 +138,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-markdown');
 
   // Default task(s)
-  grunt.registerTask('default', [ 'connect', 'jshint', 'concat', 'uglify', 'markdown', 'compass', 'watch']);
-  grunt.registerTask('deploy', [ 'connect', 'jshint', 'concat', 'uglify', 'markdown', 'compass', 'gh-pages']);
-
+  grunt.registerTask('default', ['connect', 'jshint', 'concat', 'uglify', 'markdown', 'compass', 'watch']);
+  grunt.registerTask('deploy', ['jshint', 'concat', 'uglify', 'markdown', 'compass', 'gh-pages']);
 
 };
