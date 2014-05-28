@@ -99,20 +99,6 @@ Passing a line tag with a field and no value will draw a line on the chart for e
 </bar-graph>
 ```
 
-#### Future Graph Types
-
-We'd like to accomplish all of the following charts as directives:
-
-- Line
-- Multiple Line
-- Area
-- Stacked Area
-- 100% Stacked Area
-- Bar
-- Multiple Bar
-- Stacked Bar
-- Donut
-
 ## Contributing
 
 1. Fork & clone
