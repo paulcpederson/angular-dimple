@@ -57,7 +57,7 @@ module.exports = function(grunt) {
       options: {
         stripBanners: true,
         banner: '/*! Angular-Dimple - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
-        '*   https://github.com/geoloqi/angular-dimple\n' +
+        '*   https://github.com/esripdx/angular-dimple\n' +
         '*   Licensed ISC */\n'
       },
       dist: {
