@@ -48,12 +48,20 @@
 
 .angular-dimple-logo {
   float: left;
+  @include respond-to($tablet-mid) {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .navigation-section {
   width: 50%;
   text-align: right;
   float: right;
+  @include respond-to($tablet-mid) {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .numbered {

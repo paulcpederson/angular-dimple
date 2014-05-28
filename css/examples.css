@@ -1,4 +1,4 @@
-/* line 4, ../scss/examples.scss */
+/* line 5, ../scss/examples.scss */
 .white-panel {
   margin-bottom: 1rem;
   background-color: white;
@@ -12,16 +12,16 @@
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 10, ../scss/examples.scss */
+/* line 11, ../scss/examples.scss */
 .white-panel.padded {
   padding: 2rem;
 }
-/* line 14, ../scss/examples.scss */
+/* line 15, ../scss/examples.scss */
 .white-panel h2 {
   padding: 6rem 0 1rem 0;
 }
 
-/* line 19, ../scss/examples.scss */
+/* line 20, ../scss/examples.scss */
 .example-link {
   margin-top: -2.75rem;
   float: right;
@@ -29,22 +29,22 @@
   font-size: 1rem;
 }
 
-/* line 26, ../scss/examples.scss */
+/* line 27, ../scss/examples.scss */
 .sidebar {
   position: fixed;
   height: 100vh;
   overflow: auto;
 }
-/* line 30, ../scss/examples.scss */
+/* line 33, ../scss/examples.scss */
 .sidebar li {
   margin-bottom: 1rem;
   padding: .25rem 0;
 }
-/* line 34, ../scss/examples.scss */
+/* line 37, ../scss/examples.scss */
 .sidebar a {
   width: 100%;
 }
-/* line 36, ../scss/examples.scss */
+/* line 39, ../scss/examples.scss */
 .sidebar a img {
   float: left;
   height: 3rem;
@@ -65,19 +65,32 @@
   -o-transition: all 200ms linear;
   transition: all 200ms linear;
 }
-/* line 48, ../scss/examples.scss */
+/* line 51, ../scss/examples.scss */
 .sidebar a:hover img {
   -webkit-box-shadow: 0 0 0 4px #dde3e8;
   -moz-box-shadow: 0 0 0 4px #dde3e8;
   box-shadow: 0 0 0 4px #dde3e8;
 }
-/* line 53, ../scss/examples.scss */
+/* line 56, ../scss/examples.scss */
 .sidebar span {
   display: inline-block;
   line-height: 3rem;
 }
+@media screen and (max-width: 960px) {
+  /* line 27, ../scss/examples.scss */
+  .sidebar {
+    padding-top: 1rem;
+    position: relative;
+    height: auto;
+  }
+  /* line 66, ../scss/examples.scss */
+  .sidebar li {
+    width: 48%;
+    display: inline-block;
+  }
+}
 
-/* line 59, ../scss/examples.scss */
+/* line 73, ../scss/examples.scss */
 .api-link {
   font-size: 1rem;
   float: right;
