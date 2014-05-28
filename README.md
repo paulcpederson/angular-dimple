@@ -118,7 +118,7 @@ We'd like to accomplish all of the following charts as directives:
 1. Fork & clone
 1. `npm install`
 1. `grunt` to run development environment
-1. ~~Test with `grunt test`~~ (not yet implemented)
+1. Test with `grunt test`
 1. Open a pull request!
 
 ## License
