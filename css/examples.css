@@ -1,4 +1,101 @@
-/* line 4, ../scss/examples.scss */
+/* line 109, ../scss/base/_mixins.scss */
+.show {
+  visibility: visible;
+}
+
+/* line 113, ../scss/base/_mixins.scss */
+.hide {
+  display: none !important;
+  visibility: hidden;
+}
+
+@media screen and (min-width: 960px) {
+  /* line 118, ../scss/base/_mixins.scss */
+  .phone-hide {
+    visibility: visible;
+  }
+
+  /* line 119, ../scss/base/_mixins.scss */
+  .tablet-hide {
+    visibility: visible;
+  }
+
+  /* line 120, ../scss/base/_mixins.scss */
+  .phone-show {
+    display: none !important;
+    visibility: hidden;
+  }
+
+  /* line 121, ../scss/base/_mixins.scss */
+  .tablet-show {
+    display: none !important;
+    visibility: hidden;
+  }
+
+  /* line 122, ../scss/base/_mixins.scss */
+  .tablet-only {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+@media screen and (max-width: 959px) and (min-width: 480px) {
+  /* line 127, ../scss/base/_mixins.scss */
+  .phone-hide {
+    visibility: visible;
+  }
+
+  /* line 128, ../scss/base/_mixins.scss */
+  .tablet-hide {
+    display: none !important;
+    visibility: hidden;
+  }
+
+  /* line 129, ../scss/base/_mixins.scss */
+  .phone-show {
+    display: none !important;
+    visibility: hidden;
+  }
+
+  /* line 130, ../scss/base/_mixins.scss */
+  .tablet-show {
+    visibility: visible;
+  }
+
+  /* line 131, ../scss/base/_mixins.scss */
+  .tablet-only {
+    visibility: visible;
+  }
+}
+@media screen and (max-width: 479px) {
+  /* line 136, ../scss/base/_mixins.scss */
+  .phone-hide {
+    display: none !important;
+    visibility: hidden;
+  }
+
+  /* line 137, ../scss/base/_mixins.scss */
+  .tablet-hide {
+    display: none !important;
+    visibility: hidden;
+  }
+
+  /* line 138, ../scss/base/_mixins.scss */
+  .phone-show {
+    visibility: visible;
+  }
+
+  /* line 139, ../scss/base/_mixins.scss */
+  .tablet-show {
+    visibility: visible;
+  }
+
+  /* line 140, ../scss/base/_mixins.scss */
+  .tablet-only {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+/* line 5, ../scss/examples.scss */
 .white-panel {
   margin-bottom: 1rem;
   background-color: white;
@@ -12,16 +109,23 @@
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 10, ../scss/examples.scss */
+/* line 11, ../scss/examples.scss */
 .white-panel.padded {
   padding: 2rem;
 }
-/* line 14, ../scss/examples.scss */
+/* line 15, ../scss/examples.scss */
 .white-panel h2 {
   padding: 6rem 0 1rem 0;
 }
 
-/* line 19, ../scss/examples.scss */
+@media screen and (max-width: 662px) {
+  /* line 20, ../scss/examples.scss */
+  h2 {
+    display: inline-block;
+  }
+}
+
+/* line 26, ../scss/examples.scss */
 .example-link {
   margin-top: -2.75rem;
   float: right;
@@ -29,57 +133,21 @@
   font-size: 1rem;
 }
 
-/* line 26, ../scss/examples.scss */
-.sidebar {
-  position: fixed;
-  height: 100vh;
-  overflow: auto;
-}
-/* line 30, ../scss/examples.scss */
-.sidebar li {
-  margin-bottom: 1rem;
-  padding: .25rem 0;
-}
-/* line 34, ../scss/examples.scss */
-.sidebar a {
-  width: 100%;
-}
-/* line 36, ../scss/examples.scss */
-.sidebar a img {
-  float: left;
-  height: 3rem;
-  width: 3rem;
-  margin-right: 1rem;
-  background-color: white;
-  border: 2px solid #dde3e8;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 0 0 #dde3e8;
-  -moz-box-shadow: 0 0 0 0 #dde3e8;
-  box-shadow: 0 0 0 0 #dde3e8;
-  -webkit-transition: all 200ms linear;
-  -moz-transition: all 200ms linear;
-  -o-transition: all 200ms linear;
-  transition: all 200ms linear;
-}
-/* line 48, ../scss/examples.scss */
-.sidebar a:hover img {
-  -webkit-box-shadow: 0 0 0 4px #dde3e8;
-  -moz-box-shadow: 0 0 0 4px #dde3e8;
-  box-shadow: 0 0 0 4px #dde3e8;
-}
-/* line 53, ../scss/examples.scss */
-.sidebar span {
-  display: inline-block;
-  line-height: 3rem;
-}
-
-/* line 59, ../scss/examples.scss */
+/* line 35, ../scss/examples.scss */
 .api-link {
   font-size: 1rem;
   float: right;
   line-height: 3.25rem;
+}
+
+@media screen and (max-width: 662px) {
+  /* line 43, ../scss/examples.scss */
+  .example-link,
+  .api-link {
+    width: 100%;
+    display: block;
+    margin-top: 0rem;
+    margin-bottom: 1.5rem;
+    float: left;
+  }
 }
