@@ -57,7 +57,7 @@ module.exports = function(grunt) {
       options: {
         stripBanners: true,
         banner: '/*! Angular-Dimple - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
-        '*   https://github.com/geoloqi/angular-dimple\n' +
+        '*   https://github.com/esripdx/angular-dimple\n' +
         '*   Licensed ISC */\n'
       },
       dist: {
@@ -138,8 +138,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-markdown');
 
   // Default task(s)
-  grunt.registerTask('default', [ 'connect', 'jshint', 'concat', 'uglify', 'markdown', 'compass', 'watch']);
-  grunt.registerTask('deploy', [ 'connect', 'jshint', 'concat', 'uglify', 'markdown', 'compass', 'gh-pages']);
-
+  grunt.registerTask('default', ['connect', 'jshint', 'concat', 'uglify', 'markdown', 'compass', 'watch']);
+  grunt.registerTask('deploy', ['jshint', 'concat', 'uglify', 'markdown', 'compass', 'gh-pages']);
 
 };
