@@ -97,8 +97,7 @@ Passing a line tag with a field and no value will draw a line on the chart for e
   <bar field="storeId" value="2"></bar>
   <bar field="storeId" value="1"></bar>
 </bar-graph>
-```html
-
+```
 
 #### Future Graph Types
 
@@ -116,13 +115,12 @@ We'd like to accomplish all of the following charts as directives:
 
 ## Contributing
 
-1. Fork the Repo
-2. Clone to your machine
-3. `npm install`
-4. `grunt` to run development environment
-5. Test with `grunt test`.
-6. Open a pull-request!
+1. Fork & clone
+1. `npm install`
+1. `grunt` to run development environment
+1. ~~Test with `grunt test`~~ (not yet implemented)
+1. Open a pull request!
 
-## Liscence
+## License
 
 [ISC](http://en.wikipedia.org/wiki/ISC_license)
