@@ -1,9 +1,8 @@
 {
   "name": "angular-dimple",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Angular.js wrapper for the Dimple charting language",
-  "repository": "https://github.com/geoloqi/angular-dimple",
+  "repository": "https://github.com/esripdx/angular-dimple",
   "license": "ISC",
   "devDependencies": {
     "grunt": "^0.4.5",
