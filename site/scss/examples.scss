@@ -1,5 +1,6 @@
 @import "compass";
 @import "config";
+@import "base/mixins";
 
 .white-panel {
   margin-bottom: 1rem;
@@ -27,6 +28,8 @@
   position: fixed;
   height: 100vh;
   overflow: auto;
+
+
   li {
     margin-bottom: 1rem;
     padding: .25rem 0;
@@ -53,6 +56,17 @@
   span {
     display: inline-block;
     line-height: 3rem;
+  }
+
+  @include respond-to($tablet-mid){
+    padding-top: 1rem;
+    position: relative;
+    height: auto;
+
+    li {
+      width: 48%;
+      display: inline-block;
+    }
   }
 }
 

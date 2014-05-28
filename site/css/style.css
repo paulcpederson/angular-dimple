@@ -1875,15 +1875,29 @@ pre .tex .formula {
 .angular-dimple-logo {
   float: left;
 }
+@media screen and (max-width: 960px) {
+  /* line 49, ../scss/style.scss */
+  .angular-dimple-logo {
+    width: 100%;
+    text-align: center;
+  }
+}
 
-/* line 53, ../scss/style.scss */
+/* line 57, ../scss/style.scss */
 .navigation-section {
   width: 50%;
   text-align: right;
   float: right;
 }
+@media screen and (max-width: 960px) {
+  /* line 57, ../scss/style.scss */
+  .navigation-section {
+    width: 100%;
+    text-align: center;
+  }
+}
 
-/* line 59, ../scss/style.scss */
+/* line 67, ../scss/style.scss */
 .numbered {
   text-align: center;
   width: 2em;
@@ -1903,7 +1917,7 @@ pre .tex .formula {
   border-radius: 50%;
 }
 
-/* line 74, ../scss/style.scss */
+/* line 82, ../scss/style.scss */
 .navigation {
   position: fixed;
   height: 100vh;
@@ -1912,7 +1926,7 @@ pre .tex .formula {
   background-color: #ededed;
 }
 
-/* line 82, ../scss/style.scss */
+/* line 90, ../scss/style.scss */
 .chart {
   position: absolute;
   top: 0;
@@ -1923,7 +1937,7 @@ pre .tex .formula {
   padding-left: 1rem;
 }
 
-/* line 92, ../scss/style.scss */
+/* line 100, ../scss/style.scss */
 .chart-icon {
   display: inline-block;
   margin-bottom: 1rem;
@@ -1943,11 +1957,11 @@ pre .tex .formula {
   transition: all 200ms linear;
   border: 1px solid #dde3e8;
 }
-/* line 104, ../scss/style.scss */
+/* line 112, ../scss/style.scss */
 .chart-icon:hover {
   background-color: #fafbfe;
 }
-/* line 107, ../scss/style.scss */
+/* line 115, ../scss/style.scss */
 .chart-icon:before {
   content: "";
   position: absolute;
@@ -1969,19 +1983,19 @@ pre .tex .formula {
   -o-transition: all 200ms linear;
   transition: all 200ms linear;
 }
-/* line 120, ../scss/style.scss */
+/* line 128, ../scss/style.scss */
 .chart-icon:hover:before {
   -webkit-box-shadow: 0 0 0 12px #dde3e8;
   -moz-box-shadow: 0 0 0 12px #dde3e8;
   box-shadow: 0 0 0 12px #dde3e8;
 }
-/* line 124, ../scss/style.scss */
+/* line 132, ../scss/style.scss */
 .chart-icon img {
   width: 100%;
   height: auto;
 }
 
-/* line 130, ../scss/style.scss */
+/* line 138, ../scss/style.scss */
 .footer {
   position: relative;
   z-index: 5;
