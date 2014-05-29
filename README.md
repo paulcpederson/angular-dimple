@@ -49,55 +49,118 @@ For example, in the controller for your app, if you had something like `$scope.g
 You'd set up a line-graph like this:
 
 ```html
-<line-graph data="graphData">
-  <x-axis field="Month" order-by="date"></x-axis>
-  <y-axis field="Sales" order-by="number"></y-axis>
+<graph data="graphData">
+  <x-axis field="Month"></x-axis>
+  <y-axis field="Sales"></y-axis>
   <line field="storeId" value="2"></line>
   <line field="storeId" value="1"></line>
-</line-graph>
+</graph>
 ```
 
 This would give you a line graph with an x-axis of "Month", a y-axis of "Sales" and two lines, each corresponding to a different store from your dataset.
 
+Passing a line tag with a field and no value will draw a line on the chart for each unique value for that field in your data. So you could plot a line for each unique `storeId` without having to specify them all by name like this:
+
 ```html
-<line field="storeId"></line>
+<graph data="graphData">
+  <x-axis field="Month"></x-axis>
+  <y-axis field="Sales"></y-axis>
+  <line field="storeId"></line>
+</graph>
 ```
-
-Passing a line tag with a field and no value will draw a line on the chart for each unique value for that field in your data.
-
 
 #### Line Graphs
 
 ```html
-<line-graph data="graphData">
-  <x-axis field="Month" order-by="date"></x-axis>
-  <y-axis field="Sales" order-by="number"></y-axis>
+<graph data="graphData">
+  <x-axis field="Month"></x-axis>
+  <y-axis field="Sales"></y-axis>
   <line field="storeId" value="2"></line>
   <line field="storeId" value="1"></line>
-</line-graph>
+</graph>
+```
+
+#### Area Charts
+
+```html
+<graph data="graphData">
+  <x-axis field="Month"></x-axis>
+  <y-axis field="Sales"></y-axis>
+  <area field="storeId" value="2"></area>
+  <area field="storeId" value="1"></area>
+</graph>
 ```
 
 #### Stacked Area Charts
 
 ```html
-<line-graph data="graphData">
-  <x-axis field="Month" order-by="date"></x-axis>
-  <y-axis field="Sales" order-by="number"></y-axis>
-  <stacked-area field="storeId" value="2"></stacked-area>
-  <stacked-area field="storeId" value="1"></stacked-area>
-</line-graph>
+<graph data="graphData">
+  <x-axis field="Month"></x-axis>
+  <y-axis field="Sales"></y-axis>
+  <stacked-area field="storeId"></stacked-area>
+</graph>
 ```
 
 #### Bar Graphs
 
 ```html
-<bar-graph data="graphData" orientation="horizontal">
-  <x-axis field="Month" order-by="date"></x-axis>
-  <y-axis field="Sales" order-by="number"></y-axis>
+<graph data="graphData" orientation="horizontal">
+  <x-axis field="Month"></x-axis>
+  <y-axis field="Sales"></y-axis>
   <bar field="storeId" value="2"></bar>
   <bar field="storeId" value="1"></bar>
-</bar-graph>
+</graph>
 ```
+
+#### Stacked Bar Graphs
+
+```html
+<graph data="graphData" orientation="horizontal">
+  <x-axis field="Month"></x-axis>
+  <y-axis field="Sales"></y-axis>
+  <stacked-bar field="storeId" value="2"></stacked-bar>
+</graph>
+```
+
+#### Scatter Plot
+
+Scatter plots require one extra field (`series`) to be passed through to the `<scatter-plot>` element. Let's say you have some data with heights and weights formatted like this:
+
+```json
+[
+  {
+    "Height": 64,
+    "Weight": 190
+  },{
+    "Height": 68,
+    "Weight": 195
+  },{
+    "Height": 69,
+    "Weight": 198
+  },{
+    "Height": 70,
+    "Weight": 205
+  },{
+    "Height": 67,
+    "Weight": 198
+  },{
+    "Height": 76,
+    "Weight": 195
+  }
+]
+```
+
+Assuming you set that on your scope as `$scope.scatterData`, you can use the following directive to make a scatter plot:
+
+```
+<graph data="scatterData" width="100%" height="600px">
+  <x field="Height" type="Measure"></x>
+  <y field="Weight" type="Measure"></y>
+  <scatter-plot series="Height"></scatter-plot>
+</graph>
+```
+
+* Note: right now if your data set has two heights which are the same, it will average the two weights together. This comes from dimple, but we'd like to change that default behavior, see [this issue](https://github.com/esripdx/angular-dimple/issues/15).*
 
 ## Contributing
 

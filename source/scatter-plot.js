@@ -11,8 +11,10 @@ angular.module('angular-dimple.scatter-plot', [])
       var chart = graphController.getChart();
 
       function addScatterPlot () {
-        scatterPlot = chart.addSeries([$attrs.series, $attrs.field], dimple.plot.bubble);
-        core.filter(scatterPlot, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
+        var field = $attrs.field ? $attrs.field : "";
+        scatterPlot = chart.addSeries([$attrs.series, field], dimple.plot.bubble);
+        scatterPlot.aggregate = dimple.aggregateMethod.avg;
+        core.filter(scatterPlot, $scope.data, field, $attrs.value, $attrs.filter);
         graphController.draw();
       }
 
