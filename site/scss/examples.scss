@@ -49,3 +49,12 @@ h2 {
     float: left;
   }
 }
+
+@include respond-to($phone){
+  .container {
+    padding: 0 0;
+  }
+  .white-panel.padded {
+    padding: 2rem 1rem;
+  }
+}
