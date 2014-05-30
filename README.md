@@ -156,11 +156,11 @@ Assuming you set that on your scope as `$scope.scatterData`, you can use the fol
 <graph data="scatterData" width="100%" height="600px">
   <x field="Height" type="Measure"></x>
   <y field="Weight" type="Measure"></y>
-  <scatter-plot series="Height"></scatter-plot>
+  <scatter-plot field="Weight" series="Height" label="Group A"></scatter-plot>
 </graph>
 ```
 
-* Note: right now if your data set has two heights which are the same, it will average the two weights together. This comes from dimple, but we'd like to change that default behavior, see [this issue](https://github.com/esripdx/angular-dimple/issues/15).*
+* Note: the `label` attribute will make all the points the same color and title the group with that label in the legend if you have one.*
 
 ## Contributing
 
