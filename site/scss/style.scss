@@ -137,7 +137,9 @@
 }
 .scroll-to-top {
   position: fixed;
-
+  @include respond-to($tablet-mid){
+    display: none;
+  }
 }
 
 .chart {
