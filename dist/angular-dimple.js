@@ -1,4 +1,4 @@
-/*! Angular-Dimple - 1.0.0 - 2014-05-28
+/*! Angular-Dimple - 1.0.0 - 2014-05-30
 *   https://github.com/esripdx/angular-dimple
 *   Licensed ISC */
 angular.module('angular-dimple.core', [])
@@ -250,10 +250,14 @@ angular.module('angular-dimple.scatter-plot', [])
       var chart = graphController.getChart();
 
       function addScatterPlot () {
-        var field = $attrs.field ? $attrs.field : "";
-        scatterPlot = chart.addSeries([$attrs.series, field], dimple.plot.bubble);
+        var array = [];
+
+        if ($attrs.series){ array.push($attrs.series); }
+        array.push($attrs.field);
+        if ($attrs.label || $attrs.label === '') { array.push($attrs.label); }
+        scatterPlot = chart.addSeries(array, dimple.plot.bubble);
         scatterPlot.aggregate = dimple.aggregateMethod.avg;
-        core.filter(scatterPlot, $scope.data, field, $attrs.value, $attrs.filter);
+        core.filter(scatterPlot, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
         graphController.draw();
       }
 

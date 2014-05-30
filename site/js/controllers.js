@@ -41,4 +41,7 @@ angular.module('myApp.controllers', [])
   dataService.getData().then(function(response) {
     $scope.graphData = response.data;
   });
+  dataService.getSimpleData().then(function(response) {
+    $scope.simpleData = response.data;
+  });
 }]);

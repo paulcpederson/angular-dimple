@@ -6,6 +6,9 @@ angular.module('myApp.services', [])
   return {
     getData: function() {
       return $http.get('../data/example_data.json');
+    },
+    getSimpleData: function() {
+      return $http.get('../data/simple.json');
     }
   };
 }]);
