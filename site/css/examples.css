@@ -151,3 +151,15 @@
     float: left;
   }
 }
+
+@media screen and (max-width: 480px) {
+  /* line 54, ../scss/examples.scss */
+  .container {
+    padding: 0 0;
+  }
+
+  /* line 57, ../scss/examples.scss */
+  .white-panel.padded {
+    padding: 2rem 1rem;
+  }
+}
