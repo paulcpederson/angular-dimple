@@ -2,13 +2,21 @@
 
 A simple angular library wrapping dimple charts as angular directives.
 
-## Setup
+## Install
+
+### Manual
 
 To get setup, simply:
 
 1. Make sure you have d3 and dimple
 2. Download the minified javascript in dist
 3. Include the library as a module in your app
+
+### Bower
+
+```
+bower install angular-dimple
+```
 
 ## Use
 
