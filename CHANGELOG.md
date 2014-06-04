@@ -1,5 +1,8 @@
 # Angular-Dimple Changelog
 
+# v1.0.2
+* add bower dependencies
+
 # v1.0.1
 * add bower manifest
 * add changelog
