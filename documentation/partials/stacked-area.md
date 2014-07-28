@@ -6,7 +6,7 @@
 </h2>
 
 <div class="white-panel">
-  <graph data="graphData">
+  <graph data="graphData" width="100%" height="600px">
     <x field="Month" order-by="Date"></x>
     <y field="Unit Sales"></y>
     <legend></legend>
@@ -53,7 +53,7 @@
 </h3>
 
 <div class="white-panel">
-  <graph data="graphData" height="600">
+  <graph data="graphData" width="100%" height="600px">
     <x field="Month" order-by="Date"></x>
     <y field="Unit Sales" type="Percent"></y>
     <legend></legend>
@@ -62,7 +62,7 @@
 </div>
 
 ```
-<graph data="graphData" height="600">
+<graph data="graphData" width="100%" height="600px">
   <x field="Month" order-by="Date"></x>
   <y field="Unit Sales" type="Percent"></y>
   <legend></legend>

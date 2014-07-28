@@ -6,7 +6,7 @@
 </h2>
 
 <div class="white-panel">
-  <graph data="graphData">
+  <graph data="graphData" width="100%" height="600px">
     <x field="Month" order-by="Date"></x>
     <y field="Unit Sales"></y>
     <legend></legend>
@@ -16,7 +16,7 @@
 
 ```html
 <!-- As Stacked Bar -->
-<graph data="graphData">
+<graph data="graphData" width="100%" height="600px">
   <x field="Month" order-by="Date"></x>
   <y field="Unit Sales"></y>
   <legend></legend>
