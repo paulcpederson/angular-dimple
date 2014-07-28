@@ -11,7 +11,6 @@ angular.module('angular-dimple.ring', [])
       var graphController = $controllers[1];
       var areaController = $controllers[0];
       var chart = graphController.getChart();
-      var ring;
 
       function setData (data, series) {
         series.data = data;
@@ -22,6 +21,7 @@ angular.module('angular-dimple.ring', [])
         if ($attrs.width && !$attrs.radius) {
           var width = (100 - $attrs.width) + '%';
           ring.innerRadius = width;
+          console.log(width);
         } else if ($attrs.width && $attrs.radius) {
           var width = ($attrs.radius - $attrs.width) + '%';
           ring.innerRadius = width;
