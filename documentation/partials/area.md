@@ -6,7 +6,7 @@
 </h2>
 
 <div class="white-panel">
-  <graph data="graphData">
+ <graph data="graphData" width="100%" height="600px">
     <x field="Month" order-by="Date"></x>
     <y field="Unit Sales"></y>
     <legend></legend>
@@ -17,7 +17,7 @@
 ```
 <!-- Default -->
 <div class="white-panel">
-  <graph data="graphData">
+ <graph data="graphData" width="100%" height="600px">
     <x field="Month" order-by="Date"></x>
     <y field="Unit Sales"></y>
     <legend></legend>
@@ -28,7 +28,7 @@
 
 <!-- Grouped Area -->
 <div class="white-panel">
-  <graph data="graphData" width="100%" height="600px">
+ <graph data="graphData" width="100%" height="600px">
     <x group-by="Owner" field="Month" order-by="Date" title="Cream, Get the Money"></x>
     <y field="Unit Sales" type="Measure" title="Dollah Dolah Bill Yall"></y>
 
@@ -41,7 +41,7 @@
 ```
 <!-- Grouped Area -->
 <div class="white-panel">
-  <graph data="graphData" width="100%" height="600px">
+ <graph data="graphData" width="100%" height="600px">
     <x group-by="Owner" field="Month" order-by="Date" title="Cream, Get the Money"></x>
     <y field="Unit Sales" type="Measure" title="Dollah Dolah Bill Yall"></y>
 

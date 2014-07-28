@@ -5,7 +5,7 @@
     </span>
 </h2>
 
-<graph data="graphData">
+<graph data="graphData" width="100%" height="600px">
   <x field="Month" order-by="Date"></x>
   <y field="Unit Sales" type="Percent"></y>
   <legend></legend>
@@ -14,7 +14,7 @@
 
 ```html
 <!-- Default Stacked -->
-<graph data="graphData">
+<graph data="graphData" width="100%" height="600px">
   <x field="Month" order-by="Date"></x>
   <y field="Unit Sales" type="Percent"></y>
   <legend></legend>
