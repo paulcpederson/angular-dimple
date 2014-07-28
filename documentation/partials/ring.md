@@ -9,7 +9,7 @@
   <graph data="graphData" width="100%" height="600px">
     <p field="Unit Sales"></p>
     <legend></legend>
-    <ring field="Owner" stroke="20"></ring>
+    <ring field="Owner" width="20"></ring>
   </graph>
 </div>
 
@@ -18,7 +18,7 @@
   <graph data="graphData" width="100%" height="600px">
     <p field="Unit Sales"></p>
     <legend></legend>
-    <ring field="Owner" stroke="20"></ring>
+    <ring field="Owner" width="20"></ring>
   </graph>
 ```
 
