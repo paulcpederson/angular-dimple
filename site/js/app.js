@@ -38,6 +38,10 @@ angular.module('myApp', [
     templateUrl: '../documentation/partials/scatter-plot.html',
     controller: 'scatterController'
   })
+  .when('/ring', {
+    templateUrl: '../documentation/partials/ring.html',
+    controller: 'ringController'
+  })
 
   .otherwise({
     redirectTo: '/line-graph'

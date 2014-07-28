@@ -37,6 +37,12 @@ angular.module('myApp.controllers', [])
   });
 }])
 
+.controller('ringController', ['$scope', 'dataService', function($scope, dataService) {
+  dataService.getData().then(function(response) {
+    $scope.graphData = response.data;
+  });
+}])
+
 .controller('scatterController', ['$scope', 'dataService', function($scope, dataService) {
   dataService.getData().then(function(response) {
     $scope.graphData = response.data;
