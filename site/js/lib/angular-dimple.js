@@ -32,12 +32,14 @@ angular.module('angular-dimple', [
   'angular-dimple.legend',
   'angular-dimple.x',
   'angular-dimple.y',
+  'angular-dimple.p',
   'angular-dimple.line',
   'angular-dimple.bar',
   'angular-dimple.stacked-bar',
   'angular-dimple.area',
   'angular-dimple.stacked-area',
-  'angular-dimple.scatter-plot'
+  'angular-dimple.scatter-plot',
+  'angular-dimple.ring'
 ])
 
 .constant('MODULE_VERSION', '0.0.1')
@@ -237,6 +239,90 @@ angular.module('angular-dimple.line', [])
     }
   };
 }]);
+angular.module('angular-dimple.p', [])
+
+.directive('p', [function () {
+  return {
+    restrict: 'E',
+    replace: true,
+    require: ['p', '^graph'],
+    controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
+    }],
+    link: function($scope, $element, $attrs, $controllers) {
+      var graphController = $controllers[1];
+      var chart = graphController.getChart();
+
+      function addAxis () {
+        p = chart.addMeasureAxis('p', $attrs.field);
+
+        if ($attrs.title && $attrs.title !== "null") {
+          p.title = $attrs.title;
+        } else if ($attrs.title == "null") {
+          p.title = null;
+        }
+      }
+      $scope.$watch('data', function(newValue, oldValue) {
+        if (newValue) {
+          addAxis();
+        }
+      });
+    }
+  };
+}]);
+angular.module('angular-dimple.ring', [])
+
+.directive('ring', ['angular-dimple.core', function (core) {
+  return {
+    restrict: 'E',
+    replace: true,
+    require: ['ring', '^graph'],
+    controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
+    }],
+    link: function($scope, $element, $attrs, $controllers) {
+      var graphController = $controllers[1];
+      var areaController = $controllers[0];
+      var chart = graphController.getChart();
+
+      function addRing () {
+        ring = chart.addSeries([$attrs.field], dimple.plot.pie);
+        if ($attrs.stroke) {
+          var stroke = (100 - $attrs.stroke) + '%';
+          ring.innerRadius = stroke;
+          console.log(stroke);
+        } else {
+          ring.innerRadius = "50%";
+        }
+
+
+        // ring.innerRadius = "50%";
+        // core.filter(ring, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
+        // ring.lineMarkers = true;
+
+        // if ($attrs.value) {
+        //   ring = chart.addSeries([$attrs.field], dimple.plot.pie);
+        //   core.filter(ring, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
+        //   ring.lineMarkers = true;
+        // } else {
+        //   var values = dimple.getUniqueValues($scope.data, $attrs.field);
+        //   angular.forEach(values, function(value){
+        //     ring = chart.addSeries([$attrs.field], dimple.plot.pie);
+        //     core.filter(ring, $scope.data, $attrs.field, value, $attrs.filter);
+        //     ring.lineMarkers = true;
+        //   });
+        // }
+        graphController.draw();
+      }
+
+      $scope.$watch('data', function(newValue, oldValue) {
+        if (newValue) {
+          addRing();
+        }
+      });
+    }
+  };
+}]);
+
+
 angular.module('angular-dimple.scatter-plot', [])
 
 .directive('scatterPlot', ['angular-dimple.core', function (core) {
