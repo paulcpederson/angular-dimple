@@ -1,7 +1,7 @@
 Top Tabbed Code Sample:
 
 ```html
-<graph data="graphData" height="400">
+<graph data="graphData" height="400" width="100%">
   <x field="Month" order-by="Date"></x>
   <y field="Unit Sales"></y>
   <legend></legend>

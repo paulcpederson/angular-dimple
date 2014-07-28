@@ -6,7 +6,7 @@
 </h2>
 
 <div class="white-panel">
-  <graph data="graphData" height="600px">
+  <graph data="graphData" width="100%" height="600px">
     <x field="Operating Profit" type="Measure"></x>
     <y field="Unit Sales" type="Measure"></y>
     <legend></legend>
@@ -16,7 +16,7 @@
 
 ```html
 <!-- With Attrs -->
-<graph data="graphData" height="600px">
+<graph data="graphData" width="100%" height="600px">
   <x field="Operating Profit" type="Measure"></x>
   <y field="Unit Sales" type="Measure"></y>
   <legend></legend>

@@ -240,3 +240,32 @@ Scatter Plots also use the `series` attribute. Series defines the categorical da
 | series    | Accepts a string 'field'. |
 | filter    | Accepts a string 'field:value'. Will filter the data to only points where the defined field matches the defined value. |
 
+---
+
+## Ring
+The `ring` directive creates pie and donut charts - but require a seperate type of axis that the other charts in Angular Dimple. A ring chart uses a `<p></p>` axis to plot a single measure. Adding multiple series to a ring chart will create concentric circles within the chart.
+
+You can define both the width of the ring (as a percentage) and the size of the ring (as a percentage).
+
+```html
+<p field="Unit Sales"></p>
+<ring field="Owner"></ring>
+
+<!-- OR -->
+
+<p field="Unit Sales"></p>
+<ring field="Owner" width="20"></ring>
+<ring field="Price Tier" width="20" radius="75"></ring>>
+```
+
+#### Attributes
+
+| attribute | description |
+| --------- | ----------- |
+| field     | **Required.** Field to plot as a ring. |
+| width     | Accepts a number. Width of ring, as percent of circle size. |
+| radius    | Accepts a number. Size of ring, as percent of circle size. |
+
+
+
+
