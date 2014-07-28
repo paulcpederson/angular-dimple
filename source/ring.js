@@ -33,23 +33,6 @@ angular.module('angular-dimple.ring', [])
           ring.outerRadius = ($attrs.radius) + '%';
         }
 
-
-        // ring.innerRadius = "50%";
-        // core.filter(ring, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
-        // ring.lineMarkers = true;
-
-        // if ($attrs.value) {
-        //   ring = chart.addSeries([$attrs.field], dimple.plot.pie);
-        //   core.filter(ring, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
-        //   ring.lineMarkers = true;
-        // } else {
-        //   var values = dimple.getUniqueValues($scope.data, $attrs.field);
-        //   angular.forEach(values, function(value){
-        //     ring = chart.addSeries([$attrs.field], dimple.plot.pie);
-        //     core.filter(ring, $scope.data, $attrs.field, value, $attrs.filter);
-        //     ring.lineMarkers = true;
-        //   });
-        // }
         graphController.draw();
       }
 

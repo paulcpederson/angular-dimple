@@ -20,6 +20,7 @@ angular.module('angular-dimple.p', [])
           p.title = null;
         }
       }
+
       $scope.$watch('data', function(newValue, oldValue) {
         if (newValue) {
           addAxis();
