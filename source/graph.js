@@ -21,6 +21,7 @@ angular.module('angular-dimple.graph', [])
           var graphController = controllers[0];
           graphController._createChart(id);
           scope.dataReady = false;
+          scope.filters = [];
 
           var chart = graphController.getChart();
           var transition;
@@ -72,6 +73,24 @@ angular.module('angular-dimple.graph', [])
       this.getID = function () {
         return id;
       };
+
+      this.filter = function (attrs) {
+        if (attrs.value !== undefined) {
+          $scope.filters.push(attrs.value);
+        }
+        if ($scope.filters.length) {
+          chart.data = dimple.filterData($scope.data, attrs.field, $scope.filters);
+        }
+
+        if (attrs.filter !== undefined) {
+          console.log("i see a filter");
+          var thisFilter = attrs.filter.split(':');
+          var field = thisFilter[0];
+          var value = [thisFilter[1]];
+          chart.data = dimple.filterData($scope.data, field, value);
+        }
+      };
+
     }]
   };
 }]);
