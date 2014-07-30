@@ -9,24 +9,21 @@ angular.module('angular-dimple.line', [])
     }],
     link: function($scope, $element, $attrs, $controllers) {
       var graphController = $controllers[1];
-      var lineController = $controllers[0];
       var chart = graphController.getChart();
       var drawn = false;
 
       function addLine () {
         var filteredData;
         line = chart.addSeries([$attrs.field], dimple.plot.line);
-        // core.filter(line, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
+        graphController.filter($attrs);
         line.lineMarkers = true;
         graphController.draw();
       }
 
       $scope.$watch('dataReady', function(newValue, oldValue) {
         if (newValue === true) {
-          console.log(newValue);
           addLine();
         }
-
       });
 
     }

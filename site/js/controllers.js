@@ -3,6 +3,7 @@ angular.module('myApp.controllers', [])
 
 
 .controller('testController', ['$scope', 'dataService', function($scope, dataService) {
+   $scope.line = true;
    $scope.generate_data = function () {
         var retary = [];
         for (var i = 0; i < 5; i++) {
