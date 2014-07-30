@@ -17,21 +17,20 @@ angular.module('angular-dimple.ring', [])
       }
 
       function addRing () {
-        var width;
+        var thickness;
         ring = chart.addSeries([$attrs.field], dimple.plot.pie);
-        if ($attrs.thickness && !$attrs.radius) {
-          width = (100 - $attrs.thickness) + '%';
-          ring.innerRadius = width;
-          console.log(width);
-        } else if ($attrs.thickness && $attrs.radius) {
-          width = ($attrs.radius - $attrs.thickness) + '%';
-          ring.innerRadius = width;
+        if ($attrs.thickness && !$attrs.diameter) {
+          thickness = (100 - $attrs.thickness) + '%';
+          ring.innerRadius = thickness;
+        } else if ($attrs.thickness && $attrs.diameter) {
+          thickness = ($attrs.diameter - $attrs.thickness) + '%';
+          ring.innerRadius = thickness;
         } else {
           ring.innerRadius = "50%";
         }
 
-        if ($attrs.radius) {
-          ring.outerRadius = ($attrs.radius) + '%';
+        if ($attrs.diameter) {
+          ring.outerRadius = ($attrs.diameter) + '%';
         }
 
         graphController.draw();
