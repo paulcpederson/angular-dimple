@@ -34,7 +34,7 @@
     <p field="Unit Sales"></p>
     <legend></legend>
     <ring field="Owner" thickness="20"></ring>
-	  <ring field="Price Tier" thickness="20" radius="75"></ring>
+	  <ring field="Price Tier" thickness="20" diameter="75"></ring>
   </graph>
 </div>
 
@@ -44,6 +44,6 @@
     <p field="Unit Sales"></p>
     <legend></legend>
     <ring field="Owner" thickness="20"></ring>
-	  <ring field="Price Tier" thickness="20" radius="75"></ring>
+	  <ring field="Price Tier" thickness="20" diameter="75"></ring>
   </graph>
 ```
