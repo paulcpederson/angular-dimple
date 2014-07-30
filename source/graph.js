@@ -5,10 +5,14 @@ angular.module('angular-dimple.graph', [])
     restrict: 'E',
     replace: true,
     scope: {
-      data: '='
+      data: '=',
     },
     require: ['graph'],
     transclude: true,
+    link: function($scope, $element, $attrs, $controllers) {
+      var graphController = $controllers[0];
+      var chart = graphController.getChart();
+    },
     compile: function($element, $attrs) {
       var id = (Math.random() * 1e9).toString(36).replace(".", "_");
       $element.append('<div class="dimple-graph" id="dng-'+ id +'"></div>');
@@ -16,11 +20,24 @@ angular.module('angular-dimple.graph', [])
         post: function postLink(scope, element, attrs, controllers, transclude) {
           var graphController = controllers[0];
           graphController._createChart(id);
+          scope.dataReady = false;
+
+          var chart = graphController.getChart();
+          var transition;
+          if (attrs.transition) {
+            transition = attrs.transition;
+          } else {
+            transition = 750;
+          }
+
           scope.$watch('data', function(newValue, oldValue) {
             if (newValue) {
+              scope.dataReady = true;
               graphController.setData();
+              chart.draw(transition);
             }
           });
+
           transclude(scope, function(clone){
             element.append(clone);
           });
@@ -34,8 +51,8 @@ angular.module('angular-dimple.graph', [])
       this._createChart = function (domId) {
         id = domId;
         var svg = dimple.newSvg('#dng-'+ id +'', $attrs.width, $attrs.height);
-        chart = new dimple.chart(svg);
-
+        var data = $scope.data;
+        chart = new dimple.chart(svg, data);
         var autoStyle = $attrs.autoStyle === 'false' ? true : false;
         chart.noFormats = autoStyle;
       };
@@ -55,7 +72,6 @@ angular.module('angular-dimple.graph', [])
       this.getID = function () {
         return id;
       };
-
     }]
   };
 }]);
