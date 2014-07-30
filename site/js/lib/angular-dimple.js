@@ -1,4 +1,4 @@
-/*! Angular-Dimple - 1.0.2 - 2014-05-30
+/*! Angular-Dimple - 1.0.2 - 2014-07-28
 *   https://github.com/esripdx/angular-dimple
 *   Licensed ISC */
 angular.module('angular-dimple.core', [])
@@ -289,13 +289,14 @@ angular.module('angular-dimple.ring', [])
       }
 
       function addRing () {
+        var width;
         ring = chart.addSeries([$attrs.field], dimple.plot.pie);
-        if ($attrs.width && !$attrs.radius) {
-          var width = (100 - $attrs.width) + '%';
+        if ($attrs.thickness && !$attrs.radius) {
+          width = (100 - $attrs.thickness) + '%';
           ring.innerRadius = width;
           console.log(width);
-        } else if ($attrs.width && $attrs.radius) {
-          var width = ($attrs.radius - $attrs.width) + '%';
+        } else if ($attrs.thickness && $attrs.radius) {
+          width = ($attrs.radius - $attrs.thickness) + '%';
           ring.innerRadius = width;
         } else {
           ring.innerRadius = "50%";
