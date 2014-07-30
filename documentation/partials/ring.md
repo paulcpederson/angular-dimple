@@ -9,7 +9,7 @@
   <graph data="graphData" width="100%" height="600px">
     <p field="Unit Sales"></p>
     <legend></legend>
-    <ring field="Owner" width="20"></ring>
+    <ring field="Owner" thickness="20"></ring>
   </graph>
 </div>
 
@@ -18,7 +18,7 @@
   <graph data="graphData" width="100%" height="600px">
     <p field="Unit Sales"></p>
     <legend></legend>
-    <ring field="Owner" width="20"></ring>
+    <ring field="Owner" thickness="20"></ring>
   </graph>
 ```
 
@@ -33,8 +33,8 @@
   <graph data="graphData" width="100%" height="600px">
     <p field="Unit Sales"></p>
     <legend></legend>
-    <ring field="Owner" width="20"></ring>
-	<ring field="Price Tier" width="20" radius="75"></ring>
+    <ring field="Owner" thickness="20"></ring>
+	  <ring field="Price Tier" thickness="20" radius="75"></ring>
   </graph>
 </div>
 
@@ -43,7 +43,7 @@
   <graph data="graphData" width="100%" height="600px">
     <p field="Unit Sales"></p>
     <legend></legend>
-    <ring field="Owner" width="20"></ring>
-	<ring field="Price Tier" width="20" radius="75"></ring>
+    <ring field="Owner" thickness="20"></ring>
+	  <ring field="Price Tier" thickness="20" radius="75"></ring>
   </graph>
 ```
