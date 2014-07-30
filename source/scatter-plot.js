@@ -18,12 +18,12 @@ angular.module('angular-dimple.scatter-plot', [])
         if ($attrs.label || $attrs.label === '') { array.push($attrs.label); }
         scatterPlot = chart.addSeries(array, dimple.plot.bubble);
         scatterPlot.aggregate = dimple.aggregateMethod.avg;
-        core.filter(scatterPlot, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
+        graphController.filter($attrs);
         graphController.draw();
       }
 
-      $scope.$watch('data', function(newValue, oldValue) {
-        if (newValue) {
+      $scope.$watch('dataReady', function(newValue, oldValue) {
+        if (newValue === true) {
           addScatterPlot();
         }
       });
