@@ -23,7 +23,6 @@ angular.module('angular-dimple.x', [])
           if ($attrs.orderBy) {
             x.addGroupOrderRule($attrs.orderBy);
           }
-
         } else {
           if ($attrs.type == 'Measure') {
             x = chart.addMeasureAxis('x', $attrs.field);
@@ -43,8 +42,9 @@ angular.module('angular-dimple.x', [])
           x.title = null;
         }
       }
-      $scope.$watch('data', function(newValue, oldValue) {
-        if (newValue) {
+
+      $scope.$watch('dataReady', function(newValue, oldValue) {
+        if (newValue === true) {
           addAxis();
         }
       });
