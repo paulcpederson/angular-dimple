@@ -20,8 +20,8 @@ angular.module('angular-dimple.legend', [])
         chart.addLegend(left, top, width, height, position);
       }
 
-      $scope.$watch('data', function(newValue, oldValue) {
-        if (newValue) {
+      $scope.$watch('dataReady', function(newValue, oldValue) {
+        if (newValue === true) {
           addLegend();
         }
       });

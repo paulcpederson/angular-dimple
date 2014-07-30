@@ -43,8 +43,8 @@ angular.module('angular-dimple.y', [])
         }
       }
 
-      $scope.$watch('data', function(newValue, oldValue) {
-        if (newValue) {
+      $scope.$watch('dataReady', function(newValue, oldValue) {
+        if (newValue === true) {
           addAxis();
         }
       });
