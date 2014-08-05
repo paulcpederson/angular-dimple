@@ -4,7 +4,7 @@ angular.module('angular-dimple', [
   'angular-dimple.legend',
   'angular-dimple.x',
   'angular-dimple.y',
-  'angular-dimple.p',
+  'angular-dimple.r',
   'angular-dimple.line',
   'angular-dimple.bar',
   'angular-dimple.stacked-bar',
