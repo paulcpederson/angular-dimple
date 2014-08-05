@@ -32,7 +32,7 @@ angular.module('angular-dimple.ring', [])
         if ($attrs.diameter) {
           ring.outerRadius = ($attrs.diameter) + '%';
         }
-
+        graphController.filter($attrs);
         graphController.draw();
       }
 
