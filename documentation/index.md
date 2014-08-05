@@ -250,12 +250,12 @@ The `ring` directive creates pie and donut charts - but require a seperate type 
 You can define both the thickness of the ring (as a percentage) and the diameter of the ring (as a percentage).
 
 ```html
-<p field="Unit Sales"></p>
+<r field="Unit Sales"></r>
 <ring field="Owner"></ring>
 
 <!-- OR -->
 
-<p field="Unit Sales"></p>
+<r field="Unit Sales"></r>
 <ring field="Owner" thickness="20"></ring>
 <ring field="Price Tier" thickness="20" diameter="75"></ring>>
 ```
