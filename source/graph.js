@@ -14,12 +14,10 @@ angular.module('angular-dimple.graph', [])
       var chart = graphController.getChart();
     },
     compile: function($element, $attrs) {
-      var id = (Math.random() * 1e9).toString(36).replace(".", "_");
-      $element.append('<div class="dimple-graph" id="dng-'+ id +'"></div>');
       return {
         post: function postLink(scope, element, attrs, controllers, transclude) {
           var graphController = controllers[0];
-          graphController._createChart(id);
+          graphController._createChart();
           scope.dataReady = false;
           scope.filters = [];
 
@@ -47,10 +45,11 @@ angular.module('angular-dimple.graph', [])
     },
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
       var chart;
-      var id;
 
-      this._createChart = function (domId) {
-        id = domId;
+      var id = (Math.random() * 1e9).toString(36).replace(".", "_");
+      $element.append('<div class="dimple-graph" id="dng-'+ id +'"></div>');
+
+      this._createChart = function () {
         var svg = dimple.newSvg('#dng-'+ id +'', $attrs.width, $attrs.height);
         var data = $scope.data;
         chart = new dimple.chart(svg, data);
