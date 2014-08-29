@@ -1,6 +1,6 @@
 angular.module('angular-dimple.stacked-bar', [])
 
-.directive('stackedBar', ['angular-dimple.core', function (core) {
+.directive('stackedBar', [function () {
   return {
     restrict: 'E',
     replace: true,

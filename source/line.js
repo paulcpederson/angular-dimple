@@ -1,6 +1,6 @@
 angular.module('angular-dimple.line', [])
 
-.directive('line', ['angular-dimple.core', function (core) {
+.directive('line', [function () {
   return {
     restrict: 'E',
     replace: true,

@@ -1,6 +1,6 @@
 angular.module('angular-dimple.bar', [])
 
-.directive('bar', ['angular-dimple.core', function (core) {
+.directive('bar', [function () {
   return {
     restrict: 'E',
     replace: true,

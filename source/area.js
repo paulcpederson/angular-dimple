@@ -1,6 +1,6 @@
 angular.module('angular-dimple.area', [])
 
-.directive('area', ['angular-dimple.core', function (core) {
+.directive('area', [function () {
   return {
     restrict: 'E',
     replace: true,

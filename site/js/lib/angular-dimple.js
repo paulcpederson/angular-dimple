@@ -1,17 +1,7 @@
-/*! Angular-Dimple - 1.0.2 - 2014-08-04
+/*! Angular-Dimple - 1.0.2 - 2014-08-29
 *   https://github.com/esripdx/angular-dimple
 *   Licensed ISC */
-angular.module('angular-dimple.core', [])
-
-.service('angular-dimple.core', [function(){
-  return {
-    // Nothing to see here.
-  };
-}]);
-
-
 angular.module('angular-dimple', [
-  'angular-dimple.core',
   'angular-dimple.graph',
   'angular-dimple.legend',
   'angular-dimple.x',
@@ -33,7 +23,7 @@ angular.module('angular-dimple', [
 });
 angular.module('angular-dimple.area', [])
 
-.directive('area', ['angular-dimple.core', function (core) {
+.directive('area', [function () {
   return {
     restrict: 'E',
     replace: true,
@@ -73,7 +63,7 @@ angular.module('angular-dimple.area', [])
 
 angular.module('angular-dimple.bar', [])
 
-.directive('bar', ['angular-dimple.core', function (core) {
+.directive('bar', [function () {
   return {
     restrict: 'E',
     replace: true,
@@ -118,12 +108,10 @@ angular.module('angular-dimple.graph', [])
       var chart = graphController.getChart();
     },
     compile: function($element, $attrs) {
-      var id = (Math.random() * 1e9).toString(36).replace(".", "_");
-      $element.append('<div class="dimple-graph" id="dng-'+ id +'"></div>');
       return {
         post: function postLink(scope, element, attrs, controllers, transclude) {
           var graphController = controllers[0];
-          graphController._createChart(id);
+          graphController._createChart();
           scope.dataReady = false;
           scope.filters = [];
 
@@ -151,10 +139,11 @@ angular.module('angular-dimple.graph', [])
     },
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
       var chart;
-      var id;
 
-      this._createChart = function (domId) {
-        id = domId;
+      var id = (Math.random() * 1e9).toString(36).replace(".", "_");
+      $element.append('<div class="dimple-graph" id="dng-'+ id +'"></div>');
+
+      this._createChart = function () {
         var svg = dimple.newSvg('#dng-'+ id +'', $attrs.width, $attrs.height);
         var data = $scope.data;
         chart = new dimple.chart(svg, data);
@@ -230,7 +219,7 @@ angular.module('angular-dimple.legend', [])
 }]);
 angular.module('angular-dimple.line', [])
 
-.directive('line', ['angular-dimple.core', function (core) {
+.directive('line', [function () {
   return {
     restrict: 'E',
     replace: true,
@@ -292,7 +281,7 @@ angular.module('angular-dimple.r', [])
 }]);
 angular.module('angular-dimple.ring', [])
 
-.directive('ring', ['angular-dimple.core', function (core) {
+.directive('ring', [function () {
   return {
     restrict: 'E',
     replace: true,
@@ -324,7 +313,7 @@ angular.module('angular-dimple.ring', [])
         if ($attrs.diameter) {
           ring.outerRadius = ($attrs.diameter) + '%';
         }
-
+        graphController.filter($attrs);
         graphController.draw();
       }
 
@@ -340,7 +329,7 @@ angular.module('angular-dimple.ring', [])
 
 angular.module('angular-dimple.scatter-plot', [])
 
-.directive('scatterPlot', ['angular-dimple.core', function (core) {
+.directive('scatterPlot', [function () {
   return {
     restrict: 'E',
     replace: true,
@@ -372,7 +361,7 @@ angular.module('angular-dimple.scatter-plot', [])
 }]);
 angular.module('angular-dimple.stacked-area', [])
 
-.directive('stackedArea', ['angular-dimple.core', function (core) {
+.directive('stackedArea', [function () {
   return {
     restrict: 'E',
     replace: true,
@@ -405,7 +394,7 @@ angular.module('angular-dimple.stacked-area', [])
 }]);
 angular.module('angular-dimple.stacked-bar', [])
 
-.directive('stackedBar', ['angular-dimple.core', function (core) {
+.directive('stackedBar', [function () {
   return {
     restrict: 'E',
     replace: true,
