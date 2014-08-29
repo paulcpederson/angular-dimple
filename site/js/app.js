@@ -10,6 +10,12 @@ angular.module('myApp', [
 .config(['$routeProvider', '$logProvider', function($routeProvider, $logProvider) {
   $routeProvider
 
+  .when('/animation-test', {
+    templateUrl: '../documentation/partials/animation-test.html',
+    controller: 'testController'
+  })
+
+
   .when('/line-graph', {
     templateUrl: '../documentation/partials/line-graph.html',
     controller: 'lineGraphController'
@@ -50,3 +56,4 @@ angular.module('myApp', [
   $logProvider.debugEnabled(true);
 
 }]);
+

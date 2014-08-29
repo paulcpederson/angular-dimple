@@ -1,10 +1,10 @@
-angular.module('angular-dimple.p', [])
+angular.module('angular-dimple.r', [])
 
-.directive('p', [function () {
+.directive('r', [function () {
   return {
     restrict: 'E',
     replace: true,
-    require: ['p', '^graph'],
+    require: ['r', '^graph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
@@ -12,12 +12,12 @@ angular.module('angular-dimple.p', [])
       var chart = graphController.getChart();
 
       function addAxis () {
-        p = chart.addMeasureAxis('p', $attrs.field);
+        r = chart.addMeasureAxis('p', $attrs.field);
 
         if ($attrs.title && $attrs.title !== "null") {
-          p.title = $attrs.title;
+          r.title = $attrs.title;
         } else if ($attrs.title == "null") {
-          p.title = null;
+          r.title = null;
         }
       }
 

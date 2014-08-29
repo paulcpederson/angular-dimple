@@ -1,6 +1,6 @@
 angular.module('angular-dimple.stacked-area', [])
 
-.directive('stackedArea', ['angular-dimple.core', function (core) {
+.directive('stackedArea', [function () {
   return {
     restrict: 'E',
     replace: true,
@@ -18,13 +18,13 @@ angular.module('angular-dimple.stacked-area', [])
         } else {
           area = chart.addSeries([$attrs.field], dimple.plot.area);
         }
-        core.filter(area, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
+        graphController.filter($attrs);
         area.lineMarkers = false;
         graphController.draw();
       }
 
-      $scope.$watch('data', function(newValue, oldValue) {
-        if (newValue) {
+      $scope.$watch('dataReady', function(newValue, oldValue) {
+        if (newValue === true) {
           addArea();
         }
       });

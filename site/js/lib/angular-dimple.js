@@ -1,38 +1,12 @@
-/*! Angular-Dimple - 1.0.2 - 2014-07-28
+/*! Angular-Dimple - 1.0.2 - 2014-08-29
 *   https://github.com/esripdx/angular-dimple
 *   Licensed ISC */
-angular.module('angular-dimple.core', [])
-
-.service('angular-dimple.core', [function(){
-  return {
-    filter: function (chart, scopeData, field, value, filter) {
-      if (scopeData !== null) {
-        var data = this.filterData(scopeData, filter);
-        chart.data = data;
-        if (value !== undefined) {
-          chart.data = dimple.filterData(data, field, [value]);
-        }
-      }
-    },
-    filterData: function (data, filter) {
-      if (filter) {
-        var filters = filter.split(':');
-        return dimple.filterData(data, filters[0], [filters[1]]);
-      } else {
-        return data;
-      }
-    }
-  };
-}]);
-
-
 angular.module('angular-dimple', [
-  'angular-dimple.core',
   'angular-dimple.graph',
   'angular-dimple.legend',
   'angular-dimple.x',
   'angular-dimple.y',
-  'angular-dimple.p',
+  'angular-dimple.r',
   'angular-dimple.line',
   'angular-dimple.bar',
   'angular-dimple.stacked-bar',
@@ -49,7 +23,7 @@ angular.module('angular-dimple', [
 });
 angular.module('angular-dimple.area', [])
 
-.directive('area', ['angular-dimple.core', function (core) {
+.directive('area', [function () {
   return {
     restrict: 'E',
     replace: true,
@@ -70,15 +44,15 @@ angular.module('angular-dimple.area', [])
           var values = dimple.getUniqueValues($scope.data, $attrs.field);
           angular.forEach(values, function(value){
             area = chart.addSeries([$attrs.field], dimple.plot.area);
-            core.filter(area, $scope.data, $attrs.field, value, $attrs.filter);
+            graphController.filter($attrs);
             area.lineMarkers = true;
           });
         }
         graphController.draw();
       }
 
-      $scope.$watch('data', function(newValue, oldValue) {
-        if (newValue) {
+      $scope.$watch('dataReady', function(newValue, oldValue) {
+        if (newValue === true) {
           addArea();
         }
       });
@@ -89,7 +63,7 @@ angular.module('angular-dimple.area', [])
 
 angular.module('angular-dimple.bar', [])
 
-.directive('bar', ['angular-dimple.core', function (core) {
+.directive('bar', [function () {
   return {
     restrict: 'E',
     replace: true,
@@ -104,14 +78,14 @@ angular.module('angular-dimple.bar', [])
       function addBar () {
         var filteredData;
         bar = chart.addSeries([$attrs.field], dimple.plot.bar);
-        core.filter(bar, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
+        graphController.filter($attrs);
         graphController.draw();
       }
 
 
 
-      $scope.$watch('data', function(newValue, oldValue) {
-        if (newValue) {
+      $scope.$watch('dataReady', function(newValue, oldValue) {
+        if (newValue === true) {
           addBar();
         }
       });
@@ -125,22 +99,38 @@ angular.module('angular-dimple.graph', [])
     restrict: 'E',
     replace: true,
     scope: {
-      data: '='
+      data: '=',
     },
     require: ['graph'],
     transclude: true,
+    link: function($scope, $element, $attrs, $controllers) {
+      var graphController = $controllers[0];
+      var chart = graphController.getChart();
+    },
     compile: function($element, $attrs) {
-      var id = (Math.random() * 1e9).toString(36).replace(".", "_");
-      $element.append('<div class="dimple-graph" id="dng-'+ id +'"></div>');
       return {
         post: function postLink(scope, element, attrs, controllers, transclude) {
           var graphController = controllers[0];
-          graphController._createChart(id);
+          graphController._createChart();
+          scope.dataReady = false;
+          scope.filters = [];
+
+          var chart = graphController.getChart();
+          var transition;
+          if (attrs.transition) {
+            transition = attrs.transition;
+          } else {
+            transition = 750;
+          }
+
           scope.$watch('data', function(newValue, oldValue) {
             if (newValue) {
+              scope.dataReady = true;
               graphController.setData();
+              chart.draw(transition);
             }
           });
+
           transclude(scope, function(clone){
             element.append(clone);
           });
@@ -149,13 +139,14 @@ angular.module('angular-dimple.graph', [])
     },
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
       var chart;
-      var id;
 
-      this._createChart = function (domId) {
-        id = domId;
+      var id = (Math.random() * 1e9).toString(36).replace(".", "_");
+      $element.append('<div class="dimple-graph" id="dng-'+ id +'"></div>');
+
+      this._createChart = function () {
         var svg = dimple.newSvg('#dng-'+ id +'', $attrs.width, $attrs.height);
-        chart = new dimple.chart(svg);
-
+        var data = $scope.data;
+        chart = new dimple.chart(svg, data);
         var autoStyle = $attrs.autoStyle === 'false' ? true : false;
         chart.noFormats = autoStyle;
       };
@@ -174,6 +165,23 @@ angular.module('angular-dimple.graph', [])
 
       this.getID = function () {
         return id;
+      };
+
+      this.filter = function (attrs) {
+        if (attrs.value !== undefined) {
+          $scope.filters.push(attrs.value);
+        }
+        if ($scope.filters.length) {
+          chart.data = dimple.filterData($scope.data, attrs.field, $scope.filters);
+        }
+
+        if (attrs.filter !== undefined) {
+          console.log("i see a filter");
+          var thisFilter = attrs.filter.split(':');
+          var field = thisFilter[0];
+          var value = [thisFilter[1]];
+          chart.data = dimple.filterData($scope.data, field, value);
+        }
       };
 
     }]
@@ -201,8 +209,8 @@ angular.module('angular-dimple.legend', [])
         chart.addLegend(left, top, width, height, position);
       }
 
-      $scope.$watch('data', function(newValue, oldValue) {
-        if (newValue) {
+      $scope.$watch('dataReady', function(newValue, oldValue) {
+        if (newValue === true) {
           addLegend();
         }
       });
@@ -211,7 +219,7 @@ angular.module('angular-dimple.legend', [])
 }]);
 angular.module('angular-dimple.line', [])
 
-.directive('line', ['angular-dimple.core', function (core) {
+.directive('line', [function () {
   return {
     restrict: 'E',
     replace: true,
@@ -220,32 +228,33 @@ angular.module('angular-dimple.line', [])
     }],
     link: function($scope, $element, $attrs, $controllers) {
       var graphController = $controllers[1];
-      var lineController = $controllers[0];
       var chart = graphController.getChart();
+      var drawn = false;
 
       function addLine () {
         var filteredData;
         line = chart.addSeries([$attrs.field], dimple.plot.line);
-        core.filter(line, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
+        graphController.filter($attrs);
         line.lineMarkers = true;
         graphController.draw();
       }
 
-      $scope.$watch('data', function(newValue, oldValue) {
-        if (newValue) {
+      $scope.$watch('dataReady', function(newValue, oldValue) {
+        if (newValue === true) {
           addLine();
         }
       });
+
     }
   };
 }]);
-angular.module('angular-dimple.p', [])
+angular.module('angular-dimple.r', [])
 
-.directive('p', [function () {
+.directive('r', [function () {
   return {
     restrict: 'E',
     replace: true,
-    require: ['p', '^graph'],
+    require: ['r', '^graph'],
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
     }],
     link: function($scope, $element, $attrs, $controllers) {
@@ -253,12 +262,12 @@ angular.module('angular-dimple.p', [])
       var chart = graphController.getChart();
 
       function addAxis () {
-        p = chart.addMeasureAxis('p', $attrs.field);
+        r = chart.addMeasureAxis('p', $attrs.field);
 
         if ($attrs.title && $attrs.title !== "null") {
-          p.title = $attrs.title;
+          r.title = $attrs.title;
         } else if ($attrs.title == "null") {
-          p.title = null;
+          r.title = null;
         }
       }
 
@@ -272,7 +281,7 @@ angular.module('angular-dimple.p', [])
 }]);
 angular.module('angular-dimple.ring', [])
 
-.directive('ring', ['angular-dimple.core', function (core) {
+.directive('ring', [function () {
   return {
     restrict: 'E',
     replace: true,
@@ -289,23 +298,22 @@ angular.module('angular-dimple.ring', [])
       }
 
       function addRing () {
-        var width;
+        var thickness;
         ring = chart.addSeries([$attrs.field], dimple.plot.pie);
-        if ($attrs.thickness && !$attrs.radius) {
-          width = (100 - $attrs.thickness) + '%';
-          ring.innerRadius = width;
-          console.log(width);
-        } else if ($attrs.thickness && $attrs.radius) {
-          width = ($attrs.radius - $attrs.thickness) + '%';
-          ring.innerRadius = width;
+        if ($attrs.thickness && !$attrs.diameter) {
+          thickness = (100 - $attrs.thickness) + '%';
+          ring.innerRadius = thickness;
+        } else if ($attrs.thickness && $attrs.diameter) {
+          thickness = ($attrs.diameter - $attrs.thickness) + '%';
+          ring.innerRadius = thickness;
         } else {
           ring.innerRadius = "50%";
         }
 
-        if ($attrs.radius) {
-          ring.outerRadius = ($attrs.radius) + '%';
+        if ($attrs.diameter) {
+          ring.outerRadius = ($attrs.diameter) + '%';
         }
-
+        graphController.filter($attrs);
         graphController.draw();
       }
 
@@ -321,7 +329,7 @@ angular.module('angular-dimple.ring', [])
 
 angular.module('angular-dimple.scatter-plot', [])
 
-.directive('scatterPlot', ['angular-dimple.core', function (core) {
+.directive('scatterPlot', [function () {
   return {
     restrict: 'E',
     replace: true,
@@ -339,12 +347,12 @@ angular.module('angular-dimple.scatter-plot', [])
         if ($attrs.label || $attrs.label === '') { array.push($attrs.label); }
         scatterPlot = chart.addSeries(array, dimple.plot.bubble);
         scatterPlot.aggregate = dimple.aggregateMethod.avg;
-        core.filter(scatterPlot, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
+        graphController.filter($attrs);
         graphController.draw();
       }
 
-      $scope.$watch('data', function(newValue, oldValue) {
-        if (newValue) {
+      $scope.$watch('dataReady', function(newValue, oldValue) {
+        if (newValue === true) {
           addScatterPlot();
         }
       });
@@ -353,7 +361,7 @@ angular.module('angular-dimple.scatter-plot', [])
 }]);
 angular.module('angular-dimple.stacked-area', [])
 
-.directive('stackedArea', ['angular-dimple.core', function (core) {
+.directive('stackedArea', [function () {
   return {
     restrict: 'E',
     replace: true,
@@ -371,13 +379,13 @@ angular.module('angular-dimple.stacked-area', [])
         } else {
           area = chart.addSeries([$attrs.field], dimple.plot.area);
         }
-        core.filter(area, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
+        graphController.filter($attrs);
         area.lineMarkers = false;
         graphController.draw();
       }
 
-      $scope.$watch('data', function(newValue, oldValue) {
-        if (newValue) {
+      $scope.$watch('dataReady', function(newValue, oldValue) {
+        if (newValue === true) {
           addArea();
         }
       });
@@ -386,7 +394,7 @@ angular.module('angular-dimple.stacked-area', [])
 }]);
 angular.module('angular-dimple.stacked-bar', [])
 
-.directive('stackedBar', ['angular-dimple.core', function (core) {
+.directive('stackedBar', [function () {
   return {
     restrict: 'E',
     replace: true,
@@ -404,12 +412,12 @@ angular.module('angular-dimple.stacked-bar', [])
         } else {
           bar = chart.addSeries([$attrs.field], dimple.plot.bar);
         }
-        core.filter(bar, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
+        graphController.filter($attrs);
         graphController.draw();
       }
 
-      $scope.$watch('data', function(newValue, oldValue) {
-        if (newValue) {
+      $scope.$watch('dataReady', function(newValue, oldValue) {
+        if (newValue === true) {
           addBar();
         }
       });
@@ -441,7 +449,6 @@ angular.module('angular-dimple.x', [])
           if ($attrs.orderBy) {
             x.addGroupOrderRule($attrs.orderBy);
           }
-
         } else {
           if ($attrs.type == 'Measure') {
             x = chart.addMeasureAxis('x', $attrs.field);
@@ -461,8 +468,9 @@ angular.module('angular-dimple.x', [])
           x.title = null;
         }
       }
-      $scope.$watch('data', function(newValue, oldValue) {
-        if (newValue) {
+
+      $scope.$watch('dataReady', function(newValue, oldValue) {
+        if (newValue === true) {
           addAxis();
         }
       });
@@ -514,8 +522,8 @@ angular.module('angular-dimple.y', [])
         }
       }
 
-      $scope.$watch('data', function(newValue, oldValue) {
-        if (newValue) {
+      $scope.$watch('dataReady', function(newValue, oldValue) {
+        if (newValue === true) {
           addAxis();
         }
       });

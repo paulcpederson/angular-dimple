@@ -243,19 +243,21 @@ Scatter Plots also use the `series` attribute. Series defines the categorical da
 ---
 
 ## Ring
+<a class="example-link" href="../examples/#/ring">example</a>
+
 The `ring` directive creates pie and donut charts - but require a seperate type of axis that the other charts in Angular Dimple. A ring chart uses a `<p></p>` axis to plot a single measure. Adding multiple series to a ring chart will create concentric circles within the chart.
 
-You can define both the width of the ring (as a percentage) and the size of the ring (as a percentage).
+You can define both the thickness of the ring (as a percentage) and the diameter of the ring (as a percentage).
 
 ```html
-<p field="Unit Sales"></p>
+<r field="Unit Sales"></r>
 <ring field="Owner"></ring>
 
 <!-- OR -->
 
-<p field="Unit Sales"></p>
-<ring field="Owner" width="20"></ring>
-<ring field="Price Tier" width="20" radius="75"></ring>>
+<r field="Unit Sales"></r>
+<ring field="Owner" thickness="20"></ring>
+<ring field="Price Tier" thickness="20" diameter="75"></ring>>
 ```
 
 #### Attributes
@@ -263,8 +265,8 @@ You can define both the width of the ring (as a percentage) and the size of the 
 | attribute | description |
 | --------- | ----------- |
 | field     | **Required.** Field to plot as a ring. |
-| width     | Accepts a number. Width of ring, as percent of circle size. |
-| radius    | Accepts a number. Size of ring, as percent of circle size. |
+| thickness     | Accepts a number. Width of ring, as percent of circle size. |
+| diameter    | Accepts a number. Size of ring, as percent of circle size. |
 
 
 

@@ -1,6 +1,6 @@
 angular.module('angular-dimple.stacked-bar', [])
 
-.directive('stackedBar', ['angular-dimple.core', function (core) {
+.directive('stackedBar', [function () {
   return {
     restrict: 'E',
     replace: true,
@@ -18,12 +18,12 @@ angular.module('angular-dimple.stacked-bar', [])
         } else {
           bar = chart.addSeries([$attrs.field], dimple.plot.bar);
         }
-        core.filter(bar, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
+        graphController.filter($attrs);
         graphController.draw();
       }
 
-      $scope.$watch('data', function(newValue, oldValue) {
-        if (newValue) {
+      $scope.$watch('dataReady', function(newValue, oldValue) {
+        if (newValue === true) {
           addBar();
         }
       });

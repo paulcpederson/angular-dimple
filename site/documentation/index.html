@@ -495,16 +495,17 @@
 </table>
 <hr>
 <h2 id="ring">Ring</h2>
+<p><a class="example-link" href="../examples/#/ring">example</a></p>
 <p>The <code>ring</code> directive creates pie and donut charts - but require a seperate type of axis that the other charts in Angular Dimple. A ring chart uses a <code>&lt;p&gt;&lt;/p&gt;</code> axis to plot a single measure. Adding multiple series to a ring chart will create concentric circles within the chart.</p>
-<p>You can define both the width of the ring (as a percentage) and the size of the ring (as a percentage).</p>
-<pre><code class="lang-html"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">field</span>=<span class="value">"Unit Sales"</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+<p>You can define both the thickness of the ring (as a percentage) and the diameter of the ring (as a percentage).</p>
+<pre><code class="lang-html"><span class="tag">&lt;<span class="title">r</span> <span class="attribute">field</span>=<span class="value">"Unit Sales"</span>&gt;</span><span class="tag">&lt;/<span class="title">r</span>&gt;</span>
 <span class="tag">&lt;<span class="title">ring</span> <span class="attribute">field</span>=<span class="value">"Owner"</span>&gt;</span><span class="tag">&lt;/<span class="title">ring</span>&gt;</span>
 
 <span class="comment">&lt;!-- OR --&gt;</span>
 
-<span class="tag">&lt;<span class="title">p</span> <span class="attribute">field</span>=<span class="value">"Unit Sales"</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-<span class="tag">&lt;<span class="title">ring</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">width</span>=<span class="value">"20"</span>&gt;</span><span class="tag">&lt;/<span class="title">ring</span>&gt;</span>
-<span class="tag">&lt;<span class="title">ring</span> <span class="attribute">field</span>=<span class="value">"Price Tier"</span> <span class="attribute">width</span>=<span class="value">"20"</span> <span class="attribute">radius</span>=<span class="value">"75"</span>&gt;</span><span class="tag">&lt;/<span class="title">ring</span>&gt;</span>&gt;</code></pre>
+<span class="tag">&lt;<span class="title">r</span> <span class="attribute">field</span>=<span class="value">"Unit Sales"</span>&gt;</span><span class="tag">&lt;/<span class="title">r</span>&gt;</span>
+<span class="tag">&lt;<span class="title">ring</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">thickness</span>=<span class="value">"20"</span>&gt;</span><span class="tag">&lt;/<span class="title">ring</span>&gt;</span>
+<span class="tag">&lt;<span class="title">ring</span> <span class="attribute">field</span>=<span class="value">"Price Tier"</span> <span class="attribute">thickness</span>=<span class="value">"20"</span> <span class="attribute">diameter</span>=<span class="value">"75"</span>&gt;</span><span class="tag">&lt;/<span class="title">ring</span>&gt;</span>&gt;</code></pre>
 <h4 id="attributes">Attributes</h4>
 <table>
 <thead>
@@ -519,11 +520,11 @@
 <td><strong>Required.</strong> Field to plot as a ring.</td>
 </tr>
 <tr>
-<td>width</td>
+<td>thickness</td>
 <td>Accepts a number. Width of ring, as percent of circle size.</td>
 </tr>
 <tr>
-<td>radius</td>
+<td>diameter</td>
 <td>Accepts a number. Size of ring, as percent of circle size.</td>
 </tr>
 </tbody>
