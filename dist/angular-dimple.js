@@ -103,50 +103,48 @@ angular.module('angular-dimple.graph', [])
     },
     require: ['graph'],
     transclude: true,
-    link: function($scope, $element, $attrs, $controllers) {
-      var graphController = $controllers[0];
+    link: function (scope, element, attrs, controllers, transclude) {
+      var graphController = controllers[0];
+      graphController._createChart();
+      scope.dataReady = false;
+      scope.filters = [];
+
       var chart = graphController.getChart();
-    },
-    compile: function($element, $attrs) {
-      return {
-        post: function postLink(scope, element, attrs, controllers, transclude) {
-          var graphController = controllers[0];
-          graphController._createChart();
-          scope.dataReady = false;
-          scope.filters = [];
+      var transition;
+      if (attrs.transition) {
+        transition = attrs.transition;
+      } else {
+        transition = 750;
+      }
 
-          var chart = graphController.getChart();
-          var transition;
-          if (attrs.transition) {
-            transition = attrs.transition;
-          } else {
-            transition = 750;
-          }
-
-          scope.$watch('data', function(newValue, oldValue) {
-            if (newValue) {
-              scope.dataReady = true;
-              graphController.setData();
-              chart.draw(transition);
-            }
-          });
-
-          transclude(scope, function(clone){
-            element.append(clone);
-          });
+      scope.$watch('data', function(newValue, oldValue) {
+        if (newValue) {
+          scope.dataReady = true;
+          graphController.setData();
+          chart.draw(transition);
         }
-      };
+      });
+
+      transclude(scope, function(clone){
+        element.append(clone);
+      });
     },
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
       var chart;
 
-      var id = (Math.random() * 1e9).toString(36).replace(".", "_");
-      $element.append('<div class="dimple-graph" id="dng-'+ id +'"></div>');
-
       this._createChart = function () {
-        var svg = dimple.newSvg('#dng-'+ id +'', $attrs.width, $attrs.height);
-        var data = $scope.data;
-        chart = new dimple.chart(svg, data);
+        // create an svg element
+        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('width', $attrs.width);
+        svg.setAttribute('height', $attrs.height);
+
+        // end the svg to this <graph>
+        $element.append(svg);
+
+        // create the dimple chart using the d3 selection of our <svg> element
+        chart = new dimple.chart(d3.select(svg));
+
+        // auto style
         var autoStyle = $attrs.autoStyle === 'false' ? true : false;
         chart.noFormats = autoStyle;
       };
