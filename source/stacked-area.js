@@ -1,6 +1,6 @@
 angular.module('angular-dimple.stacked-area', [])
 
-.directive('stackedArea', ['angular-dimple.core', function (core) {
+.directive('stackedArea', [function () {
   return {
     restrict: 'E',
     replace: true,

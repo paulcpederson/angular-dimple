@@ -1,6 +1,6 @@
 angular.module('angular-dimple.ring', [])
 
-.directive('ring', ['angular-dimple.core', function (core) {
+.directive('ring', [function () {
   return {
     restrict: 'E',
     replace: true,

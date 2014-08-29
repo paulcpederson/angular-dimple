@@ -1,6 +1,6 @@
 angular.module('angular-dimple.scatter-plot', [])
 
-.directive('scatterPlot', ['angular-dimple.core', function (core) {
+.directive('scatterPlot', [function () {
   return {
     restrict: 'E',
     replace: true,
