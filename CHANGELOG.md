@@ -3,6 +3,7 @@
 # v1.1.0
 * add functionality inside ng-repeat
 * graphs update live when scope changes
+* add ring charts
 
 # v1.0.2
 * add bower dependencies
