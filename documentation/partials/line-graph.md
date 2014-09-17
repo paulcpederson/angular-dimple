@@ -47,3 +47,23 @@
   <line field="Owner" value="Tyrell Corp"></line>
 </graph>
 ```
+
+## Inside ng-repeat
+<div class="white-panel" ng-repeat="one in arrayOfData">
+  <graph data="one.data" width="100%" height="600px">
+    <x field="Month" order-by="Date"></x>
+    <y field="Unit Sales"></y>
+    <legend></legend>
+    <line field="Owner"></line>
+  </graph>
+</div>
+
+```html
+<!-- Default -->
+<graph data="graphData" width="100%" height="600px">
+  <x field="Month" order-by="Date"></x>
+  <y field="Unit Sales"></y>
+  <legend></legend>
+  <line field="Owner"></line>
+</graph>
+```
