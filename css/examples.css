@@ -98,15 +98,13 @@
 /* line 5, ../scss/examples.scss */
 .white-panel {
   margin-bottom: 1rem;
-  background-color: white;
-  border: 1px solid #ecf0f3;
-  -webkit-box-sizing: border-box;
+  background-color: #FFFFFF;
+  border: 1px solid #ECF0F3;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
+  -webkit-border-radius: 3px;
   border-radius: 3px;
 }
 /* line 11, ../scss/examples.scss */
@@ -141,7 +139,7 @@
 }
 
 @media screen and (max-width: 662px) {
-  /* line 43, ../scss/examples.scss */
+  /* line 42, ../scss/examples.scss */
   .example-link,
   .api-link {
     width: 100%;
@@ -149,5 +147,17 @@
     margin-top: 0rem;
     margin-bottom: 1.5rem;
     float: left;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* line 54, ../scss/examples.scss */
+  .container {
+    padding: 0 0;
+  }
+
+  /* line 57, ../scss/examples.scss */
+  .white-panel.padded {
+    padding: 2rem 1rem;
   }
 }

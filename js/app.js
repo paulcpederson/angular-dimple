@@ -10,6 +10,12 @@ angular.module('myApp', [
 .config(['$routeProvider', '$logProvider', function($routeProvider, $logProvider) {
   $routeProvider
 
+  .when('/animation-test', {
+    templateUrl: '../documentation/partials/animation-test.html',
+    controller: 'testController'
+  })
+
+
   .when('/line-graph', {
     templateUrl: '../documentation/partials/line-graph.html',
     controller: 'lineGraphController'
@@ -38,6 +44,10 @@ angular.module('myApp', [
     templateUrl: '../documentation/partials/scatter-plot.html',
     controller: 'scatterController'
   })
+  .when('/ring', {
+    templateUrl: '../documentation/partials/ring.html',
+    controller: 'ringController'
+  })
 
   .otherwise({
     redirectTo: '/line-graph'
@@ -46,3 +56,4 @@ angular.module('myApp', [
   $logProvider.debugEnabled(true);
 
 }]);
+

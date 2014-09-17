@@ -7,11 +7,11 @@
 }
 /* line 9, ../scss/home.scss */
 .homepage-navigation a {
-  color: #fafbfe;
+  color: #FAFBFE;
 }
 /* line 11, ../scss/home.scss */
 .homepage-navigation a:hover {
-  color: white;
+  color: #FFFFFF;
 }
 
 /* line 17, ../scss/home.scss */
@@ -22,15 +22,15 @@ pre {
 
 /* line 22, ../scss/home.scss */
 code {
-  background-color: white;
-  border-color: #ecf0f3;
+  background-color: #FFFFFF;
+  border-color: #ECF0F3;
 }
 
 /* line 27, ../scss/home.scss */
 .banner {
   position: relative;
   overflow: hidden;
-  color: white;
+  color: #FFFFFF;
   background: url(../img/dots.svg) #245070;
   z-index: 20;
 }
@@ -42,7 +42,7 @@ code {
   font-weight: 200;
 }
 /* line 39, ../scss/home.scss */
-.banner .dimple-graph {
+.banner .banner-graphic {
   position: absolute;
   top: -260px;
   bottom: 0;
@@ -79,5 +79,5 @@ code {
 
 /* line 71, ../scss/home.scss */
 .charts-list a {
-  color: #76899b;
+  color: #76899B;
 }
