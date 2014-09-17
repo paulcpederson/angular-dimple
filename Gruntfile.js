@@ -5,7 +5,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     'gh-pages': {
       options: {
-        base: 'site'
+        base: 'site',
+        repo: 'https://github.com/esripdx/angular-dimple.git'
       },
       src: '**/*'
     },
