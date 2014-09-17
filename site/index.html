@@ -17,7 +17,7 @@
 
   <!-- Dimple and D3 -->
   <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.1.0.min.js"></script>
 
 </head>
 
@@ -70,11 +70,14 @@
         </div>
       </nav>
 
-      <graph data="graphData" width="2400" height="800" class="blue-graph">
-        <x field="Month" order-by="Date" type="Category"></x>
-        <y field="Unit Sales" type="Measure" title=""></y>
-        <line field="Owner"></line>
-      </graph>
+      <div class="banner-graphic">
+        <graph data="graphData" width="2400" height="800" class="blue-graph">
+          <x field="Month" order-by="Date" type="Category"></x>
+          <y field="Unit Sales" type="Measure" title=""></y>
+          <line field="Owner"></line>
+        </graph>
+      </div>
+
       <div class="banner-copy">
         <div class="container">
           <div class="row">
@@ -113,7 +116,7 @@
 <span class="tag">&lt;/<span class="title">graph</span>&gt;</span></code></pre>
                 </article>
                 <article class="tab-content active">
-                  <graph data="graphData" height="400">
+                  <graph data="graphData" height="400" width="100%">
                     <x field="Month" order-by="Date"></x>
                     <y field="Unit Sales"></y>
                     <legend></legend>
@@ -202,6 +205,20 @@
               <a href="./documentation/#scatter-plot">Reference</a>
             </p>
           </div>
+
+          <div class="column-6 pre-9 post-1 tablet-column-10 tablet-pre-7 phone-column-22 phone-pre-1 center-text trailer-5">
+            <a href="./examples/#/ring" class="chart-icon">
+              <img src="img/ring.svg">
+            </a>
+            <h4>
+              <a href="./examples/#/ring">Ring</a>
+            </h4>
+            <p class="small">
+              <a href="./examples/#/ring">Examples</a> |
+              <a href="./documentation/#ring">Reference</a>
+            </p>
+          </div>
+
       </div>
     </div>
 

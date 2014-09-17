@@ -1,6 +1,6 @@
 angular.module('angular-dimple.area', [])
 
-.directive('area', ['angular-dimple.core', function (core) {
+.directive('area', [function () {
   return {
     restrict: 'E',
     replace: true,
@@ -21,15 +21,15 @@ angular.module('angular-dimple.area', [])
           var values = dimple.getUniqueValues($scope.data, $attrs.field);
           angular.forEach(values, function(value){
             area = chart.addSeries([$attrs.field], dimple.plot.area);
-            core.filter(area, $scope.data, $attrs.field, value, $attrs.filter);
+            graphController.filter($attrs);
             area.lineMarkers = true;
           });
         }
         graphController.draw();
       }
 
-      $scope.$watch('data', function(newValue, oldValue) {
-        if (newValue) {
+      $scope.$watch('dataReady', function(newValue, oldValue) {
+        if (newValue === true) {
           addArea();
         }
       });
