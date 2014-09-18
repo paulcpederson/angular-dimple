@@ -19,6 +19,9 @@ angular.module('angular-dimple.x', [])
             x = chart.addPctAxis('x', $attrs.field);
           } else if ($attrs.type == 'Time') {
             x = chart.addTimeAxis('x', $attrs.field);
+            if ($attrs.format) {
+              x.tickFormat = $attrs.format;
+            }
           } else {
             x = chart.addCategoryAxis('x', [$attrs.groupBy, $attrs.field]);
           }
@@ -32,6 +35,9 @@ angular.module('angular-dimple.x', [])
             x = chart.addPctAxis('x', $attrs.field);
           } else if ($attrs.type == 'Time') {
             x = chart.addTimeAxis('x', $attrs.field);
+            if ($attrs.format) {
+              x.tickFormat = $attrs.format;
+            }
           } else {
             x = chart.addCategoryAxis('x', $attrs.field);
           }
