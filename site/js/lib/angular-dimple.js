@@ -1,4 +1,4 @@
-/*! Angular-Dimple - 1.1.0 - 2014-09-17
+/*! Angular-Dimple - 1.1.1 - 2014-09-18
 *   https://github.com/esripdx/angular-dimple
 *   Licensed ISC */
 angular.module('angular-dimple', [
@@ -441,6 +441,11 @@ angular.module('angular-dimple.x', [])
             x = chart.addMeasureAxis('x', [$attrs.groupBy, $attrs.field]);
           } else if ($attrs.type == 'Percent') {
             x = chart.addPctAxis('x', $attrs.field);
+          } else if ($attrs.type == 'Time') {
+            x = chart.addTimeAxis('x', $attrs.field);
+            if ($attrs.format) {
+              x.tickFormat = $attrs.format;
+            }
           } else {
             x = chart.addCategoryAxis('x', [$attrs.groupBy, $attrs.field]);
           }
@@ -452,6 +457,11 @@ angular.module('angular-dimple.x', [])
             x = chart.addMeasureAxis('x', $attrs.field);
           } else if ($attrs.type == 'Percent') {
             x = chart.addPctAxis('x', $attrs.field);
+          } else if ($attrs.type == 'Time') {
+            x = chart.addTimeAxis('x', $attrs.field);
+            if ($attrs.format) {
+              x.tickFormat = $attrs.format;
+            }
           } else {
             x = chart.addCategoryAxis('x', $attrs.field);
           }
@@ -494,6 +504,11 @@ angular.module('angular-dimple.y', [])
             y = chart.addCategoryAxis('y', $attrs.field);
           } else if ($attrs.type == 'Percent') {
             y = chart.addPctAxis('y', $attrs.field);
+          } else if ($attrs.type == 'Time') {
+            y = chart.addTimeAxis('x', $attrs.field);
+            if ($attrs.format) {
+              y.tickFormat = $attrs.format;
+            }
           } else {
             y = chart.addMeasureAxis('y', $attrs.field);
           }
@@ -505,6 +520,11 @@ angular.module('angular-dimple.y', [])
             y = chart.addCategoryAxis('y', $attrs.field);
           } else if ($attrs.type == 'Percent') {
             y = chart.addPctAxis('y', $attrs.field);
+          } else if ($attrs.type == 'Time') {
+            y = chart.addTimeAxis('x', $attrs.field);
+            if ($attrs.format) {
+              y.tickFormat = $attrs.format;
+            }
           } else {
             y = chart.addMeasureAxis('y', $attrs.field);
           }
