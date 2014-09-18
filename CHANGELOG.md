@@ -1,5 +1,8 @@
 # Angular-Dimple Changelog
 
+# v1.1.1
+* add time formats and such
+
 # v1.1.0
 * add functionality inside ng-repeat
 * graphs update live when scope changes
