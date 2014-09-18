@@ -17,6 +17,8 @@ angular.module('angular-dimple.y', [])
             y = chart.addCategoryAxis('y', $attrs.field);
           } else if ($attrs.type == 'Percent') {
             y = chart.addPctAxis('y', $attrs.field);
+          } else if ($attrs.type == 'Time') {
+            x = chart.addTimeAxis('x', $attrs.field);
           } else {
             y = chart.addMeasureAxis('y', $attrs.field);
           }
@@ -28,6 +30,8 @@ angular.module('angular-dimple.y', [])
             y = chart.addCategoryAxis('y', $attrs.field);
           } else if ($attrs.type == 'Percent') {
             y = chart.addPctAxis('y', $attrs.field);
+          } else if ($attrs.type == 'Time') {
+            x = chart.addTimeAxis('x', $attrs.field);
           } else {
             y = chart.addMeasureAxis('y', $attrs.field);
           }
