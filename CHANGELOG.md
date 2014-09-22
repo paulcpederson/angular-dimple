@@ -1,5 +1,10 @@
 # Angular-Dimple Changelog
 
+# v1.1.2
+* add default width (100%)
+* add default height (100%)
+* add default margin (60, 60, 20, 40)
+
 # v1.1.1
 * add time formats and such
 
