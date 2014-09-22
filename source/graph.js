@@ -41,14 +41,28 @@ angular.module('angular-dimple.graph', [])
       this._createChart = function () {
         // create an svg element
         var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.setAttribute('width', $attrs.width);
-        svg.setAttribute('height', $attrs.height);
+        if ($attrs.width) {
+          svg.setAttribute('width', $attrs.width);
+        } else {
+          svg.setAttribute('width', '100%');
+        }
+        if ($attrs.height) {
+          svg.setAttribute('height', $attrs.height);
+        } else {
+          svg.setAttribute('height', '100%');
+        }
 
         // end the svg to this <graph>
         $element.append(svg);
 
         // create the dimple chart using the d3 selection of our <svg> element
         chart = new dimple.chart(d3.select(svg));
+
+        if ($attrs.margin) {
+          chart.setMargins($attrs.margin);
+        } else {
+          chart.setMargins(60, 60, 20, 40);
+        }
 
         // auto style
         var autoStyle = $attrs.autoStyle === 'false' ? true : false;
