@@ -1,4 +1,4 @@
-/*! Angular-Dimple - 1.1.1 - 2014-09-22
+/*! Angular-Dimple - 1.1.2 - 2014-09-26
 *   https://github.com/esripdx/angular-dimple
 *   Licensed ISC */
 angular.module('angular-dimple', [
@@ -38,7 +38,7 @@ angular.module('angular-dimple.area', [])
       function addArea () {
         if ($attrs.value) {
           area = chart.addSeries([$attrs.field], dimple.plot.area);
-          core.filter(area, $scope.data, $attrs.field, $attrs.value, $attrs.filter);
+          graphController.filter($attrs);
           area.lineMarkers = true;
         } else {
           var values = dimple.getUniqueValues($scope.data, $attrs.field);
