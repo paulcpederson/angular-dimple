@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> | Angular Dimple</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta name="description" content="A mini-library of Angular directives for charting.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Brick Fonts -->
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Source+Code+Pro:200,300/Clear+Sans:200,300,400,400i,500,500i,700,700i">
+
+    <!-- Dimple and D3 -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.1.0.min.js"></script>
+  
+</head>
+<body ng-app="myApp" class="off-white">
+
+  <nav class="primary-navigation">
+    <div class="container">
+      <div class="row">
+        <div class="column-24">
+          <div class="angular-dimple-logo">
+            <a href="../">
+              <img src="../assets/img/Angular-Dimple-Logo.svg" alt="Angular Dimple">
+            </a>
+          </div>
+          <div class="navigation-section">
+            <a href="../examples" class="post-1">Examples</a>
+            <a href="../documentation" class="post-1">API Docs</a>
+            <a href="https://github.com/esripdx/angular-dimple" class="btn">GitHub</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+<div class="container leader-5 trailer-5">
+  <div class="row">
+    <!-- Menu -->
+    <aside class="sidebar column-5 tablet-column-24">
+      <ul class="menu">
+        <li>
+          <a href="#graph">
+            <img src="../assets/img/graph.svg">
+            <span class="phone-hide">Graph</span>
+          </a>
+        </li>
+        <li>
+          <a href="#x">
+            <img src="../assets/img/x.svg">
+            <span class="phone-hide">X</span>
+          </a>
+        </li>
+        <li>
+          <a href="#y">
+            <img src="../assets/img/y.svg">
+            <span class="phone-hide">Y</span>
+          </a>
+        </li>
+        <li>
+          <a href="#legend">
+            <img src="../assets/img/legend.svg">
+            <span class="phone-hide">Legend</span>
+          </a>
+        </li>
+        <li>
+          <a href="#line">
+            <img src="../assets/img/line.svg">
+            <span class="phone-hide">Line</span>
+          </a>
+        </li>
+        <li>
+          <a href="#bar">
+            <img src="../assets/img/bar.svg">
+            <span class="phone-hide">Bar</span>
+          </a>
+        </li>
+        <li>
+          <a href="#stacked-bar">
+            <img src="../assets/img/stacked-bar.svg">
+            <span class="phone-hide">Stacked Bar</span>
+          </a>
+        </li>
+        <li>
+          <a href="#area">
+            <img src="../assets/img/area.svg">
+            <span class="phone-hide">Area</span>
+          </a>
+        </li>
+        <li>
+          <a href="#stacked-area">
+            <img src="../assets/img/stacked-area.svg">
+            <span class="phone-hide">Stacked Area</span>
+          </a>
+        </li>
+        <li>
+          <a href="#scatter-plot">
+            <img src="../assets/img/scatter-plot.svg">
+            <span class="phone-hide">Scatter Plot</span>
+          </a>
+       </li>
+       <li>
+          <a href="#ring">
+            <img src="../assets/img/ring.svg">
+            <span class="phone-hide">Ring</span>
+          </a>
+       </li>
+      </ul>
+    </aside>
+
+    <div class="scroll-to-top">
+      <button class="btn outline" onClick="window.scrollTo(0,0);">Back to Top</button>
+    </div>
+
+    <!-- Views -->
+    <main class="column-18 pre-6 right">
+      <div class="white-panel padded">
+        <h1 id="angular-dimple-documentation">Angular Dimple Documentation</h1>
+<p>Angular Dimple is a series of Angular directives that help you create graphs and visualizations based on <a href="http://dimplejs.org/">Dimple.js</a> and <a href="http://d3js.org/">d3</a>. It&#39;s designed to create graphs as simply as possible from flat JSON data.</p>
+<hr>
+<h2 id="graph">Graph</h2>
+<p>The <code>&lt;graph&gt;</code> directive is the wrapper directive for every type of chart in Angular Dimple. This is where you define what data to graph, as well as the size of the graph. The data property accepts a scope variable, and you should handle the variables creation in your own data service – Dimple Angular provides some simple methods of data filtering on a graph, but avoids intensive data compiling and manipulation.</p>
+<p>This directive creates a div with a dynamic id, and initializes a new Dimple graph inside of it with several default options. Default heighth and width are 100% of the parent container.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">graph</span> <span class="hljs-attribute">data</span>=<span class="hljs-value">'data'</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">'100%'</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">'100%'</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">graph</span>&gt;</span>
+</code></pre>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>none</td>
+<td><strong>Required.</strong> Angular Dimple graphs accept flat JSON files as a $scope variable, set from a service. Or something</td>
+</tr>
+<tr>
+<td>width</td>
+<td>100%</td>
+<td>Accepts a percent or a number. Sets the width of the chart, either in pixels or percent.</td>
+</tr>
+<tr>
+<td>height</td>
+<td>100%</td>
+<td>Accepts a percent or a number. Sets the width of the chart, either in pixels or percent.</td>
+</tr>
+<tr>
+<td>auto-style</td>
+<td>true</td>
+<td>Boolean. If false, no default dimple color, fill, or stroke styles will be applied to the graph. Allows for custom css styling.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="x">X</h2>
+<p>The <code>&lt;x&gt;</code> directive sets up your x axis for the graph. Defining an x axis is required. Because it&#39;s graph. Be default, <code>&lt;x&gt;</code> will expect to tie to categorical data rather than measure data.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">x</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">'Month'</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'Category'</span> <span class="hljs-attribute">order-by</span>=<span class="hljs-value">'Date'</span> <span class="hljs-attribute">group-by</span>=<span class="hljs-value">'Owner'</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">'Month, Year'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">x</span>&gt;</span>
+</code></pre>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td>none</td>
+<td><strong>Required.</strong> Field from your data to set as the X-Axis.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Category</td>
+<td>Accepts &#39;Category&#39;, &#39;Measure&#39;, or &#39;Percent&#39;. Defines axis type.</td>
+</tr>
+<tr>
+<td>order-by</td>
+<td>none</td>
+<td>Field from your data to order the x axis by.</td>
+</tr>
+<tr>
+<td>group-by</td>
+<td>none</td>
+<td>Creates small mutliple graphs grouped by a Categorical data field.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>field value</td>
+<td>Labels the x axis. If &#39;null&#39;, will not draw a title for the axis.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="y">Y</h2>
+<p>The <code>&lt;y&gt;</code> directive sets up your y axis for the graph. One y axis is requires, but you can set multiple axes of each type and the graph will display them. By default, <code>&lt;y&gt;</code> will expect to plot measure data rather than categorical data.</p>
+<p>Changing the axis to to &#39;Percent&#39; will tie the largest value on the defined field to 100%, and compare the rest of the values to that.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">y</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">'Unit Sales'</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'Measure'</span> <span class="hljs-attribute">order-by</span>=<span class="hljs-value">'Unit Sales'</span> <span class="hljs-attribute">group-by</span>=<span class="hljs-value">'Owner'</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">'Sales'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">x</span>&gt;</span>
+</code></pre>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td>none</td>
+<td><strong>Required.</strong> Field from your data to set as the Y-Axis.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Measure</td>
+<td>Accepts &#39;Category&#39;, &#39;Measure&#39;, or &#39;Percent&#39;. Defines axis type.</td>
+</tr>
+<tr>
+<td>order-by</td>
+<td>none</td>
+<td>Field from your data to order the y axis by.</td>
+</tr>
+<tr>
+<td>group-by</td>
+<td>none</td>
+<td>Creates small mutliple graphs grouped by a Categorical data field.</td>
+</tr>
+<tr>
+<td>title</td>
+<td>field value</td>
+<td>Labels the y-axis. If &#39;null&#39;, will not draw a title for the axis.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="legend">Legend</h2>
+<p>The <code>&lt;legend&gt;</code> directive creates a legend for your graph. The legend is generated from the plotted data.</p>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>left</td>
+<td>10%</td>
+<td>Accepts a percent or a number. Sets position from left of chart in either pixels or percent.</td>
+</tr>
+<tr>
+<td>top</td>
+<td>4%</td>
+<td>Accepts a percent or a number. Sets position from top of chart in either pixels or percent.</td>
+</tr>
+<tr>
+<td>height</td>
+<td>100%</td>
+<td>Accepts a percent or a number. Sets height of legend in either pixels or percent.</td>
+</tr>
+<tr>
+<td>width</td>
+<td>90%</td>
+<td>Accepts a percent or a number. Sets width of legend in either pixels or percent.</td>
+</tr>
+<tr>
+<td>position</td>
+<td>left</td>
+<td>Accepts &#39;left&#39; or &#39;right&#39;. Set float position of legend.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="line">Line</h2>
+<p><a class="example-link" href="../examples/#/line-graph">example</a></p>
+<p>The <code>&lt;line&gt;</code> directive plots your data as a line. The <code>field</code> attribute (required) will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single line to your graph for that value in the field. You can include as many line elements in your graph as you have unique values. Leaving the <code>value</code> attribute blank will plot each unique value in the data set as it&#39;s own line.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">line</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">line</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- OR --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">line</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span> <span class="hljs-attribute">val</span>=<span class="hljs-value">"Aperture"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">line</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">line</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span> <span class="hljs-attribute">val</span>=<span class="hljs-value">"Black Mesa"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">line</span>&gt;</span>
+</code></pre>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td><strong>Required.</strong> Field to plot as a line.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Will plot a line where the field is the given value.</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>Accepts a string &#39;field:value&#39;. Will filter the data to only points where the defined field matches the defined value.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="bar">Bar</h2>
+<p><a class="example-link" href="../examples/#/bar">example</a></p>
+<p>The <code>&lt;bar&gt;</code> directive plots your data as series of bars. The <code>field</code> attribute (required) will define the field from your data to plot to the graph. The <code>value</code> attribute will plot the bars to your graph  for that value in the field. If no value is defined, or multiple bars are included in the graph, the data will plot as a stacked bar.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">bar</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span> <span class="hljs-attribute">val</span>=<span class="hljs-value">"Aperture"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">bar</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- OR --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">bar</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">bar</span>&gt;</span>
+</code></pre>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td><strong>Required.</strong> Field to plot as a line.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Will plot a line where the field is the given value.</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>Accepts a string &#39;field:value&#39;. Will filter the data to only points where the defined field matches the defined value.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<hr>
+<h2 id="stacked-bar">Stacked Bar</h2>
+<p><a class="example-link" href="../examples/#/stacked-bar">example</a></p>
+<p>The <code>&lt;bar&gt;</code> directive plots your data as series of bars. The <code>field</code> attribute (required) will define the field from your data to plot to the graph. The <code>value</code> attribute will plot the bars to your graph  for that value in the field. If no value is defined, or multiple bars are included in the graph, the data will plot as a stacked bar.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">stacked-bar</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span> <span class="hljs-attribute">val</span>=<span class="hljs-value">"Aperture"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">stacked-bar</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- OR --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">stacked-bar</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">stacked-bar</span>&gt;</span>
+</code></pre>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td><strong>Required.</strong> Field to plot as a line.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Will plot a line where the field is the given value.</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>Accepts a string &#39;field:value&#39;. Will filter the data to only points where the defined field matches the defined value.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="area">Area</h2>
+<p><a class="example-link" href="../examples/#/area-graph">example</a></p>
+<p>The <code>&lt;area&gt;</code> directive plots your data to an area chart. The <code>field</code> attribute will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single area to your graph for that value in the field. You can include as many area elements in your graph as you have unique values.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">area</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">area</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- OR --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">area</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span> <span class="hljs-attribute">val</span>=<span class="hljs-value">"Aperture"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">area</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">area</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span> <span class="hljs-attribute">val</span>=<span class="hljs-value">"Black Mesa"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">area</span>&gt;</span>
+</code></pre>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td><strong>Required.</strong> Field to plot as a line.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Will plot a line where the field is the given value.</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>Accepts a string &#39;field:value&#39;. Will filter the data to only points where the defined field matches the defined value.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="stacked-area">Stacked Area</h2>
+<p><a class="example-link" href="../examples/#/stacked-area">example</a></p>
+<p>The <code>&lt;stacked-area&gt;</code> directive plots your data to a stacked area chart. The <code>field</code> attribute will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single line to your graph for that value in the field. You can include as many area elements in your graph as you have unique values.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">stacked-area</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">stacked-area</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- OR --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">stacked-area</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span> <span class="hljs-attribute">val</span>=<span class="hljs-value">"Aperture"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">stacked-area</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">stacked-area</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span> <span class="hljs-attribute">val</span>=<span class="hljs-value">"Black Mesa"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">stacked-area</span>&gt;</span>
+</code></pre>
+<h3 id="expanded-stacked-area">Expanded Stacked Area</h3>
+<p><a class="example-link" href="../examples/#/stacked-area">example</a></p>
+<p>Setting the y axis in a stacked area graph with create an expanded stacked area, where the total combined value of the field is equal to 100%.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">y</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">'Unit Sales'</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"Percent"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">y</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">stacked-area</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">stacked-area</span>&gt;</span>
+</code></pre>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td><strong>Required.</strong> Field to plot as a line.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Will plot a line where the field is the given value.</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>Accepts a string &#39;field:value&#39;. Will filter the data to only points where the defined field matches the defined value.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="scatter-plot">Scatter Plot</h2>
+<p><a class="example-link" href="../examples/#/scatter-plot">example</a></p>
+<p>The <code>&lt;scatter-plot&gt;</code> directive plots your data to an scatter plot chart. The <code>field</code> attribute will define the field from your data to plot to the graph. The <code>value</code> attribute will plot a single scatter plot to your graph for that value in the field. You can include as many scatter plot elements in your graph as you have unique values.</p>
+<p>Scatter Plots also use the <code>series</code> attribute. Series defines the categorical data to plot against the fields on the axes.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">scatter-plot</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span> <span class="hljs-attribute">series</span>=<span class="hljs-value">"SKU"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">scatter-plot</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- OR --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">scatter-plot</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Channel"</span> <span class="hljs-attribute">val</span>=<span class="hljs-value">"Supermarket"</span> <span class="hljs-attribute">series</span>=<span class="hljs-value">"SKU"</span> <span class="hljs-attribute">filter</span>=<span class="hljs-value">"Owner:Aperture"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">scatter-plot</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">scatter-plot</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Channel"</span> <span class="hljs-attribute">val</span>=<span class="hljs-value">"Hypermarket"</span> <span class="hljs-attribute">series</span>=<span class="hljs-value">"SKU"</span> <span class="hljs-attribute">filter</span>=<span class="hljs-value">"Owner:Aperture"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">scatter-plot</span>&gt;</span>
+</code></pre>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td><strong>Required.</strong> Field to plot as a line.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Will plot a line where the field is the given value.</td>
+</tr>
+<tr>
+<td>series</td>
+<td>Accepts a string &#39;field&#39;.</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>Accepts a string &#39;field:value&#39;. Will filter the data to only points where the defined field matches the defined value.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="ring">Ring</h2>
+<p><a class="example-link" href="../examples/#/ring">example</a></p>
+<p>The <code>ring</code> directive creates pie and donut charts - but require a seperate type of axis that the other charts in Angular Dimple. A ring chart uses a <code>&lt;p&gt;&lt;/p&gt;</code> axis to plot a single measure. Adding multiple series to a ring chart will create concentric circles within the chart.</p>
+<p>You can define both the thickness of the ring (as a percentage) and the diameter of the ring (as a percentage).</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">r</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Unit Sales"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">r</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">ring</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">ring</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- OR --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">r</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Unit Sales"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">r</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">ring</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span> <span class="hljs-attribute">thickness</span>=<span class="hljs-value">"20"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">ring</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">ring</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Price Tier"</span> <span class="hljs-attribute">thickness</span>=<span class="hljs-value">"20"</span> <span class="hljs-attribute">diameter</span>=<span class="hljs-value">"75"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">ring</span>&gt;</span>&gt;
+</code></pre>
+<h4 id="attributes">Attributes</h4>
+<table>
+<thead>
+<tr>
+<th>attribute</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td><strong>Required.</strong> Field to plot as a ring.</td>
+</tr>
+<tr>
+<td>thickness</td>
+<td>Accepts a number. Width of ring, as percent of circle size.</td>
+</tr>
+<tr>
+<td>diameter</td>
+<td>Accepts a number. Size of ring, as percent of circle size.</td>
+</tr>
+</tbody>
+</table>
+
+      </div>
+    </main>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <div class="fullscreen darker-blue">
+    <div class="container">
+      <div class="row">
+        <div class="column-24">
+          <h4>Made by <a href="http://pdx.esri.com/">EsriPDX</a></h4>
+          <nav>
+            <a href="https://github.com/Esripdx">GitHub</a> | <a href="https://twitter.com/esripdx">Twitter</a>
+          </nav>
+          <ul>
+            <li class="leader-1">Made with <a href="http://dimplejs.org/">DimpleJS</a>, <a href="https://angularjs.org/">AngularJS</a>, and <a href="http://gruntjs.com/">Grunt</a>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Angular and Angular-Route -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.3.0-beta.8/angular-route.min.js"></script>
+
+  <!-- JS -->
+  <script src="../assets/js/lib/angular-dimple.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/services.js"></script>
+  <script src="../assets/js/controllers.js"></script>
+  <script src="../assets/js/filters.js"></script>
+  <script src="../assets/js/directives.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-41031992-2', 'esripdx.github.io');
+    ga('send', 'pageview');
+
+  </script>
+
+  <!-- Last Modified: Mon Sep 29 2014 17:15:59 GMT-0700 (PDT) -->
+  <!-- dev -->
+  <!--  -->
+  <!-- ../ -->
+</body>
+</html>

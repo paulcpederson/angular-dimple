@@ -1,4 +1,6 @@
+.DS_Store
 .grunt
 .sass-cache
 node_modules
 bower_components
+user.js

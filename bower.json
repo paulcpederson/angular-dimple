@@ -1,32 +1,21 @@
 {
-  "name": "angular-dimple",
-  "version": "1.1.2",
-  "main": "dist/angular-dimple.js",
-  "homepage": "http://esripdx.github.io/angular-dimple/",
+  "name": "project-boilerplate",
+  "version": "0.0.0",
+  "homepage": "https://github.com/nikolaswise/project-boilerplate",
   "authors": [
-    "Paul C Pederson <ppederson@esri.com>",
-    "Nik Wise <nwise@esri.com>"
+    "Nikolas Wise <nikolaswise@gmail.com>"
   ],
-  "description": "A mini-library of Angular directives for charting",
-  "keywords": [
-    "Angular",
-    "Dimple",
-    "charts",
-    "graphs",
-    "directives"
-  ],
-  "license": "ISC",
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
-    "documentation",
-    "source",
     "test",
-    "site"
+    "tests"
   ],
-  "dependencies": {
-    "d3": "~3.4.8",
-    "dimple": "~2.0.0"
+  "devDependencies": {
+    "typecabinet": "~0.0.2",
+    "viewport-grid": "*",
+    "rye": "~0.0.1"
   }
 }

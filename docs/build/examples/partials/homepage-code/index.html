@@ -1,0 +1,69 @@
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">graph</span> <span class="hljs-attribute">data</span>=<span class="hljs-value">"graphData"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"400"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"100%"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">x</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Month"</span> <span class="hljs-attribute">order-by</span>=<span class="hljs-value">"Date"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">x</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">y</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Unit Sales"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">y</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">legend</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">legend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">line</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Aperture"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">line</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">graph</span>&gt;</span>
+</code></pre>
+<p>index.html:</p>
+<pre><code class="lang-html"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://d3js.org/d3.v3.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://dimplejs.org/dist/dimple.v2.0.0.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ng-app</span>=<span class="hljs-value">"myApp"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"myController"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">graph</span> <span class="hljs-attribute">data</span>=<span class="hljs-value">"graphData"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">x</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Month"</span> <span class="hljs-attribute">order-by</span>=<span class="hljs-value">"Date"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">x</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">y</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Unit Sales"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">y</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">line</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Aperture"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">line</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">graph</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"angular-dimple.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"app.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>app.js</p>
+<pre><code class="lang-js">angular.module(<span class="hljs-string">'myApp'</span>, [
+  <span class="hljs-string">'angular-dimple'</span>
+])
+
+.controller(<span class="hljs-string">'myController'</span>, [<span class="hljs-string">'$scope'</span>, <span class="hljs-string">'dataService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($scope, dataService)</span> {</span>
+  dataService.getData().then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(response)</span> {</span>
+    $scope.graphData = response.data;
+  });
+}])
+
+.service(<span class="hljs-string">'dataService'</span>, [<span class="hljs-string">'$http'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($http)</span> {</span>
+  <span class="hljs-keyword">return</span> {
+    getData: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+      <span class="hljs-keyword">return</span> $http.get(<span class="hljs-string">'data.json'</span>);
+    }
+  };
+}]);
+</code></pre>
+<p>data.json</p>
+<pre><code class="lang-json">[
+  {
+    "<span class="hljs-attribute">Date</span>": <span class="hljs-value"><span class="hljs-string">"01\/01\/2011"</span></span>,
+    "<span class="hljs-attribute">Month</span>": <span class="hljs-value"><span class="hljs-string">"Jan-11"</span></span>,
+    "<span class="hljs-attribute">Owner</span>": <span class="hljs-value"><span class="hljs-string">"Aperture"</span></span>,
+    "<span class="hljs-attribute">Unit Sales</span>": <span class="hljs-value"><span class="hljs-string">"1765"</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">Date</span>": <span class="hljs-value"><span class="hljs-string">"02\/01\/2011"</span></span>,
+    "<span class="hljs-attribute">Month</span>": <span class="hljs-value"><span class="hljs-string">"Jan-11"</span></span>,
+    "<span class="hljs-attribute">Owner</span>": <span class="hljs-value"><span class="hljs-string">"Aperture"</span></span>,
+    "<span class="hljs-attribute">Unit Sales</span>": <span class="hljs-value"><span class="hljs-string">"1899"</span>
+  </span>},
+  {
+    "<span class="hljs-attribute">Date</span>": <span class="hljs-value"><span class="hljs-string">"02\/01\/2011"</span></span>,
+    "<span class="hljs-attribute">Month</span>": <span class="hljs-value"><span class="hljs-string">"Jan-11"</span></span>,
+    "<span class="hljs-attribute">Owner</span>": <span class="hljs-value"><span class="hljs-string">"Aperture"</span></span>,
+    "<span class="hljs-attribute">Unit Sales</span>": <span class="hljs-value"><span class="hljs-string">"1565"</span>
+  </span>}
+]
+</code></pre>

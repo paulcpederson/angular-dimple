@@ -1,18 +1,28 @@
 {
-  "name": "angular-dimple",
-  "version": "1.1.2",
-  "description": "Angular.js wrapper for the Dimple charting language",
-  "repository": "https://github.com/esripdx/angular-dimple",
-  "license": "ISC",
+  "name": "project-boilerplate",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-compass": "^0.8.0",
-    "grunt-contrib-connect": "^0.7.1",
+    "acetate": "0.0.7",
+    "grunt": "~0.4.5",
+    "grunt-acetate": "0.0.5",
+    "grunt-contrib-imagemin": "^0.8.1",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-watch": "~0.6.1",
     "grunt-contrib-concat": "^0.4.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-uglify": "^0.4.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-markdown": "^0.6.1",
-    "grunt-gh-pages": "~0.9.1"
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-compress": "^0.11.0",
+    "grunt-gh-pages": "^0.9.1",
+    "grunt-newer": "^0.7.0",
+    "load-grunt-tasks": "~0.6.0",
+    "minimist": "~1.1.0"
   }
 }

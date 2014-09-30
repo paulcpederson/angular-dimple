@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Acetate | Angular Dimple</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <meta name="description" content="A mini-library of Angular directives for charting.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Brick Fonts -->
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Source+Code+Pro:200,300/Clear+Sans:200,300,400,400i,500,500i,700,700i">
+
+    <!-- Dimple and D3 -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.1.0.min.js"></script>
+  
+</head>
+<body ng-app="myApp" class="off-white">
+
+  <nav class="primary-navigation">
+    <div class="container">
+      <div class="row">
+        <div class="column-24">
+          <div class="angular-dimple-logo">
+            <a href="">
+              <img src="assets/img/Angular-Dimple-Logo.svg" alt="Angular Dimple">
+            </a>
+          </div>
+          <div class="navigation-section">
+            <a href="examples" class="post-1">Examples</a>
+            <a href="documentation" class="post-1">API Docs</a>
+            <a href="https://github.com/esripdx/angular-dimple" class="btn">GitHub</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+<!-- Banner -->
+<div class="banner">
+
+  <!-- Navigation -->
+  <nav class="homepage-navigation">
+    <div class="container">
+      <div class="row">
+        <div class="column-24">
+          <div class="angular-dimple-logo">
+            <a href="./">
+              <img src="assets/img/Angular-Dimple-Logo.svg" alt="Angular Dimple">
+            </a>
+          </div>
+          <div class="navigation-section white-text">
+            <a href="./examples" class="post-1">Examples</a>
+            <a href="./documentation" class="post-1">API Docs</a>
+            <a href="https://github.com/esripdx/angular-dimple" class="btn white">GitHub</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="banner-graphic">
+    <graph data="graphData" width="2400" height="800" class="blue-graph">
+      <x field="Month" order-by="Date" type="Category"></x>
+      <y field="Unit Sales" type="Measure" title=""></y>
+      <line field="Owner"></line>
+    </graph>
+  </div>
+
+  <div class="banner-copy">
+    <div class="container">
+      <div class="row">
+        <div class="column-12 pre-6 center-text">
+          <h1>Angular Dimple</h1>
+          <p class="large">A mini-library of Angular directives for charting.</p>
+          <a href="https://github.com/esripdx/angular-dimple" class="btn">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Directive Example -->
+  <div class="fullscreen off-white">
+    <div class="container">
+      <div class="row">
+        <div class="column-10 post-2 tablet-column-22 tablet-pre-1">
+          <h2>The Power of Angular Directives</h2>
+          <p> With Angular directives, Angular-Dimple allows you to create graphs and visualizations clearly and declaratively. Want a line graph? Just use a <code>&lt;line&gt;</code> element inside of a <code>&lt;graph&gt;</code> element. Add some axes and you're done.</p>
+        </div>
+        <div class="column-12 tablet-column-22 tablet-pre-1">
+          <div class="tab-group">
+            <nav class="tab-nav">
+              <a class="tab">Sample Code</a>
+              <a class="tab active">Graph</a>
+            </nav>
+            <section class="tab-contents">
+              <article class="tab-content">
+                <pre><code class="lang-html"><span class="tag">&lt;<span class="title">graph</span> <span class="attribute">data</span>=<span class="value">"graphData"</span> <span class="attribute">height</span>=<span class="value">"400"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">x</span> <span class="attribute">field</span>=<span class="value">"Month"</span> <span class="attribute">order-by</span>=<span class="value">"Date"</span>&gt;</span><span class="tag">&lt;/<span class="title">x</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">y</span> <span class="attribute">field</span>=<span class="value">"Unit Sales"</span>&gt;</span><span class="tag">&lt;/<span class="title">y</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">legend</span>&gt;</span><span class="tag">&lt;/<span class="title">legend</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">line</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">value</span>=<span class="value">"Aperture"</span>&gt;</span><span class="tag">&lt;/<span class="title">line</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">graph</span>&gt;</span></code></pre>
+              </article>
+              <article class="tab-content active">
+                <graph data="graphData" height="400">
+                  <x field="Month" order-by="Date"></x>
+                  <y field="Unit Sales"></y>
+                  <legend></legend>
+                  <line field="Owner" value="Aperture"></line>
+                </graph>
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Charts List -->
+<div class="fullscreen darker-blue charts-list">
+  <div class="container">
+    <div class="column-6 pre-1 post-1 tablet-column-10 phone-column-22 center-text trailer-5">
+      <a href="./examples/#/line-graph" class="chart-icon">
+        <img src="/assets/img/line.svg">
+      </a>
+      <h4>
+        <a href="./examples/#/line-graph">Line</a>
+      </h4>
+      <p class="small">
+        <a href="./examples/#/line-graph">Examples</a> |
+        <a href="./documentation/#line">Reference</a>
+      </p>
+    </div>
+    <div class="column-6 pre-1 post-1 tablet-column-10 phone-column-22 center-text trailer-5">
+      <a href="./examples/#/area" class="chart-icon">
+        <img src="/assets/img/area.svg">
+      </a>
+      <h4>
+        <a href="./examples/#/area">Area</a>
+      </h4>
+      <p class="small">
+        <a href="./examples/#/area">Examples</a> |
+        <a href="./documentation/#area">Reference</a>
+      </p>
+    </div>
+    <div class="column-6 pre-1 post-1 tablet-column-10 phone-column-22 center-text trailer-5">
+      <a href="./examples/#/stacked-area" class="chart-icon">
+        <img src="/assets/img/stacked-area.svg">
+      </a>
+      <h4>
+        <a href="./examples/#/stacked-area">Stacked Area</a>
+      </h4>
+      <p class="small">
+        <a href="./examples/#/stacked-area">Examples</a> |
+        <a href="./documentation/#stacked-area">Reference</a>
+      </p>
+    </div>
+    <div class="column-6 pre-1 post-1 tablet-column-10 phone-column-22 center-text trailer-5">
+      <a href="./examples/#/bar" class="chart-icon">
+        <img src="/assets/img/bar.svg">
+      </a>
+      <h4>
+        <a href="./examples/#/bar">Bar</a>
+      </h4>
+      <p class="small">
+        <a href="./examples/#/bar">Examples</a> |
+        <a href="./documentation/#bar">Reference</a>
+      </p>
+    </div>
+    <div class="column-6 pre-1 post-1 tablet-column-10 phone-column-22 center-text trailer-5">
+      <a href="./examples/#/stacked-bar" class="chart-icon">
+        <img src="/assets/img/stacked-bar.svg">
+      </a>
+      <h4>
+        <a href="./examples/#/stacked-bar">Stacked Bar</a>
+      </h4>
+      <p class="small">
+        <a href="./examples/#/stacked-bar">Examples</a> |
+        <a href="./documentation/#stacked-bar">Reference</a>
+      </p>
+    </div>
+    <div class="column-6 pre-1 post-1 tablet-column-10 phone-column-22 center-text trailer-5">
+      <a href="./examples/#/scatter-plot" class="chart-icon">
+        <img src="/assets/img/scatter-plot.svg">
+      </a>
+      <h4>
+        <a href="./examples/#/scatter-plot">Scatter Plot</a>
+      </h4>
+      <p class="small">
+        <a href="./examples/#/scatter-plot">Examples</a> |
+        <a href="./documentation/#scatter-plot">Reference</a>
+      </p>
+    </div>
+
+    <div class="column-6 pre-9 post-1 tablet-column-10 tablet-pre-7 phone-column-22 phone-pre-1 center-text trailer-5">
+      <a href="./examples/#/ring" class="chart-icon">
+        <img src="/assets/img/ring.svg">
+      </a>
+      <h4>
+        <a href="./examples/#/ring">Ring</a>
+      </h4>
+      <p class="small">
+        <a href="./examples/#/ring">Examples</a> |
+        <a href="./documentation/#ring">Reference</a>
+      </p>
+    </div>
+  </div>
+
+<!-- Get Started -->
+  <div class="fullscreen off-white">
+    <div class="container">
+      <div class="row">
+        <div class="column-9 tablet-column-22 leader-4 pre-1">
+          <h2>Get Started</h2>
+          <p class="large"><span class="numbered">1</span>Create a basic Angular app</p>
+          <p class="large"><span class="numbered">2</span>Include Angular-Dimple as a dependency</p>
+          <p class="large"><span class="numbered">3</span>Add data</p>
+        </div>
+        <div class="column-12 pre-1 tablet-column-22">
+          <div class="tab-group">
+            <nav class="tab-nav">
+              <a class="tab active">index.html</a>
+              <a class="tab">app.js</a>
+              <a class="tab">data.json</a>
+            </nav>
+            <section class="tab-contents">
+              <article class="tab-content active">
+                <pre><code class="lang-html"><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://d3js.org/d3.v3.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"http://dimplejs.org/dist/dimple.v2.0.0.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">body</span> <span class="attribute">ng-app</span>=<span class="value">"myApp"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"myController"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">graph</span> <span class="attribute">data</span>=<span class="value">"graphData"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">x</span> <span class="attribute">field</span>=<span class="value">"Month"</span> <span class="attribute">order-by</span>=<span class="value">"Date"</span>&gt;</span><span class="tag">&lt;/<span class="title">x</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">y</span> <span class="attribute">field</span>=<span class="value">"Unit Sales"</span>&gt;</span><span class="tag">&lt;/<span class="title">y</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">line</span> <span class="attribute">field</span>=<span class="value">"Owner"</span> <span class="attribute">value</span>=<span class="value">"Aperture"</span>&gt;</span><span class="tag">&lt;/<span class="title">line</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">graph</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"angular-dimple.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"app.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></pre>
+              </article>
+              <article class="tab-content">
+                <pre><code class="lang-js">angular.module(<span class="comment">'myApp', [</span>
+  <span class="comment">'angular-dimple'</span>
+])
+
+.controller(<span class="comment">'myController', ['$scope', 'dataService', function($scope, dataService) {</span>
+  dataService.getData().<span class="keyword">then</span>(<span class="keyword">function</span>(<span class="built_in">response</span>) {
+    $scope.graphData = <span class="built_in">response</span>.data;
+  });
+}])
+
+.service(<span class="comment">'dataService', ['$http', function($http) {</span>
+  return {
+    getData: <span class="keyword">function</span>() {
+      return $http.<span class="keyword">get</span>(<span class="comment">'data.json');</span>
+    }
+  };
+}]);</code></pre>
+              </article>
+              <article class="tab-content">
+                <pre><code class="lang-json">[
+  {
+    "<span class="attribute">Date</span>": <span class="value"><span class="string">"01\/01\/2011"</span></span>,
+    "<span class="attribute">Month</span>": <span class="value"><span class="string">"Jan-11"</span></span>,
+    "<span class="attribute">Owner</span>": <span class="value"><span class="string">"Aperture"</span></span>,
+    "<span class="attribute">Unit Sales</span>": <span class="value"><span class="string">"1765"</span>
+  }</span>,
+  {
+    "<span class="attribute">Date</span>": <span class="value"><span class="string">"02\/01\/2011"</span></span>,
+    "<span class="attribute">Month</span>": <span class="value"><span class="string">"Jan-11"</span></span>,
+    "<span class="attribute">Owner</span>": <span class="value"><span class="string">"Aperture"</span></span>,
+    "<span class="attribute">Unit Sales</span>": <span class="value"><span class="string">"1899"</span>
+  }</span>,
+  {
+    "<span class="attribute">Date</span>": <span class="value"><span class="string">"02\/01\/2011"</span></span>,
+    "<span class="attribute">Month</span>": <span class="value"><span class="string">"Jan-11"</span></span>,
+    "<span class="attribute">Owner</span>": <span class="value"><span class="string">"Aperture"</span></span>,
+    "<span class="attribute">Unit Sales</span>": <span class="value"><span class="string">"1565"</span>
+  }</span>
+]</code></pre>
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <div class="fullscreen darker-blue">
+    <div class="container">
+      <div class="row">
+        <div class="column-24">
+          <h4>Made by <a href="http://pdx.esri.com/">EsriPDX</a></h4>
+          <nav>
+            <a href="https://github.com/Esripdx">GitHub</a> | <a href="https://twitter.com/esripdx">Twitter</a>
+          </nav>
+          <ul>
+            <li class="leader-1">Made with <a href="http://dimplejs.org/">DimpleJS</a>, <a href="https://angularjs.org/">AngularJS</a>, and <a href="http://gruntjs.com/">Grunt</a>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Angular and Angular-Route -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.3.0-beta.8/angular-route.min.js"></script>
+
+  <!-- JS -->
+  <script src="assets/js/lib/angular-dimple.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/services.js"></script>
+  <script src="assets/js/controllers.js"></script>
+  <script src="assets/js/filters.js"></script>
+  <script src="assets/js/directives.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-41031992-2', 'esripdx.github.io');
+    ga('send', 'pageview');
+
+  </script>
+
+  <!-- Last Modified: Tue Sep 23 2014 13:33:32 GMT-0700 (PDT) -->
+  <!-- dev -->
+  <!--  -->
+  <!--  -->
+</body>
+</html>
