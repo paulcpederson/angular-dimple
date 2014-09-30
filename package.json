@@ -4,6 +4,10 @@
   "description": "Angular.js wrapper for the Dimple charting language",
   "repository": "https://github.com/esripdx/angular-dimple",
   "license": "ISC",
+  "scripts": {
+    "prepublish": "bower install && grunt prepublish",
+    "start": "grunt"
+  }
   "devDependencies": {
     "acetate": "0.0.7",
     "grunt": "~0.4.5",
