@@ -1,0 +1,21 @@
+{% extends "layouts/_layout" %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="blog.css">
+{% endblock %}
+
+{% block content %}
+  <main>
+    <aside>
+      <ul>
+        {% for post in blog|sort(false, false, "title") %}
+          <li>{{ post.title }}</li>
+        {% endfor %}
+      </ul>
+    </aside>
+    <h1> {{title}} </h1>
+    <h3> {{ description }}</h3>
+    {% block post %}{% endblock %}
+  </main>
+{% endblock%}
