@@ -1,0 +1,17 @@
+<pre><code class="lang-js">angular.module(<span class="comment">'myApp', [</span>
+  <span class="comment">'angular-dimple'</span>
+])
+
+.controller(<span class="comment">'myController', ['$scope', 'dataService', function($scope, dataService) {</span>
+  dataService.getData().<span class="keyword">then</span>(<span class="keyword">function</span>(<span class="built_in">response</span>) {
+    $scope.graphData = <span class="built_in">response</span>.data;
+  });
+}])
+
+.service(<span class="comment">'dataService', ['$http', function($http) {</span>
+  return {
+    getData: <span class="keyword">function</span>() {
+      return $http.<span class="keyword">get</span>(<span class="comment">'data.json');</span>
+    }
+  };
+}]);</code></pre>
