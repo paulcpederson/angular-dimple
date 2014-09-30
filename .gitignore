@@ -1,4 +1,10 @@
+.DS_Store
 .grunt
 .sass-cache
 node_modules
 bower_components
+user.js
+dist
+docs/build
+angular-dimple.zip
+docs/source/assets/js/lib
