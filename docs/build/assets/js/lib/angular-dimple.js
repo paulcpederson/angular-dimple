@@ -1,5 +1,5 @@
 /*! angular-dimple - 1.1.3 - 2014-09-30
-*   https://github.com/https://,esripdx/angular-dimple
+*   https://github.com/esripdx/angular-dimple
 *   Licensed ISC */
 angular.module('angular-dimple', [
   'angular-dimple.graph',
