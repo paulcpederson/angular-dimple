@@ -19,18 +19,18 @@ function findVersion(log) {
   return description;
 }
 
-// Javascript banner
-var banner = '/*! Angular-Dimple - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
-             '*   https://github.com/esripdx/angular-dimple\n' +
-            '*   Licensed ISC */\n';
-var project = 'esripdx/angular-dimple';
-var repo = 'https://github.com/esripdx/angular-dimple.git';
-var dist = 'angular-dimple.zip';
-
 module.exports = function(grunt) {
-  var currentVersion = 'v' + grunt.file.readJSON('package.json').version;
+  var pkg = grunt.file.readJSON('package.json');
+  var name = pkg.name;
+  var repo = pkg.repository.split('github.com/')[1];
+  var currentVersion = 'v' + pkg.version;
   var log = grunt.file.read('CHANGELOG.md');
-  // var description = findVersion(log);
+  var description = findVersion(log);
+
+  // Javascript banner
+  var banner = '/*! ' + name + ' - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
+               '*   https://github.com/' + repo + '\n' +
+               '*   Licensed ISC */\n';
 
   require('load-grunt-tasks')(grunt);
 
@@ -106,14 +106,13 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ['lib/*.js'],
-        dest: 'dist/angular-dimple.js'
+        dest: 'dist/' + name + '.js'
       }
     },
     'uglify': {
       dist: {
-        files: {
-          'dist/angular-dimple.min.js': ['lib/*.js']
-        }
+        src: ['lib/*.js'],
+        dest: 'dist/' + name + '.min.js'
       }
     },
     'copy': {
@@ -141,7 +140,7 @@ module.exports = function(grunt) {
     'compress': {
       main: {
         options: {
-          archive: dist
+          archive: repo + '.zip'
         },
         files: [
           {
@@ -151,34 +150,54 @@ module.exports = function(grunt) {
         ]
       }
     },
+    'concurrent': {
+      prepublish: [
+        'sass',
+        'uglify',
+        'copy',
+        'concat:dist',
+        'newer:imagemin'
+      ]
+    },
     // Bump the version on GitHub
-    // 'github-release': {
-    //   options: {
-    //     repository: project,
-    //     auth: user(),
-    //     release: {
-    //       tag_name: currentVersion,
-    //       name: currentVersion,
-    //       body: description,
-    //       prerelease: true
-    //     }
-    //   },
-    //   files: {
-    //     src: [dist]
-    //   }
-    // },
+    'github-release': {
+      options: {
+        repository: repo,
+        auth: user(),
+        release: {
+          tag_name: currentVersion,
+          name: currentVersion,
+          body: description,
+          prerelease: true
+        }
+      },
+      files: {
+        src: name + '.zip'
+      }
+    },
     'gh-pages': {
       options: {
         base: 'build',
-        repo: repo
+        repo: 'https://github.com/' + repo + '.git'
       },
       src: ['**']
     }
   });
 
+  // Build a dist folder with all assets
+  grunt.registerTask('prepublish', [
+    'concurrent:prepublish'
+  ]);
+
   grunt.registerTask('lib', ['jshint:lib', 'concat:dist', 'uglify:dist']);
   grunt.registerTask('deploy', ['lib', 'acetate:build', 'sass', 'newer:imagemin', 'gh-pages']);
-  grunt.registerTask('release', ['lib', 'compress', 'github-release']);
+
+    // Release a new version of the framework
+  grunt.registerTask('release', [
+    'prepublish',
+    'compress',
+    'github-release'
+  ]);
 
   grunt.registerTask('default', ['lib', 'jshint:docs', 'copy', 'newer:imagemin', 'sass', 'acetate:watch', 'watch']);
 
