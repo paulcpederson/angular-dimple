@@ -24,7 +24,29 @@ This directive creates a div with a dynamic id, and initializes a new Dimple gra
 | width     | 100%        | Accepts a percent or a number. Sets the width of the chart, either in pixels or percent. |
 | height    | 100%        | Accepts a percent or a number. Sets the width of the chart, either in pixels or percent. |
 | auto-style | true       | Boolean. If false, no default dimple color, fill, or stroke styles will be applied to the graph. Allows for custom css styling. |
+| color | none | String. Matches to a color palette on the scope. See below for syntax |
 
+```
+  $scope.palette = [
+    {
+      name: "Black Mesa", // Required, name of field to assign
+      fill: "#FFBEB4",   // Requried, fill color
+	  stroke: "#FFBEB4", // Optional, stroke color
+	  opacity: "1"       // Optional, opacity
+    },
+    {
+      name: "Aperture",
+      fill: "#7B9ACC",
+	  stroke: "#7B9ACC",
+	  opacity: "1"
+    },
+    {
+      name: "Tyrell Corp",
+      fill: "#D1FFA9",
+	  stroke: "#D1FFA9",
+	  opacity: "1"
+    }
+  ];
 *****
 
 ## X
