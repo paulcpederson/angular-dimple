@@ -2,6 +2,7 @@
 
 ## v1.1.3
 * rebuild site
+* add `color` attribute on graph.js
 
 ## v1.1.2
 * add default width (100%)
