@@ -1,147 +1,217 @@
-module.exports = function(grunt) {
+// ┌─────────────┐
+// │ Gruntfile   │
+// └─────────────┘
+// Grunt wraps several tasks to ease development
+// runs acetate, deploys the site, and tags new releases
 
-  // Project configuration.
+// To draft a release, add GitHub credentials to user.js
+var fs = require('fs');
+var user = function(){};
+
+if (fs.existsSync('./user.js')) {
+  user = require('./user.js');
+}
+
+// Gets current version description from CHANGELOG.md
+function findVersion(log) {
+  var newVersion = log.split('## v')[1];
+  var description = newVersion.substring(5,newVersion.length);
+  return description;
+}
+
+module.exports = function(grunt) {
+  var pkg = grunt.file.readJSON('package.json');
+  var name = pkg.name;
+  var repo = pkg.repository.split('github.com/')[1];
+  var currentVersion = 'v' + pkg.version;
+  var log = grunt.file.read('CHANGELOG.md');
+  var description = findVersion(log);
+
+  // Javascript banner
+  var banner = '/*! ' + name + ' - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
+               '*   https://github.com/' + repo + '\n' +
+               '*   Licensed ISC */\n';
+
+  require('load-grunt-tasks')(grunt);
+
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    'gh-pages': {
-      options: {
-        base: 'site',
-        repo: 'https://github.com/esripdx/angular-dimple.git'
+
+    // Build documentation site
+    'acetate': {
+      build: {
+        config: 'acetate.conf.js'
       },
-      src: '**/*'
+      watch: {
+        config: 'acetate.conf.js',
+        options: {
+          watch: true,
+          server: true
+        }
+      }
     },
+
+    // Watch sass, images, and javascript
     'watch': {
-      source: {
-        files: ['./source/**/*'],
-        tasks: ['concat', 'uglify', 'jshint'],
-        options: {
-          nospawn: true
-        }
-      },
-      examples: {
-        files: ['./site/js/*.js'],
-        tasks: ['jshint'],
-        options: {
-          nospawn: true
-        }
-      },
       sass: {
-        files: ['./site/scss/**/*'],
-        tasks: ['compass'],
-        options: {
-          nospawn: true
-        }
+        files: ['docs/source/assets/css/**/*'],
+        tasks: ['sass']
       },
-      docs: {
-        files: ['documentation/**'],
-        tasks: ['markdown'],
+      img: {
+        files: ['docs/source/assets/img/**/*'],
+        tasks: ['newer:imagemin']
+      },
+      js: {
+        files: ['docs/source/assets/js/**/*', 'lib/**.*'],
+        tasks: ['lib', 'jshint:docs', 'copy:docs']
+      }
+    },
+
+    // Build site sass
+    'sass': {
+      expanded: {
         options: {
-          nospawn: true
+          style: 'expanded',
+          sourcemap: 'none',
+          loadPath: 'bower_components'
+        },
+        files: {
+          'docs/build/assets/css/style.css': 'docs/source/assets/css/style.scss'
         }
       }
     },
-    'compass': {
-      dev: {
-        options: {
-          sassDir: 'site/scss',
-          cssDir: 'site/css'
-        }
+
+    // Optimize images
+    'imagemin': {
+      doc: {
+        files: [{
+          expand: true,
+          cwd: 'docs/source/assets/img',
+          src: ['**/*.{png,jpg,svg}'],
+          dest: 'docs/build/assets/img/'
+        }]
       }
     },
+
+    // Check js for errors
     'jshint': {
-      files: [
-        './source/**/*.js',
-        './site/js/*.js'
+      lib: [
+        'lib/**/*.js'
+      ],
+      docs: [
+        'docs/source/assets/js/**.js'
       ]
     },
+
+    // Concatenate lib
     'concat': {
       options: {
         stripBanners: true,
-        banner: '/*! Angular-Dimple - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
-        '*   https://github.com/esripdx/angular-dimple\n' +
-        '*   Licensed ISC */\n'
+        banner: banner
       },
       dist: {
-        src: ['source/*.js'],
-        dest: 'dist/angular-dimple.js'
-      },
-      examples: {
-        src: ['source/*.js'],
-        dest: 'site/js/lib/angular-dimple.js'
-      },
+        src: ['lib/*.js'],
+        dest: 'dist/' + name + '.js'
+      }
     },
+
+    // Minified version of lib
     'uglify': {
       dist: {
-        files: {
-          'dist/angular-dimple.min.js': ['source/*.js']
-        }
-      },
-      examples: {
-        files: {
-          'site/js/lib/angular-dimple.min.js': ['source/*.js']
-        }
+        src: ['lib/*.js'],
+        dest: 'dist/' + name + '.min.js'
       }
     },
-    'connect': {
-      'static': {
-        options: {
-          base: 'site/',
-          hostname: 'localhost',
-          port: 8001
-        }
+
+    // Copy files
+    'copy': {
+      dist: {
+        expand: true,
+        cwd: 'dist/',
+        src: ['*'],
+        dest: 'docs/source/assets/js/lib/'
+      },
+      docs: {
+        expand: true,
+        cwd: 'docs/source/assets/js/',
+        src: ['**/*'],
+        dest: 'docs/build/assets/js/'
+      },
+      data: {
+        expand: true,
+        cwd: 'docs/source/data',
+        src: ['*'],
+        dest: 'docs/build/data/'
       }
     },
-    'markdown': {
-      all: {
+
+    // Make a zip file of the dist folder
+    'compress': {
+      main: {
+        options: {
+          archive: repo + '.zip'
+        },
         files: [
           {
-            expand: true,
-            src: 'documentation/index.md',
-            dest: 'site/',
-            ext: '.html'
-          }
-        ],
-        options: {
-          template: 'documentation/layout.html',
-          markdownOptions: {
-            gfm: true,
-            highlight: 'manual'
-          }
+            src: ['dist/**'],
+            dest: './'
+          },
+        ]
+      }
+    },
+
+    // This task runs right after npm install
+    'concurrent': {
+      prepublish: [
+        'sass',
+        'uglify',
+        'copy',
+        'concat:dist',
+        'newer:imagemin'
+      ]
+    },
+
+    // Release a new version on GitHub
+    'github-release': {
+      options: {
+        repository: repo,
+        auth: user(),
+        release: {
+          tag_name: currentVersion,
+          name: currentVersion,
+          body: description,
+          prerelease: true
         }
       },
-      partials: {
-        files: [
-          {
-            expand: true,
-            src: 'documentation/partials/*.md',
-            dest: 'site/',
-            ext: '.html'
-          }
-        ],
-        options: {
-          template: 'documentation/blank.html',
-          markdownOptions: {
-            gfm: true,
-            highlight: 'manual'
-          }
-        }
+      files: {
+        src: name + '.zip'
       }
+    },
+
+    // Deploy the docs site to gh-pages
+    'gh-pages': {
+      options: {
+        base: 'build',
+        repo: 'https://github.com/' + repo + '.git'
+      },
+      src: ['**']
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-gh-pages');
-  grunt.loadNpmTasks('grunt-markdown');
+  // Build a dist folder with all assets
+  grunt.registerTask('prepublish', [
+    'concurrent:prepublish'
+  ]);
 
-  grunt.registerTask('test', ['jshint']);
-  grunt.registerTask('build', ['test', 'concat', 'uglify', 'markdown', 'compass']);
-  grunt.registerTask('develop', ['connect', 'build', 'watch']);
-  grunt.registerTask('deploy', ['build', 'gh-pages']);
-  grunt.registerTask('default', ['develop']);
+  grunt.registerTask('lib', ['jshint:lib', 'concat:dist', 'uglify:dist']);
+  grunt.registerTask('deploy', ['lib', 'acetate:build', 'sass', 'newer:imagemin', 'gh-pages']);
+
+    // Release a new version of the framework
+  grunt.registerTask('release', [
+    'prepublish',
+    'compress',
+    'github-release'
+  ]);
+
+  grunt.registerTask('default', ['lib', 'jshint:docs', 'copy', 'newer:imagemin', 'sass', 'acetate:watch', 'watch']);
 
 };
