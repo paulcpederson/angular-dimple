@@ -1,4 +1,4 @@
-/*! Angular-Dimple - 1.1.2 - 2014-09-29
+/*! angular-dimple - 1.1.3 - 2014-10-01
 *   https://github.com/esripdx/angular-dimple
 *   Licensed ISC */
 angular.module('angular-dimple', [
@@ -100,6 +100,7 @@ angular.module('angular-dimple.graph', [])
     replace: true,
     scope: {
       data: '=',
+      color: '='
     },
     require: ['graph'],
     transclude: true,
@@ -161,6 +162,14 @@ angular.module('angular-dimple.graph', [])
         // auto style
         var autoStyle = $attrs.autoStyle === 'false' ? true : false;
         chart.noFormats = autoStyle;
+
+        // Apply palette styles
+        if ($attrs.color) {
+          var palette = $scope.color;
+          for (var i = 0; i < palette.length; i++ ) {
+            chart.assignColor(palette[i].name, palette[i].fill, palette[i].stroke, palette[i].opacity);
+          }
+        }
       };
 
       this.getChart = function () {
