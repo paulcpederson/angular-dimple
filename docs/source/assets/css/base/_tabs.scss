@@ -1,0 +1,69 @@
+// Tab Patterns
+.tab-group {
+  width: 100%;
+  .tab-nav {
+    width: 100%;
+    display: block;
+    @extend %clearfix;
+    .tab {
+      float: left;
+      @include box-sizing(border-box);
+      padding: 0.5em 1em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background-color: $off-white;
+      border: 1px solid $lighter-gray;
+      border-left: none;
+      border-radius: 0;
+      background-image: none;
+      &:first-child {
+        border-radius: 3px 0 0 0;
+        border-left: 1px solid $lighter-gray;
+      }
+      &:last-child {
+        border-radius: 0 3px 0 0;
+      }
+      &:hover {
+        background-color: mix($off-white, $white);
+      }
+      &.active {
+        border-bottom: 1px solid transparent;
+        background-color: $white;
+        &:hover {
+          background-color: $white;
+        }
+      }
+    }
+  }
+  .tab-contents {
+    width: 100%;
+    border: 1px solid $lighter-gray;
+    border-radius: 0 0 3px 3px;
+    margin-top: -1px;
+    @include box-sizing(border-box);
+    .tab-content {
+      background-color: $white;
+      display: none;
+      width: 100%;
+      @include box-sizing(border-box);
+      border-radius: 0 0 3px 3px;
+      padding: 1em;
+      overflow: auto;
+      &.active {
+        display: block;
+      }
+      code {
+        border: none;
+        overflow: initial;
+        background: transparent;
+      }
+      pre {
+        background: transparent;
+        padding: 0;
+        border: none;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
