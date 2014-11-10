@@ -1,5 +1,8 @@
 # Angular-Dimple Changelog
 
+## v.1.1.4
+* Fix bug that caused smooshed graphs on Firefox
+
 ## v1.1.3
 * rebuild site
 * add `color` attribute on graph.js

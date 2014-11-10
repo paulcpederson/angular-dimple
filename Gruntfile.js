@@ -149,7 +149,7 @@ module.exports = function(grunt) {
     'compress': {
       main: {
         options: {
-          archive: repo + '.zip'
+          archive: name + '.zip'
         },
         files: [
           {
@@ -179,8 +179,7 @@ module.exports = function(grunt) {
         release: {
           tag_name: currentVersion,
           name: currentVersion,
-          body: description,
-          prerelease: true
+          body: description
         }
       },
       files: {
