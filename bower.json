@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "d3": "~3.4.8",
-    "dimple": "~2.0.0",
+    "dimple": "~2.1.0",
     "typecabinet": "~0.0.2",
     "viewport-grid": "*",
     "rye": "~0.0.1"
