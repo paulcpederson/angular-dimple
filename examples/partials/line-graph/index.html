@@ -1,0 +1,63 @@
+<h2>
+    Line Graph
+    <span class="api-link">
+      <a href="../documentation/#line">Line Graph Documentation</a>
+    </span>
+</h2>
+
+<div class="white-panel">
+  <graph data="graphData" width="100%" height="600px">
+    <x field="Month" order-by="Date"></x>
+    <y field="Unit Sales"></y>
+    <graph-legend></graph-legend>
+    <line field="Owner"></line>
+  </graph>
+</div>
+
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- Default --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">graph</span> <span class="hljs-attribute">data</span>=<span class="hljs-value">"graphData"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"100%"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"600px"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">x</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Month"</span> <span class="hljs-attribute">order-by</span>=<span class="hljs-value">"Date"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">x</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">y</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Unit Sales"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">y</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">graph-legend</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">graph-legend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">line</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">line</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">graph</span>&gt;</span>
+</code></pre>
+<div class="white-panel">
+  <graph data="graphData" width="100%" height="600px">
+    <x group-by="Owner" field="Month" order-by="Date" type="Category" title="Cream, Get the Money"></x>
+    <y field="Unit Sales" type="Measure" title="Dollah Dolah Bill Yall"></y>
+    <legend left="0" top="4%" height="100%" width="90%" position="right"> </graph-legend>
+    <line field="Owner" value="Aperture"></line>
+    <line field="Owner" value="Black Mesa"></line>
+    <line field="Owner" value="Tyrell Corp"></line>
+  </graph>
+</div>
+
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- With Attrs --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">graph</span> <span class="hljs-attribute">data</span>=<span class="hljs-value">"graphData"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"100%"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"600px"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">x</span> <span class="hljs-attribute">group-by</span>=<span class="hljs-value">"Owner"</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Month"</span> <span class="hljs-attribute">order-by</span>=<span class="hljs-value">"Date"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"Category"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Cream, Get the Money"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">x</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">y</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Unit Sales"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"Measure"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Dollah Dolah Bill Yall"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">y</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">legend</span> <span class="hljs-attribute">left</span>=<span class="hljs-value">"0"</span> <span class="hljs-attribute">top</span>=<span class="hljs-value">"4%"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"100%"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"90%"</span> <span class="hljs-attribute">position</span>=<span class="hljs-value">"right"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">graph-legend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">line</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Aperture"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">line</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">line</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Black Mesa"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">line</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">line</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Tyrell Corp"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">line</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">graph</span>&gt;</span>
+</code></pre>
+<h2 id="inside-ng-repeat">Inside ng-repeat</h2>
+<div class="white-panel" ng-repeat="one in arrayOfData">
+  <graph data="one.data" width="100%" height="600px">
+    <x field="Month" order-by="Date"></x>
+    <y field="Unit Sales"></y>
+    <graph-legend></graph-legend>
+    <line field="Owner"></line>
+  </graph>
+</div>
+
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- Default --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">graph</span> <span class="hljs-attribute">data</span>=<span class="hljs-value">"graphData"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"100%"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"600px"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">x</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Month"</span> <span class="hljs-attribute">order-by</span>=<span class="hljs-value">"Date"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">x</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">y</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Unit Sales"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">y</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">graph-legend</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">graph-legend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">line</span> <span class="hljs-attribute">field</span>=<span class="hljs-value">"Owner"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">line</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">graph</span>&gt;</span>
+</code></pre>
