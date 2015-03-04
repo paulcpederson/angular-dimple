@@ -12,7 +12,7 @@ layout: false
   <graph data="graphData" width="100%" height="600px">
     <x field="Operating Profit" type="Measure"></x>
     <y field="Unit Sales" type="Measure"></y>
-    <legend></legend>
+    <graph-legend></graph-legend>
     <scatter-plot field="Owner" value="Aperture" series="SKU"></scatter-plot>
   </graph>
 </div>
@@ -22,7 +22,7 @@ layout: false
 <graph data="graphData" width="100%" height="600px">
   <x field="Operating Profit" type="Measure"></x>
   <y field="Unit Sales" type="Measure"></y>
-  <legend></legend>
+  <graph-legend></graph-legend>
   <!-- plot all of Aperture's SKU's against profit and sales
        'series' is the data you'd like to plot on the graph -->
   <scatter-plot field="Owner" value="Aperture" series="SKU"></scatter-plot>
@@ -32,7 +32,7 @@ layout: false
   <graph data="graphData" width="100%" height="600px">
     <x field="Operating Profit" type="Measure" title="Profit, Aperture"></x>
     <y field="Unit Sales" type="Measure"></y>
-    <legend></legend>
+    <graph-legend></graph-legend>
     <scatter-plot field="Channel" series="SKU" filter="Owner:Aperture"></scatter-plot>
   </graph>
 </div>
@@ -41,7 +41,7 @@ layout: false
 <graph data="graphData" width="100%" height="600px">
   <x field="Operating Profit" type="Measure" title="Profit, Aperture"></x>
   <y field="Unit Sales" type="Measure"></y>
-  <legend></legend>
+  <graph-legend></graph-legend>
   <!-- plot the SKU of each channel as a different color,
        using 'filter' to only show entries for Aperture. -->
   <scatter-plot field="Channel" series="SKU" filter="Owner:Aperture"></scatter-plot>

@@ -5,7 +5,7 @@ layout: false
   <graph data="graphData" width="100%" height="600px">
     <x field="Month" order-by="Date"></x>
     <y field="Unit Sales"></y>
-    <legend></legend>
+    <graph-legend></graph-legend>
     <line field="Owner" value="Aperture"></line>
   </graph>
 </div>

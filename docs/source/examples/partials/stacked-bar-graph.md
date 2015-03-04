@@ -12,7 +12,7 @@ layout: false
   <graph data="graphData" width="100%" height="600px">
     <x field="Month" order-by="Date"></x>
     <y field="Unit Sales"></y>
-    <legend></legend>
+    <graph-legend></graph-legend>
     <stacked-bar field="Owner"></stacked-bar>
   </graph>
 </div>
@@ -22,7 +22,7 @@ layout: false
 <graph data="graphData" width="100%" height="600px">
   <x field="Month" order-by="Date"></x>
   <y field="Unit Sales"></y>
-  <legend></legend>
+  <graph-legend></graph-legend>
   <stacked-bar field="Owner"></stacked-bar>
 </graph>
 ```

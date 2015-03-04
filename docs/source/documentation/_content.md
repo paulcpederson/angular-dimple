@@ -95,7 +95,7 @@ Changing the axis to to 'Percent' will tie the largest value on the defined fiel
 
 ## Legend
 
-The `<legend>` directive creates a legend for your graph. The legend is generated from the plotted data.
+The `<graph-legend>` directive creates a legend for your graph. The legend is generated from the plotted data.
 
 | attribute | default     | description |
 | --------- | ----------- | ----------- |
