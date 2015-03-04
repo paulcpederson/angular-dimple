@@ -1,5 +1,8 @@
 # Angular-Dimple Changelog
 
+## v.2.0.0
+* Change <legend> to <graph-legend> to avoid clash with actual html legend element
+
 ## v.1.1.4
 * Fix bug that caused smooshed graphs on Firefox
 
