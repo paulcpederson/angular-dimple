@@ -1,5 +1,8 @@
 # Angular-Dimple Changelog
 
+## v2.0.1
+* Add dist files to releases so bower can find it
+
 ## v.2.0.0
 * Change <legend> to <graph-legend> to avoid clash with actual html legend element
 

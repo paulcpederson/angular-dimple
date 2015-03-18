@@ -1,4 +1,4 @@
-/*! angular-dimple - 2.0.0 - 2015-03-18
+/*! angular-dimple - 2.0.1 - 2015-03-18
 *   https://github.com/esripdx/angular-dimple
 *   Licensed ISC */
 angular.module('angular-dimple', [
