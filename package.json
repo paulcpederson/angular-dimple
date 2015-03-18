@@ -1,6 +1,6 @@
 {
   "name": "angular-dimple",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Angular.js wrapper for the Dimple charting language",
   "repository": "https://github.com/esripdx/angular-dimple",
   "license": "ISC",
