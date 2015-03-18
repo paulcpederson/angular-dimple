@@ -12,7 +12,7 @@ layout: false
   <graph data="graphData" width="100%" height="600px">
     <x field="Month" order-by="Date"></x>
     <y field="Unit Sales"></y>
-    <legend></legend>
+    <graph-legend></graph-legend>
     <stacked-area field="Owner"></area>
   </graph>
 </div>
@@ -22,7 +22,7 @@ layout: false
 <graph data="graphData">
   <x field="Month" order-by="Date"></x>
   <y field="Unit Sales"></y>
-  <legend></legend>
+  <graph-legend></graph-legend>
   <stacked-area field="Owner"></area>
 </graph>
 ```
@@ -59,7 +59,7 @@ layout: false
   <graph data="graphData" width="100%" height="600px">
     <x field="Month" order-by="Date"></x>
     <y field="Unit Sales" type="Percent"></y>
-    <legend></legend>
+    <graph-legend></graph-legend>
     <stacked-area field="Owner"></area>
   </graph>
 </div>
@@ -68,7 +68,7 @@ layout: false
 <graph data="graphData" width="100%" height="600px">
   <x field="Month" order-by="Date"></x>
   <y field="Unit Sales" type="Percent"></y>
-  <legend></legend>
+  <graph-legend></graph-legend>
   <stacked-area field="Owner"></area>
 </graph>
 ```

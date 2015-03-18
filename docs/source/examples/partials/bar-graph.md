@@ -12,7 +12,7 @@ layout: false
   <graph data="graphData" width="100%" height="600px">
     <x field="Month" order-by="Date"></x>
     <y field="Unit Sales"></y>
-    <legend></legend>
+    <graph-legend></graph-legend>
     <bar field="Owner" value="Black Mesa"></bar>
   </graph>
 </div>
@@ -21,7 +21,7 @@ layout: false
 <graph data="graphData" width="100%" height="600px">
   <x field="Month" order-by="Date"></x>
   <y field="Unit Sales"></y>
-  <legend></legend>
+  <graph-legend></graph-legend>
   <bar field="Owner" value="Black Mesa"></bar>
 </graph>
 ```

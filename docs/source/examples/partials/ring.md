@@ -11,7 +11,7 @@ layout: false
 <div class="white-panel">
   <graph data="graphData" width="100%" height="600px">
     <r field="Unit Sales"></r>
-    <legend></legend>
+    <graph-legend></graph-legend>
     <ring field="Owner" thickness="20"></ring>
   </graph>
 </div>
@@ -20,7 +20,7 @@ layout: false
 <!-- Default Stacked -->
   <graph data="graphData" width="100%" height="600px">
     <r field="Unit Sales"></r>
-    <legend></legend>
+    <graph-legend></graph-legend>
     <ring field="Owner" thickness="20"></ring>
   </graph>
 ```
@@ -35,7 +35,7 @@ layout: false
 <div class="white-panel">
   <graph data="graphData" width="100%" height="600px">
     <r field="Unit Sales"></r>
-    <legend></legend>
+    <graph-legend></graph-legend>
     <ring field="Owner" thickness="20"></ring>
 	  <ring field="Price Tier" thickness="20" diameter="75"></ring>
   </graph>
@@ -45,7 +45,7 @@ layout: false
 <!-- Default Stacked -->
   <graph data="graphData" width="100%" height="600px">
     <r field="Unit Sales"></r>
-    <legend></legend>
+    <graph-legend></graph-legend>
     <ring field="Owner" thickness="20"></ring>
 	  <ring field="Price Tier" thickness="20" diameter="75"></ring>
   </graph>
