@@ -3,14 +3,7 @@
 // └─────────────┘
 // Grunt wraps several tasks to ease development
 // runs acetate, deploys the site, and tags new releases
-
-// To draft a release, add GitHub credentials to user.js
 var fs = require('fs');
-var user = function(){};
-
-if (fs.existsSync('./user.js')) {
-  user = require('./user.js');
-}
 
 // Gets current version description from CHANGELOG.md
 function findVersion(log) {
@@ -175,7 +168,6 @@ module.exports = function(grunt) {
     'github-release': {
       options: {
         repository: repo,
-        auth: user(),
         release: {
           tag_name: currentVersion,
           name: currentVersion,
@@ -184,6 +176,26 @@ module.exports = function(grunt) {
       },
       files: {
         src: name + '.zip'
+      }
+    },
+
+    // Ask for GitHub username and password
+    'prompt': {
+      github: {
+        options: {
+          questions: [
+            {
+              config: 'github-release.options.auth.user',
+              type: 'input',
+              message: 'GitHub username:'
+            },
+            {
+              config: 'github-release.options.auth.password',
+              type: 'password',
+              message: 'GitHub password:'
+            }
+          ]
+        }
       }
     },
 
@@ -207,6 +219,7 @@ module.exports = function(grunt) {
 
     // Release a new version of the framework
   grunt.registerTask('release', [
+    'prompt:github',
     'prepublish',
     'compress',
     'github-release'
