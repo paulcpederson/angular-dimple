@@ -203,7 +203,7 @@ module.exports = function(grunt) {
     'gh-pages': {
       options: {
         base: 'build',
-        repo: 'https://github.com/' + repo + '.git'
+        repo: 'https://github.com/esripdx/angular-dimple.git'
       },
       src: ['**']
     }
