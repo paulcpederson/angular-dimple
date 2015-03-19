@@ -11,39 +11,39 @@ angular.module('myApp', [
   $routeProvider
 
   .when('/animation-test', {
-    templateUrl: '/examples/partials/animation-test.html',
+    templateUrl: '/angular-dimple/examples/partials/animation-test.html',
     controller: 'testController'
   })
   .when('/line-graph', {
-    templateUrl: '/examples/partials/line-graph/index.html',
+    templateUrl: '/angular-dimple/examples/partials/line-graph/index.html',
     controller: 'lineGraphController'
   })
   .when('/stacked-area', {
-    templateUrl: '/examples/partials/stacked-area/index.html',
+    templateUrl: '/angular-dimple/examples/partials/stacked-area/index.html',
     controller: 'stackedAreaController'
   })
   .when('/area', {
-    templateUrl: '/examples/partials/area/index.html',
+    templateUrl: '/angular-dimple/examples/partials/area/index.html',
     controller: 'areaController'
   })
   .when('/expanded-stacked-area', {
-    templateUrl: '/examples/partials/expanded-stacked-area/index.html',
+    templateUrl: '/angular-dimple/examples/partials/expanded-stacked-area/index.html',
     controller: 'expandedAreaController'
   })
   .when('/bar', {
-    templateUrl: '/examples/partials/bar-graph/index.html',
+    templateUrl: '/angular-dimple/examples/partials/bar-graph/index.html',
     controller: 'barController'
   })
   .when('/stacked-bar', {
-    templateUrl: '/examples/partials/stacked-bar-graph/index.html',
+    templateUrl: '/angular-dimple/examples/partials/stacked-bar-graph/index.html',
     controller: 'stackedBarController'
   })
   .when('/scatter-plot', {
-    templateUrl: '/examples/partials/scatter-plot/index.html',
+    templateUrl: '/angular-dimple/examples/partials/scatter-plot/index.html',
     controller: 'scatterController'
   })
   .when('/ring', {
-    templateUrl: '/examples/partials/ring/index.html',
+    templateUrl: '/angular-dimple/examples/partials/ring/index.html',
     controller: 'ringController'
   })
   .otherwise({
