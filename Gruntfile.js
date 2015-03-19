@@ -202,8 +202,8 @@ module.exports = function(grunt) {
     // Deploy the docs site to gh-pages
     'gh-pages': {
       options: {
-        base: 'build',
-        repo: 'https://github.com/esripdx/angular-dimple.git'
+        base: 'docs/build',
+        repo: 'https://github.com/paulcpederson/angular-dimple.git'
       },
       src: ['**']
     }
