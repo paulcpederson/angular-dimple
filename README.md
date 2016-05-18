@@ -58,8 +58,8 @@ You'd set up a line-graph like this:
 
 ```html
 <graph data="graphData">
-  <x-axis field="Month"></x-axis>
-  <y-axis field="Sales"></y-axis>
+  <x field="Month"></x>
+  <y field="Sales"></y>
   <line field="storeId" value="2"></line>
   <line field="storeId" value="1"></line>
 </graph>
@@ -71,8 +71,8 @@ Passing a line tag with a field and no value will draw a line on the chart for e
 
 ```html
 <graph data="graphData">
-  <x-axis field="Month"></x-axis>
-  <y-axis field="Sales"></y-axis>
+  <x field="Month"></x>
+  <y field="Sales"></y>
   <line field="storeId"></line>
 </graph>
 ```
@@ -81,8 +81,8 @@ Passing a line tag with a field and no value will draw a line on the chart for e
 
 ```html
 <graph data="graphData">
-  <x-axis field="Month"></x-axis>
-  <y-axis field="Sales"></y-axis>
+  <x field="Month"></x>
+  <y field="Sales"></y>
   <line field="storeId" value="2"></line>
   <line field="storeId" value="1"></line>
 </graph>
@@ -92,8 +92,8 @@ Passing a line tag with a field and no value will draw a line on the chart for e
 
 ```html
 <graph data="graphData">
-  <x-axis field="Month"></x-axis>
-  <y-axis field="Sales"></y-axis>
+  <x field="Month"></x>
+  <y field="Sales"></y>
   <area field="storeId" value="2"></area>
   <area field="storeId" value="1"></area>
 </graph>
@@ -103,8 +103,8 @@ Passing a line tag with a field and no value will draw a line on the chart for e
 
 ```html
 <graph data="graphData">
-  <x-axis field="Month"></x-axis>
-  <y-axis field="Sales"></y-axis>
+  <x field="Month"></x>
+  <y field="Sales"></y>
   <stacked-area field="storeId"></stacked-area>
 </graph>
 ```
@@ -113,8 +113,8 @@ Passing a line tag with a field and no value will draw a line on the chart for e
 
 ```html
 <graph data="graphData" orientation="horizontal">
-  <x-axis field="Month"></x-axis>
-  <y-axis field="Sales"></y-axis>
+  <x field="Month"></x>
+  <y field="Sales"></y>
   <bar field="storeId" value="2"></bar>
   <bar field="storeId" value="1"></bar>
 </graph>
@@ -124,8 +124,8 @@ Passing a line tag with a field and no value will draw a line on the chart for e
 
 ```html
 <graph data="graphData" orientation="horizontal">
-  <x-axis field="Month"></x-axis>
-  <y-axis field="Sales"></y-axis>
+  <x field="Month"></x>
+  <y field="Sales"></y>
   <stacked-bar field="storeId" value="2"></stacked-bar>
 </graph>
 ```
