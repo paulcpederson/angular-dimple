@@ -1,4 +1,4 @@
-/*! angular-dimple - 2.0.1 - 2015-03-18
+/*! angular-dimple - 2.0.1 - 2016-05-18
 *   https://github.com/esripdx/angular-dimple
 *   Licensed ISC */
 angular.module('angular-dimple', [
@@ -94,7 +94,7 @@ angular.module('angular-dimple.bar', [])
 }]);
 angular.module('angular-dimple.graph', [])
 
-.directive('graph', [function () {
+.directive('graph', ['$window', function ($window) {
   return {
     restrict: 'E',
     replace: true,
@@ -129,10 +129,24 @@ angular.module('angular-dimple.graph', [])
       transclude(scope, function(clone){
         element.append(clone);
       });
+
+      scope.onResize = function() {
+        if (graphController.getAutoresize()){
+          var chart = graphController.getChart();
+          if (chart){
+            chart.draw(0, true);
+          }
+        }
+      };
+
+      angular.element($window).bind('resize', function() {
+          scope.onResize();
+      });
+
     },
     controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
       var chart;
-
+      var autoresize = false;
       var id = (Math.random() * 1e9).toString(36).replace(".", "_");
       $element.append('<div class="dimple-graph" id="dng-'+ id +'"></div>');
 
@@ -141,6 +155,7 @@ angular.module('angular-dimple.graph', [])
 
         var width = $attrs.width ? $attrs.width : '100%';
         var height = $attrs.height ? $attrs.height : '100%';
+        autoresize = $attrs.autoresize ? $attrs.autoresize.toLowerCase()==='true' : false;
 
         var svg = dimple.newSvg('#dng-'+ id +'', width, height);
         var data = $scope.data;
@@ -165,6 +180,10 @@ angular.module('angular-dimple.graph', [])
             chart.assignColor(palette[i].name, palette[i].fill, palette[i].stroke, palette[i].opacity);
           }
         }
+      };
+
+      this.getAutoresize = function (){
+        return autoresize;
       };
 
       this.getChart = function () {
@@ -523,7 +542,7 @@ angular.module('angular-dimple.y', [])
           } else if ($attrs.type == 'Percent') {
             y = chart.addPctAxis('y', $attrs.field);
           } else if ($attrs.type == 'Time') {
-            y = chart.addTimeAxis('x', $attrs.field);
+            y = chart.addTimeAxis('y', $attrs.field);
             if ($attrs.format) {
               y.tickFormat = $attrs.format;
             }
@@ -539,7 +558,7 @@ angular.module('angular-dimple.y', [])
           } else if ($attrs.type == 'Percent') {
             y = chart.addPctAxis('y', $attrs.field);
           } else if ($attrs.type == 'Time') {
-            y = chart.addTimeAxis('x', $attrs.field);
+            y = chart.addTimeAxis('y', $attrs.field);
             if ($attrs.format) {
               y.tickFormat = $attrs.format;
             }
